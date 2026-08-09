@@ -255,9 +255,32 @@ code {
   padding-bottom: clamp(2.5rem, 6vw, 4rem);
 }
 
+/* Shared square cover frame — no tall-strip cropping */
+.cover-frame {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: calc(var(--radius) - 4px);
+  background: var(--bg-elevated);
+  border: 1px solid var(--line);
+}
+
+.cover-frame img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
 .featured-card {
   display: grid;
-  grid-template-columns: minmax(140px, 220px) 1fr;
+  grid-template-columns: 240px minmax(0, 1fr);
   gap: 1.5rem 2rem;
   align-items: center;
   padding: 1.25rem;
@@ -270,16 +293,14 @@ code {
 }
 
 .featured-card-art {
+  width: 240px;
+  max-width: 100%;
+  aspect-ratio: 1 / 1;
   border-radius: calc(var(--radius) - 4px);
   overflow: hidden;
   border: 1px solid var(--line);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
-}
-
-.featured-card-art img {
-  width: 100%;
-  aspect-ratio: 1;
-  object-fit: cover;
+  flex-shrink: 0;
 }
 
 .featured-label {
@@ -350,13 +371,10 @@ code {
   transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
 }
 
-.arc-card img {
-  width: 100%;
-  aspect-ratio: 1;
-  object-fit: cover;
-  border-radius: calc(var(--radius) - 6px);
+.arc-cover {
   margin-bottom: 0.85rem;
-  border: 1px solid var(--line);
+  border-radius: calc(var(--radius) - 6px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
 }
 
 .arc-card h3 {
@@ -764,7 +782,8 @@ code {
 .album-art-wrap {
   position: relative;
   display: block;
-  aspect-ratio: 1;
+  width: 100%;
+  aspect-ratio: 1 / 1;
   border-radius: var(--radius);
   overflow: hidden;
   border: 1px solid var(--line);
@@ -774,9 +793,13 @@ code {
 }
 
 .album-art-wrap img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
+  max-width: none;
   object-fit: cover;
+  object-position: center;
   display: block;
 }
 
