@@ -1017,21 +1017,27 @@ code {
   }
 
   .hero-portrait {
+    --portrait-size: min(200px, 48vw);
+    width: var(--portrait-size);
+    height: var(--portrait-size);
+    min-width: var(--portrait-size);
+    min-height: var(--portrait-size);
+    max-width: var(--portrait-size);
+    max-height: var(--portrait-size);
     justify-self: start;
-    width: min(200px, 55vw);
-    max-width: 200px;
-    height: auto;
-    aspect-ratio: 1 / 1;
     border-radius: 50%;
     overflow: hidden;
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
     order: -1; /* photo above copy on small screens */
   }
 
   .hero-portrait-img {
     width: 100%;
-    aspect-ratio: 1 / 1;
-    height: auto;
+    height: 100%;
     border-radius: 50%;
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
   }
 
   .about-grid {
