@@ -33,3 +33,25 @@ Pushes to `main` publish via GitHub Pages (`main` / root). Custom domain: `lila-
 - Covers: `images/covers/`
 - Profile: `images/profile.jpg`
 - Styles: `css/styles.css` (bump `?v=` in HTML when testing cache)
+
+
+## Photos gallery
+
+Layout is a **justified row gallery** (like Google Photos): each image keeps its native aspect ratio — no forced crop.
+
+1. Add files under `images/gallery/` (or any path under the site).
+2. Append an entry in `data/photos.json`:
+
+```json
+{
+  "src": "images/gallery/my-shot.jpg",
+  "alt": "Description",
+  "caption": "Optional caption"
+}
+```
+
+3. Commit and push. Pages rebuild automatically.
+
+### Web uploads?
+
+GitHub Pages is static — the browser cannot write files to the repo by itself. Real “upload from the website with login” needs a small backend (Cloudflare R2 + Worker, Supabase Storage, S3, etc.). Until then, add photos via git as above.
