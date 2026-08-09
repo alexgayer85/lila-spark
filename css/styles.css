@@ -460,6 +460,55 @@ code {
   box-shadow: 0 0 24px rgba(255, 45, 149, 0.15);
 }
 
+.era-chip a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.era-chip a:hover,
+.era-chip a:focus-visible {
+  color: var(--ink);
+}
+
+.era-group {
+  margin-top: 2.25rem;
+}
+
+.era-group:first-of-type {
+  margin-top: 0.5rem;
+}
+
+.era-heading {
+  margin: 0 0 1rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink);
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.era-heading span {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--cyan);
+  text-transform: uppercase;
+}
+
+.era-note {
+  margin: 0;
+  color: var(--ink-muted);
+  font-size: 0.95rem;
+  padding: 1rem 1.25rem;
+  border: 1px dashed var(--line);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.02);
+}
+
 /* Music tracks */
 .track-list {
   list-style: none;
