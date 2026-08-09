@@ -432,6 +432,34 @@ code {
   max-width: 36rem;
 }
 
+/* Eras */
+.era-list {
+  list-style: none;
+  margin: 0 0 1.5rem;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.era-chip {
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--ink-muted);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.era-chip.is-current {
+  color: var(--ink);
+  border-color: rgba(255, 45, 149, 0.45);
+  background: linear-gradient(120deg, rgba(255, 45, 149, 0.18), rgba(155, 92, 255, 0.12));
+  box-shadow: 0 0 24px rgba(255, 45, 149, 0.15);
+}
+
 /* Music tracks */
 .track-list {
   list-style: none;
@@ -458,6 +486,23 @@ code {
   border-color: rgba(255, 45, 149, 0.35);
   box-shadow: 0 0 0 1px rgba(255, 45, 149, 0.12), 0 12px 40px rgba(0, 0, 0, 0.25);
   transform: translateY(-1px);
+}
+
+.track-card-feature {
+  border-color: rgba(45, 226, 255, 0.3);
+  background:
+    linear-gradient(120deg, rgba(255, 45, 149, 0.12), rgba(45, 226, 255, 0.08)),
+    var(--card);
+}
+
+.track-card-feature .track-num {
+  color: var(--cyan);
+}
+
+.track-card-feature .track-badge {
+  border-color: rgba(255, 45, 149, 0.4);
+  color: var(--magenta);
+  background: rgba(255, 45, 149, 0.1);
 }
 
 .track-num {
