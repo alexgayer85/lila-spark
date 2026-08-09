@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=covers-square-1" />
+  <link rel="stylesheet" href="css/styles.css?v=photos-justified-1" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
 </head>
 <body>
@@ -45,59 +45,31 @@
   </header>
 
   <main id="main">
-
     <section class="page-hero">
       <div class="wrap">
         <p class="eyebrow">Gallery</p>
         <h1 class="page-title">Photos</h1>
         <p class="section-lead">
-          Press shots, concept images, and personal photography — growing with the project.
+          Press shots, concept images, and personal photography — shown full-frame, no cropping.
         </p>
       </div>
     </section>
-    <section class="section">
-      <div class="wrap">
-        <ul class="photo-grid">
-          <li class="photo-card">
-            <figure>
-              <img src="images/profile.jpg" alt="Lila Spark portrait" width="400" height="400" loading="lazy" />
-              <figcaption>Profile · Afterglow era</figcaption>
-            </figure>
-          </li>
-          <li class="photo-card">
-            <figure>
-              <img src="images/covers/afterglow.jpg" alt="Afterglow album cover" width="900" height="900" loading="lazy" />
-              <figcaption>Afterglow · album art</figcaption>
-            </figure>
-          </li>
-          <li class="photo-card">
-            <figure>
-              <img src="images/covers/sparked.jpg" alt="Sparked album cover" width="900" height="900" loading="lazy" />
-              <figcaption>Sparked · album art</figcaption>
-            </figure>
-          </li>
-          <li class="photo-card">
-            <figure>
-              <img src="images/covers/truly-me.jpg" alt="Truly Me album cover" width="900" height="900" loading="lazy" />
-              <figcaption>Truly Me · album art</figcaption>
-            </figure>
-          </li>
-          <li class="photo-card">
-            <figure>
-              <img src="images/family/lila-layla.jpg" alt="Lila and Layla" width="1200" height="1200" loading="lazy" />
-              <figcaption>Lila &amp; Layla · 2015</figcaption>
-            </figure>
-          </li>
-          <li class="photo-card photo-card-soon">
-            <figure>
-              <div class="photo-placeholder">More soon</div>
-              <figcaption>Professional shoots &amp; lifestyle — coming</figcaption>
-            </figure>
-          </li>
-        </ul>
+
+    <section class="section photo-section">
+      <div class="wrap wrap-wide">
+        <div
+          id="photo-gallery"
+          class="photo-gallery"
+          data-manifest="data/photos.json"
+          aria-live="polite"
+        ></div>
+        <p class="photo-help">
+          Click a photo to view full size. To add images on this static site, place files in
+          <code>images/gallery/</code> (or elsewhere under <code>images/</code>) and list them in
+          <code>data/photos.json</code>, then push to GitHub.
+        </p>
       </div>
     </section>
-
   </main>
 
   <footer class="site-footer">
@@ -123,5 +95,6 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/photos.js"></script>
 </body>
 </html>

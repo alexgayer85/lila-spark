@@ -1,0 +1,40 @@
+{
+  "targetRowHeight": 240,
+  "photos": [
+    {
+      "src": "images/profile.jpg",
+      "alt": "Lila Spark portrait",
+      "caption": "Profile · Afterglow era"
+    },
+    {
+      "src": "images/covers/afterglow.jpg",
+      "alt": "Afterglow album cover",
+      "caption": "Afterglow · album art"
+    },
+    {
+      "src": "images/covers/sparked.jpg",
+      "alt": "Sparked album cover",
+      "caption": "Sparked · album art"
+    },
+    {
+      "src": "images/covers/truly-me.jpg",
+      "alt": "Truly Me album cover",
+      "caption": "Truly Me · album art"
+    },
+    {
+      "src": "images/family/lila-layla.jpg",
+      "alt": "Lila and Layla together",
+      "caption": "Lila & Layla · ages 13 & 11 · 2015"
+    },
+    {
+      "src": "images/family/elena.jpg",
+      "alt": "Elena Spark",
+      "caption": "Elena · mother"
+    },
+    {
+      "src": "images/family/daniel.jpg",
+      "alt": "Daniel Spark",
+      "caption": "Daniel · father"
+    }
+  ]
+}
