@@ -14,6 +14,8 @@
   --glow-cyan: 0 0 40px rgba(45, 226, 255, 0.25);
   --radius: 16px;
   --font: "Outfit", system-ui, sans-serif;
+  /* Brittany-style script for the wordmark (Great Vibes is free & close) */
+  --font-script: "Great Vibes", "Segoe Script", "Apple Chancery", cursive;
   --max: 1040px;
   --header-h: 4.25rem;
 }
@@ -150,29 +152,37 @@ code {
 .logo {
   display: inline-flex;
   align-items: center;
-  gap: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
+  gap: 0.7rem;
+  text-decoration: none;
 }
 
 .logo-mark {
-  width: 1.35rem;
-  height: 1.35rem;
+  width: 2.35rem;
+  height: 2.35rem;
   border-radius: 50%;
-  background:
-    radial-gradient(circle at 35% 35%, #fff 0 12%, transparent 13%),
-    radial-gradient(circle at 50% 50%, var(--magenta) 0 40%, var(--cyan) 70%, transparent 71%);
-  box-shadow: var(--glow-magenta);
+  object-fit: cover;
+  object-position: center top;
   flex-shrink: 0;
+  border: 1.5px solid rgba(255, 45, 149, 0.45);
+  box-shadow: 0 0 0 2px rgba(10, 10, 15, 0.6), var(--glow-magenta);
+  background: var(--bg-elevated);
 }
 
 .logo-mark.small {
-  width: 0.9rem;
-  height: 0.9rem;
+  width: 1.35rem;
+  height: 1.35rem;
+  border-width: 1px;
+  box-shadow: 0 0 12px rgba(255, 45, 149, 0.35);
 }
 
 .logo-text {
-  background: linear-gradient(120deg, #fff 20%, var(--magenta) 55%, var(--cyan));
+  font-family: var(--font-script);
+  font-weight: 400;
+  font-size: 1.85rem;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  padding-bottom: 0.15rem;
+  background: linear-gradient(120deg, #fff 15%, var(--magenta) 50%, var(--cyan) 95%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -260,10 +270,11 @@ code {
 }
 
 .hero-name {
-  font-size: clamp(2.75rem, 8vw, 4.5rem);
-  font-weight: 800;
-  line-height: 1.05;
-  letter-spacing: -0.03em;
+  font-family: var(--font-script);
+  font-size: clamp(3.25rem, 11vw, 5.75rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: 0.01em;
   background: linear-gradient(115deg, #fff 10%, var(--magenta) 50%, var(--cyan) 95%);
   -webkit-background-clip: text;
   background-clip: text;
@@ -983,7 +994,10 @@ code {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  font-weight: 600;
+  font-family: var(--font-script);
+  font-weight: 400;
+  font-size: 1.45rem;
+  letter-spacing: 0.02em;
 }
 
 .footer-copy {
