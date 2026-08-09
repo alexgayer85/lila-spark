@@ -36,4 +36,14 @@
     a.setAttribute("title", "Link coming soon");
     a.setAttribute("aria-disabled", "true");
   });
+
+  // Only one track plays at a time
+  const players = Array.from(document.querySelectorAll("audio.track-audio"));
+  players.forEach((audio) => {
+    audio.addEventListener("play", () => {
+      players.forEach((other) => {
+        if (other !== audio && !other.paused) other.pause();
+      });
+    });
+  });
 })();

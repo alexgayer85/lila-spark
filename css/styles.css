@@ -505,6 +505,33 @@ code {
   background: rgba(255, 45, 149, 0.1);
 }
 
+.track-audio {
+  display: block;
+  width: 100%;
+  max-width: 28rem;
+  margin-top: 0.75rem;
+  height: 2.25rem;
+  border-radius: 999px;
+  accent-color: var(--magenta);
+}
+
+.track-card .track-body {
+  min-width: 0;
+}
+
+/* Stack player under meta; badge stays top-right on wide layouts */
+.track-card {
+  align-items: start;
+}
+
+.track-card .track-num {
+  padding-top: 0.35rem;
+}
+
+.track-card .track-badge {
+  margin-top: 0.35rem;
+}
+
 .track-num {
   font-size: 0.85rem;
   font-weight: 700;
