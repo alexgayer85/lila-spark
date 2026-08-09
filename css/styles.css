@@ -540,18 +540,41 @@ code {
 /* About */
 .about-grid {
   display: grid;
-  grid-template-columns: 1.4fr 1fr;
+  grid-template-columns: 1.55fr 0.9fr;
   gap: 2.5rem;
   align-items: start;
 }
 
-.about-copy p {
+.about-copy p,
+.bio p {
   color: var(--ink-muted);
-  margin: 0 0 1rem;
-  font-size: 1.05rem;
+  margin: 0 0 1.1rem;
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
+
+.bio em {
+  color: var(--ink);
+  font-style: italic;
+}
+
+.bio-close {
+  color: var(--ink) !important;
+  font-weight: 500;
+  padding-top: 0.35rem;
+  border-top: 1px solid var(--line);
+  margin-top: 0.5rem !important;
+  padding-top: 1.15rem !important;
+}
+
+.hero-lead em {
+  color: var(--ink);
+  font-style: italic;
 }
 
 .about-card {
+  position: sticky;
+  top: calc(var(--header-h) + 1rem);
   padding: 1.5rem;
   border-radius: var(--radius);
   border: 1px solid var(--line);
