@@ -759,11 +759,59 @@ code {
   transform: translateY(-2px);
 }
 
+/* Full frame, no crop — letterbox if needed */
+.family-photo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0c0c12;
+  width: 100%;
+}
+
 .family-card img {
   width: 100%;
-  aspect-ratio: 1;
-  object-fit: cover;
+  height: auto;
   display: block;
+  object-fit: contain;
+  object-position: center;
+  vertical-align: middle;
+}
+
+.family-age {
+  position: absolute;
+  left: 0.65rem;
+  bottom: 0.65rem;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #fff;
+  background: rgba(10, 10, 15, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+}
+
+.family-age strong {
+  font-weight: 800;
+  color: var(--cyan);
+  font-variant-numeric: tabular-nums;
+}
+
+.family-age-duo {
+  gap: 0.45rem;
+}
+
+.family-age-sep {
+  opacity: 0.5;
+  font-weight: 400;
 }
 
 .family-card-feature figure {
