@@ -253,14 +253,24 @@ code {
   position: relative;
   z-index: 1;
   padding: clamp(3.5rem, 10vw, 7rem) 0 clamp(4rem, 12vw, 8rem);
+}
+
+/* Two-column layout: copy left, portrait right — no overlap */
+.hero-layout {
   display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(180px, 280px);
   align-items: center;
+  justify-content: space-between;
+  column-gap: clamp(2.5rem, 8vw, 5.5rem);
+  row-gap: 2rem;
 }
 
 .hero-inner {
   position: relative;
   z-index: 2;
-  max-width: 38rem;
+  max-width: 34rem;
+  min-width: 0;
+  justify-self: start;
 }
 
 .eyebrow {
@@ -360,11 +370,10 @@ code {
 }
 
 .hero-portrait {
-  position: absolute;
-  right: max(4%, calc(50% - 440px));
-  top: 50%;
-  transform: translateY(-50%);
-  width: min(300px, 38vw);
+  position: relative;
+  justify-self: end;
+  width: min(280px, 100%);
+  max-width: 280px;
   aspect-ratio: 1;
   z-index: 1;
   border-radius: 50%;
@@ -373,6 +382,7 @@ code {
   box-shadow:
     0 0 50px rgba(255, 45, 149, 0.35),
     0 0 80px rgba(45, 226, 255, 0.12);
+  flex-shrink: 0;
 }
 
 .hero-portrait-img {
@@ -383,7 +393,6 @@ code {
   object-fit: cover;
   object-position: center top;
   background: var(--bg);
-  /* soft vignette via ring already on parent */
 }
 
 /* Sections */
@@ -978,11 +987,17 @@ code {
 
 /* Responsive */
 @media (max-width: 820px) {
-  .hero-spark {
-    opacity: 0.35;
-    right: -5%;
-    width: 200px;
-    height: 200px;
+  .hero-portrait {
+    opacity: 0.9;
+    right: 4%;
+    width: min(160px, 32vw);
+    top: auto;
+    bottom: 1rem;
+    transform: none;
+  }
+
+  .hero {
+    padding-bottom: clamp(8rem, 28vw, 12rem);
   }
 
   .about-grid {
@@ -1044,11 +1059,6 @@ code {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
-  }
-
-  .spark-ring,
-  .spark-core {
-    animation: none;
   }
 
   .btn:hover,
