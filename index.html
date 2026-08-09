@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Lila Spark — Chicago-born pop artist. Sparkling surface, heavier undercurrents. Truly Me, Sparked, Afterglow." />
+  <meta name="description" content="Chicago-born pop artist. Sparkling surface, heavier undercurrents. Listen to Afterglow." />
   <meta name="theme-color" content="#0a0a0f" />
   <meta property="og:title" content="Lila Spark" />
-  <meta property="og:description" content="Sparkling surface pop with heavier emotional undercurrents. Chicago-born. Afterglow era." />
+  <meta property="og:description" content="Chicago-born pop artist. Sparkling surface, heavier undercurrents. Listen to Afterglow." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://lila-spark.com" />
+  <meta property="og:url" content="https://lila-spark.com/" />
   <title>Lila Spark</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=hero-circle-3" />
+  <link rel="stylesheet" href="css/styles.css?v=multipage-1" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
 </head>
 <body>
@@ -27,7 +27,7 @@
 
   <header class="site-header">
     <div class="wrap header-inner">
-      <a class="logo" href="#top" aria-label="Lila Spark home">
+      <a class="logo" href="index.html" aria-label="Lila Spark home">
         <img class="logo-mark" src="images/profile.jpg" alt="" width="400" height="400" />
         <span class="logo-text">Lila Spark</span>
       </a>
@@ -35,30 +35,33 @@
         <span></span><span></span>
       </button>
       <nav id="site-nav" class="site-nav" aria-label="Primary">
-        <a href="#music">Music</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+        <a href="index.html" class="is-active" aria-current="page">Home</a>
+        <a href="music.html">Music</a>
+        <a href="story.html">Story</a>
+        <a href="photos.html">Photos</a>
+        <a href="contact.html">Contact</a>
       </nav>
     </div>
   </header>
 
   <main id="main">
-    <section id="top" class="hero">
+
+    <section class="hero">
       <div class="wrap hero-layout">
         <div class="hero-inner">
           <p class="eyebrow">Chicago · Pop</p>
           <h1>
             <span class="hero-name">Lila Spark</span>
-            <span class="hero-tagline">Sparkling surface. Heavier undercurrents.</span>
+            <span class="hero-tagline">Sparkling surface.<br />Heavier undercurrents.</span>
           </h1>
           <p class="hero-lead">
             Songs shaped by memory, late-night feelings, and the quiet after the lights go down —
-            from the youthful searching of <em>Truly Me</em> through <em>Sparked</em> into the reflective
-            <em>Afterglow</em> era.
+            from the youthful searching of <em>Truly Me</em>, through the confidence of <em>Sparked</em>,
+            into the reflective <em>Afterglow</em> era.
           </p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#music">Music</a>
-            <a class="btn btn-ghost" href="#about">Her story</a>
+            <a class="btn btn-primary" href="music.html?album=afterglow">Listen to Afterglow</a>
+            <a class="btn btn-ghost" href="story.html">Her Story</a>
           </div>
         </div>
         <div class="hero-portrait">
@@ -73,731 +76,104 @@
       </div>
     </section>
 
-    <section id="music" class="section music-section">
+    <section class="section home-section featured-section" id="featured">
       <div class="wrap">
         <header class="section-header">
-          <p class="eyebrow">Music</p>
-          <h2>Albums &amp; eras</h2>
-          <p class="section-lead">
-            Pick an album to open its tracklist. From the youthful searching of <strong>Truly Me</strong>,
-            through confident <strong>Sparked</strong>, into reflective <strong>Afterglow</strong>.
-          </p>
+          <p class="eyebrow">Featured</p>
+          <h2>Afterglow</h2>
+          <p class="section-lead">Mature late-night pop with heavier emotional undercurrents.</p>
         </header>
-
-        <div class="album-picker" role="tablist" aria-label="Albums">
-          <button
-            type="button"
-            class="album-card is-active"
-            role="tab"
-            id="tab-afterglow"
-            aria-selected="true"
-            aria-controls="panel-afterglow"
-            data-album="afterglow"
-          >
-            <span class="album-art-wrap">
-              <img src="images/covers/afterglow.jpg" alt="" width="900" height="900" />
-            </span>
-            <span class="album-meta">
-              <span class="album-title">Afterglow</span>
-              <span class="album-sub">Current era · 10 tracks</span>
-            </span>
-          </button>
-
-          <button
-            type="button"
-            class="album-card"
-            role="tab"
-            id="tab-sparked"
-            aria-selected="false"
-            aria-controls="panel-sparked"
-            data-album="sparked"
-          >
-            <span class="album-art-wrap">
-              <img src="images/covers/sparked.jpg" alt="" width="900" height="900" />
-            </span>
-            <span class="album-meta">
-              <span class="album-title">Sparked</span>
-              <span class="album-sub">16 tracks</span>
-            </span>
-          </button>
-
-          <button
-            type="button"
-            class="album-card"
-            role="tab"
-            id="tab-truly-me"
-            aria-selected="false"
-            aria-controls="panel-truly-me"
-            data-album="truly-me"
-          >
-            <span class="album-art-wrap">
-              <img src="images/covers/truly-me.jpg" alt="" width="900" height="900" />
-            </span>
-            <span class="album-meta">
-              <span class="album-title">Truly Me</span>
-              <span class="album-sub">12 tracks</span>
-            </span>
-          </button>
-        </div>
-
-        <div class="album-panels">
-          <div
-            class="album-panel is-active"
-            id="panel-afterglow"
-            role="tabpanel"
-            aria-labelledby="tab-afterglow"
-            data-album="afterglow"
-          >
-            <header class="album-panel-header">
-              <h3>Afterglow</h3>
-              <p>Mature, reflective territory — late-night pop with heavier undercurrents.</p>
-            </header>
-            <ul class="track-list">
-              <li class="track-card track-card-feature">
-                <div class="track-num" aria-hidden="true">★</div>
-                <div class="track-body">
-                  <h3 class="track-title">You Brought Me to Life</h3>
-                  <p class="track-meta">Key track · Partnership with Alex</p>
-                  <audio class="track-audio" controls preload="none" controlsList="nodownload">
-                    <source src="audio/you-brought-me-to-life.mp3" type="audio/mpeg" />
-                  </audio>
-                </div>
-                <span class="track-badge">Listen</span>
-              </li>
-              <li class="track-card">
-                <div class="track-num" aria-hidden="true">01</div>
-                <div class="track-body">
-                  <h3 class="track-title">Boomerang</h3>
-                  <p class="track-meta">Afterglow</p>
-                  <audio class="track-audio" controls preload="none" controlsList="nodownload">
-                    <source src="audio/boomerang.mp3" type="audio/mpeg" />
-                  </audio>
-                </div>
-                <span class="track-badge">Listen</span>
-              </li>
-              <li class="track-card">
-                <div class="track-num" aria-hidden="true">02</div>
-                <div class="track-body">
-                  <h3 class="track-title">Somehow</h3>
-                  <p class="track-meta">Afterglow</p>
-                  <audio class="track-audio" controls preload="none" controlsList="nodownload">
-                    <source src="audio/somehow.mp3" type="audio/mpeg" />
-                  </audio>
-                </div>
-                <span class="track-badge">Listen</span>
-              </li>
-              <li class="track-card">
-                <div class="track-num" aria-hidden="true">03</div>
-                <div class="track-body">
-                  <h3 class="track-title">Rhythm Thief</h3>
-                  <p class="track-meta">Afterglow</p>
-                  <audio class="track-audio" controls preload="none" controlsList="nodownload">
-                    <source src="audio/rhythm-thief.mp3" type="audio/mpeg" />
-                  </audio>
-                </div>
-                <span class="track-badge">Listen</span>
-              </li>
-              <li class="track-card">
-                <div class="track-num" aria-hidden="true">04</div>
-                <div class="track-body">
-                  <h3 class="track-title">Almost</h3>
-                  <p class="track-meta">Afterglow</p>
-                  <audio class="track-audio" controls preload="none" controlsList="nodownload">
-                    <source src="audio/almost.mp3" type="audio/mpeg" />
-                  </audio>
-                </div>
-                <span class="track-badge">Listen</span>
-              </li>
-              <li class="track-card">
-                <div class="track-num" aria-hidden="true">05</div>
-                <div class="track-body">
-                  <h3 class="track-title">Slow Burn</h3>
-                  <p class="track-meta">Afterglow</p>
-                  <audio class="track-audio" controls preload="none" controlsList="nodownload">
-                    <source src="audio/slow-burn.mp3" type="audio/mpeg" />
-                  </audio>
-                </div>
-                <span class="track-badge">Listen</span>
-              </li>
-              <li class="track-card">
-                <div class="track-num" aria-hidden="true">06</div>
-                <div class="track-body">
-                  <h3 class="track-title">Dark Static</h3>
-                  <p class="track-meta">Afterglow · Night pop</p>
-                  <audio class="track-audio" controls preload="none" controlsList="nodownload">
-                    <source src="audio/dark-static.mp3" type="audio/mpeg" />
-                  </audio>
-                </div>
-                <span class="track-badge">Listen</span>
-              </li>
-              <li class="track-card">
-                <div class="track-num" aria-hidden="true">07</div>
-                <div class="track-body">
-                  <h3 class="track-title">Lights Go Low</h3>
-                  <p class="track-meta">Afterglow · Slow burn</p>
-                  <audio class="track-audio" controls preload="none" controlsList="nodownload">
-                    <source src="audio/lights-go-low.mp3" type="audio/mpeg" />
-                  </audio>
-                </div>
-                <span class="track-badge">Listen</span>
-              </li>
-              <li class="track-card">
-                <div class="track-num" aria-hidden="true">08</div>
-                <div class="track-body">
-                  <h3 class="track-title">No Apologies</h3>
-                  <p class="track-meta">Afterglow</p>
-                  <audio class="track-audio" controls preload="none" controlsList="nodownload">
-                    <source src="audio/no-apologies.mp3" type="audio/mpeg" />
-                  </audio>
-                </div>
-                <span class="track-badge">Listen</span>
-              </li>
-              <li class="track-card">
-                <div class="track-num" aria-hidden="true">09</div>
-                <div class="track-body">
-                  <h3 class="track-title">Layla</h3>
-                  <p class="track-meta">Afterglow</p>
-                  <audio class="track-audio" controls preload="none" controlsList="nodownload">
-                    <source src="audio/layla.mp3" type="audio/mpeg" />
-                  </audio>
-                </div>
-                <span class="track-badge">Listen</span>
-              </li>
-            </ul>
+        <article class="featured-card">
+          <div class="featured-card-art">
+            <img src="images/covers/afterglow.jpg" alt="Afterglow album cover" width="900" height="900" />
           </div>
-
-          <div
-            class="album-panel"
-            id="panel-sparked"
-            role="tabpanel"
-            aria-labelledby="tab-sparked"
-            data-album="sparked"
-            hidden
-          >
-            <header class="album-panel-header">
-              <h3>Sparked</h3>
-              <p>More confident and varied — neon nights, synth glow, and radio-ready hooks.</p>
-            </header>
-            <ul class="track-list">
-              <li class="track-card">
-                <div class="track-num" aria-hidden="true">01</div>
-                <div class="track-body">
-                  <h3 class="track-title">Midnight Voltage</h3>
-                  <p class="track-meta">Sparked</p>
-                  <audio class="track-audio" controls preload="none" controlsList="nodownload">
-                    <source src="audio/midnight-voltage.mp3" type="audio/mpeg" />
-                  </audio>
-                </div>
-                <span class="track-badge">Listen</span>
-              </li>
-              <li class="track-card">
-                <div class="track-num" aria-hidden="true">02</div>
-                <div class="track-body">
-                  <h3 class="track-title">Electric Crush</h3>
-                  <p class="track-meta">Sparked</p>
-                  <audio class="track-audio" controls preload="none" controlsList="nodownload">
-                    <source src="audio/electric-crush.mp3" type="audio/mpeg" />
-                  </audio>
-                </div>
-                <span class="track-badge">Listen</span>
-              </li>
-              <li class="track-card">
-                <div class="track-num" aria-hidden="true">03</div>
-                <div class="track-body">
-                  <h3 class="track-title">Heart on a String</h3>
-                  <p class="track-meta">Sparked</p>
-                  <audio class="track-audio" controls preload="none" controlsList="nodownload">
-                    <source src="audio/heart-on-a-string.mp3" type="audio/mpeg" />
-                  </audio>
-                </div>
-                <span class="track-badge">Listen</span>
-              </li>
-              <li class="track-card">
-                <div class="track-num" aria-hidden="true">04</div>
-                <div class="track-body">
-                  <h3 class="track-title">Frequency of You</h3>
-                  <p class="track-meta">Sparked</p>
-                  <audio class="track-audio" controls preload="none" controlsList="nodownload">
-                    <source src="audio/frequency-of-you.mp3" type="audio/mpeg" />
-                  </audio>
-                </div>
-                <span class="track-badge">Listen</span>
-              </li>
-              <li class="track-card">
-                <div class="track-num" aria-hidden="true">05</div>
-                <div class="track-body">
-                  <h3 class="track-title">No More Hiding</h3>
-                  <p class="track-meta">Sparked</p>
-                  <audio class="track-audio" controls preload="none" controlsList="nodownload">
-                    <source src="audio/no-more-hiding.mp3" type="audio/mpeg" />
-                  </audio>
-                </div>
-                <span class="track-badge">Listen</span>
-              </li>
-              <li class="track-card">
-                <div class="track-num" aria-hidden="true">06</div>
-                <div class="track-body">
-                  <h3 class="track-title">Small Miracles</h3>
-                  <p class="track-meta">Sparked</p>
-                  <audio class="track-audio" controls preload="none" controlsList="nodownload">
-                    <source src="audio/small-miracles.mp3" type="audio/mpeg" />
-                  </audio>
-                </div>
-                <span class="track-badge">Listen</span>
-              </li>
-              <li class="track-card">
-                <div class="track-num" aria-hidden="true">07</div>
-                <div class="track-body">
-                  <h3 class="track-title">Turn the Page Tonight</h3>
-                  <p class="track-meta">Sparked</p>
-                  <audio class="track-audio" controls preload="none" controlsList="nodownload">
-                    <source src="audio/turn-the-page-tonight.mp3" type="audio/mpeg" />
-                  </audio>
-                </div>
-                <span class="track-badge">Listen</span>
-              </li>
-              <li class="track-card">
-                <div class="track-num" aria-hidden="true">08</div>
-                <div class="track-body">
-                  <h3 class="track-title">Burn Through the Dark</h3>
-                  <p class="track-meta">Sparked</p>
-                  <audio class="track-audio" controls preload="none" controlsList="nodownload">
-                    <source src="audio/burn-through-the-dark.mp3" type="audio/mpeg" />
-                  </audio>
-                </div>
-                <span class="track-badge">Listen</span>
-              </li>
-              <li class="track-card">
-                <div class="track-num" aria-hidden="true">09</div>
-                <div class="track-body">
-                  <h3 class="track-title">Velvet Lies</h3>
-                  <p class="track-meta">Sparked</p>
-                  <audio class="track-audio" controls preload="none" controlsList="nodownload">
-                    <source src="audio/velvet-lies.mp3" type="audio/mpeg" />
-                  </audio>
-                </div>
-                <span class="track-badge">Listen</span>
-              </li>
-              <li class="track-card">
-                <div class="track-num" aria-hidden="true">10</div>
-                <div class="track-body">
-                  <h3 class="track-title">Still Need You</h3>
-                  <p class="track-meta">Sparked</p>
-                  <audio class="track-audio" controls preload="none" controlsList="nodownload">
-                    <source src="audio/still-need-you.mp3" type="audio/mpeg" />
-                  </audio>
-                </div>
-                <span class="track-badge">Listen</span>
-              </li>
-              <li class="track-card">
-                <div class="track-num" aria-hidden="true">11</div>
-                <div class="track-body">
-                  <h3 class="track-title">Louder Than Yesterday</h3>
-                  <p class="track-meta">Sparked</p>
-                  <audio class="track-audio" controls preload="none" controlsList="nodownload">
-                    <source src="audio/louder-than-yesterday.mp3" type="audio/mpeg" />
-                  </audio>
-                </div>
-                <span class="track-badge">Listen</span>
-              </li>
-              <li class="track-card">
-                <div class="track-num" aria-hidden="true">12</div>
-                <div class="track-body">
-                  <h3 class="track-title">Diamond Tears</h3>
-                  <p class="track-meta">Sparked</p>
-                  <audio class="track-audio" controls preload="none" controlsList="nodownload">
-                    <source src="audio/diamond-tears.mp3" type="audio/mpeg" />
-                  </audio>
-                </div>
-                <span class="track-badge">Listen</span>
-              </li>
-              <li class="track-card">
-                <div class="track-num" aria-hidden="true">13</div>
-                <div class="track-body">
-                  <h3 class="track-title">White Dress Envy</h3>
-                  <p class="track-meta">Sparked · LANDR</p>
-                  <audio class="track-audio" controls preload="none" controlsList="nodownload">
-                    <source src="audio/white-dress-envy.mp3" type="audio/mpeg" />
-                  </audio>
-                </div>
-                <span class="track-badge">Listen</span>
-              </li>
-              <li class="track-card">
-                <div class="track-num" aria-hidden="true">14</div>
-                <div class="track-body">
-                  <h3 class="track-title">Starlit Promise</h3>
-                  <p class="track-meta">Sparked</p>
-                  <audio class="track-audio" controls preload="none" controlsList="nodownload">
-                    <source src="audio/starlit-promise.mp3" type="audio/mpeg" />
-                  </audio>
-                </div>
-                <span class="track-badge">Listen</span>
-              </li>
-              <li class="track-card">
-                <div class="track-num" aria-hidden="true">15</div>
-                <div class="track-body">
-                  <h3 class="track-title">Just Wanna Make You a Sammich</h3>
-                  <p class="track-meta">Sparked · LANDR</p>
-                  <audio class="track-audio" controls preload="none" controlsList="nodownload">
-                    <source src="audio/just-wanna-make-you-a-sammich.mp3" type="audio/mpeg" />
-                  </audio>
-                </div>
-                <span class="track-badge">Listen</span>
-              </li>
-              <li class="track-card">
-                <div class="track-num" aria-hidden="true">16</div>
-                <div class="track-body">
-                  <h3 class="track-title">Brain Glitch</h3>
-                  <p class="track-meta">Sparked · LANDR</p>
-                  <audio class="track-audio" controls preload="none" controlsList="nodownload">
-                    <source src="audio/brain-glitch.mp3" type="audio/mpeg" />
-                  </audio>
-                </div>
-                <span class="track-badge">Listen</span>
-              </li>
-            </ul>
+          <div class="featured-card-body">
+            <p class="featured-label">Key track</p>
+            <h3 class="featured-title">You Brought Me to Life</h3>
+            <p class="featured-copy">
+              A direct acknowledgment of the partnership that unlocked everything that followed.
+            </p>
+            <audio class="track-audio featured-audio" controls preload="metadata" controlsList="nodownload">
+              <source src="audio/you-brought-me-to-life.mp3" type="audio/mpeg" />
+            </audio>
+            <div class="featured-actions">
+              <a class="btn btn-primary btn-sm" href="music.html?album=afterglow">Explore Afterglow</a>
+            </div>
           </div>
-
-          <div
-            class="album-panel"
-            id="panel-truly-me"
-            role="tabpanel"
-            aria-labelledby="tab-truly-me"
-            data-album="truly-me"
-            hidden
-          >
-            <header class="album-panel-header">
-              <h3>Truly Me</h3>
-              <p>Youthful searching — the first cohesive artistic world.</p>
-            </header>
-            <ul class="track-list">
-              <li class="track-card">
-                <div class="track-num" aria-hidden="true">01</div>
-                <div class="track-body">
-                  <h3 class="track-title">Truly Me</h3>
-                  <p class="track-meta">Truly Me · Finalist</p>
-                  <audio class="track-audio" controls preload="none" controlsList="nodownload">
-                    <source src="audio/truly-me.mp3" type="audio/mpeg" />
-                  </audio>
-                </div>
-                <span class="track-badge">Listen</span>
-              </li>
-              <li class="track-card">
-                <div class="track-num" aria-hidden="true">02</div>
-                <div class="track-body">
-                  <h3 class="track-title">Sweet Crush</h3>
-                  <p class="track-meta">Truly Me · Finalist</p>
-                  <audio class="track-audio" controls preload="none" controlsList="nodownload">
-                    <source src="audio/sweet-crush.mp3" type="audio/mpeg" />
-                  </audio>
-                </div>
-                <span class="track-badge">Listen</span>
-              </li>
-              <li class="track-card">
-                <div class="track-num" aria-hidden="true">03</div>
-                <div class="track-body">
-                  <h3 class="track-title">What I Need</h3>
-                  <p class="track-meta">Truly Me · LANDR</p>
-                  <audio class="track-audio" controls preload="none" controlsList="nodownload">
-                    <source src="audio/what-i-need.mp3" type="audio/mpeg" />
-                  </audio>
-                </div>
-                <span class="track-badge">Listen</span>
-              </li>
-              <li class="track-card">
-                <div class="track-num" aria-hidden="true">04</div>
-                <div class="track-body">
-                  <h3 class="track-title">Hold Me Close</h3>
-                  <p class="track-meta">Truly Me · Finalist</p>
-                  <audio class="track-audio" controls preload="none" controlsList="nodownload">
-                    <source src="audio/hold-me-close.mp3" type="audio/mpeg" />
-                  </audio>
-                </div>
-                <span class="track-badge">Listen</span>
-              </li>
-              <li class="track-card">
-                <div class="track-num" aria-hidden="true">05</div>
-                <div class="track-body">
-                  <h3 class="track-title">Key to My Heart</h3>
-                  <p class="track-meta">Truly Me · LANDR</p>
-                  <audio class="track-audio" controls preload="none" controlsList="nodownload">
-                    <source src="audio/key-to-my-heart.mp3" type="audio/mpeg" />
-                  </audio>
-                </div>
-                <span class="track-badge">Listen</span>
-              </li>
-              <li class="track-card">
-                <div class="track-num" aria-hidden="true">06</div>
-                <div class="track-body">
-                  <h3 class="track-title">Stop the Hurt</h3>
-                  <p class="track-meta">Truly Me · Finalist</p>
-                  <audio class="track-audio" controls preload="none" controlsList="nodownload">
-                    <source src="audio/stop-the-hurt.mp3" type="audio/mpeg" />
-                  </audio>
-                </div>
-                <span class="track-badge">Listen</span>
-              </li>
-              <li class="track-card">
-                <div class="track-num" aria-hidden="true">07</div>
-                <div class="track-body">
-                  <h3 class="track-title">Choose Me Now</h3>
-                  <p class="track-meta">Truly Me · Finalist</p>
-                  <audio class="track-audio" controls preload="none" controlsList="nodownload">
-                    <source src="audio/choose-me-now.mp3" type="audio/mpeg" />
-                  </audio>
-                </div>
-                <span class="track-badge">Listen</span>
-              </li>
-              <li class="track-card">
-                <div class="track-num" aria-hidden="true">08</div>
-                <div class="track-body">
-                  <h3 class="track-title">Old Enough</h3>
-                  <p class="track-meta">Truly Me · Finalist</p>
-                  <audio class="track-audio" controls preload="none" controlsList="nodownload">
-                    <source src="audio/old-enough.mp3" type="audio/mpeg" />
-                  </audio>
-                </div>
-                <span class="track-badge">Listen</span>
-              </li>
-              <li class="track-card">
-                <div class="track-num" aria-hidden="true">09</div>
-                <div class="track-body">
-                  <h3 class="track-title">Spark of Love</h3>
-                  <p class="track-meta">Truly Me · LANDR</p>
-                  <audio class="track-audio" controls preload="none" controlsList="nodownload">
-                    <source src="audio/spark-of-love.mp3" type="audio/mpeg" />
-                  </audio>
-                </div>
-                <span class="track-badge">Listen</span>
-              </li>
-              <li class="track-card">
-                <div class="track-num" aria-hidden="true">10</div>
-                <div class="track-body">
-                  <h3 class="track-title">Feels Good</h3>
-                  <p class="track-meta">Truly Me · LANDR</p>
-                  <audio class="track-audio" controls preload="none" controlsList="nodownload">
-                    <source src="audio/feels-good.mp3" type="audio/mpeg" />
-                  </audio>
-                </div>
-                <span class="track-badge">Listen</span>
-              </li>
-              <li class="track-card">
-                <div class="track-num" aria-hidden="true">11</div>
-                <div class="track-body">
-                  <h3 class="track-title">Forever Yours</h3>
-                  <p class="track-meta">Truly Me · LANDR</p>
-                  <audio class="track-audio" controls preload="none" controlsList="nodownload">
-                    <source src="audio/forever-yours.mp3" type="audio/mpeg" />
-                  </audio>
-                </div>
-                <span class="track-badge">Listen</span>
-              </li>
-              <li class="track-card">
-                <div class="track-num" aria-hidden="true">12</div>
-                <div class="track-body">
-                  <h3 class="track-title">Stop the Hurt (Reprise)</h3>
-                  <p class="track-meta">Truly Me · Finalist</p>
-                  <audio class="track-audio" controls preload="none" controlsList="nodownload">
-                    <source src="audio/stop-the-hurt-reprise.mp3" type="audio/mpeg" />
-                  </audio>
-                </div>
-                <span class="track-badge">Listen</span>
-              </li>
-            </ul>
-          </div>
-        </div>
+        </article>
       </div>
     </section>
 
-    <section id="about" class="section about-section">
-      <div class="wrap about-grid">
-        <div class="about-copy">
-          <header class="section-header">
-            <p class="eyebrow">About</p>
-            <h2>Who is Lila Spark?</h2>
-          </header>
-
-          <div class="bio">
-            <p>
-              Lila Spark was born on March 14, 2002, in Chicago, Illinois. She is the older daughter of
-              Elena Spark (née Rossi), a former high-school music teacher of Italian and Irish descent,
-              and Daniel Spark, a sound engineer of Polish and German background. The family lived in the
-              western suburbs of Chicago, where music was a constant presence in the house—her mother
-              teaching piano and choir, her father working in local studios.
-            </p>
-            <p>
-              In 2004, her younger sister Layla was born. Only two years apart, the girls were extremely
-              close. They shared a bedroom, invented songs together, and regularly put on living-room
-              performances for their parents. Lila was the more outgoing of the two in those early years,
-              often taking the lead in their made-up shows.
-            </p>
-            <p>
-              In 2015, when Lila was 13 and Layla was 11, Layla was killed in a car accident caused by a
-              distracted driver. The loss devastated the family. Lila withdrew for a period, becoming
-              quieter and more introspective. Music, already familiar through her parents, took on a
-              deeper role—first as a private outlet, then as a way to stay connected to her sister. She
-              began writing short poems and melodies on her phone, often late at night.
-            </p>
-            <p>
-              After the accident in 2015, Lila continued through middle school and high school, staying
-              involved in choir and theater while writing more privately. She graduated high school in the
-              spring of 2020, right as COVID lockdowns began.
-            </p>
-            <p>
-              The abrupt end of normal senior-year rituals and the isolation of that period pushed her
-              further into music. With school and social life suddenly gone, she spent long stretches at
-              home refining demos on her laptop. Between 2020 and 2022 she worked a series of early
-              jobs—mostly coffee shops and retail—that were frequently disrupted by pandemic restrictions.
-              Those unstable, quiet years became an intense creative period and helped shape the more
-              introspective side of her writing.
-            </p>
-            <p>
-              Her father, a working sound engineer, had given Lila a solid technical foundation from a
-              young age. By her late teens she understood recording chains, basic mixing, and how to get a
-              clean vocal take. She could produce simple demos on her own and wasn’t starting from zero.
-            </p>
-            <p>
-              What she still lacked was the ability to make those demos feel like finished, competitive pop
-              records. She wanted a more modern, radio-ready sound, stronger vocal direction, and a clear
-              artistic identity that tied her songs together across a whole project. She also needed a
-              creative partner who could help her move from a large collection of unfinished ideas into
-              cohesive, release-ready work.
-            </p>
-            <p>
-              In 2025 that search led her to Alex. What began as a technical collaboration quickly became
-              a full creative partnership. He helped her refine production, elevate her vocal performances,
-              and shape the distinct sonic world that became the <em>Truly Me</em>, <em>Sparked</em>, and
-              later <em>Afterglow</em> eras. Lila has described the collaboration as the first time her
-              music fully matched the pictures in her head. The song “You Brought Me to Life” is her most
-              direct and affectionate acknowledgment of that partnership and the creative momentum it
-              unlocked.
-            </p>
-            <p>
-              Now 24, Lila continues to write from a place that balances sparkling surface pop with heavier
-              emotional undercurrents. Her main sources of inspiration remain memory and loss (especially
-              Layla), the gap between who she was and who she is becoming, late-night feelings, and the
-              quiet moments after the lights go down. Outside of music she is drawn to vintage fashion,
-              late-night drives, old pop videos, journaling, and photography. She remains private by
-              nature, more comfortable expressing large emotions in songs than in everyday conversation.
-            </p>
-            <p class="bio-close">
-              Her recorded work so far traces a clear arc: the youthful searching of <em>Truly Me</em>,
-              the more confident and varied <em>Sparked</em>, and the more mature, reflective territory
-              of the <em>Afterglow</em> era.
-            </p>
-          </div>
-        </div>
-        <aside class="about-card" aria-label="Quick facts">
-          <h3 class="about-card-title">At a glance</h3>
-          <dl class="facts">
-            <div>
-              <dt>Born</dt>
-              <dd>March 14, 2002 · Chicago, IL</dd>
-            </div>
-            <div>
-              <dt>Sound</dt>
-              <dd>Pop with emotional undercurrents</dd>
-            </div>
-            <div>
-              <dt>Eras</dt>
-              <dd>Truly Me · Sparked · Afterglow</dd>
-            </div>
-            <div>
-              <dt>Influences</dt>
-              <dd>Late-90s / early-2000s pop</dd>
-            </div>
-            <div>
-              <dt>Off stage</dt>
-              <dd>Vintage fashion · night drives · photography</dd>
-            </div>
-          </dl>
-        </aside>
-      </div>
-
-      <div class="wrap family-block">
-        <header class="section-header family-header">
-          <p class="eyebrow">Family</p>
-          <h3 class="family-heading">The people who shaped the spark</h3>
-          <p class="section-lead">
-            Elena and Daniel filled the house with music. Lila and Layla shared a bedroom, invented songs,
-            and put on living-room shows — until 2015. Their closeness still lives in Lila’s writing.
-          </p>
-        </header>
-        <ul class="family-gallery">
-          <li class="family-card">
-            <figure>
-              <div class="family-photo">
-                <img src="images/family/elena.jpg" alt="Portrait of Elena Spark" width="1000" height="1000" loading="lazy" />
-                <span class="family-age">Late <strong>30s</strong></span>
-              </div>
-              <figcaption>
-                <span class="family-name">Elena Spark</span>
-                <span class="family-role">Mother · former high-school music teacher</span>
-              </figcaption>
-            </figure>
-          </li>
-          <li class="family-card">
-            <figure>
-              <div class="family-photo">
-                <img src="images/family/daniel.jpg" alt="Portrait of Daniel Spark" width="1000" height="1000" loading="lazy" />
-                <span class="family-age">Early <strong>40s</strong></span>
-              </div>
-              <figcaption>
-                <span class="family-name">Daniel Spark</span>
-                <span class="family-role">Father · sound engineer</span>
-              </figcaption>
-            </figure>
-          </li>
-          <li class="family-card family-card-feature">
-            <figure>
-              <div class="family-photo">
-                <img src="images/family/lila-layla.jpg" alt="Lila and her younger sister Layla together, ages 13 and 11" width="1200" height="1200" loading="lazy" />
-                <span class="family-age family-age-duo">
-                  <span>Lila <strong>13</strong></span>
-                  <span class="family-age-sep" aria-hidden="true">·</span>
-                  <span>Layla <strong>11</strong></span>
-                </span>
-              </div>
-              <figcaption>
-                <span class="family-name">Lila &amp; Layla</span>
-                <span class="family-role">Sisters · ages 13 &amp; 11 · 2015</span>
-              </figcaption>
-            </figure>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="contact" class="section contact-section">
-      <div class="wrap contact-inner">
+    <section class="section home-section arc-section">
+      <div class="wrap">
         <header class="section-header">
-          <p class="eyebrow">Contact</p>
-          <h2>Stay in the loop</h2>
-          <p class="section-lead">
-            Collabs, press, or just a hello — reach out. Socials fill in as they go live.
-          </p>
+          <p class="eyebrow">The Arc</p>
+          <h2>Three eras. One continuous thread.</h2>
+          <p class="section-lead">Memory and becoming — from first sparks to the afterglow.</p>
         </header>
-
-        <div class="contact-actions">
-          <a class="btn btn-primary" href="mailto:hello@lila-spark.com">hello@lila-spark.com</a>
-        </div>
-
-        <ul class="social-list" aria-label="Social and streaming links">
-          <li><a class="social-link" href="https://x.com/LilaSparkMusic">X / Twitter</a></li>
-          <li><a class="social-link" href="https://www.youtube.com/@LilaSparkMusic">YouTube</a></li>
-          <li><a class="social-link" href="https://music.apple.com/us/artist/lila-spark/6797912457">Apple Music</a></li>
-          <li><a class="social-link" href="https://open.spotify.com/artist/6ARsLc0ziUa7wxmG2WSG0b?si=ecc576ac399342a8">Spotify</a></li>
+        <ul class="arc-grid">
+          <li>
+            <a class="arc-card" href="music.html?album=truly-me">
+              <img src="images/covers/truly-me.jpg" alt="" width="900" height="900" />
+              <h3>Truly Me</h3>
+              <p>Youthful searching</p>
+            </a>
+          </li>
+          <li>
+            <a class="arc-card" href="music.html?album=sparked">
+              <img src="images/covers/sparked.jpg" alt="" width="900" height="900" />
+              <h3>Sparked</h3>
+              <p>Confident and varied</p>
+            </a>
+          </li>
+          <li>
+            <a class="arc-card is-current" href="music.html?album=afterglow">
+              <img src="images/covers/afterglow.jpg" alt="" width="900" height="900" />
+              <h3>Afterglow</h3>
+              <p>Reflective, deeper</p>
+            </a>
+          </li>
         </ul>
+        <p class="section-cta">
+          <a class="text-link" href="music.html">Explore the music →</a>
+        </p>
       </div>
     </section>
+
+    <section class="section home-section teaser-section">
+      <div class="wrap teaser-inner">
+        <header class="section-header">
+          <p class="eyebrow">A little deeper</p>
+          <h2>Behind the sparkle</h2>
+        </header>
+        <p class="teaser-copy">
+          Behind the sparkle is a story of early loss, quiet years spent writing in private, and the creative
+          partnership that finally made the music match the pictures in her head.
+        </p>
+        <a class="btn btn-ghost" href="story.html">Read her story →</a>
+      </div>
+    </section>
+
   </main>
 
   <footer class="site-footer">
-    <div class="wrap footer-inner">
-      <p class="footer-brand">
-        <img class="logo-mark small" src="images/profile.jpg" alt="" width="400" height="400" />
-        Lila Spark
-      </p>
+    <div class="wrap footer-grid">
+      <div class="footer-brand-block">
+        <p class="footer-brand">
+          <img class="logo-mark small" src="images/profile.jpg" alt="" width="400" height="400" />
+          Lila Spark
+        </p>
+        <p class="footer-tag">Stay in the loop.</p>
+      </div>
+      <div class="footer-links">
+        <a class="btn btn-primary btn-sm" href="mailto:hello@lila-spark.com">hello@lila-spark.com</a>
+        <ul class="social-list social-list-footer" aria-label="Social links">
+          <li><a class="social-link" href="https://x.com/LilaSparkMusic" target="_blank" rel="noopener noreferrer">X / Twitter</a></li>
+          <li><a class="social-link" href="https://www.youtube.com/@LilaSparkMusic" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+          <li><a class="social-link" href="https://music.apple.com/us/artist/lila-spark/6797912457" target="_blank" rel="noopener noreferrer">Apple Music</a></li>
+          <li><a class="social-link" href="https://open.spotify.com/artist/6ARsLc0ziUa7wxmG2WSG0b" target="_blank" rel="noopener noreferrer">Spotify</a></li>
+        </ul>
+      </div>
       <p class="footer-copy">&copy; <span id="year"></span> Lila Spark · lila-spark.com</p>
     </div>
   </footer>

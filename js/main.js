@@ -94,13 +94,15 @@
     });
   });
 
-  // Deep link: #music?album=sparked or #panel-sparked
+  // Deep link: music.html?album=sparked or #panel-sparked
   const hash = window.location.hash.replace(/^#/, "");
-  if (hash.startsWith("panel-") || hash.startsWith("era-")) {
-    const id = hash.replace(/^(panel|era)-/, "");
-    if (albumCards.some((c) => c.dataset.album === id)) selectAlbum(id);
-  } else if (new URLSearchParams(window.location.search).get("album")) {
-    const id = new URLSearchParams(window.location.search).get("album");
-    if (albumCards.some((c) => c.dataset.album === id)) selectAlbum(id);
+  const albumParam = new URLSearchParams(window.location.search).get("album");
+  if (albumCards.length) {
+    if (hash.startsWith("panel-") || hash.startsWith("era-")) {
+      const id = hash.replace(/^(panel|era)-/, "");
+      if (albumCards.some((c) => c.dataset.album === id)) selectAlbum(id);
+    } else if (albumParam && albumCards.some((c) => c.dataset.album === albumParam)) {
+      selectAlbum(albumParam);
+    }
   }
 })();

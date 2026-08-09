@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Gallery: portraits, album art, and personal photography." />
+  <meta name="theme-color" content="#0a0a0f" />
+  <meta property="og:title" content="Photos — Lila Spark" />
+  <meta property="og:description" content="Gallery: portraits, album art, and personal photography." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://lila-spark.com/photos.html" />
+  <title>Photos — Lila Spark</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css?v=multipage-1" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="bg-orbs" aria-hidden="true">
+    <span class="orb orb-a"></span>
+    <span class="orb orb-b"></span>
+    <span class="orb orb-c"></span>
+  </div>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="logo" href="index.html" aria-label="Lila Spark home">
+        <img class="logo-mark" src="images/profile.jpg" alt="" width="400" height="400" />
+        <span class="logo-text">Lila Spark</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <span></span><span></span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="music.html">Music</a>
+        <a href="story.html">Story</a>
+        <a href="photos.html" class="is-active" aria-current="page">Photos</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="page-hero">
+      <div class="wrap">
+        <p class="eyebrow">Gallery</p>
+        <h1 class="page-title">Photos</h1>
+        <p class="section-lead">
+          Press shots, concept images, and personal photography — growing with the project.
+        </p>
+      </div>
+    </section>
+    <section class="section">
+      <div class="wrap">
+        <ul class="photo-grid">
+          <li class="photo-card">
+            <figure>
+              <img src="images/profile.jpg" alt="Lila Spark portrait" width="400" height="400" loading="lazy" />
+              <figcaption>Profile · Afterglow era</figcaption>
+            </figure>
+          </li>
+          <li class="photo-card">
+            <figure>
+              <img src="images/covers/afterglow.jpg" alt="Afterglow album cover" width="900" height="900" loading="lazy" />
+              <figcaption>Afterglow · album art</figcaption>
+            </figure>
+          </li>
+          <li class="photo-card">
+            <figure>
+              <img src="images/covers/sparked.jpg" alt="Sparked album cover" width="900" height="900" loading="lazy" />
+              <figcaption>Sparked · album art</figcaption>
+            </figure>
+          </li>
+          <li class="photo-card">
+            <figure>
+              <img src="images/covers/truly-me.jpg" alt="Truly Me album cover" width="900" height="900" loading="lazy" />
+              <figcaption>Truly Me · album art</figcaption>
+            </figure>
+          </li>
+          <li class="photo-card">
+            <figure>
+              <img src="images/family/lila-layla.jpg" alt="Lila and Layla" width="1200" height="1200" loading="lazy" />
+              <figcaption>Lila &amp; Layla · 2015</figcaption>
+            </figure>
+          </li>
+          <li class="photo-card photo-card-soon">
+            <figure>
+              <div class="photo-placeholder">More soon</div>
+              <figcaption>Professional shoots &amp; lifestyle — coming</figcaption>
+            </figure>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand-block">
+        <p class="footer-brand">
+          <img class="logo-mark small" src="images/profile.jpg" alt="" width="400" height="400" />
+          Lila Spark
+        </p>
+        <p class="footer-tag">Stay in the loop.</p>
+      </div>
+      <div class="footer-links">
+        <a class="btn btn-primary btn-sm" href="mailto:hello@lila-spark.com">hello@lila-spark.com</a>
+        <ul class="social-list social-list-footer" aria-label="Social links">
+          <li><a class="social-link" href="https://x.com/LilaSparkMusic" target="_blank" rel="noopener noreferrer">X / Twitter</a></li>
+          <li><a class="social-link" href="https://www.youtube.com/@LilaSparkMusic" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+          <li><a class="social-link" href="https://music.apple.com/us/artist/lila-spark/6797912457" target="_blank" rel="noopener noreferrer">Apple Music</a></li>
+          <li><a class="social-link" href="https://open.spotify.com/artist/6ARsLc0ziUa7wxmG2WSG0b" target="_blank" rel="noopener noreferrer">Spotify</a></li>
+        </ul>
+      </div>
+      <p class="footer-copy">&copy; <span id="year"></span> Lila Spark · lila-spark.com</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
