@@ -432,71 +432,117 @@ code {
   max-width: 36rem;
 }
 
-/* Eras */
-.era-list {
-  list-style: none;
-  margin: 0 0 1.5rem;
+/* Album picker */
+.album-picker {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.album-card {
+  appearance: none;
+  -webkit-appearance: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin: 0;
   padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.55rem;
-}
-
-.era-chip {
-  padding: 0.4rem 0.9rem;
-  border-radius: 999px;
-  border: 1px solid var(--line);
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  color: var(--ink-muted);
-  background: rgba(255, 255, 255, 0.03);
-}
-
-.era-chip.is-current {
-  color: var(--ink);
-  border-color: rgba(255, 45, 149, 0.45);
-  background: linear-gradient(120deg, rgba(255, 45, 149, 0.18), rgba(155, 92, 255, 0.12));
-  box-shadow: 0 0 24px rgba(255, 45, 149, 0.15);
-}
-
-.era-chip a {
+  border: none;
+  background: transparent;
   color: inherit;
-  text-decoration: none;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  border-radius: calc(var(--radius) + 4px);
 }
 
-.era-chip a:hover,
-.era-chip a:focus-visible {
-  color: var(--ink);
+.album-art-wrap {
+  position: relative;
+  display: block;
+  aspect-ratio: 1;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--bg-elevated);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
-.era-group {
-  margin-top: 2.25rem;
+.album-art-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
-.era-group:first-of-type {
-  margin-top: 0.5rem;
+.album-card:hover .album-art-wrap,
+.album-card:focus-visible .album-art-wrap {
+  transform: translateY(-3px);
+  border-color: rgba(255, 45, 149, 0.45);
+  box-shadow: 0 16px 48px rgba(255, 45, 149, 0.2), 0 0 0 1px rgba(45, 226, 255, 0.15);
 }
 
-.era-heading {
-  margin: 0 0 1rem;
-  font-size: 1.15rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--ink);
+.album-card:focus-visible {
+  outline: none;
+}
+
+.album-card.is-active .album-art-wrap {
+  border-color: rgba(255, 45, 149, 0.65);
+  box-shadow:
+    0 0 0 2px rgba(255, 45, 149, 0.55),
+    0 0 36px rgba(255, 45, 149, 0.35),
+    0 16px 40px rgba(0, 0, 0, 0.4);
+}
+
+.album-meta {
   display: flex;
-  align-items: baseline;
-  gap: 0.75rem;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0 0.15rem;
 }
 
-.era-heading span {
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  color: var(--cyan);
-  text-transform: uppercase;
+.album-title {
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+}
+
+.album-sub {
+  font-size: 0.82rem;
+  color: var(--ink-muted);
+}
+
+.album-card.is-active .album-title {
+  background: linear-gradient(120deg, #fff 10%, var(--magenta) 70%, var(--cyan));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.album-panels {
+  min-height: 8rem;
+}
+
+.album-panel[hidden] {
+  display: none !important;
+}
+
+.album-panel-header {
+  margin-bottom: 1.15rem;
+}
+
+.album-panel-header h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.album-panel-header p {
+  margin: 0;
+  color: var(--ink-muted);
+  max-width: 36rem;
 }
 
 .era-note {
@@ -507,6 +553,20 @@ code {
   border: 1px dashed var(--line);
   border-radius: var(--radius);
   background: rgba(255, 255, 255, 0.02);
+}
+
+@media (max-width: 720px) {
+  .album-picker {
+    grid-template-columns: 1fr;
+    max-width: 20rem;
+    margin-inline: auto 0;
+  }
+}
+
+@media (min-width: 721px) and (max-width: 900px) {
+  .album-picker {
+    gap: 1rem;
+  }
 }
 
 /* Music tracks */

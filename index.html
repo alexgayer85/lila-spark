@@ -70,177 +70,258 @@
       <div class="wrap">
         <header class="section-header">
           <p class="eyebrow">Music</p>
-          <h2>Eras &amp; tracks</h2>
+          <h2>Albums &amp; eras</h2>
           <p class="section-lead">
-            A clear arc so far: the youthful searching of <strong>Truly Me</strong>, the more confident
-            and varied <strong>Sparked</strong>, and the mature, reflective territory of <strong>Afterglow</strong>.
+            Pick an album to open its tracklist. From the youthful searching of <strong>Truly Me</strong>,
+            through confident <strong>Sparked</strong>, into reflective <strong>Afterglow</strong>.
           </p>
         </header>
 
-        <ul class="era-list" aria-label="Creative eras">
-          <li class="era-chip"><a href="#era-afterglow">Afterglow</a></li>
-          <li class="era-chip"><a href="#era-sparked">Sparked</a></li>
-          <li class="era-chip">Truly Me</li>
-        </ul>
+        <div class="album-picker" role="tablist" aria-label="Albums">
+          <button
+            type="button"
+            class="album-card is-active"
+            role="tab"
+            id="tab-afterglow"
+            aria-selected="true"
+            aria-controls="panel-afterglow"
+            data-album="afterglow"
+          >
+            <span class="album-art-wrap">
+              <img src="images/covers/afterglow.jpg" alt="" width="900" height="900" />
+            </span>
+            <span class="album-meta">
+              <span class="album-title">Afterglow</span>
+              <span class="album-sub">Current era · 10 tracks</span>
+            </span>
+          </button>
 
-        <div class="era-group" id="era-afterglow">
-          <h3 class="era-heading">Afterglow <span>current era</span></h3>
-          <ul class="track-list">
-            <li class="track-card track-card-feature">
-              <div class="track-num" aria-hidden="true">★</div>
-              <div class="track-body">
-                <h3 class="track-title">You Brought Me to Life</h3>
-                <p class="track-meta">Key track · Partnership with Alex</p>
-                <audio class="track-audio" controls preload="metadata" controlsList="nodownload">
-                  <source src="audio/you-brought-me-to-life.mp3" type="audio/mpeg" />
-                </audio>
-              </div>
-              <span class="track-badge">Listen</span>
-            </li>
-            <li class="track-card">
-              <div class="track-num" aria-hidden="true">01</div>
-              <div class="track-body">
-                <h3 class="track-title">Boomerang</h3>
-                <p class="track-meta">Afterglow</p>
-                <audio class="track-audio" controls preload="metadata" controlsList="nodownload">
-                  <source src="audio/boomerang.mp3" type="audio/mpeg" />
-                </audio>
-              </div>
-              <span class="track-badge">Listen</span>
-            </li>
-            <li class="track-card">
-              <div class="track-num" aria-hidden="true">02</div>
-              <div class="track-body">
-                <h3 class="track-title">Somehow</h3>
-                <p class="track-meta">Afterglow</p>
-                <audio class="track-audio" controls preload="metadata" controlsList="nodownload">
-                  <source src="audio/somehow.mp3" type="audio/mpeg" />
-                </audio>
-              </div>
-              <span class="track-badge">Listen</span>
-            </li>
-            <li class="track-card">
-              <div class="track-num" aria-hidden="true">03</div>
-              <div class="track-body">
-                <h3 class="track-title">Rhythm Thief</h3>
-                <p class="track-meta">Afterglow</p>
-                <audio class="track-audio" controls preload="metadata" controlsList="nodownload">
-                  <source src="audio/rhythm-thief.mp3" type="audio/mpeg" />
-                </audio>
-              </div>
-              <span class="track-badge">Listen</span>
-            </li>
-            <li class="track-card">
-              <div class="track-num" aria-hidden="true">04</div>
-              <div class="track-body">
-                <h3 class="track-title">Almost</h3>
-                <p class="track-meta">Afterglow</p>
-                <audio class="track-audio" controls preload="metadata" controlsList="nodownload">
-                  <source src="audio/almost.mp3" type="audio/mpeg" />
-                </audio>
-              </div>
-              <span class="track-badge">Listen</span>
-            </li>
-            <li class="track-card">
-              <div class="track-num" aria-hidden="true">05</div>
-              <div class="track-body">
-                <h3 class="track-title">Slow Burn</h3>
-                <p class="track-meta">Afterglow</p>
-                <audio class="track-audio" controls preload="metadata" controlsList="nodownload">
-                  <source src="audio/slow-burn.mp3" type="audio/mpeg" />
-                </audio>
-              </div>
-              <span class="track-badge">Listen</span>
-            </li>
-            <li class="track-card">
-              <div class="track-num" aria-hidden="true">06</div>
-              <div class="track-body">
-                <h3 class="track-title">Dark Static</h3>
-                <p class="track-meta">Afterglow · Night pop</p>
-                <audio class="track-audio" controls preload="metadata" controlsList="nodownload">
-                  <source src="audio/dark-static.mp3" type="audio/mpeg" />
-                </audio>
-              </div>
-              <span class="track-badge">Listen</span>
-            </li>
-            <li class="track-card">
-              <div class="track-num" aria-hidden="true">07</div>
-              <div class="track-body">
-                <h3 class="track-title">Lights Go Low</h3>
-                <p class="track-meta">Afterglow · Slow burn</p>
-                <audio class="track-audio" controls preload="metadata" controlsList="nodownload">
-                  <source src="audio/lights-go-low.mp3" type="audio/mpeg" />
-                </audio>
-              </div>
-              <span class="track-badge">Listen</span>
-            </li>
-            <li class="track-card">
-              <div class="track-num" aria-hidden="true">08</div>
-              <div class="track-body">
-                <h3 class="track-title">No Apologies</h3>
-                <p class="track-meta">Afterglow</p>
-                <audio class="track-audio" controls preload="metadata" controlsList="nodownload">
-                  <source src="audio/no-apologies.mp3" type="audio/mpeg" />
-                </audio>
-              </div>
-              <span class="track-badge">Listen</span>
-            </li>
-            <li class="track-card">
-              <div class="track-num" aria-hidden="true">09</div>
-              <div class="track-body">
-                <h3 class="track-title">Layla</h3>
-                <p class="track-meta">Afterglow</p>
-                <audio class="track-audio" controls preload="metadata" controlsList="nodownload">
-                  <source src="audio/layla.mp3" type="audio/mpeg" />
-                </audio>
-              </div>
-              <span class="track-badge">Listen</span>
-            </li>
-          </ul>
+          <button
+            type="button"
+            class="album-card"
+            role="tab"
+            id="tab-sparked"
+            aria-selected="false"
+            aria-controls="panel-sparked"
+            data-album="sparked"
+          >
+            <span class="album-art-wrap">
+              <img src="images/covers/sparked.jpg" alt="" width="900" height="900" />
+            </span>
+            <span class="album-meta">
+              <span class="album-title">Sparked</span>
+              <span class="album-sub">3 tracks on site</span>
+            </span>
+          </button>
+
+          <button
+            type="button"
+            class="album-card"
+            role="tab"
+            id="tab-truly-me"
+            aria-selected="false"
+            aria-controls="panel-truly-me"
+            data-album="truly-me"
+          >
+            <span class="album-art-wrap">
+              <img src="images/covers/truly-me.jpg" alt="" width="900" height="900" />
+            </span>
+            <span class="album-meta">
+              <span class="album-title">Truly Me</span>
+              <span class="album-sub">Coming soon</span>
+            </span>
+          </button>
         </div>
 
-        <div class="era-group" id="era-sparked">
-          <h3 class="era-heading">Sparked</h3>
-          <ul class="track-list">
-            <li class="track-card">
-              <div class="track-num" aria-hidden="true">01</div>
-              <div class="track-body">
-                <h3 class="track-title">Midnight Voltage</h3>
-                <p class="track-meta">Sparked · Night pop</p>
-                <audio class="track-audio" controls preload="metadata" controlsList="nodownload">
-                  <source src="audio/midnight-voltage.mp3" type="audio/mpeg" />
-                </audio>
-              </div>
-              <span class="track-badge">Listen</span>
-            </li>
-            <li class="track-card">
-              <div class="track-num" aria-hidden="true">02</div>
-              <div class="track-body">
-                <h3 class="track-title">Electric Crush</h3>
-                <p class="track-meta">Sparked · Synth · R&amp;B</p>
-                <audio class="track-audio" controls preload="metadata" controlsList="nodownload">
-                  <source src="audio/electric-crush.mp3" type="audio/mpeg" />
-                </audio>
-              </div>
-              <span class="track-badge">Listen</span>
-            </li>
-            <li class="track-card">
-              <div class="track-num" aria-hidden="true">03</div>
-              <div class="track-body">
-                <h3 class="track-title">Frequency of You</h3>
-                <p class="track-meta">Sparked · Alt pop</p>
-                <audio class="track-audio" controls preload="metadata" controlsList="nodownload">
-                  <source src="audio/frequency-of-you.mp3" type="audio/mpeg" />
-                </audio>
-              </div>
-              <span class="track-badge">Listen</span>
-            </li>
-          </ul>
-        </div>
+        <div class="album-panels">
+          <div
+            class="album-panel is-active"
+            id="panel-afterglow"
+            role="tabpanel"
+            aria-labelledby="tab-afterglow"
+            data-album="afterglow"
+          >
+            <header class="album-panel-header">
+              <h3>Afterglow</h3>
+              <p>Mature, reflective territory — late-night pop with heavier undercurrents.</p>
+            </header>
+            <ul class="track-list">
+              <li class="track-card track-card-feature">
+                <div class="track-num" aria-hidden="true">★</div>
+                <div class="track-body">
+                  <h3 class="track-title">You Brought Me to Life</h3>
+                  <p class="track-meta">Key track · Partnership with Alex</p>
+                  <audio class="track-audio" controls preload="none" controlsList="nodownload">
+                    <source src="audio/you-brought-me-to-life.mp3" type="audio/mpeg" />
+                  </audio>
+                </div>
+                <span class="track-badge">Listen</span>
+              </li>
+              <li class="track-card">
+                <div class="track-num" aria-hidden="true">01</div>
+                <div class="track-body">
+                  <h3 class="track-title">Boomerang</h3>
+                  <p class="track-meta">Afterglow</p>
+                  <audio class="track-audio" controls preload="none" controlsList="nodownload">
+                    <source src="audio/boomerang.mp3" type="audio/mpeg" />
+                  </audio>
+                </div>
+                <span class="track-badge">Listen</span>
+              </li>
+              <li class="track-card">
+                <div class="track-num" aria-hidden="true">02</div>
+                <div class="track-body">
+                  <h3 class="track-title">Somehow</h3>
+                  <p class="track-meta">Afterglow</p>
+                  <audio class="track-audio" controls preload="none" controlsList="nodownload">
+                    <source src="audio/somehow.mp3" type="audio/mpeg" />
+                  </audio>
+                </div>
+                <span class="track-badge">Listen</span>
+              </li>
+              <li class="track-card">
+                <div class="track-num" aria-hidden="true">03</div>
+                <div class="track-body">
+                  <h3 class="track-title">Rhythm Thief</h3>
+                  <p class="track-meta">Afterglow</p>
+                  <audio class="track-audio" controls preload="none" controlsList="nodownload">
+                    <source src="audio/rhythm-thief.mp3" type="audio/mpeg" />
+                  </audio>
+                </div>
+                <span class="track-badge">Listen</span>
+              </li>
+              <li class="track-card">
+                <div class="track-num" aria-hidden="true">04</div>
+                <div class="track-body">
+                  <h3 class="track-title">Almost</h3>
+                  <p class="track-meta">Afterglow</p>
+                  <audio class="track-audio" controls preload="none" controlsList="nodownload">
+                    <source src="audio/almost.mp3" type="audio/mpeg" />
+                  </audio>
+                </div>
+                <span class="track-badge">Listen</span>
+              </li>
+              <li class="track-card">
+                <div class="track-num" aria-hidden="true">05</div>
+                <div class="track-body">
+                  <h3 class="track-title">Slow Burn</h3>
+                  <p class="track-meta">Afterglow</p>
+                  <audio class="track-audio" controls preload="none" controlsList="nodownload">
+                    <source src="audio/slow-burn.mp3" type="audio/mpeg" />
+                  </audio>
+                </div>
+                <span class="track-badge">Listen</span>
+              </li>
+              <li class="track-card">
+                <div class="track-num" aria-hidden="true">06</div>
+                <div class="track-body">
+                  <h3 class="track-title">Dark Static</h3>
+                  <p class="track-meta">Afterglow · Night pop</p>
+                  <audio class="track-audio" controls preload="none" controlsList="nodownload">
+                    <source src="audio/dark-static.mp3" type="audio/mpeg" />
+                  </audio>
+                </div>
+                <span class="track-badge">Listen</span>
+              </li>
+              <li class="track-card">
+                <div class="track-num" aria-hidden="true">07</div>
+                <div class="track-body">
+                  <h3 class="track-title">Lights Go Low</h3>
+                  <p class="track-meta">Afterglow · Slow burn</p>
+                  <audio class="track-audio" controls preload="none" controlsList="nodownload">
+                    <source src="audio/lights-go-low.mp3" type="audio/mpeg" />
+                  </audio>
+                </div>
+                <span class="track-badge">Listen</span>
+              </li>
+              <li class="track-card">
+                <div class="track-num" aria-hidden="true">08</div>
+                <div class="track-body">
+                  <h3 class="track-title">No Apologies</h3>
+                  <p class="track-meta">Afterglow</p>
+                  <audio class="track-audio" controls preload="none" controlsList="nodownload">
+                    <source src="audio/no-apologies.mp3" type="audio/mpeg" />
+                  </audio>
+                </div>
+                <span class="track-badge">Listen</span>
+              </li>
+              <li class="track-card">
+                <div class="track-num" aria-hidden="true">09</div>
+                <div class="track-body">
+                  <h3 class="track-title">Layla</h3>
+                  <p class="track-meta">Afterglow</p>
+                  <audio class="track-audio" controls preload="none" controlsList="nodownload">
+                    <source src="audio/layla.mp3" type="audio/mpeg" />
+                  </audio>
+                </div>
+                <span class="track-badge">Listen</span>
+              </li>
+            </ul>
+          </div>
 
-        <div class="era-group" id="era-truly-me">
-          <h3 class="era-heading">Truly Me <span>more soon</span></h3>
-          <p class="era-note">Album remasters ready in the vault — tracks can land here next.</p>
+          <div
+            class="album-panel"
+            id="panel-sparked"
+            role="tabpanel"
+            aria-labelledby="tab-sparked"
+            data-album="sparked"
+            hidden
+          >
+            <header class="album-panel-header">
+              <h3>Sparked</h3>
+              <p>More confident and varied — neon nights, synth glow, and radio-ready hooks.</p>
+            </header>
+            <ul class="track-list">
+              <li class="track-card">
+                <div class="track-num" aria-hidden="true">01</div>
+                <div class="track-body">
+                  <h3 class="track-title">Midnight Voltage</h3>
+                  <p class="track-meta">Sparked · Night pop</p>
+                  <audio class="track-audio" controls preload="none" controlsList="nodownload">
+                    <source src="audio/midnight-voltage.mp3" type="audio/mpeg" />
+                  </audio>
+                </div>
+                <span class="track-badge">Listen</span>
+              </li>
+              <li class="track-card">
+                <div class="track-num" aria-hidden="true">02</div>
+                <div class="track-body">
+                  <h3 class="track-title">Electric Crush</h3>
+                  <p class="track-meta">Sparked · Synth · R&amp;B</p>
+                  <audio class="track-audio" controls preload="none" controlsList="nodownload">
+                    <source src="audio/electric-crush.mp3" type="audio/mpeg" />
+                  </audio>
+                </div>
+                <span class="track-badge">Listen</span>
+              </li>
+              <li class="track-card">
+                <div class="track-num" aria-hidden="true">03</div>
+                <div class="track-body">
+                  <h3 class="track-title">Frequency of You</h3>
+                  <p class="track-meta">Sparked · Alt pop</p>
+                  <audio class="track-audio" controls preload="none" controlsList="nodownload">
+                    <source src="audio/frequency-of-you.mp3" type="audio/mpeg" />
+                  </audio>
+                </div>
+                <span class="track-badge">Listen</span>
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="album-panel"
+            id="panel-truly-me"
+            role="tabpanel"
+            aria-labelledby="tab-truly-me"
+            data-album="truly-me"
+            hidden
+          >
+            <header class="album-panel-header">
+              <h3>Truly Me</h3>
+              <p>Youthful searching — the first cohesive artistic world.</p>
+            </header>
+            <p class="era-note">Tracks from the remaster vault will appear here next. Album art is ready.</p>
+          </div>
         </div>
       </div>
     </section>

@@ -38,12 +38,69 @@
   });
 
   // Only one track plays at a time
-  const players = Array.from(document.querySelectorAll("audio.track-audio"));
-  players.forEach((audio) => {
+  const players = () => Array.from(document.querySelectorAll("audio.track-audio"));
+  document.querySelectorAll("audio.track-audio").forEach((audio) => {
     audio.addEventListener("play", () => {
-      players.forEach((other) => {
+      players().forEach((other) => {
         if (other !== audio && !other.paused) other.pause();
       });
     });
   });
+
+  function pauseAllAudio() {
+    players().forEach((a) => {
+      if (!a.paused) a.pause();
+    });
+  }
+
+  // Album picker: show only selected album's tracks
+  const albumCards = Array.from(document.querySelectorAll(".album-card[data-album]"));
+  const albumPanels = Array.from(document.querySelectorAll(".album-panel[data-album]"));
+
+  function selectAlbum(id) {
+    pauseAllAudio();
+    albumCards.forEach((card) => {
+      const on = card.dataset.album === id;
+      card.classList.toggle("is-active", on);
+      card.setAttribute("aria-selected", on ? "true" : "false");
+      card.tabIndex = on ? 0 : -1;
+    });
+    albumPanels.forEach((panel) => {
+      const on = panel.dataset.album === id;
+      panel.classList.toggle("is-active", on);
+      if (on) panel.removeAttribute("hidden");
+      else panel.setAttribute("hidden", "");
+    });
+  }
+
+  albumCards.forEach((card) => {
+    card.addEventListener("click", () => selectAlbum(card.dataset.album));
+    card.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        selectAlbum(card.dataset.album);
+      }
+      // Arrow keys between albums
+      if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
+        e.preventDefault();
+        const i = albumCards.indexOf(card);
+        const next =
+          e.key === "ArrowRight"
+            ? albumCards[(i + 1) % albumCards.length]
+            : albumCards[(i - 1 + albumCards.length) % albumCards.length];
+        selectAlbum(next.dataset.album);
+        next.focus();
+      }
+    });
+  });
+
+  // Deep link: #music?album=sparked or #panel-sparked
+  const hash = window.location.hash.replace(/^#/, "");
+  if (hash.startsWith("panel-") || hash.startsWith("era-")) {
+    const id = hash.replace(/^(panel|era)-/, "");
+    if (albumCards.some((c) => c.dataset.album === id)) selectAlbum(id);
+  } else if (new URLSearchParams(window.location.search).get("album")) {
+    const id = new URLSearchParams(window.location.search).get("album");
+    if (albumCards.some((c) => c.dataset.album === id)) selectAlbum(id);
+  }
 })();
