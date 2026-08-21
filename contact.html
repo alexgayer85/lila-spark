@@ -4,17 +4,33 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Get in touch: hello@lila-spark.com" />
+  <meta name="author" content="Alex Gayer" />
+  <meta name="copyright" content="Copyright Alex Gayer. All rights reserved." />
   <meta name="theme-color" content="#0a0a0f" />
   <meta property="og:title" content="Contact — Lila Spark" />
   <meta property="og:description" content="Get in touch: hello@lila-spark.com" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://lila-spark.com/contact.html" />
   <title>Contact — Lila Spark</title>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Contact — Lila Spark",
+    "url": "https://lila-spark.com/contact.html",
+    "isPartOf": { "@type": "WebSite", "name": "Lila Spark", "url": "https://lila-spark.com/" },
+    "author": { "@type": "Person", "name": "Alex Gayer" },
+    "creator": { "@type": "Person", "name": "Alex Gayer" },
+    "copyrightHolder": { "@type": "Person", "name": "Alex Gayer" },
+    "copyrightYear": 2026
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=social-icons-1" />
+  <link rel="stylesheet" href="css/styles.css?v=copyright-1" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="author" href="humans.txt" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -82,7 +98,15 @@
             </a>
           </li>
         </ul>
-        
+        <aside class="copyright-note">
+          <h2 class="copyright-note-title">Copyright</h2>
+          <p>
+            Lila Spark is a project of <strong>Alex Gayer</strong>.
+            All music, images, text, code, and other materials on this site
+            are copyright &copy; <span class="js-year">2026</span> Alex Gayer.
+            All rights reserved.
+          </p>
+        </aside>
       </div>
     </section>
 
@@ -122,7 +146,10 @@
           </li>
         </ul>
       </div>
-      <p class="footer-copy">&copy; <span id="year"></span> Lila Spark · lila-spark.com</p>
+      <p class="footer-copy">
+        &copy; <span id="year"></span> Alex Gayer. All rights reserved.<br />
+        <span class="footer-copy-legal">Lila Spark and all music, images, text, and other materials on this site are the exclusive property of Alex Gayer.</span>
+      </p>
     </div>
   </footer>
 

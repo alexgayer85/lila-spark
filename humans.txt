@@ -1,0 +1,11 @@
+/* TEAM */
+Creator: Alex Gayer
+Copyright: Alex Gayer
+Site: https://lila-spark.com
+GitHub: https://github.com/alexgayer85/lila-spark
+Contact: hello@lila-spark.com
+
+/* SITE */
+Last update: 2026-08-21
+Standards: HTML5, CSS3
+Doctype: HTML5
