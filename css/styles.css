@@ -1815,3 +1815,20 @@ body.lightbox-open {
   flex-basis: 100%;
   margin-top: 0.85rem;
 }
+
+.track-stores {
+  margin: 0.45rem 0 0;
+  font-size: 0.84rem;
+  line-height: 1.45;
+  color: var(--ink-muted);
+}
+
+.track-card.is-full .track-badge {
+  border-color: rgba(255, 45, 149, 0.35);
+  color: var(--magenta);
+  background: rgba(255, 45, 149, 0.08);
+}
+
+.album-stores-note {
+  color: var(--ink-muted);
+}
