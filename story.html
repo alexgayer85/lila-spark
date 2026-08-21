@@ -28,7 +28,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=support-1" />
+  <link rel="stylesheet" href="css/styles.css?v=studio-1" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="author" href="humans.txt" />
 </head>
@@ -344,10 +344,26 @@
             <p>
               He uses Grok Imagine for stills of Lila and Grok Imagine plus the LTX 2.3 model for
               video. He spent days shaping her voice until it was bright, airy, and feminine, full
-              of melisma, yet capable of powerhouse moments and deeper, sultry R&amp;B. Music is
-              generated with ACE-Step 1.5 running locally in ComfyUI. Commercial tools raised
-              questions about ownership, ambiguity, and cost. His own hardware removed the token
-              meter and gave him tighter control.
+              of melisma, yet capable of powerhouse moments and deeper, sultry R&amp;B.
+            </p>
+            <p>
+              Music is generated with
+              <a class="text-link" href="https://github.com/ace-step/ACE-Step-1.5" target="_blank" rel="noopener noreferrer">ACE-Step 1.5</a>
+              running locally in ComfyUI. Commercial tools raised questions about ownership,
+              ambiguity, and cost. His own hardware removed the token meter and gave him tighter
+              control.
+            </p>
+            <p>
+              Every Lila Spark record starts on the page, not in a model. Lyrics are written first
+              — verse, pre-chorus, chorus, the breath between them — then a caption that names the
+              decade, the grain of the vocal, the temperature of the mix. ACE-Step 1.5, an
+              open-source music foundation model, takes that writing and treats it like a two-person
+              studio. A language-model planner thinks the song into a blueprint: tempo, key,
+              structure, the shape of the arrangement. A diffusion transformer then carves the
+              actual performance out of noise — voice, drums, bass, and air arriving together as
+              48 kHz stereo. Takes are generated locally, then covered, repainted, and rewritten
+              until the performance lands. What you hear on <em>Afterglow</em> is not a prompt
+              tossed into a box. It is a song, directed.
             </p>
             <p>
               ComfyUI got the catalog made, but a general-purpose node graph is a blunt instrument
@@ -398,7 +414,7 @@
             </div>
             <div>
               <dt>Craft</dt>
-              <dd>Local AI music, image, video · custom studio</dd>
+              <dd>ACE-Step 1.5 · local ComfyUI · custom studio</dd>
             </div>
             <div>
               <dt>Influences</dt>
@@ -410,6 +426,60 @@
             </div>
           </dl>
         </aside>
+      </div>
+
+      <div class="wrap studio-block">
+        <header class="section-header family-header">
+          <p class="eyebrow">ACE-Step 1.5</p>
+          <h3 class="family-heading">Two brains, one studio</h3>
+          <p class="section-lead">
+            Lyric LLMs sing in sequence and stall. Pure diffusion is fast and forgets the form.
+            ACE-Step 1.5 splits the job: a language model plans the song; a diffusion transformer
+            performs it.
+          </p>
+        </header>
+        <ul class="studio-brains">
+          <li>
+            <p class="studio-kicker">Planner · 5 Hz</p>
+            <h4>Language model</h4>
+            <p>
+              A Qwen3 composer-agent. Chain-of-Thought metadata, rewritten captions, discrete
+              semantic codes. Skip it when the writing is already a score — Cover and Repaint
+              do this.
+            </p>
+          </li>
+          <li>
+            <p class="studio-kicker">Renderer · 12.5 Hz</p>
+            <h4>Diffusion transformer</h4>
+            <p>
+              Odd layers listen locally for transients; even layers listen globally so a
+              four-minute track still knows its first chorus. Turbo distills fifty steps to eight.
+              The ear is a 1D VAE: 48 kHz stereo out.
+            </p>
+          </li>
+        </ul>
+        <ol class="studio-loop">
+          <li>
+            <span class="studio-step-n">01</span>
+            <strong>Write</strong>
+            <span>Lyrics, structure tags, a caption that locks era and grain.</span>
+          </li>
+          <li>
+            <span class="studio-step-n">02</span>
+            <strong>Render</strong>
+            <span>Local ComfyUI. Batch a few seeds. Listen like a producer.</span>
+          </li>
+          <li>
+            <span class="studio-step-n">03</span>
+            <strong>Cover / repaint</strong>
+            <span>Hold the bones. Fix the eight bars that missed.</span>
+          </li>
+          <li>
+            <span class="studio-step-n">04</span>
+            <strong>Master</strong>
+            <span>LANDR, then the stores. <em>Afterglow</em> is a record, not a demo.</span>
+          </li>
+        </ol>
       </div>
     </section>
 
