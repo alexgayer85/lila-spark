@@ -1,6 +1,8 @@
 (function () {
-  const yearEl = document.getElementById("year");
-  if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+  const year = String(new Date().getFullYear());
+  document.querySelectorAll("#year, .js-year").forEach((el) => {
+    el.textContent = year;
+  });
 
   const header = document.querySelector(".site-header");
   const onScroll = () => {

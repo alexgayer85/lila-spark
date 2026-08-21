@@ -2,6 +2,8 @@
 
 Artist site for [lila-spark.com](https://lila-spark.com), hosted on **GitHub Pages**.
 
+**Copyright © 2026 Alex Gayer. All rights reserved.** Lila Spark and all materials in this repository are the exclusive property of Alex Gayer. See [COPYRIGHT.md](COPYRIGHT.md).
+
 ## Pages
 
 | Page | File | Purpose |
