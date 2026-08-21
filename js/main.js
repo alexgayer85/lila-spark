@@ -107,4 +107,63 @@
       selectAlbum(albumParam);
     }
   }
+
+  // Story: lore (Lila) / reality (Alex)
+  const storySwitch = document.querySelector(".story-switch");
+  if (storySwitch) {
+    const tabs = Array.from(storySwitch.querySelectorAll("[data-view]"));
+    const heroes = Array.from(document.querySelectorAll("[data-story-hero]"));
+    const panels = Array.from(document.querySelectorAll("[data-story-panel]"));
+    const titles = {
+      lore: "Her Story — Lila Spark",
+      reality: "Reality — Alex Gayer",
+    };
+
+    function selectStoryView(id, push) {
+      if (!tabs.some((tab) => tab.dataset.view === id)) id = "lore";
+      tabs.forEach((tab) => {
+        const on = tab.dataset.view === id;
+        tab.classList.toggle("is-active", on);
+        tab.setAttribute("aria-selected", on ? "true" : "false");
+        tab.tabIndex = on ? 0 : -1;
+      });
+      heroes.forEach((el) => {
+        el.hidden = el.dataset.storyHero !== id;
+      });
+      panels.forEach((el) => {
+        el.hidden = el.dataset.storyPanel !== id;
+      });
+      document.body.dataset.storyView = id;
+      document.title = titles[id] || titles.lore;
+
+      const url = new URL(window.location.href);
+      if (id === "lore") url.searchParams.delete("view");
+      else url.searchParams.set("view", id);
+      const next = `${url.pathname}${url.search}${url.hash}`;
+      if (push) history.pushState({ storyView: id }, "", next);
+      else history.replaceState({ storyView: id }, "", next);
+    }
+
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => selectStoryView(tab.dataset.view, true));
+      tab.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
+          e.preventDefault();
+          const i = tabs.indexOf(tab);
+          const nextTab =
+            e.key === "ArrowRight"
+              ? tabs[(i + 1) % tabs.length]
+              : tabs[(i - 1 + tabs.length) % tabs.length];
+          selectStoryView(nextTab.dataset.view, true);
+          nextTab.focus();
+        }
+      });
+    });
+
+    window.addEventListener("popstate", () => {
+      selectStoryView(new URLSearchParams(window.location.search).get("view") || "lore", false);
+    });
+
+    selectStoryView(new URLSearchParams(window.location.search).get("view") || "lore", false);
+  }
 })();

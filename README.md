@@ -10,7 +10,7 @@ Artist site for [lila-spark.com](https://lila-spark.com), hosted on **GitHub Pag
 |------|------|---------|
 | Home | `index.html` | Hero, featured track, era arc, story teaser |
 | Music | `music.html` | Full discography (album art → tracklists) |
-| Story | `story.html` | Long bio, partnership, family |
+| Story | `story.html` | Lore (Lila) / Reality (Alex) toggle |
 | Photos | `photos.html` | Gallery |
 | Contact | `contact.html` | Email + socials |
 
@@ -30,7 +30,7 @@ Pushes to `main` publish via GitHub Pages (`main` / root). Custom domain: `lila-
 ## Editing
 
 - Home copy: `index.html`
-- Bio / family: `story.html`
+- Bio / family (lore) and creator story (reality): `story.html` (`?view=lore` or `?view=reality`)
 - Tracks: `music.html` + files in `audio/`
 - Covers: `images/covers/`
 - Profile: `images/profile.jpg`
