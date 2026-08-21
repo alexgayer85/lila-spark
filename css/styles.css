@@ -1803,3 +1803,15 @@ body.lightbox-open {
     grid-template-columns: 1fr;
   }
 }
+
+.album-stores {
+  margin: 0.85rem 0 0;
+  max-width: none;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.featured-actions .album-stores {
+  flex-basis: 100%;
+  margin-top: 0.85rem;
+}
