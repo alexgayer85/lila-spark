@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="The story behind Lila Spark: family, Layla, quiet years, and the partnership with Alex." />
+  <meta name="description" content="Lila Spark’s in-world story, and the real story of Alex Gayer, who created the project." />
   <meta name="author" content="Alex Gayer" />
   <meta name="copyright" content="Copyright Alex Gayer. All rights reserved." />
   <meta name="theme-color" content="#0a0a0f" />
-  <meta property="og:title" content="Her Story — Lila Spark" />
-  <meta property="og:description" content="The story behind Lila Spark: family, Layla, quiet years, and the partnership with Alex." />
+  <meta property="og:title" content="Story — Lila Spark" />
+  <meta property="og:description" content="Lila Spark’s in-world story, and the real story of Alex Gayer, who created the project." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://lila-spark.com/story.html" />
-  <title>Her Story — Lila Spark</title>
+  <title>Story — Lila Spark</title>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "Her Story — Lila Spark",
+    "name": "Story — Lila Spark",
     "url": "https://lila-spark.com/story.html",
     "isPartOf": { "@type": "WebSite", "name": "Lila Spark", "url": "https://lila-spark.com/" },
     "author": { "@type": "Person", "name": "Alex Gayer" },
@@ -28,7 +28,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=copyright-1" />
+  <link rel="stylesheet" href="css/styles.css?v=story-view-1" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="author" href="humans.txt" />
 </head>
@@ -64,14 +64,57 @@
 
     <section class="page-hero">
       <div class="wrap">
-        <p class="eyebrow">Her Story</p>
-        <h1 class="page-title">Who is Lila Spark?</h1>
-        <p class="section-lead">
-          Early loss, quiet years of writing, and the partnership that finally made the music match the pictures in her head.
-        </p>
+        <div class="story-switch" role="tablist" aria-label="Story view">
+          <button
+            type="button"
+            class="story-switch-btn is-active"
+            role="tab"
+            id="tab-lore"
+            data-view="lore"
+            aria-selected="true"
+            aria-controls="panel-lore"
+          >
+            <span class="story-switch-label">Lore</span>
+            <span class="story-switch-who">Lila</span>
+          </button>
+          <button
+            type="button"
+            class="story-switch-btn"
+            role="tab"
+            id="tab-reality"
+            data-view="reality"
+            aria-selected="false"
+            aria-controls="panel-reality"
+            tabindex="-1"
+          >
+            <span class="story-switch-label">Reality</span>
+            <span class="story-switch-who">Alex</span>
+          </button>
+        </div>
+
+        <div data-story-hero="lore">
+          <p class="eyebrow">Lore · Her story</p>
+          <h1 class="page-title">Who is Lila Spark?</h1>
+          <p class="section-lead">
+            Early loss, quiet years of writing, and the partnership that finally made the music match the pictures in her head.
+          </p>
+        </div>
+        <div data-story-hero="reality" hidden>
+          <p class="eyebrow">Reality · His story</p>
+          <h1 class="page-title">Who is Alex Gayer?</h1>
+          <p class="section-lead">
+            Lila Spark is a music project created by Alex Gayer. The songs are real. The world around them is written.
+          </p>
+        </div>
       </div>
     </section>
-    <section class="section about-section story-page">
+    <section
+      class="section about-section story-page"
+      id="panel-lore"
+      role="tabpanel"
+      aria-labelledby="tab-lore"
+      data-story-panel="lore"
+    >
       <div class="wrap about-grid">
         <div class="about-copy">
           <header class="section-header visually-hidden">
@@ -230,6 +273,75 @@
 
     </section>
 
+    <section
+      class="section about-section story-page"
+      id="panel-reality"
+      role="tabpanel"
+      aria-labelledby="tab-reality"
+      data-story-panel="reality"
+      hidden
+    >
+      <div class="wrap about-grid">
+        <div class="about-copy">
+          <header class="section-header visually-hidden">
+            <h2>Alex Gayer</h2>
+          </header>
+          <div class="bio">
+            <p>
+              Alex Gayer is the writer, producer, and copyright holder behind Lila Spark.
+            </p>
+            <p>
+              He built the project as a complete artist world: a Chicago-born pop singer with a
+              sparkling surface and heavier undercurrents, three album eras, a family, and a life
+              that can hold the feelings in the songs. That world is on the <a class="text-link" href="story.html?view=lore">Lore</a>
+              side of this page. This side is the person who made it.
+            </p>
+            <p>
+              The music is his. <em>Truly Me</em>, <em>Sparked</em>, and <em>Afterglow</em> were
+              written, produced, and released under the Lila Spark name — along with the portraits,
+              this site, and the words on it. In the lore, Lila finds a collaborator named Alex who
+              finally makes the records match the pictures in her head. In reality, that is the work:
+              sitting with a song until it sounds like the person it belongs to.
+            </p>
+            <p>
+              The public project went live in 2026, with this site at lila-spark.com and the catalog
+              on Apple Music, Spotify, and YouTube. Lila remains the face of the music. Alex remains
+              the author.
+            </p>
+            <p class="bio-close">
+              All music, images, text, and code are copyright Alex Gayer.
+              Reach him at <a class="text-link" href="mailto:hello@lila-spark.com">hello@lila-spark.com</a>.
+            </p>
+          </div>
+        </div>
+        <aside class="about-card" aria-label="Quick facts">
+          <h3 class="about-card-title">At a glance</h3>
+          <dl class="facts">
+            <div>
+              <dt>Creator</dt>
+              <dd>Alex Gayer</dd>
+            </div>
+            <div>
+              <dt>Project</dt>
+              <dd>Lila Spark</dd>
+            </div>
+            <div>
+              <dt>Role</dt>
+              <dd>Writer · producer · worldbuilder</dd>
+            </div>
+            <div>
+              <dt>Catalog</dt>
+              <dd>Truly Me · Sparked · Afterglow</dd>
+            </div>
+            <div>
+              <dt>Contact</dt>
+              <dd>hello@lila-spark.com</dd>
+            </div>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
   </main>
 
   <footer class="site-footer">
@@ -273,6 +385,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="js/main.js?v=story-view-1"></script>
 </body>
 </html>
