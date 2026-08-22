@@ -157,17 +157,43 @@ SPARKED_GALLERY = [
     for _, slug, title in SPARKED_COVERS
 ]
 
+TRULY_ME_SRC = Path("/home/alex/iCloudSync/Music/Lila Spark - Truly Me/Finalists")
+TRULY_ME_COVERS = [
+    ("01.Truly_Me.png", "truly-me-track", "Truly Me"),
+    ("02.Sweet_Crush.png", "sweet-crush", "Sweet Crush"),
+    ("03.What_I_Need.png", "what-i-need", "What I Need"),
+    ("04.Hold_Me_Close.png", "hold-me-close", "Hold Me Close"),
+    ("05.Key_to_My_Heart.png", "key-to-my-heart", "Key to My Heart"),
+    ("06.Stop_the_Hurt.png", "stop-the-hurt", "Stop the Hurt"),
+    ("07.Choose_Me_Now.png", "choose-me-now", "Choose Me Now"),
+    ("08.Old_Enough.png", "old-enough", "Old Enough"),
+    ("09.Spark_of_Love.png", "spark-of-love", "Spark of Love"),
+    ("10.Feels_Good.png", "feels-good", "Feels Good"),
+    ("11.Forever_Yours.png", "forever-yours", "Forever Yours"),
+    ("12.Stop_the_Hurt_(Reprise).png", "stop-the-hurt-reprise", "Stop the Hurt (Reprise)"),
+]
+
+TRULY_ME_GALLERY = [
+    {
+        "src": f"images/gallery/{slug}.jpg",
+        "alt": f"{title} track cover",
+        "caption": f"{title} · track cover",
+    }
+    for _, slug, title in TRULY_ME_COVERS
+]
+
 
 class TestPhotosManifest(unittest.TestCase):
     def test_appends_eight_after_existing_seven(self):
         data = json.loads((ROOT / "data" / "photos.json").read_text())
         photos = data["photos"]
-        self.assertEqual(len(photos), 33)
+        self.assertEqual(len(photos), 45)
         self.assertEqual(photos[0]["src"], "images/profile.jpg")
         self.assertEqual(photos[6]["src"], "images/family/daniel.jpg")
         self.assertEqual(photos[7:9], AGE_18)
         self.assertEqual(photos[9:17], EXPECTED_NEW)
-        self.assertEqual(photos[17:], SPARKED_GALLERY)
+        self.assertEqual(photos[17:33], SPARKED_GALLERY)
+        self.assertEqual(photos[33:], TRULY_ME_GALLERY)
         for item in photos[7:]:
             self.assertTrue((ROOT / item["src"]).is_file(), item["src"])
 
@@ -195,6 +221,22 @@ class TestPhotosManifest(unittest.TestCase):
                     self.assertLessEqual(max(im.size), max_edge, dest.name)
                 self.assertAlmostEqual(aspect(dest), aspect(src), places=2, msg=dest.name)
 
+    def test_truly_me_track_covers_sized(self):
+        for src_name, slug, _title in TRULY_ME_COVERS:
+            src = TRULY_ME_SRC / src_name
+            for dest, max_edge in (
+                (ROOT / "images" / "gallery" / f"{slug}.jpg", 1600),
+                (ROOT / "images" / "covers" / f"{slug}.jpg", 900),
+            ):
+                self.assertTrue(dest.is_file(), dest.name)
+                self.assertLessEqual(dest.stat().st_size, MAX_BYTES, dest.name)
+                with Image.open(dest) as im:
+                    self.assertEqual(im.mode, "RGB")
+                    self.assertLessEqual(max(im.size), max_edge, dest.name)
+                self.assertAlmostEqual(aspect(dest), aspect(src), places=2, msg=dest.name)
+        with Image.open(ROOT / "images" / "covers" / "truly-me.jpg") as album:
+            self.assertEqual(album.size, (900, 900))
+
 
 class TestMusicMarkup(unittest.TestCase):
     def test_three_tracks_have_covers_and_cache_bust(self):
@@ -207,10 +249,11 @@ class TestMusicMarkup(unittest.TestCase):
             ("images/covers/let-me-begin.jpg", "Let Me Begin"),
         ]
         sparked = [(f"images/covers/{slug}.jpg", title) for _, slug, title in SPARKED_COVERS]
-        for src, _title in afterglow + sparked:
+        truly = [(f"images/covers/{slug}.jpg", title) for _, slug, title in TRULY_ME_COVERS]
+        for src, _title in afterglow + sparked + truly:
             self.assertIn(f'src="{src}"', html, src)
-        self.assertEqual(html.count('class="track-cover"'), 19)
-        self.assertEqual(html.count("has-cover"), 19)
+        self.assertEqual(html.count('class="track-cover"'), 31)
+        self.assertEqual(html.count("has-cover"), 31)
         self.assertIn('class="track-title">Boomerang</h3>', html)
         self.assertNotIn("images/covers/boomerang", html)
 
