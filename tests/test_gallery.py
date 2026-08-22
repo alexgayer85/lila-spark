@@ -103,16 +103,34 @@ EXPECTED_NEW = [
 ]
 
 
+AGE_18 = {
+    "src": "images/gallery/lila-age-18.jpg",
+    "alt": "Lila Spark at age 18",
+    "caption": "Lila · age 18 · 2020",
+}
+
+
 class TestPhotosManifest(unittest.TestCase):
     def test_appends_eight_after_existing_seven(self):
         data = json.loads((ROOT / "data" / "photos.json").read_text())
         photos = data["photos"]
-        self.assertEqual(len(photos), 15)
+        self.assertEqual(len(photos), 16)
         self.assertEqual(photos[0]["src"], "images/profile.jpg")
         self.assertEqual(photos[6]["src"], "images/family/daniel.jpg")
-        self.assertEqual(photos[7:], EXPECTED_NEW)
+        self.assertEqual(photos[7], AGE_18)
+        self.assertEqual(photos[8:], EXPECTED_NEW)
         for item in photos[7:]:
             self.assertTrue((ROOT / item["src"]).is_file(), item["src"])
+
+    def test_age_18_photo_sized(self):
+        dest = ROOT / "images" / "gallery" / "lila-age-18.jpg"
+        src = Path("/home/alex/iCloudSync/Music/Lila Spark - Truly Me/lila_spark.png")
+        self.assertTrue(dest.is_file())
+        self.assertLessEqual(dest.stat().st_size, MAX_BYTES)
+        with Image.open(dest) as im:
+            self.assertEqual(im.mode, "RGB")
+            self.assertLessEqual(max(im.size), 1600)
+        self.assertAlmostEqual(aspect(dest), aspect(src), places=2)
 
 
 class TestMusicMarkup(unittest.TestCase):
