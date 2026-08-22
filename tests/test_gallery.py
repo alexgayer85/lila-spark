@@ -103,34 +103,52 @@ EXPECTED_NEW = [
 ]
 
 
-AGE_18 = {
-    "src": "images/gallery/lila-age-18.jpg",
-    "alt": "Lila Spark at age 18",
-    "caption": "Lila · age 18 · 2020",
-}
+AGE_18 = [
+    {
+        "src": "images/gallery/lila-age-18.jpg",
+        "alt": "Lila Spark at age 18",
+        "caption": "Lila · age 18 · 2020",
+    },
+    {
+        "src": "images/gallery/lila-age-18-portrait.jpg",
+        "alt": "Lila Spark at age 18, portrait",
+        "caption": "Lila · age 18 · 2020",
+    },
+]
+
+AGE_18_SOURCES = [
+    (
+        Path("/home/alex/iCloudSync/Music/Lila Spark - Truly Me/lila_spark.png"),
+        "lila-age-18.jpg",
+    ),
+    (
+        Path("/home/alex/iCloudSync/Music/Lila Spark - Truly Me/Lila Spark 1.jpg"),
+        "lila-age-18-portrait.jpg",
+    ),
+]
 
 
 class TestPhotosManifest(unittest.TestCase):
     def test_appends_eight_after_existing_seven(self):
         data = json.loads((ROOT / "data" / "photos.json").read_text())
         photos = data["photos"]
-        self.assertEqual(len(photos), 16)
+        self.assertEqual(len(photos), 17)
         self.assertEqual(photos[0]["src"], "images/profile.jpg")
         self.assertEqual(photos[6]["src"], "images/family/daniel.jpg")
-        self.assertEqual(photos[7], AGE_18)
-        self.assertEqual(photos[8:], EXPECTED_NEW)
+        self.assertEqual(photos[7:9], AGE_18)
+        self.assertEqual(photos[9:], EXPECTED_NEW)
         for item in photos[7:]:
             self.assertTrue((ROOT / item["src"]).is_file(), item["src"])
 
     def test_age_18_photo_sized(self):
-        dest = ROOT / "images" / "gallery" / "lila-age-18.jpg"
-        src = Path("/home/alex/iCloudSync/Music/Lila Spark - Truly Me/lila_spark.png")
-        self.assertTrue(dest.is_file())
-        self.assertLessEqual(dest.stat().st_size, MAX_BYTES)
-        with Image.open(dest) as im:
-            self.assertEqual(im.mode, "RGB")
-            self.assertLessEqual(max(im.size), 1600)
-        self.assertAlmostEqual(aspect(dest), aspect(src), places=2)
+        for src, dest_name in AGE_18_SOURCES:
+            dest = ROOT / "images" / "gallery" / dest_name
+            self.assertTrue(dest.is_file(), dest_name)
+            self.assertLessEqual(dest.stat().st_size, MAX_BYTES, dest_name)
+            with Image.open(dest) as im:
+                self.assertEqual(im.mode, "RGB")
+                self.assertLessEqual(max(im.size), 1600, dest_name)
+            self.assertAlmostEqual(aspect(dest), aspect(src), places=2, msg=dest_name)
 
 
 class TestMusicMarkup(unittest.TestCase):
