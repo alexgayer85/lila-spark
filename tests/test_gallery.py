@@ -176,10 +176,30 @@ TRULY_ME_COVERS = [
 TRULY_ME_GALLERY = [
     {
         "src": f"images/gallery/{slug}.jpg",
-        "alt": f"{title} track cover",
-        "caption": f"{title} · track cover",
+        "alt": f"{title} track cover, age 18",
+        "caption": f"{title} · track cover · age 18",
     }
     for _, slug, title in TRULY_ME_COVERS
+]
+
+RESHOOT_SRC = Path("/home/alex/iCloudSync/Music/Lila Spark - Truly Me")
+RESHOOT_COVERS = [
+    (RESHOOT_SRC / "What I Need 3000x3000.jpg", "what-i-need", "What I Need"),
+    (RESHOOT_SRC / "hold_me_close_3000x3000_1e47e44c.jpg", "hold-me-close", "Hold Me Close"),
+    (RESHOOT_SRC / "LANDR/key_to_my_heart-3000x3000.jpg", "key-to-my-heart", "Key to My Heart"),
+    (RESHOOT_SRC / "LANDR/spark_of_love_3000x3000.jpg", "spark-of-love", "Spark of Love"),
+    (RESHOOT_SRC / "LANDR/feels_good-3000x3000.jpg", "feels-good", "Feels Good"),
+    (RESHOOT_SRC / "LANDR/forever_yours_3000x3000.jpg", "forever-yours", "Forever Yours"),
+    (RESHOOT_SRC / "LANDR/heart_on_a_string_3000x3000.jpg", "heart-on-a-string", "Heart on a String"),
+]
+
+RESHOOT_GALLERY = [
+    {
+        "src": f"images/gallery/{slug}-age-24.jpg",
+        "alt": f"{title} track cover, age 24 reshoot",
+        "caption": f"{title} · track cover · age 24 reshoot",
+    }
+    for _src, slug, title in RESHOOT_COVERS
 ]
 
 
@@ -187,13 +207,14 @@ class TestPhotosManifest(unittest.TestCase):
     def test_appends_eight_after_existing_seven(self):
         data = json.loads((ROOT / "data" / "photos.json").read_text())
         photos = data["photos"]
-        self.assertEqual(len(photos), 45)
+        self.assertEqual(len(photos), 52)
         self.assertEqual(photos[0]["src"], "images/profile.jpg")
         self.assertEqual(photos[6]["src"], "images/family/daniel.jpg")
         self.assertEqual(photos[7:9], AGE_18)
         self.assertEqual(photos[9:17], EXPECTED_NEW)
         self.assertEqual(photos[17:33], SPARKED_GALLERY)
-        self.assertEqual(photos[33:], TRULY_ME_GALLERY)
+        self.assertEqual(photos[33:45], TRULY_ME_GALLERY)
+        self.assertEqual(photos[45:], RESHOOT_GALLERY)
         for item in photos[7:]:
             self.assertTrue((ROOT / item["src"]).is_file(), item["src"])
 
@@ -237,6 +258,19 @@ class TestPhotosManifest(unittest.TestCase):
         with Image.open(ROOT / "images" / "covers" / "truly-me.jpg") as album:
             self.assertEqual(album.size, (900, 900))
 
+    def test_age_24_reshoot_covers_sized(self):
+        for src, slug, _title in RESHOOT_COVERS:
+            for dest, max_edge in (
+                (ROOT / "images" / "gallery" / f"{slug}-age-24.jpg", 1600),
+                (ROOT / "images" / "covers" / f"{slug}-age-24.jpg", 900),
+            ):
+                self.assertTrue(dest.is_file(), dest.name)
+                self.assertLessEqual(dest.stat().st_size, MAX_BYTES, dest.name)
+                with Image.open(dest) as im:
+                    self.assertEqual(im.mode, "RGB")
+                    self.assertLessEqual(max(im.size), max_edge, dest.name)
+                self.assertAlmostEqual(aspect(dest), aspect(src), places=2, msg=dest.name)
+
 
 class TestMusicMarkup(unittest.TestCase):
     def test_three_tracks_have_covers_and_cache_bust(self):
@@ -249,11 +283,22 @@ class TestMusicMarkup(unittest.TestCase):
             ("images/covers/let-me-begin.jpg", "Let Me Begin"),
         ]
         sparked = [(f"images/covers/{slug}.jpg", title) for _, slug, title in SPARKED_COVERS]
-        truly = [(f"images/covers/{slug}.jpg", title) for _, slug, title in TRULY_ME_COVERS]
-        for src, _title in afterglow + sparked + truly:
+        reshoot_slugs = {slug for _src, slug, _title in RESHOOT_COVERS}
+        truly = [
+            (
+                f"images/covers/{slug}-age-24.jpg" if slug in reshoot_slugs else f"images/covers/{slug}.jpg",
+                title,
+            )
+            for _, slug, title in TRULY_ME_COVERS
+        ]
+        # Heart on a String is Sparked-folder still in SPARKED_COVERS but Music uses the age-24 single
+        sparked = [(src, title) for src, title in sparked if "heart-on-a-string.jpg" not in src]
+        truly_extra = [("images/covers/heart-on-a-string-age-24.jpg", "Heart on a String")]
+        for src, _title in afterglow + sparked + truly + truly_extra:
             self.assertIn(f'src="{src}"', html, src)
         self.assertEqual(html.count('class="track-cover"'), 31)
         self.assertEqual(html.count("has-cover"), 31)
+        self.assertEqual(html.count("-age-24.jpg"), 7)
         self.assertIn('class="track-title">Boomerang</h3>', html)
         self.assertNotIn("images/covers/boomerang", html)
 
