@@ -128,15 +128,46 @@ AGE_18_SOURCES = [
 ]
 
 
+SPARKED_SRC = Path("/home/alex/iCloudSync/Music/Lila Spark - Sparked/Video working folder")
+SPARKED_COVERS = [
+    ("midnight_voltage.jpg", "midnight-voltage", "Midnight Voltage"),
+    ("electric_crush.jpg", "electric-crush", "Electric Crush"),
+    ("frequency_of_you.jpg", "frequency-of-you", "Frequency of You"),
+    ("no_more_hiding.jpg", "no-more-hiding", "No More Hiding"),
+    ("small_miracles.jpg", "small-miracles", "Small Miracles"),
+    ("turn_the_page_tonight.jpg", "turn-the-page-tonight", "Turn the Page Tonight"),
+    ("burn_through_the_dark.jpg", "burn-through-the-dark", "Burn Through the Dark"),
+    ("velvet_lies.jpg", "velvet-lies", "Velvet Lies"),
+    ("still_need_you.jpg", "still-need-you", "Still Need You"),
+    ("louder_than_yesterday.jpg", "louder-than-yesterday", "Louder Than Yesterday"),
+    ("diamond_tears.jpg", "diamond-tears", "Diamond Tears"),
+    ("white_dress_envy.jpg", "white-dress-envy", "White Dress Envy"),
+    ("starlit_promise.jpg", "starlit-promise", "Starlit Promise"),
+    ("just_wanna_make_you_a_sammich.jpg", "just-wanna-make-you-a-sammich", "Just Wanna Make You a Sammich"),
+    ("brain_glitch.jpg", "brain-glitch", "Brain Glitch"),
+    ("heart_on_a_string.jpg", "heart-on-a-string", "Heart on a String"),
+]
+
+SPARKED_GALLERY = [
+    {
+        "src": f"images/gallery/{slug}.jpg",
+        "alt": f"{title} track cover",
+        "caption": f"{title} · track cover",
+    }
+    for _, slug, title in SPARKED_COVERS
+]
+
+
 class TestPhotosManifest(unittest.TestCase):
     def test_appends_eight_after_existing_seven(self):
         data = json.loads((ROOT / "data" / "photos.json").read_text())
         photos = data["photos"]
-        self.assertEqual(len(photos), 17)
+        self.assertEqual(len(photos), 33)
         self.assertEqual(photos[0]["src"], "images/profile.jpg")
         self.assertEqual(photos[6]["src"], "images/family/daniel.jpg")
         self.assertEqual(photos[7:9], AGE_18)
-        self.assertEqual(photos[9:], EXPECTED_NEW)
+        self.assertEqual(photos[9:17], EXPECTED_NEW)
+        self.assertEqual(photos[17:], SPARKED_GALLERY)
         for item in photos[7:]:
             self.assertTrue((ROOT / item["src"]).is_file(), item["src"])
 
@@ -150,21 +181,36 @@ class TestPhotosManifest(unittest.TestCase):
                 self.assertLessEqual(max(im.size), 1600, dest_name)
             self.assertAlmostEqual(aspect(dest), aspect(src), places=2, msg=dest_name)
 
+    def test_sparked_track_covers_sized(self):
+        for src_name, slug, _title in SPARKED_COVERS:
+            src = SPARKED_SRC / src_name
+            for dest, max_edge in (
+                (ROOT / "images" / "gallery" / f"{slug}.jpg", 1600),
+                (ROOT / "images" / "covers" / f"{slug}.jpg", 900),
+            ):
+                self.assertTrue(dest.is_file(), dest.name)
+                self.assertLessEqual(dest.stat().st_size, MAX_BYTES, dest.name)
+                with Image.open(dest) as im:
+                    self.assertEqual(im.mode, "RGB")
+                    self.assertLessEqual(max(im.size), max_edge, dest.name)
+                self.assertAlmostEqual(aspect(dest), aspect(src), places=2, msg=dest.name)
+
 
 class TestMusicMarkup(unittest.TestCase):
     def test_three_tracks_have_covers_and_cache_bust(self):
         html = (ROOT / "music.html").read_text()
         self.assertIn('href="css/styles.css?v=preview-covers-1"', html)
         self.assertNotIn('href="css/styles.css?v=social-icons-1"', html)
-        for src, title in [
+        afterglow = [
             ("images/covers/somehow.jpg", "Somehow"),
             ("images/covers/layla.jpg", "Layla"),
             ("images/covers/let-me-begin.jpg", "Let Me Begin"),
-        ]:
+        ]
+        sparked = [(f"images/covers/{slug}.jpg", title) for _, slug, title in SPARKED_COVERS]
+        for src, _title in afterglow + sparked:
             self.assertIn(f'src="{src}"', html, src)
-            self.assertIn(f'class="track-cover"', html)
-        self.assertEqual(html.count('class="track-cover"'), 3)
-        self.assertEqual(html.count("has-cover"), 3)
+        self.assertEqual(html.count('class="track-cover"'), 19)
+        self.assertEqual(html.count("has-cover"), 19)
         self.assertIn('class="track-title">Boomerang</h3>', html)
         self.assertNotIn("images/covers/boomerang", html)
 
