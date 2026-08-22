@@ -168,63 +168,98 @@
     },
     {
       "src": "images/gallery/truly-me-track.jpg",
-      "alt": "Truly Me track cover",
-      "caption": "Truly Me · track cover"
+      "alt": "Truly Me track cover, age 18",
+      "caption": "Truly Me · track cover · age 18"
     },
     {
       "src": "images/gallery/sweet-crush.jpg",
-      "alt": "Sweet Crush track cover",
-      "caption": "Sweet Crush · track cover"
+      "alt": "Sweet Crush track cover, age 18",
+      "caption": "Sweet Crush · track cover · age 18"
     },
     {
       "src": "images/gallery/what-i-need.jpg",
-      "alt": "What I Need track cover",
-      "caption": "What I Need · track cover"
+      "alt": "What I Need track cover, age 18",
+      "caption": "What I Need · track cover · age 18"
     },
     {
       "src": "images/gallery/hold-me-close.jpg",
-      "alt": "Hold Me Close track cover",
-      "caption": "Hold Me Close · track cover"
+      "alt": "Hold Me Close track cover, age 18",
+      "caption": "Hold Me Close · track cover · age 18"
     },
     {
       "src": "images/gallery/key-to-my-heart.jpg",
-      "alt": "Key to My Heart track cover",
-      "caption": "Key to My Heart · track cover"
+      "alt": "Key to My Heart track cover, age 18",
+      "caption": "Key to My Heart · track cover · age 18"
     },
     {
       "src": "images/gallery/stop-the-hurt.jpg",
-      "alt": "Stop the Hurt track cover",
-      "caption": "Stop the Hurt · track cover"
+      "alt": "Stop the Hurt track cover, age 18",
+      "caption": "Stop the Hurt · track cover · age 18"
     },
     {
       "src": "images/gallery/choose-me-now.jpg",
-      "alt": "Choose Me Now track cover",
-      "caption": "Choose Me Now · track cover"
+      "alt": "Choose Me Now track cover, age 18",
+      "caption": "Choose Me Now · track cover · age 18"
     },
     {
       "src": "images/gallery/old-enough.jpg",
-      "alt": "Old Enough track cover",
-      "caption": "Old Enough · track cover"
+      "alt": "Old Enough track cover, age 18",
+      "caption": "Old Enough · track cover · age 18"
     },
     {
       "src": "images/gallery/spark-of-love.jpg",
-      "alt": "Spark of Love track cover",
-      "caption": "Spark of Love · track cover"
+      "alt": "Spark of Love track cover, age 18",
+      "caption": "Spark of Love · track cover · age 18"
     },
     {
       "src": "images/gallery/feels-good.jpg",
-      "alt": "Feels Good track cover",
-      "caption": "Feels Good · track cover"
+      "alt": "Feels Good track cover, age 18",
+      "caption": "Feels Good · track cover · age 18"
     },
     {
       "src": "images/gallery/forever-yours.jpg",
-      "alt": "Forever Yours track cover",
-      "caption": "Forever Yours · track cover"
+      "alt": "Forever Yours track cover, age 18",
+      "caption": "Forever Yours · track cover · age 18"
     },
     {
       "src": "images/gallery/stop-the-hurt-reprise.jpg",
-      "alt": "Stop the Hurt (Reprise) track cover",
-      "caption": "Stop the Hurt (Reprise) · track cover"
+      "alt": "Stop the Hurt (Reprise) track cover, age 18",
+      "caption": "Stop the Hurt (Reprise) · track cover · age 18"
+    },
+    {
+      "src": "images/gallery/what-i-need-age-24.jpg",
+      "alt": "What I Need track cover, age 24 reshoot",
+      "caption": "What I Need · track cover · age 24 reshoot"
+    },
+    {
+      "src": "images/gallery/hold-me-close-age-24.jpg",
+      "alt": "Hold Me Close track cover, age 24 reshoot",
+      "caption": "Hold Me Close · track cover · age 24 reshoot"
+    },
+    {
+      "src": "images/gallery/key-to-my-heart-age-24.jpg",
+      "alt": "Key to My Heart track cover, age 24 reshoot",
+      "caption": "Key to My Heart · track cover · age 24 reshoot"
+    },
+    {
+      "src": "images/gallery/spark-of-love-age-24.jpg",
+      "alt": "Spark of Love track cover, age 24 reshoot",
+      "caption": "Spark of Love · track cover · age 24 reshoot"
+    },
+    {
+      "src": "images/gallery/feels-good-age-24.jpg",
+      "alt": "Feels Good track cover, age 24 reshoot",
+      "caption": "Feels Good · track cover · age 24 reshoot"
+    },
+    {
+      "src": "images/gallery/forever-yours-age-24.jpg",
+      "alt": "Forever Yours track cover, age 24 reshoot",
+      "caption": "Forever Yours · track cover · age 24 reshoot"
+    },
+    {
+      "src": "images/gallery/heart-on-a-string-age-24.jpg",
+      "alt": "Heart on a String track cover, age 24 reshoot",
+      "caption": "Heart on a String · track cover · age 24 reshoot"
     }
   ]
 }
