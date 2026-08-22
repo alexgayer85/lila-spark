@@ -35,6 +35,46 @@
       "src": "images/family/daniel.jpg",
       "alt": "Daniel Spark",
       "caption": "Daniel · father"
+    },
+    {
+      "src": "images/gallery/concept-to-reality.jpg",
+      "alt": "Lila Spark from concept to reality",
+      "caption": "From concept to reality"
+    },
+    {
+      "src": "images/gallery/studio-lila-at-desk.jpg",
+      "alt": "Lila and Alex in the studio, Lila at the desk",
+      "caption": "Studio session · Lila at the desk"
+    },
+    {
+      "src": "images/gallery/studio-over-shoulder.jpg",
+      "alt": "Lila looking over Alex’s shoulder in the studio",
+      "caption": "Studio session · over the shoulder"
+    },
+    {
+      "src": "images/gallery/somehow.jpg",
+      "alt": "Somehow single artwork",
+      "caption": "Somehow · single art"
+    },
+    {
+      "src": "images/gallery/let-me-begin.jpg",
+      "alt": "Let Me Begin single artwork",
+      "caption": "Let Me Begin · single art"
+    },
+    {
+      "src": "images/gallery/layla.jpg",
+      "alt": "Layla song cover",
+      "caption": "Layla · song cover"
+    },
+    {
+      "src": "images/gallery/looks-outdoor.jpg",
+      "alt": "Lila Spark outdoor looks, four outfits",
+      "caption": "Looks · outdoor"
+    },
+    {
+      "src": "images/gallery/looks-studio.jpg",
+      "alt": "Lila Spark studio looks, four outfits",
+      "caption": "Looks · studio"
     }
   ]
 }
