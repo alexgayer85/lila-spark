@@ -1188,6 +1188,21 @@ body.lightbox-open {
   min-width: 1.75rem;
 }
 
+.track-card.has-cover {
+  grid-template-columns: auto auto 1fr auto;
+}
+
+.track-cover {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  display: block;
+  margin-top: 0.15rem;
+}
+
 .track-title {
   margin: 0 0 0.2rem;
   font-size: 1.05rem;
@@ -1666,6 +1681,15 @@ body.lightbox-open {
 
   .track-badge {
     grid-column: 2;
+    justify-self: start;
+  }
+
+  .track-card.has-cover {
+    grid-template-columns: auto auto 1fr;
+  }
+
+  .track-card.has-cover .track-badge {
+    grid-column: 3;
     justify-self: start;
   }
 
