@@ -115,5 +115,32 @@ class TestPhotosManifest(unittest.TestCase):
             self.assertTrue((ROOT / item["src"]).is_file(), item["src"])
 
 
+class TestMusicMarkup(unittest.TestCase):
+    def test_three_tracks_have_covers_and_cache_bust(self):
+        html = (ROOT / "music.html").read_text()
+        self.assertIn('href="css/styles.css?v=track-covers-1"', html)
+        self.assertNotIn('href="css/styles.css?v=social-icons-1"', html)
+        for src, title in [
+            ("images/covers/somehow.jpg", "Somehow"),
+            ("images/covers/layla.jpg", "Layla"),
+            ("images/covers/let-me-begin.jpg", "Let Me Begin"),
+        ]:
+            self.assertIn(f'src="{src}"', html, src)
+            self.assertIn(f'class="track-cover"', html)
+        self.assertEqual(html.count('class="track-cover"'), 3)
+        self.assertEqual(html.count("has-cover"), 3)
+        self.assertIn('class="track-title">Boomerang</h3>', html)
+        self.assertNotIn("images/covers/boomerang", html)
+
+    def test_track_cover_css_rules_exist(self):
+        css = (ROOT / "css" / "styles.css").read_text()
+        self.assertIn(".track-card.has-cover", css)
+        self.assertIn("grid-template-columns: auto auto 1fr auto", css)
+        self.assertIn(".track-cover", css)
+        self.assertIn("border-radius: 8px", css)
+        self.assertIn("width: 56px", css)
+        self.assertIn("height: 56px", css)
+
+
 if __name__ == "__main__":
     unittest.main()
