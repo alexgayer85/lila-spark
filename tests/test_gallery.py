@@ -1,3 +1,4 @@
+import json
 import unittest
 from pathlib import Path
 
@@ -56,6 +57,62 @@ class TestCoverFiles(unittest.TestCase):
                 self.assertEqual(im.mode, "RGB")
                 self.assertLessEqual(max(im.size), 900, dest_name)
             self.assertAlmostEqual(aspect(dest), aspect(src), places=2, msg=dest_name)
+
+
+EXPECTED_NEW = [
+    {
+        "src": "images/gallery/concept-to-reality.jpg",
+        "alt": "Lila Spark from concept to reality",
+        "caption": "From concept to reality",
+    },
+    {
+        "src": "images/gallery/studio-lila-at-desk.jpg",
+        "alt": "Lila and Alex in the studio, Lila at the desk",
+        "caption": "Studio session · Lila at the desk",
+    },
+    {
+        "src": "images/gallery/studio-over-shoulder.jpg",
+        "alt": "Lila looking over Alex’s shoulder in the studio",
+        "caption": "Studio session · over the shoulder",
+    },
+    {
+        "src": "images/gallery/somehow.jpg",
+        "alt": "Somehow single artwork",
+        "caption": "Somehow · single art",
+    },
+    {
+        "src": "images/gallery/let-me-begin.jpg",
+        "alt": "Let Me Begin single artwork",
+        "caption": "Let Me Begin · single art",
+    },
+    {
+        "src": "images/gallery/layla.jpg",
+        "alt": "Layla song cover",
+        "caption": "Layla · song cover",
+    },
+    {
+        "src": "images/gallery/looks-outdoor.jpg",
+        "alt": "Lila Spark outdoor looks, four outfits",
+        "caption": "Looks · outdoor",
+    },
+    {
+        "src": "images/gallery/looks-studio.jpg",
+        "alt": "Lila Spark studio looks, four outfits",
+        "caption": "Looks · studio",
+    },
+]
+
+
+class TestPhotosManifest(unittest.TestCase):
+    def test_appends_eight_after_existing_seven(self):
+        data = json.loads((ROOT / "data" / "photos.json").read_text())
+        photos = data["photos"]
+        self.assertEqual(len(photos), 15)
+        self.assertEqual(photos[0]["src"], "images/profile.jpg")
+        self.assertEqual(photos[6]["src"], "images/family/daniel.jpg")
+        self.assertEqual(photos[7:], EXPECTED_NEW)
+        for item in photos[7:]:
+            self.assertTrue((ROOT / item["src"]).is_file(), item["src"])
 
 
 if __name__ == "__main__":
