@@ -38,5 +38,25 @@ class TestGalleryFiles(unittest.TestCase):
             self.assertAlmostEqual(aspect(dest), aspect(src), places=2, msg=dest_name)
 
 
+COVERS = [
+    ("Somehow (single)_3000x3000.jpg", "somehow.jpg"),
+    ("Layla (song cover).jpg", "layla.jpg"),
+    ("Let_Me_Begin_3000x3000_d81fa070.jpg", "let-me-begin.jpg"),
+]
+
+
+class TestCoverFiles(unittest.TestCase):
+    def test_three_single_covers_exist_sized_and_uncropped(self):
+        for src_name, dest_name in COVERS:
+            dest = ROOT / "images" / "covers" / dest_name
+            src = SRC / src_name
+            self.assertTrue(dest.is_file(), f"missing {dest}")
+            self.assertLessEqual(dest.stat().st_size, MAX_BYTES, dest_name)
+            with Image.open(dest) as im:
+                self.assertEqual(im.mode, "RGB")
+                self.assertLessEqual(max(im.size), 900, dest_name)
+            self.assertAlmostEqual(aspect(dest), aspect(src), places=2, msg=dest_name)
+
+
 if __name__ == "__main__":
     unittest.main()
