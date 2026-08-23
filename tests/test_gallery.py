@@ -275,7 +275,7 @@ class TestPhotosManifest(unittest.TestCase):
 class TestMusicMarkup(unittest.TestCase):
     def test_three_tracks_have_covers_and_cache_bust(self):
         html = (ROOT / "music.html").read_text()
-        self.assertIn('href="css/styles.css?v=preview-covers-1"', html)
+        self.assertIn('href="css/styles.css?v=explicit-1"', html)
         self.assertNotIn('href="css/styles.css?v=social-icons-1"', html)
         afterglow = [
             ("images/covers/somehow.jpg", "Somehow"),

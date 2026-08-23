@@ -33,7 +33,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=studio-2" />
+  <link rel="stylesheet" href="css/styles.css?v=studio-3" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="images/profile.jpg" />
   <link rel="author" href="humans.txt" />
@@ -371,8 +371,10 @@
               two-person studio. A language-model planner thinks the song into a blueprint: tempo,
               key, structure, the shape of the arrangement. A diffusion transformer then carves the
               actual performance out of noise — voice, drums, bass, and air arriving together as
-              48 kHz stereo. Takes are generated locally, then edited in post — Cover, Repaint,
-              and a range of other tools — until the performance lands. What you hear on
+              48 kHz stereo. Takes are generated locally, then edited in post. Cover rebuilds a
+              whole take from a reference while keeping the song’s shape. Repaint regenerates
+              just a slice — a weak verse, a muffed word — and stitches it back. Other tools
+              sit alongside those until the performance lands. What you hear on
               <em>Afterglow</em> is not a prompt tossed into a box. It is a song, directed.
             </p>
             <p>
@@ -456,8 +458,8 @@
             <h4>Language model</h4>
             <p>
               A Qwen3 composer-agent. Chain-of-Thought metadata, rewritten captions, discrete
-              semantic codes. Skip it when the writing is already a score — Cover and Repaint
-              do this.
+              semantic codes. Skip it when the writing is already a score: Cover and Repaint
+              feed existing audio straight to the renderer and leave the planner out.
             </p>
           </li>
           <li>
@@ -504,7 +506,11 @@
         <ul class="studio-tools">
           <li>
             <strong>Cover</strong>
-            <span>Hold the bones. Restyle the skin.</span>
+            <span>Hold the bones — chords, structure, the skeleton — and restyle the skin.</span>
+          </li>
+          <li>
+            <strong>Repaint</strong>
+            <span>Regenerate one slice of a take and stitch it back. The rest stays.</span>
           </li>
           <li>
             <strong>Stem separation</strong>
