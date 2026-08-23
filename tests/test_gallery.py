@@ -312,5 +312,28 @@ class TestMusicMarkup(unittest.TestCase):
         self.assertIn("height: 56px", css)
 
 
+class TestRealityStudio(unittest.TestCase):
+    def test_studio_screenshot_exists(self):
+        dest = ROOT / "images" / "studio" / "lss.jpg"
+        src = SRC / "lss.png"
+        self.assertTrue(dest.is_file(), dest)
+        self.assertTrue(src.is_file(), src)
+        self.assertLessEqual(dest.stat().st_size, MAX_BYTES, "lss.jpg")
+        with Image.open(dest) as im:
+            self.assertEqual(im.mode, "RGB")
+            self.assertLessEqual(max(im.size), 1800)
+        self.assertAlmostEqual(aspect(dest), aspect(src), places=2)
+
+    def test_story_shows_screenshot_and_edit_tools(self):
+        html = (ROOT / "story.html").read_text()
+        self.assertIn('href="css/styles.css?v=studio-5"', html)
+        self.assertIn("images/studio/lss.jpg", html)
+        self.assertIn("Repaint / Extend", html)
+        self.assertIn("<strong>Extract</strong>", html)
+        self.assertIn("<strong>Lego</strong>", html)
+        css = (ROOT / "css" / "styles.css").read_text()
+        self.assertIn(".studio-shot", css)
+
+
 if __name__ == "__main__":
     unittest.main()

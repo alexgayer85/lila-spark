@@ -33,7 +33,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=studio-4" />
+  <link rel="stylesheet" href="css/styles.css?v=studio-5" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="images/profile.jpg" />
   <link rel="author" href="humans.txt" />
@@ -373,17 +373,19 @@
               actual performance out of noise — voice, drums, bass, and air arriving together as
               48 kHz stereo. Takes are generated locally, then edited in post. Cover / Refine
               rebuilds a whole take from a reference while keeping the song’s shape — denoise
-              sets how far it can drift. Other tools sit alongside that until the performance
-              lands. What you hear on
+              sets how far it can drift. Repaint rewrites a time slice. Extend grows an intro
+              or outro. Extract and Lego pull a part out, or drop a new one in, without
+              starting over. What you hear on
               <em>Afterglow</em> is not a prompt tossed into a box. It is a song, directed.
             </p>
             <p>
               ComfyUI got the early catalog made, but a general-purpose node graph is a blunt
               instrument for a model this capable. He built Lila Spark Studio as the desk he
               actually uses — even for render. ComfyUI still runs underneath as a service; LSS
-              talks to it and implements ACE-Step with his own spin: Cover, stem separation,
-              automated stem-swapping, artwork scaling, and speech synthesis, in one place
-              instead of five windows reconstructed for every take.
+              talks to it and implements ACE-Step with his own spin: Cover, Repaint, Extend,
+              Extract, Lego, stem separation, automated stem-swapping, artwork scaling, and
+              speech synthesis, in one place instead of five windows reconstructed for every
+              take.
             </p>
             <p>
               <em>Truly Me</em> was the first album — a newcomer’s record that still carries the
@@ -486,7 +488,7 @@
           <li>
             <span class="studio-step-n">03</span>
             <strong>Edit</strong>
-            <span>Lila Spark Studio: Cover, stems, swap, art, speech.</span>
+            <span>Lila Spark Studio: Cover, repaint, extract, stems, art, speech.</span>
           </li>
           <li>
             <span class="studio-step-n">04</span>
@@ -500,13 +502,37 @@
           <p class="section-lead">
             ACE-Step is the session player. ComfyUI runs as a service. Lila Spark Studio is
             the desk he actually uses — his own spin on the graph, including render. Cover,
-            stems, art, and voice in one place instead of five windows.
+            repaint, extract, stems, art, and voice in one place instead of five windows.
           </p>
         </header>
+        <figure class="studio-shot">
+          <img
+            src="images/studio/lss.jpg"
+            alt="Lila Spark Studio: Lyrics to Music tab with lyrics, style tags, duration, and generate controls"
+            width="1800"
+            height="1563"
+            loading="lazy"
+          />
+          <figcaption>
+            Lila Spark Studio — the Lyrics to Music desk. ComfyUI stays a service underneath.
+          </figcaption>
+        </figure>
         <ul class="studio-tools">
           <li>
             <strong>Cover / Refine</strong>
             <span>Hold the bones — chords, structure, the skeleton — and restyle the skin. Whole-track, not a slice.</span>
+          </li>
+          <li>
+            <strong>Repaint / Extend</strong>
+            <span>Rewrite a verse or chorus in place, or grow a new intro and outro, without throwing the rest away.</span>
+          </li>
+          <li>
+            <strong>Extract</strong>
+            <span>Ask the model for one part — vocals, drums, bass — as a re-performance, not a surgical stem split.</span>
+          </li>
+          <li>
+            <strong>Lego</strong>
+            <span>Drop a guitar solo, a synth bed, or backing vocals onto a region and keep everything else.</span>
           </li>
           <li>
             <strong>Stem separation</strong>

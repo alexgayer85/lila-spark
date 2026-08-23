@@ -1910,3 +1910,27 @@ body.lightbox-open {
   font-size: 0.88rem;
   line-height: 1.5;
 }
+
+.studio-shot {
+  margin: 0 0 1.35rem;
+  padding: 0;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: var(--card);
+  overflow: hidden;
+}
+
+.studio-shot img {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: #0a0a0f;
+}
+
+.studio-shot figcaption {
+  margin: 0;
+  padding: 0.85rem 1.1rem 1rem;
+  color: var(--ink-muted);
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
