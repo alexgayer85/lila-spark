@@ -39,18 +39,27 @@ Pushes to `main` publish via GitHub Pages (`main` / root). Custom domain: `lila-
 
 ## Photos gallery
 
-Layout is a **justified row gallery** (like Google Photos): each image keeps its native aspect ratio — no forced crop.
+Layout is a **justified row gallery** (like Google Photos): each image keeps its native aspect ratio — no forced crop. The page is split into sections from `data/photos.json`.
 
 1. Add files under `images/gallery/` (or any path under the site).
-2. Append an entry in `data/photos.json`:
+2. Add an entry to the right section in `data/photos.json`:
 
 ```json
 {
-  "src": "images/gallery/my-shot.jpg",
-  "alt": "Description",
-  "caption": "Optional caption"
+  "id": "family",
+  "title": "Family",
+  "lead": "Optional intro",
+  "photos": [
+    {
+      "src": "images/gallery/my-shot.jpg",
+      "alt": "Description",
+      "caption": "Optional caption"
+    }
+  ]
 }
 ```
+
+Use `groups` instead of `photos` when a section needs subheads (see Single covers). Optional `targetRowHeight` on a section overrides the page default.
 
 3. Commit and push. Pages rebuild automatically.
 

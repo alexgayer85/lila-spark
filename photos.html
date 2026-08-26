@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Gallery: portraits, album art, and personal photography." />
+  <meta name="description" content="Gallery: portraits through the years, family, album art, and single covers." />
   <meta name="author" content="Alex Gayer" />
   <meta name="copyright" content="Copyright Alex Gayer. All rights reserved." />
   <meta name="theme-color" content="#0a0a0f" />
   <meta property="og:title" content="Photos — Lila Spark" />
-  <meta property="og:description" content="Gallery: portraits, album art, and personal photography." />
+  <meta property="og:description" content="Gallery: portraits through the years, family, album art, and single covers." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://lila-spark.com/photos.html" />
   <meta property="og:image" content="https://lila-spark.com/images/covers/afterglow.jpg" />
@@ -33,7 +33,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=share-1" />
+  <link rel="stylesheet" href="css/styles.css?v=photos-2" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="images/profile.jpg" />
   <link rel="author" href="humans.txt" />
@@ -72,8 +72,9 @@
         <p class="eyebrow">Gallery</p>
         <h1 class="page-title">Photos</h1>
         <p class="section-lead">
-          Press shots, concept images, and personal photography — shown full-frame, no cropping.
+          Portraits through the years, family, album art, and the rest — shown full-frame, no cropping.
         </p>
+        <nav id="photo-jump" class="photo-jump" aria-label="Photo sections" hidden></nav>
       </div>
     </section>
 
@@ -81,7 +82,7 @@
       <div class="wrap wrap-wide">
         <div
           id="photo-gallery"
-          class="photo-gallery"
+          class="photo-sections"
           data-manifest="data/photos.json"
           aria-live="polite"
         ></div>
@@ -134,6 +135,6 @@
   </footer>
 
   <script src="js/main.js?v=story-view-1"></script>
-  <script src="js/photos.js"></script>
+  <script src="js/photos.js?v=sections-2"></script>
 </body>
 </html>

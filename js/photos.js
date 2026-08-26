@@ -1,5 +1,5 @@
 /**
- * Justified photo gallery (Google / iCloud style).
+ * Sectioned justified photo gallery (Google / iCloud style).
  * Scales each image to a shared row height so full frames show — no center-crop.
  */
 (function () {
@@ -8,6 +8,7 @@
 
   const GAP = 10;
   const MANIFEST = root.dataset.manifest || "data/photos.json";
+  const jumpNav = document.getElementById("photo-jump");
 
   function loadImageMeta(photo) {
     return new Promise((resolve, reject) => {
@@ -67,9 +68,9 @@
     return rows;
   }
 
-  function render(rows) {
-    root.innerHTML = "";
-    root.classList.add("is-ready");
+  function renderInto(container, rows) {
+    container.innerHTML = "";
+    container.classList.add("is-ready");
 
     rows.forEach((row) => {
       const rowEl = document.createElement("div");
@@ -109,7 +110,7 @@
         btn.addEventListener("click", () => openLightbox(item));
         rowEl.appendChild(fig);
       });
-      root.appendChild(rowEl);
+      container.appendChild(rowEl);
     });
   }
 
@@ -152,14 +153,48 @@
     document.body.classList.remove("lightbox-open");
   }
 
-  let items = [];
-  let targetH = 240;
+  const galleries = [];
+  let defaultH = 240;
   let ro;
 
   function relayout() {
-    const width = root.clientWidth;
-    if (!items.length || width < 40) return;
-    render(layout(items, width, targetH));
+    galleries.forEach((g) => {
+      const width = g.el.clientWidth;
+      if (!g.items.length || width < 40) return;
+      renderInto(g.el, layout(g.items, width, g.targetH));
+    });
+  }
+
+  function sectionGroups(section) {
+    if (Array.isArray(section.groups) && section.groups.length) {
+      return section.groups.filter((g) => (g.photos || []).length);
+    }
+    if (Array.isArray(section.photos) && section.photos.length) {
+      return [{ title: null, photos: section.photos }];
+    }
+    return [];
+  }
+
+  function renderJump(sections) {
+    if (!jumpNav) return;
+    jumpNav.innerHTML = "";
+    const links = sections.filter((s) => s.id && s.title);
+    if (!links.length) {
+      jumpNav.hidden = true;
+      return;
+    }
+    links.forEach((section) => {
+      const a = document.createElement("a");
+      a.href = "#" + section.id;
+      a.textContent = section.title;
+      jumpNav.appendChild(a);
+    });
+    jumpNav.hidden = false;
+  }
+
+  async function loadGroupPhotos(photos) {
+    const list = Array.isArray(photos) ? photos : [];
+    return (await Promise.all(list.map((p) => loadImageMeta(p).catch(() => null)))).filter(Boolean);
   }
 
   async function init() {
@@ -168,17 +203,71 @@
       const res = await fetch(MANIFEST, { cache: "no-cache" });
       if (!res.ok) throw new Error("manifest " + res.status);
       const data = await res.json();
-      targetH = data.targetRowHeight || 240;
-      const list = Array.isArray(data.photos) ? data.photos : [];
-      items = (await Promise.all(list.map((p) => loadImageMeta(p).catch(() => null)))).filter(
-        Boolean
-      );
-      if (!items.length) {
+      defaultH = data.targetRowHeight || 240;
+
+      let sections = Array.isArray(data.sections) ? data.sections.slice() : [];
+      if (!sections.length && Array.isArray(data.photos) && data.photos.length) {
+        sections = [{ id: "gallery", title: "Photos", photos: data.photos }];
+      }
+
+      renderJump(sections);
+      root.innerHTML = "";
+      root.classList.add("is-ready");
+
+      for (const section of sections) {
+        const groups = sectionGroups(section);
+        if (!groups.length) continue;
+
+        const block = document.createElement("section");
+        block.className = "photo-block";
+        if (section.id) block.id = section.id;
+
+        const header = document.createElement("header");
+        header.className = "photo-block-header";
+        if (section.title) {
+          const h2 = document.createElement("h2");
+          h2.textContent = section.title;
+          header.appendChild(h2);
+        }
+        if (section.lead) {
+          const lead = document.createElement("p");
+          lead.className = "photo-block-lead";
+          lead.textContent = section.lead;
+          header.appendChild(lead);
+        }
+        if (header.childNodes.length) block.appendChild(header);
+
+        const targetH = section.targetRowHeight || defaultH;
+
+        for (const group of groups) {
+          if (group.title) {
+            const h3 = document.createElement("h3");
+            h3.className = "photo-group-title";
+            h3.textContent = group.title;
+            block.appendChild(h3);
+          }
+          const gal = document.createElement("div");
+          gal.className = "photo-gallery";
+          block.appendChild(gal);
+          const items = await loadGroupPhotos(group.photos);
+          galleries.push({ el: gal, items, targetH });
+        }
+
+        root.appendChild(block);
+      }
+
+      if (!galleries.length) {
         root.innerHTML =
           '<p class="photo-empty">No photos yet. Add files under <code>images/gallery/</code> and list them in <code>data/photos.json</code>.</p>';
         return;
       }
+
       relayout();
+      const hashId = location.hash.replace(/^#/, "");
+      if (hashId) {
+        const target = document.getElementById(hashId);
+        if (target) target.scrollIntoView();
+      }
       if (typeof ResizeObserver !== "undefined") {
         ro = new ResizeObserver(() => {
           window.requestAnimationFrame(relayout);

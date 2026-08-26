@@ -1,265 +1,451 @@
 {
   "targetRowHeight": 240,
-  "photos": [
+  "sections": [
     {
-      "src": "images/profile.jpg",
-      "alt": "Lila Spark portrait",
-      "caption": "Profile · Afterglow era"
+      "id": "years",
+      "title": "Through the years",
+      "lead": "One portrait for every year — newborn to 24.",
+      "targetRowHeight": 280,
+      "photos": [
+        {
+          "src": "images/gallery/age-00.jpg",
+          "alt": "Lila Spark as a newborn",
+          "caption": "Lila · newborn · 2002"
+        },
+        {
+          "src": "images/gallery/age-01.jpg",
+          "alt": "Lila Spark at age 1",
+          "caption": "Lila · age 1 · 2003"
+        },
+        {
+          "src": "images/gallery/age-02.jpg",
+          "alt": "Lila Spark at age 2",
+          "caption": "Lila · age 2 · 2004"
+        },
+        {
+          "src": "images/gallery/age-03.jpg",
+          "alt": "Lila Spark at age 3",
+          "caption": "Lila · age 3 · 2005"
+        },
+        {
+          "src": "images/gallery/age-04.jpg",
+          "alt": "Lila Spark at age 4",
+          "caption": "Lila · age 4 · 2006"
+        },
+        {
+          "src": "images/gallery/age-05.jpg",
+          "alt": "Lila Spark at age 5",
+          "caption": "Lila · age 5 · 2007"
+        },
+        {
+          "src": "images/gallery/age-06.jpg",
+          "alt": "Lila Spark at age 6",
+          "caption": "Lila · age 6 · 2008"
+        },
+        {
+          "src": "images/gallery/age-07.jpg",
+          "alt": "Lila Spark at age 7",
+          "caption": "Lila · age 7 · 2009"
+        },
+        {
+          "src": "images/gallery/age-08.jpg",
+          "alt": "Lila Spark at age 8",
+          "caption": "Lila · age 8 · 2010"
+        },
+        {
+          "src": "images/gallery/age-09.jpg",
+          "alt": "Lila Spark at age 9",
+          "caption": "Lila · age 9 · 2011"
+        },
+        {
+          "src": "images/gallery/age-10.jpg",
+          "alt": "Lila Spark at age 10",
+          "caption": "Lila · age 10 · 2012"
+        },
+        {
+          "src": "images/gallery/age-11.jpg",
+          "alt": "Lila Spark at age 11",
+          "caption": "Lila · age 11 · 2013"
+        },
+        {
+          "src": "images/gallery/age-12.jpg",
+          "alt": "Lila Spark at age 12",
+          "caption": "Lila · age 12 · 2014"
+        },
+        {
+          "src": "images/gallery/age-13.jpg",
+          "alt": "Lila Spark at age 13",
+          "caption": "Lila · age 13 · 2015"
+        },
+        {
+          "src": "images/gallery/age-14.jpg",
+          "alt": "Lila Spark at age 14",
+          "caption": "Lila · age 14 · 2016"
+        },
+        {
+          "src": "images/gallery/age-15.jpg",
+          "alt": "Lila Spark at age 15",
+          "caption": "Lila · age 15 · 2017"
+        },
+        {
+          "src": "images/gallery/age-16.jpg",
+          "alt": "Lila Spark at age 16",
+          "caption": "Lila · age 16 · 2018"
+        },
+        {
+          "src": "images/gallery/age-17.jpg",
+          "alt": "Lila Spark at age 17",
+          "caption": "Lila · age 17 · 2019"
+        },
+        {
+          "src": "images/gallery/age-18.jpg",
+          "alt": "Lila Spark at age 18",
+          "caption": "Lila · age 18 · 2020"
+        },
+        {
+          "src": "images/gallery/age-19.jpg",
+          "alt": "Lila Spark at age 19",
+          "caption": "Lila · age 19 · 2021"
+        },
+        {
+          "src": "images/gallery/age-20.jpg",
+          "alt": "Lila Spark at age 20",
+          "caption": "Lila · age 20 · 2022"
+        },
+        {
+          "src": "images/gallery/age-21.jpg",
+          "alt": "Lila Spark at age 21",
+          "caption": "Lila · age 21 · 2023"
+        },
+        {
+          "src": "images/gallery/age-22.jpg",
+          "alt": "Lila Spark at age 22",
+          "caption": "Lila · age 22 · 2024"
+        },
+        {
+          "src": "images/gallery/age-23.jpg",
+          "alt": "Lila Spark at age 23",
+          "caption": "Lila · age 23 · 2025"
+        },
+        {
+          "src": "images/gallery/age-24.jpg",
+          "alt": "Lila Spark at age 24",
+          "caption": "Lila · age 24 · 2026"
+        }
+      ]
     },
     {
-      "src": "images/covers/afterglow.jpg",
-      "alt": "Afterglow album cover",
-      "caption": "Afterglow · album art"
+      "id": "family",
+      "title": "Family",
+      "lead": "Elena, Daniel, and Lila with Layla.",
+      "photos": [
+        {
+          "src": "images/family/lila-layla.jpg",
+          "alt": "Lila and Layla together",
+          "caption": "Lila & Layla · ages 13 & 11 · 2015"
+        },
+        {
+          "src": "images/family/elena.jpg",
+          "alt": "Elena Spark",
+          "caption": "Elena · mother"
+        },
+        {
+          "src": "images/family/daniel.jpg",
+          "alt": "Daniel Spark",
+          "caption": "Daniel · father"
+        }
+      ]
     },
     {
-      "src": "images/covers/sparked.jpg",
-      "alt": "Sparked album cover",
-      "caption": "Sparked · album art"
+      "id": "albums",
+      "title": "Album art",
+      "lead": "The three era covers.",
+      "photos": [
+        {
+          "src": "images/covers/afterglow.jpg",
+          "alt": "Afterglow album cover",
+          "caption": "Afterglow · album art"
+        },
+        {
+          "src": "images/covers/sparked.jpg",
+          "alt": "Sparked album cover",
+          "caption": "Sparked · album art"
+        },
+        {
+          "src": "images/covers/truly-me.jpg",
+          "alt": "Truly Me album cover",
+          "caption": "Truly Me · album art"
+        }
+      ]
     },
     {
-      "src": "images/covers/truly-me.jpg",
-      "alt": "Truly Me album cover",
-      "caption": "Truly Me · album art"
+      "id": "singles",
+      "title": "Single covers",
+      "lead": "Track art across Afterglow, Sparked, and Truly Me.",
+      "groups": [
+        {
+          "title": "Afterglow",
+          "photos": [
+            {
+              "src": "images/gallery/somehow.jpg",
+              "alt": "Somehow single artwork",
+              "caption": "Somehow · single art"
+            },
+            {
+              "src": "images/gallery/layla.jpg",
+              "alt": "Layla song cover",
+              "caption": "Layla · song cover"
+            },
+            {
+              "src": "images/gallery/let-me-begin.jpg",
+              "alt": "Let Me Begin single artwork",
+              "caption": "Let Me Begin · single art"
+            }
+          ]
+        },
+        {
+          "title": "Sparked",
+          "photos": [
+            {
+              "src": "images/gallery/midnight-voltage.jpg",
+              "alt": "Midnight Voltage track cover",
+              "caption": "Midnight Voltage · track cover"
+            },
+            {
+              "src": "images/gallery/electric-crush.jpg",
+              "alt": "Electric Crush track cover",
+              "caption": "Electric Crush · track cover"
+            },
+            {
+              "src": "images/gallery/frequency-of-you.jpg",
+              "alt": "Frequency of You track cover",
+              "caption": "Frequency of You · track cover"
+            },
+            {
+              "src": "images/gallery/no-more-hiding.jpg",
+              "alt": "No More Hiding track cover",
+              "caption": "No More Hiding · track cover"
+            },
+            {
+              "src": "images/gallery/small-miracles.jpg",
+              "alt": "Small Miracles track cover",
+              "caption": "Small Miracles · track cover"
+            },
+            {
+              "src": "images/gallery/turn-the-page-tonight.jpg",
+              "alt": "Turn the Page Tonight track cover",
+              "caption": "Turn the Page Tonight · track cover"
+            },
+            {
+              "src": "images/gallery/burn-through-the-dark.jpg",
+              "alt": "Burn Through the Dark track cover",
+              "caption": "Burn Through the Dark · track cover"
+            },
+            {
+              "src": "images/gallery/velvet-lies.jpg",
+              "alt": "Velvet Lies track cover",
+              "caption": "Velvet Lies · track cover"
+            },
+            {
+              "src": "images/gallery/still-need-you.jpg",
+              "alt": "Still Need You track cover",
+              "caption": "Still Need You · track cover"
+            },
+            {
+              "src": "images/gallery/louder-than-yesterday.jpg",
+              "alt": "Louder Than Yesterday track cover",
+              "caption": "Louder Than Yesterday · track cover"
+            },
+            {
+              "src": "images/gallery/diamond-tears.jpg",
+              "alt": "Diamond Tears track cover",
+              "caption": "Diamond Tears · track cover"
+            },
+            {
+              "src": "images/gallery/white-dress-envy.jpg",
+              "alt": "White Dress Envy track cover",
+              "caption": "White Dress Envy · track cover"
+            },
+            {
+              "src": "images/gallery/starlit-promise.jpg",
+              "alt": "Starlit Promise track cover",
+              "caption": "Starlit Promise · track cover"
+            },
+            {
+              "src": "images/gallery/just-wanna-make-you-a-sammich.jpg",
+              "alt": "Just Wanna Make You a Sammich track cover",
+              "caption": "Just Wanna Make You a Sammich · track cover"
+            },
+            {
+              "src": "images/gallery/brain-glitch.jpg",
+              "alt": "Brain Glitch track cover",
+              "caption": "Brain Glitch · track cover"
+            },
+            {
+              "src": "images/gallery/heart-on-a-string.jpg",
+              "alt": "Heart on a String track cover",
+              "caption": "Heart on a String · track cover"
+            }
+          ]
+        },
+        {
+          "title": "Truly Me",
+          "photos": [
+            {
+              "src": "images/gallery/truly-me-track.jpg",
+              "alt": "Truly Me track cover, age 18",
+              "caption": "Truly Me · track cover · age 18"
+            },
+            {
+              "src": "images/gallery/sweet-crush.jpg",
+              "alt": "Sweet Crush track cover, age 18",
+              "caption": "Sweet Crush · track cover · age 18"
+            },
+            {
+              "src": "images/gallery/what-i-need.jpg",
+              "alt": "What I Need track cover, age 18",
+              "caption": "What I Need · track cover · age 18"
+            },
+            {
+              "src": "images/gallery/hold-me-close.jpg",
+              "alt": "Hold Me Close track cover, age 18",
+              "caption": "Hold Me Close · track cover · age 18"
+            },
+            {
+              "src": "images/gallery/key-to-my-heart.jpg",
+              "alt": "Key to My Heart track cover, age 18",
+              "caption": "Key to My Heart · track cover · age 18"
+            },
+            {
+              "src": "images/gallery/stop-the-hurt.jpg",
+              "alt": "Stop the Hurt track cover, age 18",
+              "caption": "Stop the Hurt · track cover · age 18"
+            },
+            {
+              "src": "images/gallery/choose-me-now.jpg",
+              "alt": "Choose Me Now track cover, age 18",
+              "caption": "Choose Me Now · track cover · age 18"
+            },
+            {
+              "src": "images/gallery/old-enough.jpg",
+              "alt": "Old Enough track cover, age 18",
+              "caption": "Old Enough · track cover · age 18"
+            },
+            {
+              "src": "images/gallery/spark-of-love.jpg",
+              "alt": "Spark of Love track cover, age 18",
+              "caption": "Spark of Love · track cover · age 18"
+            },
+            {
+              "src": "images/gallery/feels-good.jpg",
+              "alt": "Feels Good track cover, age 18",
+              "caption": "Feels Good · track cover · age 18"
+            },
+            {
+              "src": "images/gallery/forever-yours.jpg",
+              "alt": "Forever Yours track cover, age 18",
+              "caption": "Forever Yours · track cover · age 18"
+            },
+            {
+              "src": "images/gallery/stop-the-hurt-reprise.jpg",
+              "alt": "Stop the Hurt (Reprise) track cover, age 18",
+              "caption": "Stop the Hurt (Reprise) · track cover · age 18"
+            }
+          ]
+        },
+        {
+          "title": "Age 24 reshoots",
+          "photos": [
+            {
+              "src": "images/gallery/what-i-need-age-24.jpg",
+              "alt": "What I Need track cover, age 24 reshoot",
+              "caption": "What I Need · track cover · age 24 reshoot"
+            },
+            {
+              "src": "images/gallery/hold-me-close-age-24.jpg",
+              "alt": "Hold Me Close track cover, age 24 reshoot",
+              "caption": "Hold Me Close · track cover · age 24 reshoot"
+            },
+            {
+              "src": "images/gallery/key-to-my-heart-age-24.jpg",
+              "alt": "Key to My Heart track cover, age 24 reshoot",
+              "caption": "Key to My Heart · track cover · age 24 reshoot"
+            },
+            {
+              "src": "images/gallery/spark-of-love-age-24.jpg",
+              "alt": "Spark of Love track cover, age 24 reshoot",
+              "caption": "Spark of Love · track cover · age 24 reshoot"
+            },
+            {
+              "src": "images/gallery/feels-good-age-24.jpg",
+              "alt": "Feels Good track cover, age 24 reshoot",
+              "caption": "Feels Good · track cover · age 24 reshoot"
+            },
+            {
+              "src": "images/gallery/forever-yours-age-24.jpg",
+              "alt": "Forever Yours track cover, age 24 reshoot",
+              "caption": "Forever Yours · track cover · age 24 reshoot"
+            },
+            {
+              "src": "images/gallery/heart-on-a-string-age-24.jpg",
+              "alt": "Heart on a String track cover, age 24 reshoot",
+              "caption": "Heart on a String · track cover · age 24 reshoot"
+            }
+          ]
+        }
+      ]
     },
     {
-      "src": "images/family/lila-layla.jpg",
-      "alt": "Lila and Layla together",
-      "caption": "Lila & Layla · ages 13 & 11 · 2015"
-    },
-    {
-      "src": "images/family/elena.jpg",
-      "alt": "Elena Spark",
-      "caption": "Elena · mother"
-    },
-    {
-      "src": "images/family/daniel.jpg",
-      "alt": "Daniel Spark",
-      "caption": "Daniel · father"
-    },
-    {
-      "src": "images/gallery/lila-age-18.jpg",
-      "alt": "Lila Spark at age 18",
-      "caption": "Lila · age 18 · 2020"
-    },
-    {
-      "src": "images/gallery/lila-age-18-portrait.jpg",
-      "alt": "Lila Spark at age 18, portrait",
-      "caption": "Lila · age 18 · 2020"
-    },
-    {
-      "src": "images/gallery/concept-to-reality.jpg",
-      "alt": "Lila Spark from concept to reality",
-      "caption": "From concept to reality"
-    },
-    {
-      "src": "images/gallery/studio-lila-at-desk.jpg",
-      "alt": "Lila and Alex in the studio, Lila at the desk",
-      "caption": "Studio session · Lila at the desk"
-    },
-    {
-      "src": "images/gallery/studio-over-shoulder.jpg",
-      "alt": "Lila looking over Alex’s shoulder in the studio",
-      "caption": "Studio session · over the shoulder"
-    },
-    {
-      "src": "images/gallery/somehow.jpg",
-      "alt": "Somehow single artwork",
-      "caption": "Somehow · single art"
-    },
-    {
-      "src": "images/gallery/let-me-begin.jpg",
-      "alt": "Let Me Begin single artwork",
-      "caption": "Let Me Begin · single art"
-    },
-    {
-      "src": "images/gallery/layla.jpg",
-      "alt": "Layla song cover",
-      "caption": "Layla · song cover"
-    },
-    {
-      "src": "images/gallery/looks-outdoor.jpg",
-      "alt": "Lila Spark outdoor looks, four outfits",
-      "caption": "Looks · outdoor"
-    },
-    {
-      "src": "images/gallery/looks-studio.jpg",
-      "alt": "Lila Spark studio looks, four outfits",
-      "caption": "Looks · studio"
-    },
-    {
-      "src": "images/gallery/midnight-voltage.jpg",
-      "alt": "Midnight Voltage track cover",
-      "caption": "Midnight Voltage · track cover"
-    },
-    {
-      "src": "images/gallery/electric-crush.jpg",
-      "alt": "Electric Crush track cover",
-      "caption": "Electric Crush · track cover"
-    },
-    {
-      "src": "images/gallery/frequency-of-you.jpg",
-      "alt": "Frequency of You track cover",
-      "caption": "Frequency of You · track cover"
-    },
-    {
-      "src": "images/gallery/no-more-hiding.jpg",
-      "alt": "No More Hiding track cover",
-      "caption": "No More Hiding · track cover"
-    },
-    {
-      "src": "images/gallery/small-miracles.jpg",
-      "alt": "Small Miracles track cover",
-      "caption": "Small Miracles · track cover"
-    },
-    {
-      "src": "images/gallery/turn-the-page-tonight.jpg",
-      "alt": "Turn the Page Tonight track cover",
-      "caption": "Turn the Page Tonight · track cover"
-    },
-    {
-      "src": "images/gallery/burn-through-the-dark.jpg",
-      "alt": "Burn Through the Dark track cover",
-      "caption": "Burn Through the Dark · track cover"
-    },
-    {
-      "src": "images/gallery/velvet-lies.jpg",
-      "alt": "Velvet Lies track cover",
-      "caption": "Velvet Lies · track cover"
-    },
-    {
-      "src": "images/gallery/still-need-you.jpg",
-      "alt": "Still Need You track cover",
-      "caption": "Still Need You · track cover"
-    },
-    {
-      "src": "images/gallery/louder-than-yesterday.jpg",
-      "alt": "Louder Than Yesterday track cover",
-      "caption": "Louder Than Yesterday · track cover"
-    },
-    {
-      "src": "images/gallery/diamond-tears.jpg",
-      "alt": "Diamond Tears track cover",
-      "caption": "Diamond Tears · track cover"
-    },
-    {
-      "src": "images/gallery/white-dress-envy.jpg",
-      "alt": "White Dress Envy track cover",
-      "caption": "White Dress Envy · track cover"
-    },
-    {
-      "src": "images/gallery/starlit-promise.jpg",
-      "alt": "Starlit Promise track cover",
-      "caption": "Starlit Promise · track cover"
-    },
-    {
-      "src": "images/gallery/just-wanna-make-you-a-sammich.jpg",
-      "alt": "Just Wanna Make You a Sammich track cover",
-      "caption": "Just Wanna Make You a Sammich · track cover"
-    },
-    {
-      "src": "images/gallery/brain-glitch.jpg",
-      "alt": "Brain Glitch track cover",
-      "caption": "Brain Glitch · track cover"
-    },
-    {
-      "src": "images/gallery/heart-on-a-string.jpg",
-      "alt": "Heart on a String track cover",
-      "caption": "Heart on a String · track cover"
-    },
-    {
-      "src": "images/gallery/truly-me-track.jpg",
-      "alt": "Truly Me track cover, age 18",
-      "caption": "Truly Me · track cover · age 18"
-    },
-    {
-      "src": "images/gallery/sweet-crush.jpg",
-      "alt": "Sweet Crush track cover, age 18",
-      "caption": "Sweet Crush · track cover · age 18"
-    },
-    {
-      "src": "images/gallery/what-i-need.jpg",
-      "alt": "What I Need track cover, age 18",
-      "caption": "What I Need · track cover · age 18"
-    },
-    {
-      "src": "images/gallery/hold-me-close.jpg",
-      "alt": "Hold Me Close track cover, age 18",
-      "caption": "Hold Me Close · track cover · age 18"
-    },
-    {
-      "src": "images/gallery/key-to-my-heart.jpg",
-      "alt": "Key to My Heart track cover, age 18",
-      "caption": "Key to My Heart · track cover · age 18"
-    },
-    {
-      "src": "images/gallery/stop-the-hurt.jpg",
-      "alt": "Stop the Hurt track cover, age 18",
-      "caption": "Stop the Hurt · track cover · age 18"
-    },
-    {
-      "src": "images/gallery/choose-me-now.jpg",
-      "alt": "Choose Me Now track cover, age 18",
-      "caption": "Choose Me Now · track cover · age 18"
-    },
-    {
-      "src": "images/gallery/old-enough.jpg",
-      "alt": "Old Enough track cover, age 18",
-      "caption": "Old Enough · track cover · age 18"
-    },
-    {
-      "src": "images/gallery/spark-of-love.jpg",
-      "alt": "Spark of Love track cover, age 18",
-      "caption": "Spark of Love · track cover · age 18"
-    },
-    {
-      "src": "images/gallery/feels-good.jpg",
-      "alt": "Feels Good track cover, age 18",
-      "caption": "Feels Good · track cover · age 18"
-    },
-    {
-      "src": "images/gallery/forever-yours.jpg",
-      "alt": "Forever Yours track cover, age 18",
-      "caption": "Forever Yours · track cover · age 18"
-    },
-    {
-      "src": "images/gallery/stop-the-hurt-reprise.jpg",
-      "alt": "Stop the Hurt (Reprise) track cover, age 18",
-      "caption": "Stop the Hurt (Reprise) · track cover · age 18"
-    },
-    {
-      "src": "images/gallery/what-i-need-age-24.jpg",
-      "alt": "What I Need track cover, age 24 reshoot",
-      "caption": "What I Need · track cover · age 24 reshoot"
-    },
-    {
-      "src": "images/gallery/hold-me-close-age-24.jpg",
-      "alt": "Hold Me Close track cover, age 24 reshoot",
-      "caption": "Hold Me Close · track cover · age 24 reshoot"
-    },
-    {
-      "src": "images/gallery/key-to-my-heart-age-24.jpg",
-      "alt": "Key to My Heart track cover, age 24 reshoot",
-      "caption": "Key to My Heart · track cover · age 24 reshoot"
-    },
-    {
-      "src": "images/gallery/spark-of-love-age-24.jpg",
-      "alt": "Spark of Love track cover, age 24 reshoot",
-      "caption": "Spark of Love · track cover · age 24 reshoot"
-    },
-    {
-      "src": "images/gallery/feels-good-age-24.jpg",
-      "alt": "Feels Good track cover, age 24 reshoot",
-      "caption": "Feels Good · track cover · age 24 reshoot"
-    },
-    {
-      "src": "images/gallery/forever-yours-age-24.jpg",
-      "alt": "Forever Yours track cover, age 24 reshoot",
-      "caption": "Forever Yours · track cover · age 24 reshoot"
-    },
-    {
-      "src": "images/gallery/heart-on-a-string-age-24.jpg",
-      "alt": "Heart on a String track cover, age 24 reshoot",
-      "caption": "Heart on a String · track cover · age 24 reshoot"
+      "id": "more",
+      "title": "Miscellany",
+      "lead": "Studio, looks, and other shots that don’t sit with the rest.",
+      "photos": [
+        {
+          "src": "images/profile.jpg",
+          "alt": "Lila Spark portrait",
+          "caption": "Profile · Afterglow era"
+        },
+        {
+          "src": "images/gallery/lila-age-18.jpg",
+          "alt": "Lila Spark at age 18",
+          "caption": "Lila · age 18 · 2020"
+        },
+        {
+          "src": "images/gallery/lila-age-18-portrait.jpg",
+          "alt": "Lila Spark at age 18, portrait",
+          "caption": "Lila · age 18 · 2020"
+        },
+        {
+          "src": "images/gallery/concept-to-reality.jpg",
+          "alt": "Lila Spark from concept to reality",
+          "caption": "From concept to reality"
+        },
+        {
+          "src": "images/gallery/studio-lila-at-desk.jpg",
+          "alt": "Lila and Alex in the studio, Lila at the desk",
+          "caption": "Studio session · Lila at the desk"
+        },
+        {
+          "src": "images/gallery/studio-over-shoulder.jpg",
+          "alt": "Lila looking over Alex’s shoulder in the studio",
+          "caption": "Studio session · over the shoulder"
+        },
+        {
+          "src": "images/gallery/looks-outdoor.jpg",
+          "alt": "Lila Spark outdoor looks, four outfits",
+          "caption": "Looks · outdoor"
+        },
+        {
+          "src": "images/gallery/looks-studio.jpg",
+          "alt": "Lila Spark studio looks, four outfits",
+          "caption": "Looks · studio"
+        },
+        {
+          "src": "images/gallery/afterglow-turnaround.jpg",
+          "alt": "Lila Spark in red satin, front, profile, and back studio views",
+          "caption": "Looks · Afterglow turnaround"
+        }
+      ]
     }
   ]
 }

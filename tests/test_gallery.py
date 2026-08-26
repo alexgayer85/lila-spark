@@ -118,14 +118,24 @@ AGE_18 = [
 
 AGE_18_SOURCES = [
     (
-        Path("/home/alex/iCloudSync/Music/Lila Spark - Truly Me/lila_spark.png"),
+        Path("/home/alex/iCloudSync/Music/Lila Spark - Truly Me/1LLSj.jpg"),
         "lila-age-18.jpg",
     ),
     (
-        Path("/home/alex/iCloudSync/Music/Lila Spark - Truly Me/Lila Spark 1.jpg"),
+        Path("/home/alex/iCloudSync/Music/Lila Spark - Truly Me/dWs0E.jpg"),
         "lila-age-18-portrait.jpg",
     ),
 ]
+
+AFTERGLOW_TURNAROUND = {
+    "src": "images/gallery/afterglow-turnaround.jpg",
+    "alt": "Lila Spark in red satin, front, profile, and back studio views",
+    "caption": "Looks · Afterglow turnaround",
+}
+AFTERGLOW_TURNAROUND_SRC = Path(
+    "/home/alex/iCloudSync/Music/Lila Spark - Afterglow/"
+    "grok-image-756bf8b2-dfda-4b4c-86ac-dbc485bee1b7.jpg"
+)
 
 
 SPARKED_SRC = Path("/home/alex/iCloudSync/Music/Lila Spark - Sparked/Video working folder")
@@ -203,20 +213,114 @@ RESHOOT_GALLERY = [
 ]
 
 
+def flatten_photos(data):
+    items = []
+    for section in data.get("sections", []):
+        if section.get("groups"):
+            for group in section["groups"]:
+                items.extend(group.get("photos") or [])
+        else:
+            items.extend(section.get("photos") or [])
+    return items
+
+
+def section_by_id(data, section_id):
+    for section in data.get("sections", []):
+        if section.get("id") == section_id:
+            return section
+    raise KeyError(section_id)
+
+
+AGE_PHOTOS = [
+    {
+        "src": f"images/gallery/age-{i:02d}.jpg",
+        "alt": "Lila Spark as a newborn" if i == 0 else f"Lila Spark at age {i}",
+        "caption": "Lila · newborn · 2002" if i == 0 else f"Lila · age {i} · {2002 + i}",
+    }
+    for i in range(25)
+]
+
+
 class TestPhotosManifest(unittest.TestCase):
-    def test_appends_eight_after_existing_seven(self):
+    def test_sections_group_existing_and_age_portraits(self):
         data = json.loads((ROOT / "data" / "photos.json").read_text())
-        photos = data["photos"]
-        self.assertEqual(len(photos), 52)
-        self.assertEqual(photos[0]["src"], "images/profile.jpg")
-        self.assertEqual(photos[6]["src"], "images/family/daniel.jpg")
-        self.assertEqual(photos[7:9], AGE_18)
-        self.assertEqual(photos[9:17], EXPECTED_NEW)
-        self.assertEqual(photos[17:33], SPARKED_GALLERY)
-        self.assertEqual(photos[33:45], TRULY_ME_GALLERY)
-        self.assertEqual(photos[45:], RESHOOT_GALLERY)
-        for item in photos[7:]:
+        self.assertEqual(
+            [s["id"] for s in data["sections"]],
+            ["years", "family", "albums", "singles", "more"],
+        )
+
+        years = section_by_id(data, "years")
+        self.assertEqual(years["photos"], AGE_PHOTOS)
+        self.assertEqual(years["title"], "Through the years")
+
+        family = section_by_id(data, "family")
+        self.assertEqual(
+            [p["src"] for p in family["photos"]],
+            [
+                "images/family/lila-layla.jpg",
+                "images/family/elena.jpg",
+                "images/family/daniel.jpg",
+            ],
+        )
+
+        albums = section_by_id(data, "albums")
+        self.assertEqual(
+            [p["src"] for p in albums["photos"]],
+            [
+                "images/covers/afterglow.jpg",
+                "images/covers/sparked.jpg",
+                "images/covers/truly-me.jpg",
+            ],
+        )
+
+        singles = section_by_id(data, "singles")
+        groups = {g["title"]: g["photos"] for g in singles["groups"]}
+        self.assertEqual(
+            [g["title"] for g in singles["groups"]],
+            ["Afterglow", "Sparked", "Truly Me", "Age 24 reshoots"],
+        )
+        self.assertEqual(
+            [p["src"] for p in groups["Afterglow"]],
+            [
+                "images/gallery/somehow.jpg",
+                "images/gallery/layla.jpg",
+                "images/gallery/let-me-begin.jpg",
+            ],
+        )
+        self.assertEqual(groups["Sparked"], SPARKED_GALLERY)
+        self.assertEqual(groups["Truly Me"], TRULY_ME_GALLERY)
+        self.assertEqual(groups["Age 24 reshoots"], RESHOOT_GALLERY)
+
+        more = section_by_id(data, "more")
+        self.assertEqual(more["photos"][0]["src"], "images/profile.jpg")
+        self.assertEqual(more["photos"][1:3], AGE_18)
+        self.assertEqual(
+            more["photos"][3:],
+            [
+                EXPECTED_NEW[0],  # concept-to-reality
+                EXPECTED_NEW[1],  # studio-lila-at-desk
+                EXPECTED_NEW[2],  # studio-over-shoulder
+                EXPECTED_NEW[6],  # looks-outdoor
+                EXPECTED_NEW[7],  # looks-studio
+                AFTERGLOW_TURNAROUND,
+            ],
+        )
+
+        photos = flatten_photos(data)
+        self.assertEqual(len(photos), 78)
+        for item in photos:
             self.assertTrue((ROOT / item["src"]).is_file(), item["src"])
+
+    def test_age_portraits_sized(self):
+        for i in range(25):
+            src = SRC / f"age {i:02d}.jpg"
+            dest = ROOT / "images" / "gallery" / f"age-{i:02d}.jpg"
+            self.assertTrue(dest.is_file(), dest.name)
+            self.assertLessEqual(dest.stat().st_size, MAX_BYTES, dest.name)
+            with Image.open(dest) as im:
+                self.assertEqual(im.mode, "RGB")
+                self.assertLessEqual(max(im.size), 1600, dest.name)
+            self.assertAlmostEqual(aspect(dest), aspect(src), places=2, msg=dest.name)
 
     def test_age_18_photo_sized(self):
         for src, dest_name in AGE_18_SOURCES:
@@ -227,6 +331,17 @@ class TestPhotosManifest(unittest.TestCase):
                 self.assertEqual(im.mode, "RGB")
                 self.assertLessEqual(max(im.size), 1600, dest_name)
             self.assertAlmostEqual(aspect(dest), aspect(src), places=2, msg=dest_name)
+
+    def test_afterglow_turnaround_sized(self):
+        dest = ROOT / "images" / "gallery" / "afterglow-turnaround.jpg"
+        self.assertTrue(dest.is_file(), dest.name)
+        self.assertLessEqual(dest.stat().st_size, MAX_BYTES, dest.name)
+        with Image.open(dest) as im:
+            self.assertEqual(im.mode, "RGB")
+            self.assertLessEqual(max(im.size), 1600, dest.name)
+        self.assertAlmostEqual(
+            aspect(dest), aspect(AFTERGLOW_TURNAROUND_SRC), places=2, msg=dest.name
+        )
 
     def test_sparked_track_covers_sized(self):
         for src_name, slug, _title in SPARKED_COVERS:
@@ -310,6 +425,24 @@ class TestMusicMarkup(unittest.TestCase):
         self.assertIn("border-radius: 8px", css)
         self.assertIn("width: 56px", css)
         self.assertIn("height: 56px", css)
+
+
+class TestPhotosPage(unittest.TestCase):
+    def test_photos_page_uses_sections_and_cache_bust(self):
+        html = (ROOT / "photos.html").read_text()
+        self.assertIn('href="css/styles.css?v=photos-2"', html)
+        self.assertIn("js/photos.js?v=sections-2", html)
+        self.assertIn('id="photo-jump"', html)
+        self.assertIn('id="photo-gallery"', html)
+        self.assertIn('class="photo-sections"', html)
+        js = (ROOT / "js" / "photos.js").read_text()
+        self.assertIn("data.sections", js)
+        self.assertIn("photo-block", js)
+        self.assertIn("photo-jump", js)
+        css = (ROOT / "css" / "styles.css").read_text()
+        self.assertIn(".photo-block", css)
+        self.assertIn(".photo-jump", css)
+        self.assertIn(".photo-group-title", css)
 
 
 class TestRealityStudio(unittest.TestCase):

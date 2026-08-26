@@ -584,13 +584,87 @@ body[data-story-view="reality"] .about-card-title {
   color: #fff;
   background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
   pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.15s ease;
 }
 
-.photo-item:hover .photo-item-caption,
-.photo-item:focus-within .photo-item-caption {
-  opacity: 1;
+.photo-jump {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 1.35rem 0 0;
+}
+
+.photo-jump[hidden] {
+  display: none;
+}
+
+.photo-jump a {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.28);
+  color: var(--ink-muted);
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+
+.photo-jump a:hover,
+.photo-jump a:focus-visible {
+  color: var(--ink);
+  border-color: rgba(45, 226, 255, 0.45);
+  background: rgba(45, 226, 255, 0.08);
+}
+
+.photo-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.photo-block {
+  padding: 2.35rem 0 0.35rem;
+  scroll-margin-top: calc(var(--header-h) + 0.85rem);
+}
+
+.photo-block:first-child {
+  padding-top: 0;
+}
+
+.photo-block + .photo-block {
+  margin-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.photo-block-header {
+  margin-bottom: 1.15rem;
+}
+
+.photo-block-header h2 {
+  margin: 0 0 0.4rem;
+  font-size: clamp(1.45rem, 3vw, 1.85rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.photo-block-lead {
+  margin: 0;
+  color: var(--ink-muted);
+  max-width: 36rem;
+}
+
+.photo-group-title {
+  margin: 1.35rem 0 0.7rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cyan);
+}
+
+.photo-group-title:first-of-type {
+  margin-top: 0.15rem;
 }
 
 .photo-loading,
