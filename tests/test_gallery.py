@@ -137,6 +137,16 @@ AFTERGLOW_TURNAROUND_SRC = Path(
     "grok-image-756bf8b2-dfda-4b4c-86ac-dbc485bee1b7.jpg"
 )
 
+AFTERGLOW_LOUNGE = {
+    "src": "images/gallery/afterglow-lounge.jpg",
+    "alt": "Lila Spark in a red sequin dress singing at a candlelit lounge microphone",
+    "caption": "Afterglow · lounge set",
+}
+AFTERGLOW_LOUNGE_SRC = Path(
+    "/home/alex/iCloudSync/Music/Lila Spark - Afterglow/"
+    "grok-image-3801620e-7908-483b-befd-b5345c5128de.jpg"
+)
+
 
 SPARKED_SRC = Path("/home/alex/iCloudSync/Music/Lila Spark - Sparked/Video working folder")
 SPARKED_COVERS = [
@@ -303,11 +313,12 @@ class TestPhotosManifest(unittest.TestCase):
                 EXPECTED_NEW[6],  # looks-outdoor
                 EXPECTED_NEW[7],  # looks-studio
                 AFTERGLOW_TURNAROUND,
+                AFTERGLOW_LOUNGE,
             ],
         )
 
         photos = flatten_photos(data)
-        self.assertEqual(len(photos), 78)
+        self.assertEqual(len(photos), 79)
         for item in photos:
             self.assertTrue((ROOT / item["src"]).is_file(), item["src"])
 
@@ -332,16 +343,18 @@ class TestPhotosManifest(unittest.TestCase):
                 self.assertLessEqual(max(im.size), 1600, dest_name)
             self.assertAlmostEqual(aspect(dest), aspect(src), places=2, msg=dest_name)
 
-    def test_afterglow_turnaround_sized(self):
-        dest = ROOT / "images" / "gallery" / "afterglow-turnaround.jpg"
-        self.assertTrue(dest.is_file(), dest.name)
-        self.assertLessEqual(dest.stat().st_size, MAX_BYTES, dest.name)
-        with Image.open(dest) as im:
-            self.assertEqual(im.mode, "RGB")
-            self.assertLessEqual(max(im.size), 1600, dest.name)
-        self.assertAlmostEqual(
-            aspect(dest), aspect(AFTERGLOW_TURNAROUND_SRC), places=2, msg=dest.name
-        )
+    def test_afterglow_miscellany_shots_sized(self):
+        for src, dest_name in (
+            (AFTERGLOW_TURNAROUND_SRC, "afterglow-turnaround.jpg"),
+            (AFTERGLOW_LOUNGE_SRC, "afterglow-lounge.jpg"),
+        ):
+            dest = ROOT / "images" / "gallery" / dest_name
+            self.assertTrue(dest.is_file(), dest.name)
+            self.assertLessEqual(dest.stat().st_size, MAX_BYTES, dest.name)
+            with Image.open(dest) as im:
+                self.assertEqual(im.mode, "RGB")
+                self.assertLessEqual(max(im.size), 1600, dest.name)
+            self.assertAlmostEqual(aspect(dest), aspect(src), places=2, msg=dest.name)
 
     def test_sparked_track_covers_sized(self):
         for src_name, slug, _title in SPARKED_COVERS:
