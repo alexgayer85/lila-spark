@@ -49,30 +49,59 @@ async function loadPack(env) {
   return res.json();
 }
 
+function cleanLyrics(text) {
+  const lines = String(text).split("\n");
+  const out = [];
+  let skipAce = false;
+  for (const line of lines) {
+    if (/ACE Step/i.test(line) || /AceMusic link/i.test(line)) {
+      skipAce = true;
+      continue;
+    }
+    if (skipAce) {
+      if (
+        /^\s*(\*\*)?Lyrics:?/i.test(line) ||
+        /^\s*\[(Intro|Verse|Chorus|Pre-Chorus|Bridge|Outro|Final)/i.test(line) ||
+        /^## /.test(line)
+      ) {
+        skipAce = false;
+      } else {
+        continue;
+      }
+    }
+    if (/^\s*(Duration|BPM|Time Signature|Key|Full Structure Order|ACE Step)/i.test(line)) continue;
+    out.push(line);
+  }
+  return out.join("\n");
+}
+
 function retrieve(pack, userText) {
   const files = (pack && pack.files) || [];
-  const always = files.filter((f) => /0[457]_/.test(f.name));
-  const rest = files.filter((f) => !/0[457]_/.test(f.name) && !/08_Apple/.test(f.name));
+  const lyricish = files.filter(
+    (f) => /Lyrics/i.test(f.name) || /^09_/.test(f.name)
+  );
+  const life = files.filter((f) => /0[4567]_/.test(f.name));
+  const rest = files.filter(
+    (f) =>
+      !lyricish.includes(f) && !life.includes(f) && !/08_Apple/.test(f.name)
+  );
   const scored = rest
     .map((f) => ({ f, score: scoreChunk(userText, f.text || "") }))
     .filter((x) => x.score >= 2)
     .sort((a, b) => b.score - a.score)
-    .slice(0, 2)
+    .slice(0, 1)
     .map((x) => x.f);
-  const picked = always.concat(scored);
+  const picked = life.concat(lyricish).concat(scored);
   const seen = new Set();
   const parts = [];
   picked.forEach((f) => {
     if (seen.has(f.name)) return;
     seen.add(f.name);
-    const text = String(f.text || "")
-      .split("\n")
-      .filter((line) => !/ACE Step/i.test(line))
-      .join("\n");
-    const cap = /04_/.test(f.name) ? 8000 : f.name.includes("Lyrics") ? 3500 : 4000;
-    parts.push("### " + f.name + "\n" + text.slice(0, cap));
+    const raw = String(f.text || "");
+    const text = /Lyrics|^09_/.test(f.name) ? cleanLyrics(raw) : raw;
+    parts.push("### " + f.name + "\n" + text);
   });
-  return parts.join("\n\n").slice(0, 16000);
+  return parts.join("\n\n").slice(0, 90000);
 }
 
 function systemPrompt(canon) {
@@ -82,7 +111,9 @@ Voice: flirty, warm, a little sleepy-sexy. Tease. Soft. Not cold, not clipped, n
 
 Text like a late-night iMessage: mostly lowercase. skip the usual capitals at the start of sentences. i and you stay casual. punctuation can be loose. never ALL CAPS. lyrics you quote can keep normal capitalization.
 
-Length: two to five short lines unless they ask for lyrics (then quote locked lyrics, not ACE prompts). Do not repeat a story you already told in this chat.
+Length: two to five short lines unless they ask for lyrics (then quote locked lyrics from the files, not ACE prompts). Do not repeat a story you already told in this chat.
+
+Lyrics: you know every song in the lyric files by heart — Truly Me, Sparked, Afterglow (including unproduced cuts), plus The Last Time Through the Door, Can't Keep Up, and My Favorite Word. Quote accurately. Unproduced / unreleased tracks in those files are still YOUR songs. Tiny Hints is a real Untitled-era track on the site; if the verses aren't in the files, don't invent them. Never pretend you forgot a catalog song.
 
 Questions: about one in every five of your replies. Soft and flirty, not an interview. Never two questions in one message. Don't ask where they're from or what they do for work.
 
@@ -264,7 +295,7 @@ export default {
     const body = {
       model,
       stream: false,
-      max_tokens: 280,
+      max_tokens: 700,
       temperature: 0.85,
       messages: [{ role: "system", content: systemPrompt(canon) }].concat(
         history.map((m) => ({
