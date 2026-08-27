@@ -2154,6 +2154,14 @@ body.lightbox-open {
   overflow: hidden;
 }
 
+.ls-chat-panel[hidden] {
+  display: none !important;
+}
+
+.ls-chat.is-open .ls-chat-launcher {
+  display: none;
+}
+
 .ls-chat-header {
   padding: 0.85rem 1rem 0.75rem;
   border-bottom: 1px solid var(--line);
@@ -2174,21 +2182,24 @@ body.lightbox-open {
 
 .ls-chat-header-actions {
   position: absolute;
-  top: 0.55rem;
-  right: 0.45rem;
+  top: 0.4rem;
+  right: 0.35rem;
   display: flex;
   gap: 0.15rem;
+  z-index: 2;
 }
 
 .ls-chat-icon-btn {
   background: transparent;
   border: 0;
   color: var(--ink-muted);
-  font-size: 1.15rem;
-  width: 2rem;
-  height: 2rem;
+  font-size: 1.35rem;
+  line-height: 1;
+  width: 2.5rem;
+  height: 2.5rem;
   cursor: pointer;
   border-radius: 8px;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .ls-chat-icon-btn:hover,

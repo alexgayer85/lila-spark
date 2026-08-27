@@ -10,8 +10,15 @@
   let messages = [];
   let busy = false;
   const asked = [];
+  const usedEntries = [];
   let lastAskId = null;
+  let lastLine = "";
   let turn = 0;
+  const STOP = new Set(
+    "the a an and or of to in on for with from that this it is are was were be been being you your me my i we they she he her his our at as if so not but just about what who how why when where can could would should do did does tell say know like".split(
+      " "
+    )
+  );
 
   function el(tag, attrs, children) {
     const node = document.createElement(tag);
@@ -59,7 +66,23 @@
   function tokens(s) {
     return norm(s)
       .split(" ")
-      .filter((w) => w.length > 1);
+      .filter((w) => w.length > 1 && !STOP.has(w));
+  }
+
+  function firstSentences(text, n) {
+    const bits = [];
+    let buf = "";
+    const src = String(text).replace(/\s+/g, " ").trim();
+    for (let i = 0; i < src.length; i++) {
+      buf += src[i];
+      if (".!?".indexOf(src[i]) !== -1) {
+        bits.push(buf.trim());
+        buf = "";
+        if (bits.length >= n) return bits.join(" ");
+      }
+    }
+    if (buf.trim()) bits.push(buf.trim());
+    return bits.slice(0, n).join(" ");
   }
 
   function pick(arr) {
@@ -73,12 +96,13 @@
     (entry.keywords || []).forEach((kw) => {
       const k = norm(kw);
       if (!k) return;
-      if (q === k || q.includes(k)) score += 8 + k.length * 0.15;
+      if (k.length > 3 && (q === k || q.includes(k))) score += 10 + k.length * 0.2;
       else {
-        const kt = k.split(" ");
-        kt.forEach((w) => {
-          if (qTokens.includes(w)) score += 2;
-        });
+        k.split(" ")
+          .filter((w) => w.length > 2 && !STOP.has(w))
+          .forEach((w) => {
+            if (qTokens.includes(w)) score += w.length > 4 ? 3 : 1.5;
+          });
       }
     });
     return score;
@@ -116,28 +140,35 @@
       qTokens.every((w) => ["hi", "hey", "hello", "yo", "there", "sup", "hiya"].includes(w));
 
     let line;
+    let entryId = "";
     if (greetOnly) {
       const hello = bible.entries.find((e) => e.id === "hello");
       line = pick(hello.voice);
-    } else if (!best.length || best[0].score < 3) {
-      line =
-        "I don't really have that one locked. If it isn't in the songs or the story, I try not to make it up — interviews hate that. Ask me about Chicago, Layla, the records, Alex in the studio, vintage, night drives…";
-    } else {
+      entryId = "hello";
+    } else if (best.length && best[0].score >= 4) {
       const top = best[0].entry;
-      line = pick(top.voice);
-      if (best[1] && best[1].score >= best[0].score * 0.72 && best[1].entry.id !== top.id) {
-        const extra = pick(best[1].entry.voice);
-        if (extra && extra !== line) line = line + " " + extra;
+      entryId = top.id;
+      if (usedEntries.includes(top.id)) {
+        line = "I already said the important part of that. Ask me something else if you want a different corner of it.";
+      } else {
+        line = firstSentences(pick(top.voice), 2);
       }
+    } else {
+      const fromMd = bestMd(query);
+      line = fromMd
+        ? firstSentences(fromMd, 2)
+        : "I don't have a locked answer for that. Songs and the story are safer than me inventing it.";
     }
 
-    if ((!best.length || best[0].score < 3) && mdChunks.length) {
-      const fromMd = bestMd(query);
-      if (fromMd) line = fromMd;
+    if (entryId && !usedEntries.includes(entryId)) usedEntries.push(entryId);
+    if (line === lastLine) {
+      line = "I don’t want to say the same thing twice. What else is on your mind?";
     }
+    lastLine = line;
 
     turn += 1;
-    const shouldAsk = greetOnly || turn % 2 === 1 || best.length === 0;
+    const userAsked = /[?]/.test(query);
+    const shouldAsk = !greetOnly && !userAsked && turn > 2 && turn % 4 === 0 && !/[?]/.test(line);
     if (shouldAsk) {
       const q = nextQuestion();
       if (q) line = line + " " + q;
@@ -335,8 +366,19 @@
       if (open) input.focus();
     }
 
-    launcher.addEventListener("click", () => openPanel(panel.hidden));
-    closeBtn.addEventListener("click", () => openPanel(false));
+    launcher.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      openPanel(true);
+    });
+    closeBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      openPanel(false);
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !panel.hidden) openPanel(false);
+    });
 
     settingsBtn.addEventListener("click", () => {
       const show = settings.hidden;
