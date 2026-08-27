@@ -21,5 +21,7 @@ jobs:
           command: deploy
           secrets: |
             XAI_API_KEY
+            LOG_SECRET
         env:
           XAI_API_KEY: ${{ secrets.XAI_API_KEY }}
+          LOG_SECRET: ${{ secrets.LOG_SECRET }}
