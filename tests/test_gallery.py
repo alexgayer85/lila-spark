@@ -147,6 +147,20 @@ AFTERGLOW_LOUNGE_SRC = Path(
     "grok-image-3801620e-7908-483b-befd-b5345c5128de.jpg"
 )
 
+AFTERGLOW_STREET = {
+    "src": "images/gallery/street.jpg",
+    "alt": "Lila Spark on a downtown sidewalk in a navy blazer and white shirt",
+    "caption": "Street · Afterglow",
+}
+AFTERGLOW_STREET_SRC = SRC / "street.jpg"
+
+AFTERGLOW_TATTOO = {
+    "src": "images/gallery/tattoo.jpg",
+    "alt": "Lila Spark’s rib tattoo, a spark-shaped compass rose",
+    "caption": "Tattoo · spark",
+}
+AFTERGLOW_TATTOO_SRC = SRC / "tattoo.jpg"
+
 
 SPARKED_SRC = Path("/home/alex/iCloudSync/Music/Lila Spark - Sparked/Video working folder")
 SPARKED_COVERS = [
@@ -314,11 +328,13 @@ class TestPhotosManifest(unittest.TestCase):
                 EXPECTED_NEW[7],  # looks-studio
                 AFTERGLOW_TURNAROUND,
                 AFTERGLOW_LOUNGE,
+                AFTERGLOW_STREET,
+                AFTERGLOW_TATTOO,
             ],
         )
 
         photos = flatten_photos(data)
-        self.assertEqual(len(photos), 79)
+        self.assertEqual(len(photos), 81)
         for item in photos:
             self.assertTrue((ROOT / item["src"]).is_file(), item["src"])
 
@@ -347,6 +363,8 @@ class TestPhotosManifest(unittest.TestCase):
         for src, dest_name in (
             (AFTERGLOW_TURNAROUND_SRC, "afterglow-turnaround.jpg"),
             (AFTERGLOW_LOUNGE_SRC, "afterglow-lounge.jpg"),
+            (AFTERGLOW_STREET_SRC, "street.jpg"),
+            (AFTERGLOW_TATTOO_SRC, "tattoo.jpg"),
         ):
             dest = ROOT / "images" / "gallery" / dest_name
             self.assertTrue(dest.is_file(), dest.name)
