@@ -490,7 +490,7 @@ class TestRealityStudio(unittest.TestCase):
 
     def test_story_shows_screenshot_and_edit_tools(self):
         html = (ROOT / "story.html").read_text()
-        self.assertIn('href="css/styles.css?v=story-lore-1"', html)
+        self.assertIn('href="css/styles.css?v=story-lore-2"', html)
         self.assertIn("images/studio/lss.jpg", html)
         self.assertIn("variational autoencoder", html)
         self.assertNotIn("1D VAE", html)
@@ -515,6 +515,12 @@ class TestRealityStudio(unittest.TestCase):
         self.assertIn("photos.html#years", html)
         self.assertIn("music.html?album=afterglow", html)
         self.assertIn("music.html?album=truly-me", html)
+        self.assertIn("born 1978", html)
+        self.assertIn("born 1974", html)
+        self.assertIn("age 37 · 2015", html)
+        self.assertIn("age 41 · 2015", html)
+        self.assertNotIn("Late <strong>30s</strong>", html)
+        self.assertNotIn("Early <strong>40s</strong>", html)
 
 
 if __name__ == "__main__":
