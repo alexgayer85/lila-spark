@@ -75,15 +75,60 @@ function cleanLyrics(text) {
   return out.join("\n");
 }
 
+function wantsLyrics(userText) {
+  const q = String(userText || "").toLowerCase();
+  if (
+    /lyric|lyrics|verse|chorus|bridge|words to|sing |sang |quote|unreleased|unproduced|what does .+ say/.test(
+      q
+    )
+  )
+    return true;
+  const titles = [
+    "sammich",
+    "sandwich",
+    "let me begin",
+    "somehow",
+    "boomerang",
+    "layla",
+    "can't keep up",
+    "cant keep up",
+    "tiny hints",
+    "favorite word",
+    "last time through",
+    "stop the hurt",
+    "truly me",
+    "frequency of you",
+    "electric crush",
+    "you brought me to life",
+    "hold me in the middle",
+    "lights go low",
+    "sweet shock",
+    "brain glitch",
+    "golden",
+    "soft landing",
+    "still standing",
+    "own the glow",
+    "my favorite word",
+    "no apologies",
+    "slow burn",
+    "dark static",
+    "rhythm thief",
+  ];
+  return titles.some((t) => q.includes(t));
+}
+
 function retrieve(pack, userText) {
   const files = (pack && pack.files) || [];
-  const lyricish = files.filter(
-    (f) => /Lyrics/i.test(f.name) || /^09_/.test(f.name)
-  );
+  const lyricish = wantsLyrics(userText)
+    ? files.filter((f) => /Lyrics/i.test(f.name) || /^09_/.test(f.name))
+    : [];
   const life = files.filter((f) => /0[4567]_/.test(f.name));
   const rest = files.filter(
     (f) =>
-      !lyricish.includes(f) && !life.includes(f) && !/08_Apple/.test(f.name)
+      !/Lyrics/i.test(f.name) &&
+      !/^09_/.test(f.name) &&
+      !life.includes(f) &&
+      !/08_Apple/.test(f.name)
   );
   const scored = rest
     .map((f) => ({ f, score: scoreChunk(userText, f.text || "") }))
