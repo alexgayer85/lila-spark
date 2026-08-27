@@ -149,7 +149,7 @@
 
     turn += 1;
     const userAsked = /[?]/.test(query);
-    const shouldAsk = !greetOnly && !userAsked && turn > 2 && turn % 4 === 0 && !/[?]/.test(line);
+    const shouldAsk = false;
     if (shouldAsk) {
       const q = nextQuestion();
       if (q) line = line + " " + q;
@@ -316,7 +316,7 @@
     document.body.appendChild(root);
 
     const opener = bible
-      ? pick(bible.entries.find((e) => e.id === "hello").voice) + " " + nextQuestion()
+      ? pick(bible.entries.find((e) => e.id === "hello").voice)
       : "Hey. I'm Lila.";
     appendBubble(log, "assistant", opener);
 
