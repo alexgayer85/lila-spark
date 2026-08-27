@@ -1,6 +1,7 @@
 name: Deploy Lila chat worker
 
 on:
+  workflow_dispatch:
   push:
     branches: [main]
     paths:
