@@ -149,7 +149,7 @@
 
     turn += 1;
     const userAsked = /[?]/.test(query);
-    const shouldAsk = false;
+    const shouldAsk = !greetOnly && turn > 1 && turn % 5 === 0 && !/[?]/.test(line);
     if (shouldAsk) {
       const q = nextQuestion();
       if (q) line = line + " " + q;
