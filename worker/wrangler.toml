@@ -15,6 +15,14 @@ OUTPUT_USD_PER_M = "2.50"
 name = "LEDGER"
 class_name = "SpendLedger"
 
+[[durable_objects.bindings]]
+name = "CHATLOG"
+class_name = "ChatLog"
+
 [[migrations]]
 tag = "v1"
 new_sqlite_classes = ["SpendLedger"]
+
+[[migrations]]
+tag = "v2"
+new_sqlite_classes = ["ChatLog"]

@@ -145,12 +145,58 @@ async function ledgerStub(env) {
   return env.LEDGER.get(id);
 }
 
+async function chatLogStub(env) {
+  const id = env.CHATLOG.idFromName("global");
+  return env.CHATLOG.get(id);
+}
+
+export class ChatLog {
+  constructor(state) {
+    this.state = state;
+  }
+
+  async fetch(request) {
+    const url = new URL(request.url);
+    let rows = (await this.state.storage.get("rows")) || [];
+    if (url.pathname === "/append" && request.method === "POST") {
+      const body = await request.json();
+      rows.push({
+        ts: new Date().toISOString(),
+        user: String(body.user || "").slice(0, 2000),
+        reply: String(body.reply || "").slice(0, 4000),
+      });
+      if (rows.length > 800) rows = rows.slice(-800);
+      await this.state.storage.put("rows", rows);
+      return Response.json({ ok: true, n: rows.length });
+    }
+    if (url.pathname === "/list") {
+      const n = Math.min(200, Math.max(1, Number(url.searchParams.get("n") || "50")));
+      return Response.json({ n: rows.length, chats: rows.slice(-n).reverse() });
+    }
+    return new Response("not found", { status: 404 });
+  }
+}
+
 export default {
   async fetch(request, env) {
     const origin = request.headers.get("Origin") || "";
     if (request.method === "OPTIONS") {
       return new Response(null, { status: 204, headers: corsHeaders(origin) });
     }
+
+    const url = new URL(request.url);
+    if (request.method === "GET" && url.pathname === "/logs") {
+      const sent = (request.headers.get("Authorization") || "").replace(/^Bearer\s+/i, "");
+      if (!env.LOG_SECRET || sent !== env.LOG_SECRET) {
+        return json({ error: "unauthorized" }, 401, origin);
+      }
+      const n = url.searchParams.get("n") || "50";
+      const log = await chatLogStub(env);
+      const res = await log.fetch("https://chatlog/list?n=" + encodeURIComponent(n));
+      const data = await res.json();
+      return json(data, 200, origin);
+    }
+
     if (request.method !== "POST") {
       return json({ error: "POST only" }, 405, origin);
     }
@@ -255,6 +301,18 @@ export default {
       body: JSON.stringify({ usd }),
     });
 
-    return json({ reply: String(reply).trim() }, 200, origin);
+    const replyText = String(reply).trim();
+    try {
+      const log = await chatLogStub(env);
+      await log.fetch("https://chatlog/append", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ user: userText, reply: replyText }),
+      });
+    } catch {
+      /* logging must not break chat */
+    }
+
+    return json({ reply: replyText }, 200, origin);
   },
 };
