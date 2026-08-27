@@ -291,6 +291,7 @@ class TestPhotosManifest(unittest.TestCase):
         self.assertEqual(
             [p["src"] for p in albums["photos"]],
             [
+                "images/covers/untitled.jpg",
                 "images/covers/afterglow.jpg",
                 "images/covers/sparked.jpg",
                 "images/covers/truly-me.jpg",
@@ -334,7 +335,7 @@ class TestPhotosManifest(unittest.TestCase):
         )
 
         photos = flatten_photos(data)
-        self.assertEqual(len(photos), 81)
+        self.assertEqual(len(photos), 82)
         for item in photos:
             self.assertTrue((ROOT / item["src"]).is_file(), item["src"])
 
@@ -421,7 +422,7 @@ class TestPhotosManifest(unittest.TestCase):
 class TestMusicMarkup(unittest.TestCase):
     def test_three_tracks_have_covers_and_cache_bust(self):
         html = (ROOT / "music.html").read_text()
-        self.assertIn('href="css/styles.css?v=explicit-1"', html)
+        self.assertIn('href="css/styles.css?v=untitled-1"', html)
         self.assertNotIn('href="css/styles.css?v=social-icons-1"', html)
         afterglow = [
             ("images/covers/somehow.jpg", "Somehow"),

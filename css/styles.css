@@ -420,7 +420,7 @@ body[data-story-view="reality"] .about-card-title {
   margin: 0 0 1.5rem;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1.15rem;
 }
 
@@ -794,7 +794,7 @@ body.lightbox-open {
   }
 
   .arc-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     max-width: none;
   }
 
@@ -1043,7 +1043,7 @@ body.lightbox-open {
 /* Album picker */
 .album-picker {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1.25rem;
   margin-bottom: 2rem;
 }
@@ -1170,14 +1170,15 @@ body.lightbox-open {
 
 @media (max-width: 720px) {
   .album-picker {
-    grid-template-columns: 1fr;
-    max-width: 20rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: none;
     margin-inline: auto 0;
   }
 }
 
 @media (min-width: 721px) and (max-width: 900px) {
   .album-picker {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1rem;
   }
 }

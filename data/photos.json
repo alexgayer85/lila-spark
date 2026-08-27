@@ -159,8 +159,13 @@
     {
       "id": "albums",
       "title": "Album art",
-      "lead": "The three era covers.",
+      "lead": "The era covers.",
       "photos": [
+        {
+          "src": "images/covers/untitled.jpg",
+          "alt": "Untitled era cover, title still to come",
+          "caption": "Untitled · working cover"
+        },
         {
           "src": "images/covers/afterglow.jpg",
           "alt": "Afterglow album cover",

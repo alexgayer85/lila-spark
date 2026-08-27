@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Discography: Truly Me, Sparked, Afterglow. Full tracklists and players." />
+  <meta name="description" content="Discography: Untitled, Afterglow, Sparked, Truly Me. Full tracklists and players." />
   <meta name="author" content="Alex Gayer" />
   <meta name="copyright" content="Copyright Alex Gayer. All rights reserved." />
   <meta name="theme-color" content="#0a0a0f" />
   <meta property="og:title" content="Music — Lila Spark" />
-  <meta property="og:description" content="Discography: Truly Me, Sparked, Afterglow. Full tracklists and players." />
+  <meta property="og:description" content="Discography: Untitled, Afterglow, Sparked, Truly Me. Full tracklists and players." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://lila-spark.com/music.html" />
   <meta property="og:image" content="https://lila-spark.com/images/covers/afterglow.jpg" />
@@ -33,7 +33,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=explicit-1" />
+  <link rel="stylesheet" href="css/styles.css?v=untitled-1" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="images/profile.jpg" />
   <link rel="author" href="humans.txt" />
@@ -85,8 +85,26 @@
             type="button"
             class="album-card is-active"
             role="tab"
-            id="tab-afterglow"
+            id="tab-untitled"
             aria-selected="true"
+            aria-controls="panel-untitled"
+            data-album="untitled"
+          >
+            <span class="album-art-wrap">
+              <img src="images/covers/untitled.jpg" alt="" width="900" height="900" />
+            </span>
+            <span class="album-meta">
+              <span class="album-title">Untitled</span>
+              <span class="album-sub">Newest · title TBA · 4 tracks</span>
+            </span>
+          </button>
+
+          <button
+            type="button"
+            class="album-card"
+            role="tab"
+            id="tab-afterglow"
+            aria-selected="false"
             aria-controls="panel-afterglow"
             data-album="afterglow"
           >
@@ -95,7 +113,7 @@
             </span>
             <span class="album-meta">
               <span class="album-title">Afterglow</span>
-              <span class="album-sub">Current era · 13 tracks</span>
+              <span class="album-sub">12 tracks</span>
             </span>
           </button>
 
@@ -139,10 +157,76 @@
         <div class="album-panels">
           <div
             class="album-panel is-active"
+            id="panel-untitled"
+            role="tabpanel"
+            aria-labelledby="tab-untitled"
+            data-album="untitled"
+          >
+            <header class="album-panel-header">
+              <h3>Untitled</h3>
+              <p>New work after Afterglow. A title hasn’t settled yet.</p>
+            <p class="album-stores album-stores-note">
+              Unreleased — full listens below.
+            </p>
+            </header>
+            <ul class="track-list">
+              <li class="track-card is-full">
+                <div class="track-num" aria-hidden="true">01</div>
+                <div class="track-body">
+                  <h3 class="track-title">Can't Keep Up</h3>
+                  <p class="track-meta">Untitled · Full listen</p>
+                  <audio class="track-audio" controls preload="none" controlsList="nodownload">
+                    <source src="audio/cant-keep-up.mp3?v=320" type="audio/mpeg" />
+                  </audio>
+                </div>
+                <span class="track-badge">Full</span>
+              </li>
+              <li class="track-card is-full">
+                <div class="track-num" aria-hidden="true">02</div>
+                <div class="track-body">
+                  <h3 class="track-title">The Last Time Through the Door</h3>
+                  <p class="track-meta">Untitled · Full listen</p>
+                  <audio class="track-audio" controls preload="none" controlsList="nodownload">
+                    <source src="audio/the-last-time-through-the-door.mp3?v=320" type="audio/mpeg" />
+                  </audio>
+                </div>
+                <span class="track-badge">Full</span>
+              </li>
+              <li class="track-card is-full">
+                <div class="track-num" aria-hidden="true">03</div>
+                <div class="track-body">
+                  <h3 class="track-title">Tiny Hints</h3>
+                  <p class="track-meta">Untitled · Full listen</p>
+                  <audio class="track-audio" controls preload="none" controlsList="nodownload">
+                    <source src="audio/tiny-hints.mp3?v=320" type="audio/mpeg" />
+                  </audio>
+                </div>
+                <span class="track-badge">Full</span>
+              </li>
+              <li class="track-card is-full is-explicit">
+                <div class="track-num" aria-hidden="true">04</div>
+                <div class="track-body">
+                  <h3 class="track-title">
+                    My Favorite Word
+                    <abbr class="explicit-mark" title="Explicit lyrics">E</abbr>
+                  </h3>
+                  <p class="track-meta">Untitled · Full listen · Explicit</p>
+                  <audio class="track-audio" controls preload="none" controlsList="nodownload">
+                    <source src="audio/my-favorite-word.mp3?v=320" type="audio/mpeg" />
+                  </audio>
+                </div>
+                <span class="track-badge">Full</span>
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="album-panel"
             id="panel-afterglow"
             role="tabpanel"
             aria-labelledby="tab-afterglow"
             data-album="afterglow"
+            hidden
           >
             <header class="album-panel-header">
               <h3>Afterglow</h3>
@@ -302,20 +386,6 @@
                   <p class="track-meta">Afterglow · Full listen</p>
                   <audio class="track-audio" controls preload="none" controlsList="nodownload">
                     <source src="audio/let-me-begin.mp3?v=320" type="audio/mpeg" />
-                  </audio>
-                </div>
-                <span class="track-badge">Full</span>
-              </li>
-              <li class="track-card is-full is-explicit">
-                <div class="track-num" aria-hidden="true">12</div>
-                <div class="track-body">
-                  <h3 class="track-title">
-                    My Favorite Word
-                    <abbr class="explicit-mark" title="Explicit lyrics">E</abbr>
-                  </h3>
-                  <p class="track-meta">Afterglow · Full listen · Explicit</p>
-                  <audio class="track-audio" controls preload="none" controlsList="nodownload">
-                    <source src="audio/my-favorite-word.mp3?v=320" type="audio/mpeg" />
                   </audio>
                 </div>
                 <span class="track-badge">Full</span>
