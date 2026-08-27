@@ -490,7 +490,7 @@ class TestRealityStudio(unittest.TestCase):
 
     def test_story_shows_screenshot_and_edit_tools(self):
         html = (ROOT / "story.html").read_text()
-        self.assertIn('href="css/styles.css?v=studio-6"', html)
+        self.assertIn('href="css/styles.css?v=story-lore-1"', html)
         self.assertIn("images/studio/lss.jpg", html)
         self.assertIn("variational autoencoder", html)
         self.assertNotIn("1D VAE", html)
@@ -499,6 +499,22 @@ class TestRealityStudio(unittest.TestCase):
         self.assertIn("<strong>Lego</strong>", html)
         css = (ROOT / "css" / "styles.css").read_text()
         self.assertIn(".studio-shot", css)
+        self.assertIn(".bio-figure", css)
+        self.assertIn(".years-strip", css)
+
+    def test_lore_has_quiet_years_songs_tattoo_and_inline_photos(self):
+        html = (ROOT / "story.html").read_text()
+        self.assertIn("2022 through 2024", html)
+        self.assertIn("Stop the Hurt", html)
+        self.assertIn("four-pointed spark", html)
+        self.assertIn("Elena, Daniel, Lila, Layla", html)
+        self.assertIn("images/gallery/age-13.jpg", html)
+        self.assertIn("images/gallery/age-18.jpg", html)
+        self.assertIn("images/gallery/tattoo.jpg", html)
+        self.assertIn("images/gallery/street.jpg", html)
+        self.assertIn("photos.html#years", html)
+        self.assertIn("music.html?album=afterglow", html)
+        self.assertIn("music.html?album=truly-me", html)
 
 
 if __name__ == "__main__":

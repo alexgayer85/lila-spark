@@ -1351,6 +1351,93 @@ body.lightbox-open {
   padding-top: 1.15rem !important;
 }
 
+.bio-figure {
+  margin: 0.25rem 0 1.45rem;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: #0c0c12;
+}
+
+.bio-figure.is-portrait {
+  max-width: min(22rem, 100%);
+}
+
+.bio-figure a {
+  display: block;
+  line-height: 0;
+}
+
+.bio-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  background: #0c0c12;
+}
+
+.bio-figure figcaption {
+  margin: 0;
+  padding: 0.65rem 0.85rem 0.8rem;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: var(--ink-muted);
+}
+
+.years-strip-block {
+  margin: 1.5rem 0 0.25rem;
+}
+
+.bio p.years-strip-label {
+  margin: 0 0 0.7rem;
+  font-size: 0.88rem;
+}
+
+.years-strip {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.45rem;
+}
+
+.years-strip a {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  text-decoration: none;
+  color: var(--ink-muted);
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: #0c0c12;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.years-strip a:hover,
+.years-strip a:focus-visible {
+  color: var(--ink);
+  border-color: rgba(45, 226, 255, 0.45);
+}
+
+.years-strip img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.years-strip span {
+  display: block;
+  padding: 0 0.2rem 0.45rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
 .hero-lead em {
   color: var(--ink);
   font-style: italic;
