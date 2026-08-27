@@ -1,7 +1,5 @@
 (function () {
-  const STORAGE_KEY = "lilaSpark.xaiKey";
-  const API_URL = "https://api.x.ai/v1/chat/completions";
-  const MODEL = "grok-4.6";
+  const PROXY_URL = "https://lila-spark-chat.alexgayer85.workers.dev";
   const bibleUrl = new URL("data/lila-bible.json", document.baseURI).href;
   const packUrl = new URL("data/bible-pack.json", document.baseURI).href;
 
@@ -35,23 +33,6 @@
       if (c) node.appendChild(c);
     });
     return node;
-  }
-
-  function getKey() {
-    try {
-      return (localStorage.getItem(STORAGE_KEY) || "").trim();
-    } catch {
-      return "";
-    }
-  }
-
-  function setKey(value) {
-    try {
-      if (value) localStorage.setItem(STORAGE_KEY, value.trim());
-      else localStorage.removeItem(STORAGE_KEY);
-    } catch {
-      /* ignore */
-    }
   }
 
   function norm(s) {
@@ -240,33 +221,28 @@
   }
 
   async function grokAnswer(history) {
-    const key = getKey();
-    if (!key) return null;
-    const body = {
-      model: MODEL,
-      stream: false,
-      messages: [{ role: "system", content: biblePrompt() }, ...history],
-    };
-    const res = await fetch(API_URL, {
+    const res = await fetch(PROXY_URL, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: "Bearer " + key,
-      },
-      body: JSON.stringify(body),
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ messages: history }),
     });
-    if (!res.ok) {
-      const errText = await res.text().catch(() => "");
-      throw new Error("SpaceXAI request failed (" + res.status + "). " + errText.slice(0, 180));
+    const data = await res.json().catch(() => ({}));
+    if (res.status === 402) {
+      const err = new Error(data.reply || "cap");
+      err.code = "cap";
+      err.reply = data.reply;
+      throw err;
     }
-    const data = await res.json();
-    const text =
-      data.choices &&
-      data.choices[0] &&
-      data.choices[0].message &&
-      data.choices[0].message.content;
-    if (!text) throw new Error("Empty reply from SpaceXAI.");
-    return text;
+    if (res.status === 429) {
+      const err = new Error(data.reply || "slow");
+      err.code = "slow";
+      err.reply = data.reply;
+      throw err;
+    }
+    if (!res.ok || !data.reply) {
+      throw new Error("proxy");
+    }
+    return data.reply;
   }
 
   function appendBubble(log, role, text) {
@@ -312,26 +288,13 @@
     who.appendChild(whoText);
     header.appendChild(who);
 
-    const settingsBtn = el("button", {
-      class: "ls-chat-icon-btn",
-      type: "button",
-      "aria-label": "Chat settings",
-      text: "⚙",
-    });
     const closeBtn = el("button", {
       class: "ls-chat-icon-btn",
       type: "button",
       "aria-label": "Close chat",
       text: "×",
     });
-    header.appendChild(el("div", { class: "ls-chat-header-actions" }, [settingsBtn, closeBtn]));
-
-    const settings = el("form", { class: "ls-chat-settings", hidden: true });
-    settings.innerHTML =
-      '<label for="ls-chat-key">Optional SpaceXAI key (this browser only). Grok 4.6 stays in character from the life bible. Get a key at console.x.ai — XAI_API_KEY.</label>' +
-      '<input id="ls-chat-key" type="password" autocomplete="off" placeholder="xai-…" />' +
-      '<p class="ls-chat-hint">No key: she still talks from the bible on this site. Don\'t paste a production key.</p>' +
-      '<button type="submit" class="ls-chat-save">Save</button>';
+    header.appendChild(el("div", { class: "ls-chat-header-actions" }, [closeBtn]));
 
     const log = el("div", { class: "ls-chat-log", role: "log", "aria-live": "polite" });
     const form = el("form", { class: "ls-chat-form" });
@@ -346,7 +309,6 @@
     form.appendChild(send);
 
     panel.appendChild(header);
-    panel.appendChild(settings);
     panel.appendChild(log);
     panel.appendChild(form);
     root.appendChild(panel);
@@ -380,28 +342,6 @@
       if (e.key === "Escape" && !panel.hidden) openPanel(false);
     });
 
-    settingsBtn.addEventListener("click", () => {
-      const show = settings.hidden;
-      settings.hidden = !show;
-      if (show) {
-        settings.querySelector("input").value = getKey();
-        settings.querySelector("input").focus();
-      }
-    });
-
-    settings.addEventListener("submit", (e) => {
-      e.preventDefault();
-      setKey(settings.querySelector("input").value);
-      settings.hidden = true;
-      appendBubble(
-        log,
-        "assistant",
-        getKey()
-          ? "Okay. I'll talk a little looser now — still me, still the same life."
-          : "Alright. Just us and what I already know about myself."
-      );
-    });
-
     input.addEventListener("keydown", (e) => {
       if (e.key === "Enter" && !e.shiftKey) {
         e.preventDefault();
@@ -423,14 +363,14 @@
       thinking.classList.add("is-pending");
       try {
         let reply;
-        if (getKey()) {
-          try {
-            reply = await grokAnswer(messages.slice(-16));
-          } catch {
+        try {
+          reply = await grokAnswer(messages.slice(-12));
+        } catch (err) {
+          if (err && (err.code === "cap" || err.code === "slow") && err.reply) {
+            reply = err.reply;
+          } else {
             reply = localAnswer(text);
           }
-        } else {
-          reply = localAnswer(text);
         }
         thinking.textContent = reply;
         thinking.classList.remove("is-pending");

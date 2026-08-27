@@ -1,0 +1,20 @@
+name = "lila-spark-chat"
+main = "src/index.js"
+compatibility_date = "2025-10-11"
+workers_dev = true
+
+[vars]
+BIBLE_ORIGIN = "https://lila-spark.com"
+MODEL = "grok-3-mini-fast"
+BUDGET_USD = "10"
+WINDOW_DAYS = "30"
+INPUT_USD_PER_M = "0.60"
+OUTPUT_USD_PER_M = "4.00"
+
+[[durable_objects.bindings]]
+name = "LEDGER"
+class_name = "SpendLedger"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["SpendLedger"]
