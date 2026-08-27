@@ -472,8 +472,10 @@ class TestRealityStudio(unittest.TestCase):
 
     def test_story_shows_screenshot_and_edit_tools(self):
         html = (ROOT / "story.html").read_text()
-        self.assertIn('href="css/styles.css?v=studio-5"', html)
+        self.assertIn('href="css/styles.css?v=studio-6"', html)
         self.assertIn("images/studio/lss.jpg", html)
+        self.assertIn("variational autoencoder", html)
+        self.assertNotIn("1D VAE", html)
         self.assertIn("Repaint / Extend", html)
         self.assertIn("<strong>Extract</strong>", html)
         self.assertIn("<strong>Lego</strong>", html)
