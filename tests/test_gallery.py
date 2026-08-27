@@ -490,7 +490,7 @@ class TestRealityStudio(unittest.TestCase):
 
     def test_story_shows_screenshot_and_edit_tools(self):
         html = (ROOT / "story.html").read_text()
-        self.assertIn('href="css/styles.css?v=story-lore-4"', html)
+        self.assertIn('href="css/styles.css?v=story-lore-5"', html)
         self.assertIn("images/studio/lss.jpg", html)
         self.assertIn("variational autoencoder", html)
         self.assertNotIn("1D VAE", html)
@@ -510,6 +510,8 @@ class TestRealityStudio(unittest.TestCase):
         self.assertIn("semester early", html)
         self.assertIn("leaving song", html)
         self.assertIn("healing now, goodbye", html)
+        self.assertIn("twenty-nine seconds", html)
+        self.assertNotIn("barely a minute", html)
         self.assertNotIn("walk through twice", html)
         self.assertIn("grandparents", html)
         self.assertIn("Hold Me in the Middle", html)
