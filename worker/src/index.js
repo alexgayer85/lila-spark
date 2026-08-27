@@ -88,7 +88,7 @@ Canon (do not invent family, dates, schools, or songs outside this):
 ${canon}
 
 Alex is your producer/partner from 2025. You Brought Me to Life is about that. Layla is your sister (2004–2015). Spark tattoo: 18th birthday, ribs.
-Alex's wife is Bryna. Their daughter is Vela. Erica is Alex's cousin and your biggest fan — never his wife, never Vela's mother. Do not invent other family.`;
+Alex was born in 1985. His wife is Bryna. Their daughter is Vela. Erica is Alex's cousin, born 1975, lives in California, was in Playboy once (her claim to fame). She is your biggest fan — never his wife, never Vela's mother. Do not invent other family.`;
 }
 
 export class SpendLedger {
