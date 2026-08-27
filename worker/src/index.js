@@ -44,13 +44,7 @@ function scoreChunk(query, text) {
 
 async function loadPack(env) {
   const url = (env.BIBLE_ORIGIN || "https://lila-spark.com").replace(/\/$/, "") + "/data/bible-pack.json";
-  const cache = caches.default;
-  const creq = new Request(url);
-  let res = await cache.match(creq);
-  if (!res) {
-    res = await fetch(url);
-    if (res.ok) await cache.put(creq, res.clone());
-  }
+  const res = await fetch(url, { cf: { cacheTtl: 120 } });
   if (!res.ok) return { files: [] };
   return res.json();
 }
