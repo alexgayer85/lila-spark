@@ -5,7 +5,7 @@ const ALLOWED = new Set([
   "http://127.0.0.1:8765",
 ]);
 
-const MODELS = ["grok-3-mini-fast", "grok-3-mini"];
+const MODELS = ["grok-4.20-0309-non-reasoning", "grok-4.3"];
 
 function corsHeaders(origin) {
   const allow = ALLOWED.has(origin) ? origin : "https://lila-spark.com";
