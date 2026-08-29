@@ -221,28 +221,61 @@
   }
 
   async function grokAnswer(history) {
-    const res = await fetch(PROXY_URL, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ messages: history }),
-    });
-    const data = await res.json().catch(() => ({}));
-    if (res.status === 402) {
-      const err = new Error(data.reply || "cap");
-      err.code = "cap";
-      err.reply = data.reply;
-      throw err;
+    let lastErr;
+    for (let attempt = 0; attempt < 2; attempt++) {
+      try {
+        const res = await fetch(PROXY_URL, {
+          method: "POST",
+          headers: { "Content-Type": "text/plain;charset=UTF-8" },
+          body: JSON.stringify({ messages: history }),
+        });
+        const data = await res.json().catch(() => ({}));
+        if (res.status === 402) {
+          const err = new Error(data.reply || "cap");
+          err.code = "cap";
+          err.reply = data.reply;
+          throw err;
+        }
+        if (res.status === 429) {
+          const err = new Error(data.reply || "slow");
+          err.code = "slow";
+          err.reply = data.reply;
+          throw err;
+        }
+        if (!res.ok || !data.reply) {
+          lastErr = new Error(data.error || "proxy " + res.status);
+          continue;
+        }
+        return data.reply;
+      } catch (err) {
+        if (err && (err.code === "cap" || err.code === "slow")) throw err;
+        lastErr = err;
+      }
     }
-    if (res.status === 429) {
-      const err = new Error(data.reply || "slow");
-      err.code = "slow";
-      err.reply = data.reply;
-      throw err;
+    throw lastErr || new Error("proxy");
+  }
+
+  function reportFallback(user, error, reply) {
+    try {
+      const body = JSON.stringify({
+        user: String(user || "").slice(0, 2000),
+        error: String(error || "fallback").slice(0, 280),
+        reply: String(reply || "").slice(0, 4000),
+      });
+      const blob = new Blob([body], { type: "text/plain;charset=UTF-8" });
+      if (navigator.sendBeacon) {
+        navigator.sendBeacon(PROXY_URL + "/fallback", blob);
+      } else {
+        fetch(PROXY_URL + "/fallback", {
+          method: "POST",
+          headers: { "Content-Type": "text/plain;charset=UTF-8" },
+          body,
+          keepalive: true,
+        }).catch(() => {});
+      }
+    } catch (_) {
+      /* ignore */
     }
-    if (!res.ok || !data.reply) {
-      throw new Error("proxy");
-    }
-    return data.reply;
   }
 
   function appendBubble(log, role, text) {
@@ -370,6 +403,7 @@
             reply = err.reply;
           } else {
             reply = localAnswer(text);
+            reportFallback(text, err && err.message ? err.message : "proxy", reply);
           }
         }
         thinking.textContent = reply;

@@ -1,6 +1,8 @@
 const ALLOWED = new Set([
   "https://lila-spark.com",
   "https://www.lila-spark.com",
+  "https://chat.lila-spark.com",
+  "https://alexgayer85.github.io",
   "http://localhost:8765",
   "http://127.0.0.1:8765",
 ]);
@@ -29,10 +31,15 @@ const LOG_VIEWER_HTML = `<!DOCTYPE html>
     .meta { color:var(--muted); font-size:.82rem; margin:0 0 1rem; }
     .err { color:#ff8fb7; margin:0 0 1rem; }
     article { border:1px solid var(--line); background:rgba(18,18,28,.75); border-radius:16px; padding:.9rem 1rem; margin:0 0 .75rem; }
-    time { display:block; color:var(--muted); font-size:.75rem; margin-bottom:.55rem; }
+    time { display:block; color:var(--muted); font-size:.75rem; margin-bottom:.35rem; }
+    .via { display:inline-block; font-size:.68rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; margin:0 0 .55rem; padding:.15rem .5rem; border-radius:999px; border:1px solid var(--line); color:var(--muted); }
+    .via-grok { color:var(--cyan); border-color:rgba(45,226,255,.35); }
+    .via-backup { color:#ffb86b; border-color:rgba(255,184,107,.35); }
+    .via-cap, .via-rate, .via-error { color:var(--magenta); border-color:rgba(255,45,149,.35); }
     .who { font-size:.72rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; margin:0 0 .2rem; }
     .fan { color:var(--magenta); }
     .lila { color:var(--cyan); }
+    .why { color:#ff8fb7; font-size:.8rem; margin:.55rem 0 0; }
     p { margin:0 0 .65rem; white-space:pre-wrap; line-height:1.45; font-size:.95rem; }
     p:last-child { margin-bottom:0; }
   </style>
@@ -96,16 +103,33 @@ const LOG_VIEWER_HTML = `<!DOCTYPE html>
       }
       meta.textContent = line;
       if (!chats.length) {
-        list.innerHTML = "<p class=sub>No chats stored yet. A turn is saved after Lila answers through Grok.</p>";
+        list.innerHTML = "<p class=sub>No chats stored yet. Grok turns, backup-brain fallbacks, and errors all show here.</p>";
         return;
       }
       chats.forEach((row) => {
         const art = document.createElement("article");
+        const via = row.via || "grok";
         art.innerHTML =
-          "<time></time><p class=who fan>Fan</p><p class=u></p><p class=who lila>Lila</p><p class=r></p>";
-        art.querySelector("time").textContent = fmt(row.ts);
+          "<time></time><p class=via></p><p class=who fan>Fan</p><p class=u></p><p class=who lila>Lila</p><p class=r></p><p class=why hidden></p>";
+        const bits = [fmt(row.ts)];
+        if (row.ua) bits.push(row.ua);
+        if (row.country) bits.push(row.country);
+        art.querySelector("time").textContent = bits.join(" · ");
+        const viaEl = art.querySelector(".via");
+        viaEl.className = "via via-" + via;
+        viaEl.textContent =
+          via === "grok" ? "Grok" :
+          via === "backup" ? "Backup brain — Grok never answered" :
+          via === "cap" ? "Studio budget" :
+          via === "rate" ? "Rate limit" :
+          via === "error" ? "Error" : via;
         art.querySelector(".u").textContent = row.user || "";
         art.querySelector(".r").textContent = row.reply || "";
+        if (row.err) {
+          const why = art.querySelector(".why");
+          why.hidden = false;
+          why.textContent = row.err;
+        }
         list.appendChild(art);
       });
     }
@@ -119,12 +143,24 @@ const LOG_VIEWER_HTML = `<!DOCTYPE html>
 </body>
 </html>`;
 
+function originAllowed(origin) {
+  if (!origin) return false;
+  if (ALLOWED.has(origin)) return true;
+  try {
+    const host = new URL(origin).hostname;
+    return host === "lila-spark.com" || host.endsWith(".lila-spark.com");
+  } catch {
+    return false;
+  }
+}
+
 function corsHeaders(origin) {
-  const allow = ALLOWED.has(origin) ? origin : "https://lila-spark.com";
+  const allow = originAllowed(origin) ? origin : "https://lila-spark.com";
   return {
     "Access-Control-Allow-Origin": allow,
     "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
-    "Access-Control-Allow-Headers": "Content-Type, Authorization",
+    "Access-Control-Allow-Headers": "Content-Type, Authorization, Accept, Accept-Language",
+    "Access-Control-Max-Age": "86400",
     Vary: "Origin",
   };
 }
@@ -354,6 +390,58 @@ async function chatLogStub(env) {
   return env.CHATLOG.get(id);
 }
 
+function uaHint(ua) {
+  const s = String(ua || "");
+  const device = /iPhone|iPod/i.test(s)
+    ? "iPhone"
+    : /iPad/i.test(s)
+      ? "iPad"
+      : /Android/i.test(s)
+        ? "Android"
+        : /Mac/i.test(s)
+          ? "Mac"
+          : /Windows/i.test(s)
+            ? "Windows"
+            : s
+              ? "Web"
+              : "";
+  const browser = /Edg\//.test(s)
+    ? "Edge"
+    : /OPR|Opera/.test(s)
+      ? "Opera"
+      : /Firefox|FxiOS/.test(s)
+        ? "Firefox"
+        : /CriOS|Chrome/.test(s)
+          ? "Chrome"
+          : /Safari/.test(s)
+            ? "Safari"
+            : "";
+  return [device, browser].filter(Boolean).join(" ");
+}
+
+async function readPayload(request) {
+  const text = await request.text();
+  if (!text) return {};
+  try {
+    return JSON.parse(text);
+  } catch {
+    return {};
+  }
+}
+
+async function appendLog(env, row) {
+  try {
+    const log = await chatLogStub(env);
+    await log.fetch("https://chatlog/append", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(row),
+    });
+  } catch {
+    /* logging must not break chat */
+  }
+}
+
 export class ChatLog {
   constructor(state) {
     this.state = state;
@@ -368,6 +456,10 @@ export class ChatLog {
         ts: new Date().toISOString(),
         user: String(body.user || "").slice(0, 2000),
         reply: String(body.reply || "").slice(0, 4000),
+        via: String(body.via || "grok").slice(0, 24),
+        ua: String(body.ua || "").slice(0, 40),
+        country: String(body.country || "").slice(0, 8),
+        err: String(body.err || "").slice(0, 280),
       });
       if (rows.length > 800) rows = rows.slice(-800);
       await this.state.storage.put("rows", rows);
@@ -430,15 +522,29 @@ export default {
       return json({ error: "POST only" }, 405, origin);
     }
 
+    const visitor = {
+      ua: uaHint(request.headers.get("User-Agent") || ""),
+      country: request.headers.get("CF-IPCountry") || "",
+    };
+
+    const payload = await readPayload(request);
+
+    if (url.pathname === "/fallback") {
+      const userText = String(payload.user || "").slice(0, 2000);
+      if (!userText) return json({ error: "empty" }, 400, origin);
+      await appendLog(env, {
+        user: userText,
+        reply: String(payload.reply || "").slice(0, 4000),
+        via: "backup",
+        err: String(payload.error || "client fallback"),
+        ...visitor,
+      });
+      return json({ ok: true }, 200, origin);
+    }
+
     const key = env.XAI_API_KEY;
     if (!key) return json({ error: "not configured" }, 503, origin);
 
-    let payload;
-    try {
-      payload = await request.json();
-    } catch {
-      return json({ error: "bad json" }, 400, origin);
-    }
     const history = Array.isArray(payload.messages) ? payload.messages.slice(-12) : [];
     const lastUser = [...history].reverse().find((m) => m.role === "user");
     const userText = lastUser && lastUser.content ? String(lastUser.content).slice(0, 2000) : "";
@@ -450,24 +556,18 @@ export default {
     const rate = await stub.fetch(`https://ledger/rate?ip=${encodeURIComponent(ip)}`);
     const rateJ = await rate.json();
     if (!rateJ.ok) {
-      return json(
-        { reply: "Easy — give me a few minutes. My head is already full of this conversation." },
-        429,
-        origin
-      );
+      const reply = "Easy — give me a few minutes. My head is already full of this conversation.";
+      await appendLog(env, { user: userText, reply, via: "rate", ...visitor });
+      return json({ reply }, 429, origin);
     }
 
     const st = await stub.fetch(`https://ledger/status?budget=${budget}`);
     const stJ = await st.json();
     if (!stJ.ok) {
-      return json(
-        {
-          reply: "I have to go quiet for a bit — studio budget for the month. Find me on X if you need me.",
-          cap: true,
-        },
-        402,
-        origin
-      );
+      const reply =
+        "I have to go quiet for a bit — studio budget for the month. Find me on X if you need me.";
+      await appendLog(env, { user: userText, reply, via: "cap", ...visitor });
+      return json({ reply, cap: true }, 402, origin);
     }
 
     const pack = await loadPack(env);
@@ -512,13 +612,23 @@ export default {
 
     if (!res.ok) {
       const err = await res.text().catch(() => "");
+      await appendLog(env, {
+        user: userText,
+        reply: "",
+        via: "error",
+        err: "upstream " + res.status + " " + err.slice(0, 180),
+        ...visitor,
+      });
       return json({ error: "upstream", detail: err.slice(0, 200) }, 502, origin);
     }
 
     const data = await res.json();
     const reply =
       data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content;
-    if (!reply) return json({ error: "empty model" }, 502, origin);
+    if (!reply) {
+      await appendLog(env, { user: userText, reply: "", via: "error", err: "empty model", ...visitor });
+      return json({ error: "empty model" }, 502, origin);
+    }
 
     const usage = data.usage || {};
     const promptTok = Number(usage.prompt_tokens || 0);
@@ -531,16 +641,7 @@ export default {
     });
 
     const replyText = String(reply).trim();
-    try {
-      const log = await chatLogStub(env);
-      await log.fetch("https://chatlog/append", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ user: userText, reply: replyText }),
-      });
-    } catch {
-      /* logging must not break chat */
-    }
+    await appendLog(env, { user: userText, reply: replyText, via: "grok", ...visitor });
 
     return json({ reply: replyText }, 200, origin);
   },
