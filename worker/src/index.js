@@ -69,6 +69,10 @@ const LOG_VIEWER_HTML = `<!DOCTYPE html>
       }
     }
 
+    function money(n) {
+      return "$" + Number(n || 0).toFixed(2);
+    }
+
     async function load(secret) {
       err.hidden = true;
       list.innerHTML = "";
@@ -86,7 +90,11 @@ const LOG_VIEWER_HTML = `<!DOCTYPE html>
       sessionStorage.setItem("lila-log-secret", secret);
       const chats = data.chats || [];
       meta.hidden = false;
-      meta.textContent = chats.length + " of " + (data.n || chats.length) + " saved turns (newest first).";
+      let line = chats.length + " of " + (data.n || chats.length) + " saved turns (newest first).";
+      if (data.spent != null) {
+        line += " Studio this month: " + money(data.spent) + " of " + money(data.budget) + " (" + money(data.remaining) + " left).";
+      }
+      meta.textContent = line;
       if (!chats.length) {
         list.innerHTML = "<p class=sub>No chats stored yet. A turn is saved after Lila answers through Grok.</p>";
         return;
@@ -302,13 +310,13 @@ export class SpendLedger {
       const ip = url.searchParams.get("ip") || "unknown";
       const key = "rate:" + ip;
       const rec = (await this.state.storage.get(key)) || { t: now, n: 0 };
-      if (now - rec.t > 10 * 60 * 1000) {
+      if (now - rec.t > 15 * 60 * 1000) {
         rec.t = now;
         rec.n = 0;
       }
       rec.n += 1;
       await this.state.storage.put(key, rec);
-      return Response.json({ ok: rec.n <= 20, n: rec.n });
+      return Response.json({ ok: rec.n <= 40, n: rec.n });
     }
 
     let events = (await this.state.storage.get("events")) || [];
@@ -402,7 +410,20 @@ export default {
       const log = await chatLogStub(env);
       const res = await log.fetch("https://chatlog/list?n=" + encodeURIComponent(n));
       const data = await res.json();
-      return json(data, 200, origin);
+      const budget = env.BUDGET_USD || "10";
+      const stub = await ledgerStub(env);
+      const st = await stub.fetch("https://ledger/status?budget=" + encodeURIComponent(budget));
+      const stJ = await st.json().catch(() => ({}));
+      return json(
+        {
+          ...data,
+          spent: stJ.spent || 0,
+          remaining: stJ.remaining != null ? stJ.remaining : Number(budget),
+          budget: Number(budget),
+        },
+        200,
+        origin
+      );
     }
 
     if (request.method !== "POST") {
