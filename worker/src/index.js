@@ -155,14 +155,15 @@ function originAllowed(origin) {
 }
 
 function corsHeaders(origin) {
-  const allow = originAllowed(origin) ? origin : "https://lila-spark.com";
-  return {
+  const allow = origin && origin !== "null" ? origin : "*";
+  const headers = {
     "Access-Control-Allow-Origin": allow,
     "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
     "Access-Control-Allow-Headers": "Content-Type, Authorization, Accept, Accept-Language",
     "Access-Control-Max-Age": "86400",
-    Vary: "Origin",
   };
+  if (allow !== "*") headers.Vary = "Origin";
+  return headers;
 }
 
 function json(data, status, origin) {
@@ -170,6 +171,20 @@ function json(data, status, origin) {
     status,
     headers: { "Content-Type": "application/json", ...corsHeaders(origin) },
   });
+}
+
+function packResponse(data, status, origin, callback) {
+  if (callback && /^[A-Za-z_$][0-9A-Za-z_$]*$/.test(callback)) {
+    return new Response(callback + "(" + JSON.stringify(data) + ")", {
+      status: 200,
+      headers: {
+        "Content-Type": "text/javascript; charset=utf-8",
+        "Cache-Control": "no-store",
+        ...corsHeaders(origin),
+      },
+    });
+  }
+  return json(data, status, origin);
 }
 
 function tokens(s) {
@@ -425,6 +440,18 @@ async function readPayload(request) {
   try {
     return JSON.parse(text);
   } catch {
+    /* fall through */
+  }
+  try {
+    const params = new URLSearchParams(text);
+    const m = params.get("m") || params.get("messages") || params.get("q");
+    if (!m) return {};
+    try {
+      return JSON.parse(m);
+    } catch {
+      return { messages: [{ role: "user", content: m }] };
+    }
+  } catch {
     return {};
   }
 }
@@ -473,6 +500,130 @@ export class ChatLog {
   }
 }
 
+function visitorFrom(request) {
+  return {
+    ua: uaHint(request.headers.get("User-Agent") || ""),
+    country: request.headers.get("CF-IPCountry") || "",
+  };
+}
+
+async function completeChat(request, env, history, origin, callback) {
+  const visitor = visitorFrom(request);
+  const lastUser = [...history].reverse().find((m) => m.role === "user");
+  const userText = lastUser && lastUser.content ? String(lastUser.content).slice(0, 2000) : "";
+  if (!userText) return packResponse({ error: "empty" }, 400, origin, callback);
+
+  const key = env.XAI_API_KEY;
+  if (!key) return packResponse({ error: "not configured" }, 503, origin, callback);
+
+  const ip = request.headers.get("CF-Connecting-IP") || "unknown";
+  const stub = await ledgerStub(env);
+  const budget = env.BUDGET_USD || "10";
+  const rate = await stub.fetch(`https://ledger/rate?ip=${encodeURIComponent(ip)}`);
+  const rateJ = await rate.json();
+  if (!rateJ.ok) {
+    const reply = "easy — give me a few minutes. my head is already full of this conversation.";
+    await appendLog(env, { user: userText, reply, via: "rate", ...visitor });
+    return packResponse({ reply, slow: true }, 429, origin, callback);
+  }
+
+  const st = await stub.fetch(`https://ledger/status?budget=${budget}`);
+  const stJ = await st.json();
+  if (!stJ.ok) {
+    const reply = "i have to go quiet for a bit — studio budget for the month. find me on x if you need me.";
+    await appendLog(env, { user: userText, reply, via: "cap", ...visitor });
+    return packResponse({ reply, cap: true }, 402, origin, callback);
+  }
+
+  const pack = await loadPack(env);
+  const canon = retrieve(pack, userText);
+  const model = env.MODEL || MODELS[0];
+  const inRate = Number(env.INPUT_USD_PER_M || "0.30");
+  const outRate = Number(env.OUTPUT_USD_PER_M || "0.50");
+
+  const body = {
+    model,
+    stream: false,
+    max_tokens: 700,
+    temperature: 0.85,
+    messages: [{ role: "system", content: systemPrompt(canon) }].concat(
+      history.slice(-12).map((m) => ({
+        role: m.role === "assistant" ? "assistant" : "user",
+        content: String(m.content || "").slice(0, 2000),
+      }))
+    ),
+  };
+
+  let res = await fetch("https://api.x.ai/v1/chat/completions", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + key,
+    },
+    body: JSON.stringify(body),
+  });
+
+  if (res.status === 404 && model !== MODELS[1]) {
+    body.model = MODELS[1];
+    res = await fetch("https://api.x.ai/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + key,
+      },
+      body: JSON.stringify(body),
+    });
+  }
+
+  if (!res.ok) {
+    const err = await res.text().catch(() => "");
+    await appendLog(env, {
+      user: userText,
+      reply: "",
+      via: "error",
+      err: "upstream " + res.status + " " + err.slice(0, 180),
+      ...visitor,
+    });
+    return packResponse({ error: "upstream", detail: err.slice(0, 200) }, 502, origin, callback);
+  }
+
+  const data = await res.json();
+  const reply =
+    data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content;
+  if (!reply) {
+    await appendLog(env, { user: userText, reply: "", via: "error", err: "empty model", ...visitor });
+    return packResponse({ error: "empty model" }, 502, origin, callback);
+  }
+
+  const usage = data.usage || {};
+  const promptTok = Number(usage.prompt_tokens || 0);
+  const outTok = Number(usage.completion_tokens || 0);
+  const usd = (promptTok / 1e6) * inRate + (outTok / 1e6) * outRate;
+  await stub.fetch(`https://ledger/add?budget=${budget}`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ usd }),
+  });
+
+  const replyText = String(reply).trim();
+  await appendLog(env, { user: userText, reply: replyText, via: "grok", ...visitor });
+  return packResponse({ reply: replyText }, 200, origin, callback);
+}
+
+async function recordFallback(request, env, origin, payload) {
+  const visitor = visitorFrom(request);
+  const userText = String(payload.user || "").slice(0, 2000);
+  if (!userText) return json({ error: "empty" }, 400, origin);
+  await appendLog(env, {
+    user: userText,
+    reply: String(payload.reply || "").slice(0, 4000),
+    via: "backup",
+    err: String(payload.error || "client fallback"),
+    ...visitor,
+  });
+  return json({ ok: true }, 200, origin);
+}
+
 export default {
   async fetch(request, env) {
     const origin = request.headers.get("Origin") || "";
@@ -518,131 +669,31 @@ export default {
       );
     }
 
-    if (request.method !== "POST") {
-      return json({ error: "POST only" }, 405, origin);
+    if (request.method === "GET" && url.pathname === "/ask") {
+      const q = String(url.searchParams.get("q") || "").slice(0, 1500);
+      const callback = url.searchParams.get("callback") || "";
+      return completeChat(request, env, [{ role: "user", content: q }], origin, callback);
     }
-
-    const visitor = {
-      ua: uaHint(request.headers.get("User-Agent") || ""),
-      country: request.headers.get("CF-IPCountry") || "",
-    };
-
-    const payload = await readPayload(request);
 
     if (url.pathname === "/fallback") {
-      const userText = String(payload.user || "").slice(0, 2000);
-      if (!userText) return json({ error: "empty" }, 400, origin);
-      await appendLog(env, {
-        user: userText,
-        reply: String(payload.reply || "").slice(0, 4000),
-        via: "backup",
-        err: String(payload.error || "client fallback"),
-        ...visitor,
-      });
-      return json({ ok: true }, 200, origin);
+      if (request.method === "GET") {
+        return recordFallback(request, env, origin, {
+          user: url.searchParams.get("user") || "",
+          error: url.searchParams.get("error") || "client fallback",
+          reply: url.searchParams.get("reply") || "",
+        });
+      }
+      if (request.method === "POST") {
+        return recordFallback(request, env, origin, await readPayload(request));
+      }
     }
 
-    const key = env.XAI_API_KEY;
-    if (!key) return json({ error: "not configured" }, 503, origin);
-
-    const history = Array.isArray(payload.messages) ? payload.messages.slice(-12) : [];
-    const lastUser = [...history].reverse().find((m) => m.role === "user");
-    const userText = lastUser && lastUser.content ? String(lastUser.content).slice(0, 2000) : "";
-    if (!userText) return json({ error: "empty" }, 400, origin);
-
-    const ip = request.headers.get("CF-Connecting-IP") || "unknown";
-    const stub = await ledgerStub(env);
-    const budget = env.BUDGET_USD || "10";
-    const rate = await stub.fetch(`https://ledger/rate?ip=${encodeURIComponent(ip)}`);
-    const rateJ = await rate.json();
-    if (!rateJ.ok) {
-      const reply = "Easy — give me a few minutes. My head is already full of this conversation.";
-      await appendLog(env, { user: userText, reply, via: "rate", ...visitor });
-      return json({ reply }, 429, origin);
+    if (request.method === "POST" && (url.pathname === "/" || url.pathname === "")) {
+      const payload = await readPayload(request);
+      const history = Array.isArray(payload.messages) ? payload.messages.slice(-12) : [];
+      return completeChat(request, env, history, origin, "");
     }
 
-    const st = await stub.fetch(`https://ledger/status?budget=${budget}`);
-    const stJ = await st.json();
-    if (!stJ.ok) {
-      const reply =
-        "I have to go quiet for a bit — studio budget for the month. Find me on X if you need me.";
-      await appendLog(env, { user: userText, reply, via: "cap", ...visitor });
-      return json({ reply, cap: true }, 402, origin);
-    }
-
-    const pack = await loadPack(env);
-    const canon = retrieve(pack, userText);
-    const model = env.MODEL || MODELS[0];
-    const inRate = Number(env.INPUT_USD_PER_M || "0.30");
-    const outRate = Number(env.OUTPUT_USD_PER_M || "0.50");
-
-    const body = {
-      model,
-      stream: false,
-      max_tokens: 700,
-      temperature: 0.85,
-      messages: [{ role: "system", content: systemPrompt(canon) }].concat(
-        history.map((m) => ({
-          role: m.role === "assistant" ? "assistant" : "user",
-          content: String(m.content || "").slice(0, 2000),
-        }))
-      ),
-    };
-
-    let res = await fetch("https://api.x.ai/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: "Bearer " + key,
-      },
-      body: JSON.stringify(body),
-    });
-
-    if (res.status === 404 && model !== MODELS[1]) {
-      body.model = MODELS[1];
-      res = await fetch("https://api.x.ai/v1/chat/completions", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: "Bearer " + key,
-        },
-        body: JSON.stringify(body),
-      });
-    }
-
-    if (!res.ok) {
-      const err = await res.text().catch(() => "");
-      await appendLog(env, {
-        user: userText,
-        reply: "",
-        via: "error",
-        err: "upstream " + res.status + " " + err.slice(0, 180),
-        ...visitor,
-      });
-      return json({ error: "upstream", detail: err.slice(0, 200) }, 502, origin);
-    }
-
-    const data = await res.json();
-    const reply =
-      data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content;
-    if (!reply) {
-      await appendLog(env, { user: userText, reply: "", via: "error", err: "empty model", ...visitor });
-      return json({ error: "empty model" }, 502, origin);
-    }
-
-    const usage = data.usage || {};
-    const promptTok = Number(usage.prompt_tokens || 0);
-    const outTok = Number(usage.completion_tokens || 0);
-    const usd = (promptTok / 1e6) * inRate + (outTok / 1e6) * outRate;
-    await stub.fetch(`https://ledger/add?budget=${budget}`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ usd }),
-    });
-
-    const replyText = String(reply).trim();
-    await appendLog(env, { user: userText, reply: replyText, via: "grok", ...visitor });
-
-    return json({ reply: replyText }, 200, origin);
+    return json({ error: "not found" }, 404, origin);
   },
 };

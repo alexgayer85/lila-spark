@@ -1,7 +1,14 @@
 (function () {
-  const PROXY_URL = "https://lila-spark-chat.alexgayer85.workers.dev";
+  const PROXY = "https://lila-spark-chat.alexgayer85.workers.dev";
+  const PROXY_URL = PROXY;
   const bibleUrl = new URL("data/lila-bible.json", document.baseURI).href;
   const packUrl = new URL("data/bible-pack.json", document.baseURI).href;
+  const GROGGY = [
+    "mm still half asleep. need coffee. brain isn't braining right now — try me again in a minute?",
+    "ugh. i'm foggy. like the wifi in my head dropped. ping me one more time?",
+    "hold on… not all the way here. still half asleep. say that again in a sec?",
+    "coffee first. my brain isn't braining. give me a minute and come back?",
+  ];
 
   let bible = null;
   let mdChunks = [];
@@ -220,33 +227,128 @@
     );
   }
 
+  function groggy() {
+    return GROGGY[Math.floor(Math.random() * GROGGY.length)];
+  }
+
+  function timedFetch(url, opts, ms) {
+    const ctrl = typeof AbortController !== "undefined" ? new AbortController() : null;
+    const timer = setTimeout(function () {
+      if (ctrl) ctrl.abort();
+    }, ms || 22000);
+    const init = Object.assign({ credentials: "omit" }, opts || {});
+    if (ctrl) init.signal = ctrl.signal;
+    return fetch(url, init).finally(function () {
+      clearTimeout(timer);
+    });
+  }
+
+  function throwStatus(data, status) {
+    if (status === 402 || data.cap) {
+      const err = new Error(data.reply || "cap");
+      err.code = "cap";
+      err.reply = data.reply;
+      throw err;
+    }
+    if (status === 429 || data.slow) {
+      const err = new Error(data.reply || "slow");
+      err.code = "slow";
+      err.reply = data.reply;
+      throw err;
+    }
+    if (!data.reply) throw new Error(data.error || "proxy " + status);
+    return data.reply;
+  }
+
+  function jsonpAsk(q) {
+    return new Promise(function (resolve, reject) {
+      const cb = "lsChat" + Math.random().toString(36).slice(2);
+      let s;
+      const timer = setTimeout(function () {
+        cleanup();
+        reject(new Error("jsonp timeout"));
+      }, 22000);
+      function cleanup() {
+        clearTimeout(timer);
+        try {
+          delete window[cb];
+        } catch (_) {}
+        if (s && s.parentNode) s.parentNode.removeChild(s);
+      }
+      window[cb] = function (data) {
+        cleanup();
+        try {
+          resolve(throwStatus(data || {}, 200));
+        } catch (err) {
+          reject(err);
+        }
+      };
+      s = document.createElement("script");
+      s.async = true;
+      s.src = PROXY + "/ask?q=" + encodeURIComponent(q) + "&callback=" + cb;
+      s.onerror = function () {
+        cleanup();
+        reject(new Error("jsonp blocked"));
+      };
+      document.head.appendChild(s);
+    });
+  }
+
   async function grokAnswer(history) {
-    let lastErr;
-    for (let attempt = 0; attempt < 2; attempt++) {
-      try {
-        const res = await fetch(PROXY_URL, {
+    const payload = JSON.stringify({ messages: history });
+    const lastUser = [...history].reverse().find(function (m) {
+      return m.role === "user";
+    });
+    const last = lastUser ? String(lastUser.content || "").slice(0, 1500) : "";
+
+    const tries = [
+      function () {
+        return timedFetch(PROXY, {
           method: "POST",
-          headers: { "Content-Type": "text/plain;charset=UTF-8" },
-          body: JSON.stringify({ messages: history }),
+          headers: { "Content-Type": "text/plain" },
+          body: payload,
+        }).then(function (res) {
+          return res.json().catch(function () {
+            return {};
+          }).then(function (data) {
+            return throwStatus(data, res.status);
+          });
         });
-        const data = await res.json().catch(() => ({}));
-        if (res.status === 402) {
-          const err = new Error(data.reply || "cap");
-          err.code = "cap";
-          err.reply = data.reply;
-          throw err;
-        }
-        if (res.status === 429) {
-          const err = new Error(data.reply || "slow");
-          err.code = "slow";
-          err.reply = data.reply;
-          throw err;
-        }
-        if (!res.ok || !data.reply) {
-          lastErr = new Error(data.error || "proxy " + res.status);
-          continue;
-        }
-        return data.reply;
+      },
+      function () {
+        return timedFetch(PROXY, {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: "m=" + encodeURIComponent(payload),
+        }).then(function (res) {
+          return res.json().catch(function () {
+            return {};
+          }).then(function (data) {
+            return throwStatus(data, res.status);
+          });
+        });
+      },
+      function () {
+        return timedFetch(PROXY + "/ask?q=" + encodeURIComponent(last), { method: "GET" }).then(
+          function (res) {
+            return res.json().catch(function () {
+              return {};
+            }).then(function (data) {
+              return throwStatus(data, res.status);
+            });
+          }
+        );
+      },
+      function () {
+        return jsonpAsk(last);
+      },
+    ];
+
+    let lastErr;
+    for (let i = 0; i < tries.length; i++) {
+      try {
+        const reply = await tries[i]();
+        if (reply) return reply;
       } catch (err) {
         if (err && (err.code === "cap" || err.code === "slow")) throw err;
         lastErr = err;
@@ -256,26 +358,29 @@
   }
 
   function reportFallback(user, error, reply) {
+    const u = String(user || "").slice(0, 400);
+    const e = String(error || "fallback").slice(0, 120);
+    const r = String(reply || "").slice(0, 400);
     try {
       const body = JSON.stringify({
         user: String(user || "").slice(0, 2000),
         error: String(error || "fallback").slice(0, 280),
         reply: String(reply || "").slice(0, 4000),
       });
-      const blob = new Blob([body], { type: "text/plain;charset=UTF-8" });
-      if (navigator.sendBeacon) {
-        navigator.sendBeacon(PROXY_URL + "/fallback", blob);
-      } else {
-        fetch(PROXY_URL + "/fallback", {
-          method: "POST",
-          headers: { "Content-Type": "text/plain;charset=UTF-8" },
-          body,
-          keepalive: true,
-        }).catch(() => {});
-      }
-    } catch (_) {
-      /* ignore */
-    }
+      const blob = new Blob([body], { type: "text/plain" });
+      if (navigator.sendBeacon) navigator.sendBeacon(PROXY + "/fallback", blob);
+    } catch (_) {}
+    try {
+      const img = new Image();
+      img.src =
+        PROXY +
+        "/fallback?user=" +
+        encodeURIComponent(u) +
+        "&error=" +
+        encodeURIComponent(e) +
+        "&reply=" +
+        encodeURIComponent(r);
+    } catch (_) {}
   }
 
   function appendBubble(log, role, text) {
@@ -402,7 +507,7 @@
           if (err && (err.code === "cap" || err.code === "slow") && err.reply) {
             reply = err.reply;
           } else {
-            reply = localAnswer(text);
+            reply = groggy();
             reportFallback(text, err && err.message ? err.message : "proxy", reply);
           }
         }
