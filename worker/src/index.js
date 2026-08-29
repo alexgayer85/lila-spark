@@ -7,12 +7,116 @@ const ALLOWED = new Set([
 
 const MODELS = ["grok-4.20-0309-non-reasoning", "grok-4.3"];
 
+const LOG_VIEWER_HTML = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>Lila chat logs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root { --bg:#0a0a0f; --ink:#f4f0ff; --muted:#a39bb8; --line:rgba(255,255,255,.08); --magenta:#ff2d95; --violet:#9b5cff; --cyan:#2de2ff; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family:Outfit,system-ui,sans-serif; background:var(--bg); color:var(--ink); min-height:100vh; }
+    main { width:min(100% - 1.6rem, 42rem); margin:1.25rem auto 3rem; }
+    h1 { font-size:1.35rem; margin:0 0 .35rem; }
+    .sub { color:var(--muted); margin:0 0 1.25rem; font-size:.92rem; }
+    form { display:flex; gap:.5rem; margin-bottom:1.25rem; }
+    input { flex:1; min-width:0; border:1px solid var(--line); background:#12121a; color:var(--ink); border-radius:12px; padding:.7rem .85rem; font:inherit; }
+    button { border:0; border-radius:999px; background:linear-gradient(120deg,var(--magenta),var(--violet)); color:#fff; font:inherit; font-weight:600; padding:.7rem 1.1rem; cursor:pointer; }
+    .meta { color:var(--muted); font-size:.82rem; margin:0 0 1rem; }
+    .err { color:#ff8fb7; margin:0 0 1rem; }
+    article { border:1px solid var(--line); background:rgba(18,18,28,.75); border-radius:16px; padding:.9rem 1rem; margin:0 0 .75rem; }
+    time { display:block; color:var(--muted); font-size:.75rem; margin-bottom:.55rem; }
+    .who { font-size:.72rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; margin:0 0 .2rem; }
+    .fan { color:var(--magenta); }
+    .lila { color:var(--cyan); }
+    p { margin:0 0 .65rem; white-space:pre-wrap; line-height:1.45; font-size:.95rem; }
+    p:last-child { margin-bottom:0; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Lila chat logs</h1>
+    <p class="sub">Private. Type the LOG_SECRET password, then open.</p>
+    <form id="gate">
+      <input id="secret" type="password" autocomplete="current-password" placeholder="Password" />
+      <button type="submit">Open</button>
+    </form>
+    <p class="err" id="err" hidden></p>
+    <p class="meta" id="meta" hidden></p>
+    <div id="list"></div>
+  </main>
+  <script>
+    const err = document.getElementById("err");
+    const meta = document.getElementById("meta");
+    const list = document.getElementById("list");
+    const input = document.getElementById("secret");
+    input.value = sessionStorage.getItem("lila-log-secret") || "";
+
+    function showError(msg) {
+      err.hidden = false;
+      err.textContent = msg;
+    }
+
+    function fmt(ts) {
+      try {
+        return new Date(ts).toLocaleString();
+      } catch {
+        return ts || "";
+      }
+    }
+
+    async function load(secret) {
+      err.hidden = true;
+      list.innerHTML = "";
+      const res = await fetch("/logs?n=200", {
+        headers: {
+          Authorization: "Bearer " + secret,
+          Accept: "application/json",
+        },
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        showError(res.status === 401 ? "Wrong password." : (data.error || "Could not load logs."));
+        return;
+      }
+      sessionStorage.setItem("lila-log-secret", secret);
+      const chats = data.chats || [];
+      meta.hidden = false;
+      meta.textContent = chats.length + " of " + (data.n || chats.length) + " saved turns (newest first).";
+      if (!chats.length) {
+        list.innerHTML = "<p class=sub>No chats stored yet. A turn is saved after Lila answers through Grok.</p>";
+        return;
+      }
+      chats.forEach((row) => {
+        const art = document.createElement("article");
+        art.innerHTML =
+          "<time></time><p class=who fan>Fan</p><p class=u></p><p class=who lila>Lila</p><p class=r></p>";
+        art.querySelector("time").textContent = fmt(row.ts);
+        art.querySelector(".u").textContent = row.user || "";
+        art.querySelector(".r").textContent = row.reply || "";
+        list.appendChild(art);
+      });
+    }
+
+    document.getElementById("gate").addEventListener("submit", (e) => {
+      e.preventDefault();
+      load(input.value.trim());
+    });
+    if (input.value) load(input.value.trim());
+  </script>
+</body>
+</html>`;
+
 function corsHeaders(origin) {
   const allow = ALLOWED.has(origin) ? origin : "https://lila-spark.com";
   return {
     "Access-Control-Allow-Origin": allow,
-    "Access-Control-Allow-Methods": "POST, OPTIONS",
-    "Access-Control-Allow-Headers": "Content-Type",
+    "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type, Authorization",
     Vary: "Origin",
   };
 }
@@ -279,7 +383,19 @@ export default {
     const url = new URL(request.url);
     if (request.method === "GET" && url.pathname === "/logs") {
       const sent = (request.headers.get("Authorization") || "").replace(/^Bearer\s+/i, "");
+      const accept = request.headers.get("Accept") || "";
+      const wantsHtml = accept.includes("text/html");
       if (!env.LOG_SECRET || sent !== env.LOG_SECRET) {
+        if (wantsHtml && !sent) {
+          return new Response(LOG_VIEWER_HTML, {
+            status: 200,
+            headers: {
+              "Content-Type": "text/html; charset=utf-8",
+              "Cache-Control": "no-store",
+              ...corsHeaders(origin),
+            },
+          });
+        }
         return json({ error: "unauthorized" }, 401, origin);
       }
       const n = url.searchParams.get("n") || "50";
