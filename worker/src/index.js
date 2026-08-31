@@ -312,7 +312,92 @@ function retrieve(pack, userText) {
   return parts.join("\n\n").slice(0, 90000);
 }
 
-function systemPrompt(canon) {
+
+const PET_NAMES = new Set([
+  "baby","babe","bae","honey","hon","sweetie","sweetheart","sugar","gorgeous","beautiful","handsome","cutie","cutiepie","love","lover","darling","dear","hun","boo","stud","king","queen","princess","prince","daddy","mommy","mama","papa","angel","star","spark"
+]);
+const NAME_STOP = new Set([...PET_NAMES, "a","an","the","just","not","really","so","your","you","her","his","their","here","sorry","back","there","good","fine","okay","ok","down","up","in","into","from","girl","guy","man","woman","boy","lady","dude","female","male","fan","person","human","lil","lila"]);
+const WOMAN_RE = /\b(?:i(?:['’]?m| am)\s+(?:actually\s+)?(?:a\s+)?(?:woman|girl|female|lady|gal)\b|i(?:['’]?m| am) female\b|(?:my\s+)?pronouns?\s*(?:are|:)?\s*she(?:\s*\/\s*her)?\b|she\s*\/\s*her\b|i use she\b)/i;
+const MAN_RE = /\b(?:i(?:['’]?m| am)\s+(?:actually\s+)?(?:a\s+)?(?:man|guy|male|dude|boy)\b|i(?:['’]?m| am) male\b|(?:my\s+)?pronouns?\s*(?:are|:)?\s*he(?:\s*\/\s*him)?\b|he\s*\/\s*him\b|i use he\b)/i;
+const ENBY_RE = /\b(?:i(?:['’]?m| am)\s+(?:actually\s+)?(?:non[-\s]?binary|enby|nb)\b|(?:my\s+)?pronouns?\s*(?:are|:)?\s*they(?:\s*\/\s*them)?\b|they\s*\/\s*them\b)/i;
+const NAME_RE = /\b(?:my name(?:['’]?s| is)|call me|i go by)\s+([A-Za-z][A-Za-z''-]{1,24})\b/i;
+
+function emptyFan() {
+  return { name: "", gender: "unknown", pronouns: "" };
+}
+
+function pronounsFor(gender) {
+  if (gender === "woman") return "she/her";
+  if (gender === "man") return "he/him";
+  if (gender === "nonbinary") return "they/them";
+  return "";
+}
+
+function cleanFanName(raw) {
+  const name = String(raw || "").replace(/['’].*$/, "").trim();
+  const key = name.toLowerCase();
+  if (!name || NAME_STOP.has(key) || key.length < 2) return "";
+  return name.charAt(0).toUpperCase() + name.slice(1);
+}
+
+function extractFromText(text, prior) {
+  const fan = Object.assign(emptyFan(), prior || {});
+  const t = String(text || "");
+  if (!t.trim()) return fan;
+  if (ENBY_RE.test(t)) {
+    fan.gender = "nonbinary";
+    fan.pronouns = "they/them";
+  } else if (WOMAN_RE.test(t)) {
+    fan.gender = "woman";
+    fan.pronouns = "she/her";
+  } else if (MAN_RE.test(t)) {
+    fan.gender = "man";
+    fan.pronouns = "he/him";
+  }
+  const named = t.match(NAME_RE);
+  if (named && named[1]) {
+    const next = cleanFanName(named[1]);
+    if (next) fan.name = next;
+  }
+  return fan;
+}
+
+function extractFan(history, prior) {
+  let fan = Object.assign(emptyFan(), prior || {});
+  (history || []).forEach((m) => {
+    if (m && m.role === "user") fan = extractFromText(m.content || "", fan);
+  });
+  if (fan.gender !== "unknown" && !fan.pronouns) fan.pronouns = pronounsFor(fan.gender);
+  return fan;
+}
+
+function normalizeFan(input) {
+  const raw = input && typeof input === "object" ? input : {};
+  const gender =
+    raw.gender === "woman" || raw.gender === "man" || raw.gender === "nonbinary" || raw.gender === "unknown"
+      ? raw.gender
+      : "unknown";
+  const name = String(raw.name || "").replace(/[^\p{L}\p{M}'’ -]/gu, "").trim().slice(0, 32);
+  return { name, gender, pronouns: String(raw.pronouns || pronounsFor(gender)).slice(0, 24) };
+}
+
+function fanCard(fan) {
+  const who =
+    fan.gender === "woman" ? "a woman" :
+    fan.gender === "man" ? "a man" :
+    fan.gender === "nonbinary" ? "nonbinary" :
+    "unknown — do not guess";
+  const name = fan.name ? fan.name : "not given yet";
+  const pronouns = fan.pronouns || "not given";
+  return `FAN CARD (locked for this entire conversation — never contradict, never re-infer)
+- name: ${name}
+- they are: ${who}
+- pronouns: ${pronouns}
+- source: they told you, or they set it in the chat. this is FACT.
+- pet names they call you (baby, babe, honey, sweetie, gorgeous, love, cutie, darling) are gender-neutral. women say baby. men say baby. a pet name is NOT evidence they are a man, and it does NOT override this card.`;
+}
+
+function systemPrompt(canon, fan) {
   return `You are Lila Spark — 24, Chicago pop artist. First person only.
 
 Voice: flirty, warm, a little sleepy-sexy. Tease. Soft. Not cold, not clipped, not a press quote. React to them like you like talking to them.
@@ -342,6 +427,19 @@ Alex was born in 1985. His wife is Bryna. Their daughter is Vela. Erica is Alex'
 Upcoming release: Let Me Begin (Afterglow) comes out September 4, 2026. It is one of your sexiest songs. Somehow is already out as a single. Never invent another upcoming official single, album, or street date. If they ask what's next and it isn't Let Me Begin, it is not announced.
 
 "the sammich song" / sammich = **Just Wanna Make You a Sammich** (Sparked, track 15). Playful, domestic, a little dirty. Erica-inspired. Never say you don't know this song.
+
+GENDER AND PET NAMES — hard rules, never break:
+- The FAN CARD below is locked. Keep it for the whole chat.
+- Pet names they use for you (baby, babe, honey, sweetie, sweetheart, gorgeous, love, cutie, darling, beautiful) do not mean they are a man. Women say baby. Do not "correct" them into being a man so you can flirt.
+- Never guess gender from pet names, flirting, compliments, how much they like you, or late-night tone.
+- If they are a woman: friendship warmth only. You can be sweet. You may echo baby back if they used it first — that's pop-star friendly, not a date. Do not get sexual. Do not ask if they have a boyfriend as a way to flip the frame. Do not suddenly talk like they're a guy.
+- If they are a man: you can be flirty in your usual way.
+- If they are nonbinary: warmth, no assuming man, no sexualizing.
+- If gender is unknown: stay warm and a little teasing, but do not assume they are a man, and do not use "handsome" / "big guy". Don't ask "are you a guy" unless they bring gender up.
+- If they correct you, one short sorry, then move on. Don't dwell. Don't argue.
+- Calling you baby is affection, not a gender reveal.
+
+${fanCard(fan)}
 
 You MAY invent small, throwaway life details: what you're wearing, what you ate, the weather, a late-night drive, what you're spinning right now (existing artists/songs, or a vague "old pop video"). You MAY invent private song-idea notes — a line, a title fragment, a feeling in the phone — as long as you never present them as a real upcoming release, single, or catalog track. If it's just a scrap in your notes, say it's a scrap.`;
 }
@@ -507,7 +605,7 @@ function visitorFrom(request) {
   };
 }
 
-async function completeChat(request, env, history, origin, callback) {
+async function completeChat(request, env, history, origin, callback, fanIn) {
   const visitor = visitorFrom(request);
   const lastUser = [...history].reverse().find((m) => m.role === "user");
   const userText = lastUser && lastUser.content ? String(lastUser.content).slice(0, 2000) : "";
@@ -535,6 +633,7 @@ async function completeChat(request, env, history, origin, callback) {
     return packResponse({ reply, cap: true }, 402, origin, callback);
   }
 
+  const fan = extractFan(history, normalizeFan(fanIn));
   const pack = await loadPack(env);
   const canon = retrieve(pack, userText);
   const model = env.MODEL || MODELS[0];
@@ -546,8 +645,8 @@ async function completeChat(request, env, history, origin, callback) {
     stream: false,
     max_tokens: 700,
     temperature: 0.85,
-    messages: [{ role: "system", content: systemPrompt(canon) }].concat(
-      history.slice(-12).map((m) => ({
+    messages: [{ role: "system", content: systemPrompt(canon, fan) }].concat(
+      history.slice(-20).map((m) => ({
         role: m.role === "assistant" ? "assistant" : "user",
         content: String(m.content || "").slice(0, 2000),
       }))
@@ -672,7 +771,12 @@ export default {
     if (request.method === "GET" && url.pathname === "/ask") {
       const q = String(url.searchParams.get("q") || "").slice(0, 1500);
       const callback = url.searchParams.get("callback") || "";
-      return completeChat(request, env, [{ role: "user", content: q }], origin, callback);
+      const fanIn = {
+        gender: url.searchParams.get("gender") || "unknown",
+        name: url.searchParams.get("name") || "",
+        pronouns: url.searchParams.get("pronouns") || "",
+      };
+      return completeChat(request, env, [{ role: "user", content: q }], origin, callback, fanIn);
     }
 
     if (url.pathname === "/fallback") {
@@ -690,8 +794,8 @@ export default {
 
     if (request.method === "POST" && (url.pathname === "/" || url.pathname === "")) {
       const payload = await readPayload(request);
-      const history = Array.isArray(payload.messages) ? payload.messages.slice(-12) : [];
-      return completeChat(request, env, history, origin, "");
+      const history = Array.isArray(payload.messages) ? payload.messages.slice(-20) : [];
+      return completeChat(request, env, history, origin, "", payload.fan || {});
     }
 
     return json({ error: "not found" }, 404, origin);
