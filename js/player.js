@@ -1,6 +1,8 @@
 (function () {
   const CATALOG_URL = "data/catalog.json";
   const LYRICS_DIR = "data/lyrics/";
+  const PROXY = "https://lila-spark-chat.alexgayer85.workers.dev";
+  const SECRET_KEY = "lila-log-secret";
 
   const root = document.getElementById("ls-player");
   if (!root) return;
@@ -28,6 +30,8 @@
     addLine: root.querySelector("[data-add-line]"),
     download: root.querySelector("[data-download]"),
     revert: root.querySelector("[data-revert]"),
+    publish: root.querySelector("[data-publish]"),
+    publishStatus: root.querySelector("[data-publish-status]"),
   };
 
   const state = {
@@ -154,7 +158,19 @@
     };
   }
 
+  function lyricSlug(track) {
+    return String((track && (track.lyrics || track.id)) || "").replace(/[^a-z0-9-]/g, "");
+  }
+
   async function fetchLyricFile(track) {
+    const slug = lyricSlug(track);
+    if (!slug) return { title: track.title, durationHint: null, timed: false, lines: [] };
+    try {
+      const live = await fetch(PROXY + "/lyrics/" + encodeURIComponent(slug));
+      if (live.ok) return normalizePack(await live.json(), track.title);
+    } catch {
+      /* fall through to repo file */
+    }
     if (!track.lyrics) return { title: track.title, durationHint: null, timed: false, lines: [] };
     const res = await fetch(LYRICS_DIR + track.lyrics + ".json");
     if (!res.ok) throw new Error("no lyrics");
@@ -164,9 +180,19 @@
   async function loadLyrics(track, { forceFile } = {}) {
     state.estimates = [];
     try {
-      const saved = !forceFile && localStorage.getItem(lyricKey(track));
-      if (saved) state.lyrics = normalizePack(JSON.parse(saved), track.title);
-      else state.lyrics = await fetchLyricFile(track);
+      if (forceFile) {
+        if (!track.lyrics) {
+          state.lyrics = { title: track.title, durationHint: null, timed: false, lines: [] };
+        } else {
+          const res = await fetch(LYRICS_DIR + track.lyrics + ".json");
+          if (!res.ok) throw new Error("no lyrics");
+          state.lyrics = normalizePack(await res.json(), track.title);
+        }
+      } else {
+        const saved = localStorage.getItem(lyricKey(track));
+        if (saved) state.lyrics = normalizePack(JSON.parse(saved), track.title);
+        else state.lyrics = await fetchLyricFile(track);
+      }
     } catch {
       state.lyrics = { title: track.title, durationHint: null, timed: false, lines: [] };
     }
@@ -623,7 +649,7 @@
   function downloadPack() {
     const track = currentTrack();
     if (!track) return;
-    const name = (track.lyrics || track.id) + ".json";
+    const name = lyricSlug(track) + ".json";
     const blob = new Blob([JSON.stringify(packForSave(), null, 2) + "\n"], {
       type: "application/json",
     });
@@ -632,6 +658,50 @@
     a.download = name;
     a.click();
     URL.revokeObjectURL(a.href);
+  }
+
+  function editorPassword() {
+    let s = sessionStorage.getItem(SECRET_KEY) || "";
+    if (!s) {
+      s = window.prompt("Password to publish lyrics (same as chat logs)") || "";
+      s = s.trim();
+      if (s) sessionStorage.setItem(SECRET_KEY, s);
+    }
+    return s;
+  }
+
+  async function publishLyrics() {
+    const track = currentTrack();
+    if (!track || !els.publish) return;
+    const slug = lyricSlug(track);
+    if (!slug) return;
+    const secret = editorPassword();
+    if (!secret) return;
+    els.publish.disabled = true;
+    if (els.publishStatus) els.publishStatus.textContent = "Saving…";
+    try {
+      const res = await fetch(PROXY + "/lyrics/" + encodeURIComponent(slug), {
+        method: "PUT",
+        headers: {
+          Authorization: "Bearer " + secret,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(packForSave()),
+      });
+      if (res.status === 401) {
+        sessionStorage.removeItem(SECRET_KEY);
+        if (els.publishStatus) els.publishStatus.textContent = "Wrong password.";
+        return;
+      }
+      if (!res.ok) throw new Error("http " + res.status);
+      persistLyrics();
+      if (els.publishStatus) els.publishStatus.textContent = "Live for everyone.";
+    } catch (err) {
+      if (els.publishStatus) els.publishStatus.textContent = "Save failed.";
+      console.error(err);
+    } finally {
+      els.publish.disabled = false;
+    }
   }
 
   els.audio.addEventListener("play", () => {
@@ -773,6 +843,7 @@
   if (els.stamp) els.stamp.addEventListener("click", stampLine);
   if (els.addLine) els.addLine.addEventListener("click", addLine);
   if (els.download) els.download.addEventListener("click", downloadPack);
+  if (els.publish) els.publish.addEventListener("click", () => publishLyrics());
   if (els.revert) {
     els.revert.addEventListener("click", async () => {
       const track = currentTrack();

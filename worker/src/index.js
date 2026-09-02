@@ -158,7 +158,7 @@ function corsHeaders(origin) {
   const allow = origin && origin !== "null" ? origin : "*";
   const headers = {
     "Access-Control-Allow-Origin": allow,
-    "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+    "Access-Control-Allow-Methods": "GET, POST, PUT, OPTIONS",
     "Access-Control-Allow-Headers": "Content-Type, Authorization, Accept, Accept-Language",
     "Access-Control-Max-Age": "86400",
   };
@@ -624,6 +624,20 @@ export class ChatLog {
         files,
       });
     }
+    if (url.pathname.startsWith("/lyrics/") && request.method === "PUT") {
+      const slug = url.pathname.slice("/lyrics/".length);
+      const body = await request.json();
+      await this.state.storage.put("lyrics:" + slug, JSON.stringify(body));
+      return Response.json({ ok: true, slug });
+    }
+    if (url.pathname.startsWith("/lyrics/") && request.method === "GET") {
+      const slug = url.pathname.slice("/lyrics/".length);
+      const raw = await this.state.storage.get("lyrics:" + slug);
+      if (!raw) return new Response("not found", { status: 404 });
+      return new Response(typeof raw === "string" ? raw : JSON.stringify(raw), {
+        headers: { "Content-Type": "application/json" },
+      });
+    }
     return new Response("not found", { status: 404 });
   }
 }
@@ -775,6 +789,30 @@ export default {
       });
       const data = await res.json();
       return json(data, res.status, origin);
+    }
+    const lyricMatch = url.pathname.match(/^\/lyrics\/([a-z0-9-]{1,80})$/);
+    if (lyricMatch && request.method === "PUT") {
+      if (!env.LOG_SECRET || auth !== env.LOG_SECRET) {
+        return json({ error: "unauthorized" }, 401, origin);
+      }
+      const slug = lyricMatch[1];
+      const pack = await request.json();
+      const log = await chatLogStub(env);
+      const res = await log.fetch("https://chatlog/lyrics/" + slug, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(pack),
+      });
+      const data = await res.json();
+      return json(data, res.status, origin);
+    }
+    if (lyricMatch && request.method === "GET") {
+      const slug = lyricMatch[1];
+      const log = await chatLogStub(env);
+      const res = await log.fetch("https://chatlog/lyrics/" + slug);
+      if (!res.ok) return json({ error: "not found" }, 404, origin);
+      const data = await res.json();
+      return json(data, 200, origin);
     }
     if (request.method === "GET" && url.pathname === "/logs") {
       const accept = request.headers.get("Accept") || "";

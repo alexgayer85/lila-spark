@@ -2657,6 +2657,12 @@ body.lightbox-open {
   flex-wrap: wrap;
   gap: 0.4rem;
   margin-top: 0.7rem;
+  align-items: center;
+}
+
+.ls-edit-status {
+  font-size: 0.82rem;
+  color: var(--ink-muted);
 }
 
 @media (max-width: 720px) {
