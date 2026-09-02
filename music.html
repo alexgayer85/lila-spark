@@ -33,7 +33,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=player-7" />
+  <link rel="stylesheet" href="css/styles.css?v=player-8" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="images/profile.jpg" />
   <link rel="author" href="humans.txt" />
@@ -154,14 +154,15 @@
         </div>
 
         <div class="ls-player" id="ls-player">
-          <img class="ls-player-cover" data-cover src="images/covers/untitled.jpg" alt="" width="900" height="900" />
-          <div class="ls-player-main">
+          <div class="ls-player-head">
+            <img class="ls-player-cover" data-cover src="images/covers/untitled.jpg" alt="" width="900" height="900" />
             <div class="ls-player-meta">
               <h2 class="ls-player-title" data-title>Pick a track</h2>
               <p class="ls-player-desc" data-desc hidden></p>
               <p class="ls-player-album" data-album-name></p>
             </div>
-            <canvas class="ls-wave" data-wave width="720" height="110" aria-hidden="true"></canvas>
+          </div>
+          <canvas class="ls-wave" data-wave width="720" height="110" aria-hidden="true"></canvas>
             <div class="ls-lyrics" data-lyrics></div>
             <p class="ls-edit-toggle-wrap">
               <button type="button" class="text-link ls-edit-toggle" data-edit-toggle>Edit lyrics &amp; timing</button>
@@ -181,34 +182,37 @@
               </div>
             </div>
             <div class="ls-controls">
-              <button type="button" class="ls-btn" data-prev aria-label="Previous track">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6 6h2v12H6zm3.5 6 8.5 6V6z"/></svg>
-              </button>
-              <button type="button" class="ls-btn ls-btn-play" data-play aria-label="Play"></button>
-              <button type="button" class="ls-btn" data-next aria-label="Next track">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16 6h2v12h-2zM6 18l8.5-6L6 6z"/></svg>
-              </button>
-              <button type="button" class="ls-btn" data-skip="-10" aria-label="Back 10 seconds">-10</button>
-              <button type="button" class="ls-btn" data-skip="10" aria-label="Forward 10 seconds">+10</button>
-              <span class="ls-time" data-cur>0:00</span>
-              <div
-                class="ls-seek"
-                data-seek
-                role="slider"
-                tabindex="0"
-                aria-label="Seek"
-                aria-valuemin="0"
-                aria-valuemax="1000"
-                aria-valuenow="0"
-              >
-                <div class="ls-seek-track">
-                  <div class="ls-seek-fill" data-seek-fill></div>
-                </div>
+              <div class="ls-transport">
+                <button type="button" class="ls-btn" data-prev aria-label="Previous track">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6 6h2v12H6zm3.5 6 8.5 6V6z"/></svg>
+                </button>
+                <button type="button" class="ls-btn ls-btn-play" data-play aria-label="Play"></button>
+                <button type="button" class="ls-btn" data-next aria-label="Next track">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16 6h2v12h-2zM6 18l8.5-6L6 6z"/></svg>
+                </button>
+                <button type="button" class="ls-btn" data-skip="-10" aria-label="Back 10 seconds">-10</button>
+                <button type="button" class="ls-btn" data-skip="10" aria-label="Forward 10 seconds">+10</button>
               </div>
-              <span class="ls-time" data-dur>0:00</span>
+              <div class="ls-seek-row">
+                <span class="ls-time" data-cur>0:00</span>
+                <div
+                  class="ls-seek"
+                  data-seek
+                  role="slider"
+                  tabindex="0"
+                  aria-label="Seek"
+                  aria-valuemin="0"
+                  aria-valuemax="1000"
+                  aria-valuenow="0"
+                >
+                  <div class="ls-seek-track">
+                    <div class="ls-seek-fill" data-seek-fill></div>
+                  </div>
+                </div>
+                <span class="ls-time" data-dur>0:00</span>
+              </div>
             </div>
-            <audio preload="metadata" controlsList="nodownload"></audio>
-          </div>
+          <audio preload="metadata" controlsList="nodownload"></audio>
         </div>
 
         <div class="album-panels">
@@ -288,7 +292,7 @@
   </footer>
 
   <script src="js/main.js?v=story-view-1"></script>
-  <script src="js/player.js?v=8"></script>
+  <script src="js/player.js?v=9"></script>
   <script src="js/chat.js?v=10"></script>
 </body>
 </html>

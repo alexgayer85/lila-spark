@@ -705,25 +705,56 @@
     if (d) seekTo(r * d);
   }
 
+  const seekPtr = { x: 0, y: 0, id: null, locked: false };
+
   els.seek.addEventListener("pointerdown", (e) => {
-    state.scrubbing = true;
-    els.seek.setPointerCapture(e.pointerId);
-    ratioFromPointer(e);
+    seekPtr.x = e.clientX;
+    seekPtr.y = e.clientY;
+    seekPtr.id = e.pointerId;
+    seekPtr.locked = false;
+    state.scrubbing = false;
   });
   els.seek.addEventListener("pointermove", (e) => {
-    if (!state.scrubbing) return;
-    ratioFromPointer(e);
+    if (seekPtr.id !== e.pointerId) return;
+    const dx = e.clientX - seekPtr.x;
+    const dy = e.clientY - seekPtr.y;
+    if (!seekPtr.locked) {
+      if (Math.abs(dx) < 8 && Math.abs(dy) < 8) return;
+      if (Math.abs(dy) > Math.abs(dx)) {
+        seekPtr.id = null;
+        return;
+      }
+      seekPtr.locked = true;
+      state.scrubbing = true;
+      try {
+        els.seek.setPointerCapture(e.pointerId);
+      } catch {
+        /* capture optional */
+      }
+    }
+    if (state.scrubbing) ratioFromPointer(e);
   });
   function endScrub(e) {
-    if (!state.scrubbing) return;
-    ratioFromPointer(e);
+    if (seekPtr.id !== e.pointerId) return;
+    if (state.scrubbing || (!seekPtr.locked && Math.hypot(e.clientX - seekPtr.x, e.clientY - seekPtr.y) < 8)) {
+      ratioFromPointer(e);
+    }
     state.scrubbing = false;
+    seekPtr.id = null;
+    seekPtr.locked = false;
   }
   els.seek.addEventListener("pointerup", endScrub);
   els.seek.addEventListener("pointercancel", () => {
     state.scrubbing = false;
+    seekPtr.id = null;
+    seekPtr.locked = false;
+  });
+  let lyricTap = null;
+  els.lyrics.addEventListener("pointerdown", (e) => {
+    lyricTap = { x: e.clientX, y: e.clientY };
   });
   els.lyrics.addEventListener("click", (e) => {
+    if (lyricTap && Math.hypot(e.clientX - lyricTap.x, e.clientY - lyricTap.y) > 10) return;
     const line = e.target.closest("[data-i]");
     if (!line) return;
     const t = lineTime(Number(line.dataset.i));
