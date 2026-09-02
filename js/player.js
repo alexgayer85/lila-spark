@@ -589,6 +589,7 @@
 
   function setEditing(on) {
     state.editing = !!on;
+    root.classList.toggle("is-editing", state.editing);
     if (els.editor) els.editor.hidden = !state.editing;
     if (els.editToggle) {
       els.editToggle.textContent = state.editing ? "Done editing" : "Edit lyrics & timing";

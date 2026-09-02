@@ -2358,15 +2358,21 @@ body.lightbox-open {
   align-items: center;
 }
 
-@media (min-width: 960px) {
+@media (min-width: 960px) and (min-height: 1100px) {
   .ls-player {
     position: sticky;
     top: calc(var(--header-h) + 0.5rem);
   }
+}
 
+@media (min-width: 960px) {
   .ls-player-head {
     grid-template-columns: 7.5rem 1fr;
   }
+}
+
+.ls-player.is-editing {
+  position: static;
 }
 
 .ls-player-cover {
@@ -2616,8 +2622,11 @@ body.lightbox-open {
 .ls-edit-rows {
   display: grid;
   gap: 0.35rem;
-  max-height: 16rem;
+  max-height: min(16rem, 42vh);
   overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
+  overscroll-behavior: contain;
 }
 
 .ls-edit-row {
@@ -2656,13 +2665,47 @@ body.lightbox-open {
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
-  margin-top: 0.7rem;
+  margin: 0 0 0.65rem;
   align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  padding-bottom: 0.35rem;
+  background: rgba(10, 10, 15, 0.92);
 }
 
 .ls-edit-status {
   font-size: 0.82rem;
   color: var(--ink-muted);
+}
+
+@media (orientation: landscape) and (max-height: 900px) {
+  .ls-player {
+    position: static;
+    gap: 0.45rem;
+    padding: 0.7rem 0.85rem;
+  }
+
+  .ls-player.is-editing .ls-wave,
+  .ls-player.is-editing .ls-lyrics {
+    display: none;
+  }
+
+  .ls-player.is-editing .ls-edit-help {
+    display: none;
+  }
+
+  .ls-wave {
+    height: 48px;
+  }
+
+  .ls-lyrics {
+    height: 5.2rem;
+  }
+
+  .ls-edit-rows {
+    max-height: min(38vh, 12rem);
+  }
 }
 
 @media (max-width: 720px) {
