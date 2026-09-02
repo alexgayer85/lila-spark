@@ -2322,3 +2322,319 @@ body.lightbox-open {
     width: min(22.5rem, calc(100vw - 1.1rem));
   }
 }
+
+/* Single music player */
+.ls-player {
+  display: grid;
+  grid-template-columns: 7.5rem 1fr;
+  gap: 1.15rem 1.35rem;
+  align-items: stretch;
+  margin: 0 0 1.75rem;
+  padding: 1.1rem 1.2rem 1.2rem;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: calc(var(--radius) + 4px);
+  backdrop-filter: blur(16px);
+  position: sticky;
+  top: calc(var(--header-h) + 0.5rem);
+  z-index: 5;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+}
+
+.ls-player-cover {
+  width: 7.5rem;
+  height: 7.5rem;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+}
+
+.ls-player-main {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.ls-player-title {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.ls-player-album {
+  margin: 0.15rem 0 0;
+  color: var(--ink-muted);
+  font-size: 0.88rem;
+}
+
+.ls-player-desc {
+  margin: 0.35rem 0 0;
+  color: var(--ink);
+  font-size: 0.95rem;
+  line-height: 1.4;
+  max-width: 40rem;
+}
+
+.track-desc {
+  display: block;
+  margin: 0.2rem 0 0;
+  color: var(--ink-muted);
+  font-size: 0.88rem;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.ls-wave {
+  display: block;
+  width: 100%;
+  height: 88px;
+}
+
+.ls-lyrics {
+  position: relative;
+  height: 9.5rem;
+  overflow: hidden;
+  mask-image: linear-gradient(to bottom, transparent, #000 14%, #000 86%, transparent);
+}
+
+.ls-lyrics-track {
+  padding: 4.2rem 0;
+  transition: transform 0.4s ease;
+  will-change: transform;
+}
+
+.ls-lyric-line {
+  margin: 0;
+  padding: 0.28rem 0.4rem;
+  text-align: center;
+  color: var(--ink-muted);
+  font-size: 0.95rem;
+  line-height: 1.4;
+  transition: color 0.2s ease, opacity 0.2s ease, filter 0.2s ease;
+  cursor: pointer;
+}
+
+.ls-lyric-line.is-near {
+  color: var(--ink);
+  opacity: 0.75;
+}
+
+.ls-lyric-line.is-current {
+  color: #fff;
+  font-weight: 600;
+  transform: scale(1.04);
+  background: linear-gradient(120deg, var(--magenta), var(--cyan));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.ls-lyric-empty {
+  margin: 1.2rem 0 0;
+  text-align: center;
+  color: var(--ink-muted);
+  font-size: 0.9rem;
+}
+
+.ls-controls {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto 1fr auto;
+  gap: 0.45rem 0.55rem;
+  align-items: center;
+}
+
+.ls-btn {
+  appearance: none;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--ink);
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.ls-btn svg {
+  width: 1.05rem;
+  height: 1.05rem;
+}
+
+.ls-btn[data-skip] {
+  width: auto;
+  min-width: 2.4rem;
+  padding: 0 0.45rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.ls-btn-play {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-color: rgba(255, 45, 149, 0.45);
+  background: rgba(255, 45, 149, 0.15);
+}
+
+.ls-player.is-playing .ls-btn-play {
+  box-shadow: 0 0 18px rgba(255, 45, 149, 0.35);
+}
+
+.ls-time {
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+  min-width: 2.4rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.ls-seek {
+  width: 100%;
+  min-width: 0;
+  height: 1.4rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  touch-action: none;
+}
+
+.ls-seek-track {
+  position: relative;
+  width: 100%;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  overflow: hidden;
+}
+
+.ls-seek-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--cyan), var(--magenta));
+  border-radius: 999px;
+}
+
+.ls-player audio {
+  display: none;
+}
+
+.ls-row {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.ls-row.is-current {
+  border-color: rgba(255, 45, 149, 0.55);
+  box-shadow: 0 0 0 1px rgba(255, 45, 149, 0.25);
+}
+
+.ls-row .track-title,
+.ls-row .track-meta {
+  display: block;
+}
+
+.ls-edit-toggle-wrap {
+  margin: 0.15rem 0 0;
+  font-size: 0.82rem;
+}
+
+.ls-edit-toggle {
+  appearance: none;
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+.ls-edit {
+  margin-top: 0.35rem;
+  padding: 0.75rem 0.85rem;
+  border: 1px dashed var(--line);
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.ls-edit-help {
+  margin: 0 0 0.7rem;
+  color: var(--ink-muted);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.ls-edit-help kbd,
+.ls-edit-help code {
+  font-size: 0.85em;
+}
+
+.ls-edit-rows {
+  display: grid;
+  gap: 0.35rem;
+  max-height: 16rem;
+  overflow: auto;
+}
+
+.ls-edit-row {
+  display: grid;
+  grid-template-columns: 4.6rem 1fr auto;
+  gap: 0.35rem;
+  align-items: center;
+}
+
+.ls-edit-row.is-selected {
+  outline: 1px solid rgba(255, 45, 149, 0.45);
+  border-radius: 8px;
+}
+
+.ls-edit-row input {
+  font: inherit;
+  font-size: 0.85rem;
+  color: var(--ink);
+  background: #0a0a0f;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.35rem 0.45rem;
+}
+
+.ls-edit-row .ls-edit-del {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--ink-muted);
+  cursor: pointer;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.ls-edit-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.7rem;
+}
+
+@media (max-width: 720px) {
+  .ls-player {
+    grid-template-columns: 1fr;
+    position: static;
+  }
+
+  .ls-player-cover {
+    width: 5.5rem;
+    height: 5.5rem;
+  }
+
+  .ls-controls {
+    grid-template-columns: auto auto auto 1fr;
+  }
+
+  .ls-time:last-child {
+    display: none;
+  }
+}

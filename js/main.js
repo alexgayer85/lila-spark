@@ -73,6 +73,7 @@
       if (on) panel.removeAttribute("hidden");
       else panel.setAttribute("hidden", "");
     });
+    window.dispatchEvent(new CustomEvent("lila:album", { detail: { id } }));
   }
 
   albumCards.forEach((card) => {
