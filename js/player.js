@@ -683,14 +683,19 @@
 
   function addBreak() {
     syncEditorIntoState();
-    const t = Math.round((els.audio.currentTime || 0) * 100) / 100;
-    state.lyrics.lines.splice(state.editIndex + 1, 0, {
+    const now = Math.round((els.audio.currentTime || 0) * 100) / 100;
+    const i = Math.max(0, state.editIndex);
+    const cur = state.lyrics.lines[i];
+    const curT = cur && typeof cur.t === "number" ? cur.t : null;
+    const alreadyPassed = cur && !isBreak(cur) && curT != null && curT <= now + 0.2;
+    const at = alreadyPassed ? i + 1 : i;
+    state.lyrics.lines.splice(at, 0, {
       text: "♪ ♪ ♪",
       section: "Instrumental",
-      t: t,
+      t: now,
       break: true,
     });
-    state.editIndex += 1;
+    state.editIndex = Math.min(at + 1, state.lyrics.lines.length - 1);
     state.lyrics.timed = true;
     persistLyrics();
     renderEditor();
