@@ -1,23 +1,27 @@
 {
   "title": "Feels Good",
   "durationHint": null,
-  "timed": false,
+  "timed": true,
   "lines": [
     {
       "text": "Sun is shining, world in spin,",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 16.66
     },
     {
       "text": "With you here, let the fun begin.",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 21.9
     },
     {
       "text": "Laughter rings, worries fade,",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 26.4
     },
     {
       "text": "In this parade, we've got it made.",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 31.16
     },
     {
       "text": "Vibes are high, can't go wrong,",
@@ -25,63 +29,78 @@
     },
     {
       "text": "Sing along.",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 41.02
     },
     {
       "text": "Feels good, yeah it does,",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 44.34
     },
     {
       "text": "In this buzz, all because.",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 49.78
     },
     {
       "text": "You and me, pure delight,",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 53.16
     },
     {
       "text": "Feels good, day and night.",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 57.96
     },
     {
       "text": "Dancing free, no cares in sight,",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 69.36
     },
     {
       "text": "Everything just feels so right.",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 73.18
     },
     {
       "text": "Moments like these, cherish true,",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 77.92
     },
     {
       "text": "Me and you, breaking through.",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 82.5
     },
     {
       "text": "Rhythm calls, answer now,",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 87.92
     },
     {
       "text": "Take a bow.",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 92.86
     },
     {
       "text": "Feels good, yeah it does,",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 96.3
     },
     {
       "text": "In this buzz, all because.",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 100.92
     },
     {
       "text": "You and me, pure delight,",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 104.48
     },
     {
       "text": "Feels good, day and night.",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 109.78
     },
     {
       "text": "No end to this joy we find,",
@@ -89,23 +108,28 @@
     },
     {
       "text": "Peace of mind.",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 139.54
     },
     {
       "text": "Feels good, yeah it does,",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 143.26
     },
     {
       "text": "In this buzz, all because.",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 147.64
     },
     {
       "text": "You and me, pure delight,",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 151.06
     },
     {
       "text": "Feels good, forever bright.",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 156.38
     }
   ]
 }

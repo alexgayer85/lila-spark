@@ -1,7 +1,7 @@
 {
   "title": "Sweet Crush",
   "durationHint": null,
-  "timed": false,
+  "timed": true,
   "lines": [
     {
       "text": "Walking down the street, I catch you in my eye",
@@ -25,7 +25,8 @@
     },
     {
       "text": "Wonder if you notice what I’m going through",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 43.14
     },
     {
       "text": "Sweet crush, yeah you got me hooked",
@@ -33,7 +34,8 @@
     },
     {
       "text": "Like candy on my lips, can’t get enough",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 109.04
     },
     {
       "text": "You’re the flavor that I crave every day",
@@ -45,7 +47,8 @@
     },
     {
       "text": "Notes in my locker, whispers in the hall",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 75.96
     },
     {
       "text": "Hoping this feeling never fades at all",
@@ -73,7 +76,8 @@
     },
     {
       "text": "Like candy on my lips, can’t get enough",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 175.58
     },
     {
       "text": "You’re the flavor that I crave every day",
@@ -85,7 +89,8 @@
     },
     {
       "text": "Maybe someday you’ll see me too",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 152.52
     },
     {
       "text": "Turn this little dream into something true",
@@ -97,7 +102,8 @@
     },
     {
       "text": "Like candy on my lips, can’t get enough",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 194.62
     },
     {
       "text": "You’re the flavor that I crave night and day",

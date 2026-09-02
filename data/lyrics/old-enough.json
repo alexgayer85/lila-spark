@@ -1,7 +1,7 @@
 {
   "title": "Old Enough",
   "durationHint": null,
-  "timed": false,
+  "timed": true,
   "lines": [
     {
       "text": "They say I'm young, don't understand,",
@@ -29,15 +29,18 @@
     },
     {
       "text": "Old enough to know what's real,",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 25.8
     },
     {
       "text": "Old enough to feel the deal.",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 29.74
     },
     {
       "text": "Not too young, hear my voice,",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 33.78
     },
     {
       "text": "Old enough, my choice.",
@@ -45,39 +48,48 @@
     },
     {
       "text": "Lessons learned from every fall,",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 47.82
     },
     {
       "text": "Rising up, breaking the wall.",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 52.1
     },
     {
       "text": "Dreams are big, won't hold back,",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 56.66
     },
     {
       "text": "On this track, no turning back.",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 60.62
     },
     {
       "text": "Fire inside, burning bright,",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 65.26
     },
     {
       "text": "Into the night.",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 69.13
     },
     {
       "text": "Old enough to know what's real,",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 73.3
     },
     {
       "text": "Old enough to feel the deal.",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 76.9
     },
     {
       "text": "Not too young, hear my voice,",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 80.92
     },
     {
       "text": "Old enough, my choice.",
@@ -93,15 +105,18 @@
     },
     {
       "text": "Old enough to know what's real,",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 25.8
     },
     {
       "text": "Old enough to feel the deal.",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 122.48
     },
     {
       "text": "Not too young, hear my voice,",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 125.9
     },
     {
       "text": "Old enough, rejoice.",

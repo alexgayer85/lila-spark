@@ -1,47 +1,57 @@
 {
   "title": "Heart on a String",
   "durationHint": null,
-  "timed": false,
+  "timed": true,
   "lines": [
     {
       "text": "You got me swinging like a yo-yo in your hand",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 15.84
     },
     {
       "text": "One smile and I’m flying, one look and I land",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 21.22
     },
     {
       "text": "Can’t help but laugh at how you pull me close",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 25.92
     },
     {
       "text": "This game we’re playing, baby, I love it the most",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 30.04
     },
     {
       "text": "You tug a little and my heart starts to sing",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 35.82
     },
     {
       "text": "Got me wrapped around your finger on a string",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 39.96
     },
     {
       "text": "Heart on a string, you know just what to do",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 44.26
     },
     {
       "text": "Pull me in, let me go, I keep coming back to you",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 48.46
     },
     {
       "text": "Dancing on this feeling, never wanna cut the line",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 52.9
     },
     {
       "text": "Heart on a string and it feels so fine",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 57.26
     },
     {
       "text": "We tease and we laugh, never taking it too far",
@@ -61,47 +71,58 @@
     },
     {
       "text": "You tug a little and my heart starts to sing",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 35.82
     },
     {
       "text": "Got me wrapped around your finger on a string",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 39.96
     },
     {
       "text": "Heart on a string, you know just what to do",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 105.46
     },
     {
       "text": "Pull me in, let me go, I keep coming back to you",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 161.92
     },
     {
       "text": "Dancing on this feeling, never wanna cut the line",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 166.48
     },
     {
       "text": "Heart on a string and it feels so fine",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 170.7
     },
     {
       "text": "Pull it, baby… yeah!",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 144.82
     },
     {
       "text": "Heart on a string, you know just what to do",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 44.26
     },
     {
       "text": "Pull me in, let me go, I keep coming back to you",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 48.46
     },
     {
       "text": "Dancing on this feeling, never wanna cut the line",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 52.9
     },
     {
       "text": "Heart on a string and it feels so fine",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 57.26
     }
   ]
 }

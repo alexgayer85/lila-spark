@@ -1,27 +1,32 @@
 {
   "title": "Key to My Heart",
   "durationHint": null,
-  "timed": false,
+  "timed": true,
   "lines": [
     {
       "text": "You've got the touch that opens me wide,",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 22.98
     },
     {
       "text": "No more secrets, nothing to hide.",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 27.82
     },
     {
       "text": "Whispers in the wind, calling your name,",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 33.22
     },
     {
       "text": "This connection, it's not a game.",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 38.36
     },
     {
       "text": "Unlock the door, step inside,",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 43.16
     },
     {
       "text": "With you, I confide.",
@@ -29,7 +34,8 @@
     },
     {
       "text": "Key to my heart, you're the one I choose,",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 54.22
     },
     {
       "text": "Hold it tight, never lose.",
@@ -37,27 +43,33 @@
     },
     {
       "text": "Love's treasure, safe and sound,",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 65.12
     },
     {
       "text": "Key to my heart, all around.",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 71.5
     },
     {
       "text": "Moments shared under moonlit skies,",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 82.22
     },
     {
       "text": "Your eyes reflect no goodbyes.",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 87.64
     },
     {
       "text": "Together we'll make our stand.",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 98.7
     },
     {
       "text": "Feel the rhythm, hearts in sync,",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 103.24
     },
     {
       "text": "No need to think.",
@@ -65,7 +77,8 @@
     },
     {
       "text": "Key to my heart, you're the one I choose,",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 114.2
     },
     {
       "text": "Hold it tight, never lose.",
@@ -73,23 +86,28 @@
     },
     {
       "text": "Love's treasure, safe and sound,",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 125.06
     },
     {
       "text": "Key to my heart, all around.",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 131.36
     },
     {
       "text": "No turning back, this is real,",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 142.02
     },
     {
       "text": "Seal the deal.",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 147.5
     },
     {
       "text": "Key to my heart, you're the one I choose,",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 153.74
     },
     {
       "text": "Hold it tight, never lose.",
@@ -97,11 +115,13 @@
     },
     {
       "text": "Love's treasure, safe and sound,",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 164.1
     },
     {
       "text": "Key to my heart, forever bound.",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 170.3
     }
   ]
 }

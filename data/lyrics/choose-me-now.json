@@ -1,15 +1,17 @@
 {
   "title": "Choose Me Now",
   "durationHint": null,
-  "timed": false,
+  "timed": true,
   "lines": [
     {
       "text": "In the crowd, I see you there,",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 36.64
     },
     {
       "text": "Wondering if you even care.",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 41.78
     },
     {
       "text": "Heart's racing, time to decide,",
@@ -17,31 +19,38 @@
     },
     {
       "text": "Don't leave me on this ride.",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 50.48
     },
     {
       "text": "Open your eyes, see the truth,",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 55.28
     },
     {
       "text": "I'm right here, in my youth.",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 60.0
     },
     {
       "text": "Choose me now, don't hesitate,",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 63.38
     },
     {
       "text": "Be the one, seal our fate.",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 68.23
     },
     {
       "text": "Love's waiting, take my hand,",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 72.52
     },
     {
       "text": "Choose me now, understand.",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 76.98
     },
     {
       "text": "Friends whisper, but I feel strong,",
@@ -49,43 +58,53 @@
     },
     {
       "text": "This connection can't be wrong.",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 104.44
     },
     {
       "text": "Step forward, make it clear,",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 108.92
     },
     {
       "text": "Erase all doubt and fear.",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 113.56
     },
     {
       "text": "Moment's here, don't let it pass,",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 119.46
     },
     {
       "text": "Make it last, break the glass.",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 122.82
     },
     {
       "text": "Choose me now, don't hesitate,",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 127.26
     },
     {
       "text": "Be the one, seal our fate.",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 131.34
     },
     {
       "text": "Love's waiting, take my hand,",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 137.05
     },
     {
       "text": "Choose me now, understand.",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 140.99
     },
     {
       "text": "No more waiting in the wings,",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 164.53
     },
     {
       "text": "Hear the bells it rings.",
@@ -93,19 +112,23 @@
     },
     {
       "text": "Choose me now, don't hesitate,",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 172.93
     },
     {
       "text": "Be the one, seal our fate.",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 22.56
     },
     {
       "text": "Love's waiting, take my hand,",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 182.23
     },
     {
       "text": "Choose me now, forever stand.",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 186.85
     }
   ]
 }

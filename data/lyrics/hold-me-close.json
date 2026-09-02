@@ -1,47 +1,57 @@
 {
   "title": "Hold Me Close",
   "durationHint": null,
-  "timed": false,
+  "timed": true,
   "lines": [
     {
       "text": "Stars are shining, but I'm feeling alone,",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 25.06
     },
     {
       "text": "Wishing you were here, calling on the phone.",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 32.74
     },
     {
       "text": "Memories replay like a favorite song,",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 36.46
     },
     {
       "text": "Need your warmth where I belong.",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 42.98
     },
     {
       "text": "Distance hurts, but love remains,",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 47.92
     },
     {
       "text": "Through the rains, break these chains.",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 53.7
     },
     {
       "text": "Hold me close, don't let go,",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 62.9
     },
     {
       "text": "In your arms, let feelings show.",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 213.44
     },
     {
       "text": "Through the dark, be my guide,",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 218.6
     },
     {
       "text": "Hold me close, side by side.",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 80.24
     },
     {
       "text": "Laughter echoes from days gone by,",
@@ -49,59 +59,73 @@
     },
     {
       "text": "Tears fall soft, I can't deny.",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 106.04
     },
     {
       "text": "Promise me we'll find our way,",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 111.46
     },
     {
       "text": "Back together, come what may.",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 117.54
     },
     {
       "text": "Heart's whispering your name so sweet,",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 124.26
     },
     {
       "text": "In this beat, our souls meet.",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 129.04
     },
     {
       "text": "Hold me close, don't let go,",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 62.9
     },
     {
       "text": "In your arms, let feelings show.",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 213.44
     },
     {
       "text": "Through the dark, be my guide,",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 74.7
     },
     {
       "text": "Hold me close, side by side.",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 80.24
     },
     {
       "text": "Time will heal, love will grow,",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 193.78
     },
     {
       "text": "Just need you to know.",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 199.74
     },
     {
       "text": "Hold me close, don't let go,",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 62.9
     },
     {
       "text": "In your arms, let feelings show.",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 213.44
     },
     {
       "text": "Through the dark, be my guide,",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 74.7
     },
     {
       "text": "Hold me close, forever abide.",

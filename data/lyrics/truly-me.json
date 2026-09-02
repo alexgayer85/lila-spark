@@ -1,91 +1,112 @@
 {
   "title": "Truly Me",
   "durationHint": null,
-  "timed": false,
+  "timed": true,
   "lines": [
     {
       "text": "Waking up to a brand new day, feeling the sun on my face,",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 0.0
     },
     {
       "text": "No more doubts clouding my way, I'm finding my own space.",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 6.48
     },
     {
       "text": "Friends are calling, got plans to make, but deep inside I know,",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 17.38
     },
     {
       "text": "This heart of mine is ready to take whatever life will show.",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 24.38
     },
     {
       "text": "No hiding anymore, I'm stepping into the light,",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 34.74
     },
     {
       "text": "Got dreams in my pocket, gonna hold on tight.",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 43.5
     },
     {
       "text": "This is truly me, yeah, can't you see?",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 52.74
     },
     {
       "text": "Real and free, just let it be.",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 56.88
     },
     {
       "text": "No pretending, no disguise, under these blue skies,",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 61.8
     },
     {
       "text": "Truly me reaching for the prize.",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 70.88
     },
     {
       "text": "School hallways echo with laughter and tears,",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 84.78
     },
     {
       "text": "Crushes come and go, facing all my fears.",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 94.46
     },
     {
       "text": "But I'm learning fast, growing every day,",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 102.38
     },
     {
       "text": "Won't let the world stand in my way.",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 112.24
     },
     {
       "text": "Feel the rhythm in my soul, it's time to take control,",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 120.06
     },
     {
       "text": "Breaking free from the old, watch my story unfold.",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 128.3
     },
     {
       "text": "This is truly me, yeah, can't you see?",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 138.32
     },
     {
       "text": "Real and free, just let it be.",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 142.68
     },
     {
       "text": "No pretending, no disguise, under these blue skies,",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 209.46
     },
     {
       "text": "Truly me reaching for the prize.",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 70.88
     },
     {
       "text": "Sometimes it hurts, but I won't fall apart,",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 182.58
     },
     {
       "text": "Strength in my heart, right from the start.",
@@ -93,15 +114,18 @@
     },
     {
       "text": "This is truly me, yeah, can't you see?",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 52.74
     },
     {
       "text": "Real and free, just let it be.",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 56.88
     },
     {
       "text": "No pretending, no disguise, under these blue skies,",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 61.8
     },
     {
       "text": "Truly me forever I'll rise.",

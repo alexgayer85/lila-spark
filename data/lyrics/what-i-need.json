@@ -1,47 +1,57 @@
 {
   "title": "What I Need",
   "durationHint": null,
-  "timed": false,
+  "timed": true,
   "lines": [
     {
       "text": "Searching for answers in the quiet night,",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 10.04
     },
     {
       "text": "Wondering if you'll ever hold me tight.",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 14.4
     },
     {
       "text": "I've got questions, need to hear your voice,",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 19.1
     },
     {
       "text": "Tell me now, make the right choice.",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 23.64
     },
     {
       "text": "No more waiting in the dark,",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 28.7
     },
     {
       "text": "Light a spark, hit the mark.",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 32.56
     },
     {
       "text": "This is what I need, your love so true,",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 40.62
     },
     {
       "text": "Wrap me up, see me through.",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 46.04
     },
     {
       "text": "No games, no lies, just you and me,",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 50.58
     },
     {
       "text": "What I need, set my heart free.",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 55.48
     },
     {
       "text": "Friends say be patient, but time flies fast,",
@@ -49,59 +59,73 @@
     },
     {
       "text": "Want your affection, make it last.",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 78.2
     },
     {
       "text": "Eyes locked, feelings overflow,",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 82.76
     },
     {
       "text": "Deep inside, I already know.",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 87.32
     },
     {
       "text": "For heaven's sake, no more fake.",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 96.38
     },
     {
       "text": "This is what I need, your love so true,",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 104.7
     },
     {
       "text": "Wrap me up, see me through.",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 110.04
     },
     {
       "text": "No games, no lies, just you and me,",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 114.62
     },
     {
       "text": "What I need, set my heart free.",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 119.62
     },
     {
       "text": "One chance to make it right,",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 155.2
     },
     {
       "text": "Hold on through the night.",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 160.26
     },
     {
       "text": "This is what I need, your love so true,",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 173.52
     },
     {
       "text": "Wrap me up, see me through.",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 46.04
     },
     {
       "text": "No games, no lies, just you and me,",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 183.24
     },
     {
       "text": "What I need, eternally.",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 188.02
     }
   ]
 }

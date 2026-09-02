@@ -1,7 +1,7 @@
 {
   "title": "Stop the Hurt",
   "durationHint": null,
-  "timed": false,
+  "timed": true,
   "lines": [
     {
       "text": "Tears on my pillow, nights feeling blue,",
@@ -17,11 +17,13 @@
     },
     {
       "text": "Can't take this pain anymore.",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 49.14
     },
     {
       "text": "Time to stand up, wipe away the rain,",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 52.82
     },
     {
       "text": "No more chains, break the strain.",
@@ -29,19 +31,23 @@
     },
     {
       "text": "Stop the hurt, let me go,",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 70.44
     },
     {
       "text": "Heart's been broken, now you know.",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 75.6
     },
     {
       "text": "No more lies, no more fights,",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 80.8
     },
     {
       "text": "Stop the hurt, turn out the lights.",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 84.24
     },
     {
       "text": "Memories fade, but scars remain,",
@@ -61,31 +67,38 @@
     },
     {
       "text": "Strength inside, ready to fly,",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 125.32
     },
     {
       "text": "Say goodbye, no more cry.",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 130.44
     },
     {
       "text": "Stop the hurt, let me go,",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 142.98
     },
     {
       "text": "Heart's been broken, now you know.",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 147.5
     },
     {
       "text": "No more lies, no more fights,",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 152.78
     },
     {
       "text": "Stop the hurt, turn out the lights.",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 156.44
     },
     {
       "text": "One last look, then I'm gone,",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 179.58
     },
     {
       "text": "New dawn, moving on.",
@@ -93,19 +106,23 @@
     },
     {
       "text": "Stop the hurt, let me go,",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 195.32
     },
     {
       "text": "Heart's been broken, now you know.",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 75.6
     },
     {
       "text": "No more lies, no more fights,",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 80.8
     },
     {
       "text": "Stop the hurt, embrace the nights.",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 208.96
     }
   ]
 }
