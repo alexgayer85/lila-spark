@@ -2,7 +2,6 @@
   const PROXY = "https://lila-spark-chat.alexgayer85.workers.dev";
   const PROXY_URL = PROXY;
   const bibleUrl = new URL("data/lila-bible.json", document.baseURI).href;
-  const packUrl = new URL("data/bible-pack.json", document.baseURI).href;
   const GROGGY = [
     "mm still half asleep. need coffee. brain isn't braining right now — try me again in a minute?",
     "ugh. i'm foggy. like the wifi in my head dropped. ping me one more time?",
@@ -663,18 +662,11 @@
     });
   }
 
-  Promise.all([
-    fetch(bibleUrl).then((r) => (r.ok ? r.json() : null)),
-    fetch(packUrl).then((r) => (r.ok ? r.json() : null)).catch(() => null),
-  ])
-    .then(([data, pack]) => {
+  fetch(bibleUrl)
+    .then((r) => (r.ok ? r.json() : null))
+    .then((data) => {
       bible = data;
       mdChunks = [];
-      if (pack && Array.isArray(pack.files)) {
-        pack.files.forEach((f) => {
-          mdChunks = mdChunks.concat(chunkMarkdown(f.name, f.text || ""));
-        });
-      }
     })
     .catch(() => {
       bible = null;
