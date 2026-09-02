@@ -28,6 +28,17 @@
 
 html {
   scroll-behavior: smooth;
+  touch-action: manipulation;
+}
+
+button,
+a,
+input,
+textarea,
+select,
+label,
+summary {
+  touch-action: manipulation;
 }
 
 body {
