@@ -2695,9 +2695,29 @@ body.lightbox-open {
   background: rgba(10, 10, 15, 0.92);
 }
 
-.ls-edit-status {
+.ls-edit-pass {
+  font: inherit;
   font-size: 0.82rem;
+  color: var(--ink);
+  background: #0a0a0f;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.35rem 0.5rem;
+  min-width: 9rem;
+}
+
+.ls-edit-status {
+  font-size: 0.88rem;
+  font-weight: 600;
   color: var(--ink-muted);
+}
+
+.ls-edit-status.is-ok {
+  color: var(--cyan);
+}
+
+.ls-edit-status.is-bad {
+  color: var(--magenta);
 }
 
 @media (orientation: landscape) and (max-height: 900px) {

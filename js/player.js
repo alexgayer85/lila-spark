@@ -32,6 +32,7 @@
     download: root.querySelector("[data-download]"),
     revert: root.querySelector("[data-revert]"),
     publish: root.querySelector("[data-publish]"),
+    publishPass: root.querySelector("[data-publish-pass]"),
     publishStatus: root.querySelector("[data-publish-status]"),
   };
 
@@ -716,14 +717,22 @@
     URL.revokeObjectURL(a.href);
   }
 
+  function setPublishStatus(msg, kind) {
+    const el = els.publishStatus || root.querySelector("[data-publish-status]");
+    els.publishStatus = el;
+    if (!el) return;
+    el.textContent = msg;
+    el.classList.remove("is-ok", "is-bad");
+    if (kind) el.classList.add(kind);
+  }
+
   function editorPassword() {
-    let s = sessionStorage.getItem(SECRET_KEY) || "";
-    if (!s) {
-      s = window.prompt("Password to publish lyrics (same as chat logs)") || "";
-      s = s.trim();
-      if (s) sessionStorage.setItem(SECRET_KEY, s);
+    const typed = els.publishPass && els.publishPass.value.trim();
+    if (typed) {
+      sessionStorage.setItem(SECRET_KEY, typed);
+      return typed;
     }
-    return s;
+    return sessionStorage.getItem(SECRET_KEY) || "";
   }
 
   async function publishLyrics() {
@@ -732,11 +741,16 @@
     const slug = lyricSlug(track);
     if (!slug) return;
     syncEditorIntoState();
-    applyKaraoke();
     const secret = editorPassword();
-    if (!secret) return;
+    if (!secret) {
+      setPublishStatus("Enter the logs password, then Save live.", "is-bad");
+      if (els.publishPass) els.publishPass.focus();
+      return;
+    }
     els.publish.disabled = true;
-    if (els.publishStatus) els.publishStatus.textContent = "Saving…";
+    const prevLabel = els.publish.textContent;
+    els.publish.textContent = "Saving…";
+    setPublishStatus("Saving…");
     try {
       const res = await fetch(PROXY + "/lyrics/" + encodeURIComponent(slug), {
         method: "PUT",
@@ -748,18 +762,26 @@
       });
       if (res.status === 401) {
         sessionStorage.removeItem(SECRET_KEY);
-        if (els.publishStatus) els.publishStatus.textContent = "Wrong password.";
+        if (els.publishPass) els.publishPass.value = "";
+        setPublishStatus("Wrong password.", "is-bad");
         return;
       }
       if (!res.ok) throw new Error("http " + res.status);
       persistLyrics();
       applyKaraoke();
-      if (els.publishStatus) els.publishStatus.textContent = "Live — keep playing this track.";
+      els.publish.textContent = "Saved";
+      setPublishStatus("Saved. Keep playing this track.", "is-ok");
+      setTimeout(() => {
+        if (els.publish) els.publish.textContent = prevLabel;
+      }, 2500);
     } catch (err) {
-      if (els.publishStatus) els.publishStatus.textContent = "Save failed.";
+      setPublishStatus("Save failed. Check the network and try again.", "is-bad");
       console.error(err);
     } finally {
       els.publish.disabled = false;
+      if (els.publish && els.publish.textContent === "Saving…") {
+        els.publish.textContent = prevLabel;
+      }
     }
   }
 
