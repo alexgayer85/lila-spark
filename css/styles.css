@@ -2463,6 +2463,27 @@ body.lightbox-open {
   color: transparent;
 }
 
+.ls-lyric-line.is-break {
+  letter-spacing: 0.35em;
+  color: var(--cyan);
+  opacity: 0.55;
+  font-size: 1.15rem;
+  font-weight: 400;
+}
+
+.ls-lyric-line.is-break.is-current {
+  opacity: 1;
+  background: none;
+  color: var(--cyan);
+  -webkit-text-fill-color: var(--cyan);
+  transform: none;
+}
+
+.ls-edit-row.is-break .ls-edit-text {
+  color: var(--cyan);
+  letter-spacing: 0.12em;
+}
+
 .ls-lyric-empty {
   margin: 1.2rem 0 0;
   text-align: center;
@@ -2686,9 +2707,12 @@ body.lightbox-open {
     padding: 0.7rem 0.85rem;
   }
 
-  .ls-player.is-editing .ls-wave,
-  .ls-player.is-editing .ls-lyrics {
+  .ls-player.is-editing .ls-wave {
     display: none;
+  }
+
+  .ls-player.is-editing .ls-lyrics {
+    height: 4.4rem;
   }
 
   .ls-player.is-editing .ls-edit-help {

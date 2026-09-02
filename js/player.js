@@ -28,6 +28,7 @@
     editRows: root.querySelector("[data-edit-rows]"),
     stamp: root.querySelector("[data-stamp]"),
     addLine: root.querySelector("[data-add-line]"),
+    addBreak: root.querySelector("[data-add-break]"),
     download: root.querySelector("[data-download]"),
     revert: root.querySelector("[data-revert]"),
     publish: root.querySelector("[data-publish]"),
@@ -149,6 +150,7 @@
       text: String((l && l.text) || ""),
       section: (l && l.section) || "",
       t: l && typeof l.t === "number" ? l.t : undefined,
+      break: !!(l && l.break),
     }));
     return {
       title: data.title || title || "",
@@ -212,6 +214,7 @@
     const lines = state.lyrics.lines.map((l) => {
       const row = { text: l.text, section: l.section || "" };
       if (typeof l.t === "number") row.t = Math.round(l.t * 100) / 100;
+      if (l.break) row.break = true;
       return row;
     });
     return {
@@ -255,10 +258,32 @@
     return i;
   }
 
+  function isBreak(line) {
+    if (!line) return false;
+    if (line.break) return true;
+    const s = String(line.section || "").toLowerCase();
+    if (s.indexOf("instrumental") >= 0) return true;
+    const text = String(line.text || "").replace(/\s/g, "");
+    return text.length > 0 && /^[♪.·•]+$/.test(text);
+  }
+
   function lyricsFingerprint() {
     const track = currentTrack();
-    const first = state.lyrics.lines[0];
-    return (track && track.id) + ":" + state.lyrics.lines.length + ":" + (first && first.text);
+    const sig = state.lyrics.lines
+      .map((l) => (l.break ? "b" : "l") + (l.t != null ? l.t : "") + (l.text || ""))
+      .join("|");
+    return (track && track.id) + ":" + sig;
+  }
+
+  function applyKaraoke() {
+    buildEstimates(els.audio.duration);
+    if (els.lyrics) els.lyrics.dataset.fp = "";
+    renderLyrics(activeLine(els.audio.currentTime || 0));
+  }
+
+  function syncEditorIntoState() {
+    if (!els.editRows) return;
+    els.editRows.querySelectorAll("[data-edit-i]").forEach(readEditorRow);
   }
 
   function renderLyrics(active) {
@@ -275,7 +300,11 @@
       box.innerHTML =
         '<div class="ls-lyrics-track">' +
         lines
-          .map((l, i) => `<p class="ls-lyric-line" data-i="${i}">${escapeHtml(l.text)}</p>`)
+          .map((l, i) => {
+            const br = isBreak(l) ? " is-break" : "";
+            const label = isBreak(l) ? escapeHtml(l.text || "♪ ♪ ♪") : escapeHtml(l.text);
+            return `<p class="ls-lyric-line${br}" data-i="${i}">${label}</p>`;
+          })
           .join("") +
         "</div>";
       trackEl = box.querySelector(".ls-lyrics-track");
@@ -284,6 +313,7 @@
     for (let i = 0; i < kids.length; i++) {
       kids[i].className =
         "ls-lyric-line" +
+        (isBreak(lines[i]) ? " is-break" : "") +
         (i === active ? " is-current" : i === active - 1 || i === active + 1 ? " is-near" : "");
     }
     const idx = active >= 0 ? active : 0;
@@ -604,7 +634,8 @@
       .map((l, i) => {
         const sel = i === state.editIndex ? " is-selected" : "";
         const t = typeof l.t === "number" ? fmtPrecise(l.t) : "";
-        return `<div class="ls-edit-row${sel}" data-edit-i="${i}">
+        const br = isBreak(l) ? " is-break" : "";
+        return `<div class="ls-edit-row${sel}${br}" data-edit-i="${i}">
           <input class="ls-edit-time" data-field="t" value="${escapeHtml(t)}" aria-label="Time" />
           <input class="ls-edit-text" data-field="text" value="${escapeHtml(l.text)}" aria-label="Lyric" />
           <button type="button" class="ls-edit-del" data-del="${i}" aria-label="Remove line">×</button>
@@ -624,10 +655,12 @@
     line.text = text;
     if (t == null) delete line.t;
     else line.t = t;
+    line.break = isBreak(line);
     state.lyrics.timed = state.lyrics.lines.some((l) => typeof l.t === "number");
   }
 
   function stampLine() {
+    syncEditorIntoState();
     const i = state.editIndex;
     const line = state.lyrics.lines[i];
     if (!line) return;
@@ -636,15 +669,32 @@
     if (i < state.lyrics.lines.length - 1) state.editIndex = i + 1;
     persistLyrics();
     renderEditor();
-    renderLyrics(activeLine(els.audio.currentTime));
+    applyKaraoke();
   }
 
   function addLine() {
+    syncEditorIntoState();
     state.lyrics.lines.splice(state.editIndex + 1, 0, { text: "", section: "" });
     state.editIndex += 1;
     persistLyrics();
     renderEditor();
-    renderLyrics(activeLine(els.audio.currentTime || 0));
+    applyKaraoke();
+  }
+
+  function addBreak() {
+    syncEditorIntoState();
+    const t = Math.round((els.audio.currentTime || 0) * 100) / 100;
+    state.lyrics.lines.splice(state.editIndex + 1, 0, {
+      text: "♪ ♪ ♪",
+      section: "Instrumental",
+      t: t,
+      break: true,
+    });
+    state.editIndex += 1;
+    state.lyrics.timed = true;
+    persistLyrics();
+    renderEditor();
+    applyKaraoke();
   }
 
   function downloadPack() {
@@ -676,6 +726,8 @@
     if (!track || !els.publish) return;
     const slug = lyricSlug(track);
     if (!slug) return;
+    syncEditorIntoState();
+    applyKaraoke();
     const secret = editorPassword();
     if (!secret) return;
     els.publish.disabled = true;
@@ -696,7 +748,8 @@
       }
       if (!res.ok) throw new Error("http " + res.status);
       persistLyrics();
-      if (els.publishStatus) els.publishStatus.textContent = "Live for everyone.";
+      applyKaraoke();
+      if (els.publishStatus) els.publishStatus.textContent = "Live — keep playing this track.";
     } catch (err) {
       if (els.publishStatus) els.publishStatus.textContent = "Save failed.";
       console.error(err);
@@ -843,6 +896,7 @@
   }
   if (els.stamp) els.stamp.addEventListener("click", stampLine);
   if (els.addLine) els.addLine.addEventListener("click", addLine);
+  if (els.addBreak) els.addBreak.addEventListener("click", addBreak);
   if (els.download) els.download.addEventListener("click", downloadPack);
   if (els.publish) els.publish.addEventListener("click", () => publishLyrics());
   if (els.revert) {
