@@ -1,27 +1,111 @@
 {
-  "title": "Stop the Hurt (Reprise)",
+  "title": "Stop the Hurt",
   "durationHint": null,
   "timed": false,
   "lines": [
     {
-      "text": "Stop the hurt, one final time,",
-      "section": "Verse"
+      "text": "Tears on my pillow, nights feeling blue,",
+      "section": "Verse 1"
     },
     {
-      "text": "Healing now, feeling fine.",
-      "section": "Verse"
+      "text": "You keep playing games, what am I to do?",
+      "section": "Verse 1"
     },
     {
-      "text": "No more tears, strength I've found,",
-      "section": "Verse"
+      "text": "Promises shattered like glass on the floor,",
+      "section": "Verse 1"
     },
     {
-      "text": "Moving on, safe and sound.",
-      "section": "Verse"
+      "text": "Can't take this pain anymore.",
+      "section": "Verse 1"
     },
     {
-      "text": "Goodbye...",
-      "section": "Outro"
+      "text": "Time to stand up, wipe away the rain,",
+      "section": "Pre-Chorus"
+    },
+    {
+      "text": "No more chains, break the strain.",
+      "section": "Pre-Chorus"
+    },
+    {
+      "text": "Stop the hurt, let me go,",
+      "section": "Chorus"
+    },
+    {
+      "text": "Heart's been broken, now you know.",
+      "section": "Chorus"
+    },
+    {
+      "text": "No more lies, no more fights,",
+      "section": "Chorus"
+    },
+    {
+      "text": "Stop the hurt, turn out the lights.",
+      "section": "Chorus"
+    },
+    {
+      "text": "Memories fade, but scars remain,",
+      "section": "Verse 2"
+    },
+    {
+      "text": "Learning to dance in the pouring rain.",
+      "section": "Verse 2"
+    },
+    {
+      "text": "Won't let you pull me down low,",
+      "section": "Verse 2"
+    },
+    {
+      "text": "Rising up, stealing the show.",
+      "section": "Verse 2"
+    },
+    {
+      "text": "Strength inside, ready to fly,",
+      "section": "Pre-Chorus"
+    },
+    {
+      "text": "Say goodbye, no more cry.",
+      "section": "Pre-Chorus"
+    },
+    {
+      "text": "Stop the hurt, let me go,",
+      "section": "Chorus"
+    },
+    {
+      "text": "Heart's been broken, now you know.",
+      "section": "Chorus"
+    },
+    {
+      "text": "No more lies, no more fights,",
+      "section": "Chorus"
+    },
+    {
+      "text": "Stop the hurt, turn out the lights.",
+      "section": "Chorus"
+    },
+    {
+      "text": "One last look, then I'm gone,",
+      "section": "Bridge"
+    },
+    {
+      "text": "New dawn, moving on.",
+      "section": "Bridge"
+    },
+    {
+      "text": "Stop the hurt, let me go,",
+      "section": "Final Chorus"
+    },
+    {
+      "text": "Heart's been broken, now you know.",
+      "section": "Final Chorus"
+    },
+    {
+      "text": "No more lies, no more fights,",
+      "section": "Final Chorus"
+    },
+    {
+      "text": "Stop the hurt, embrace the nights.",
+      "section": "Final Chorus"
     }
   ]
 }

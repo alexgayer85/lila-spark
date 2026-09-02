@@ -7,7 +7,9 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-BIBLE = ROOT / "bible"
+BIBLE = Path("/home/alex/lila-spark-bible/bible")
+if not (BIBLE / "01_Truly_Me_Lyrics.md").exists():
+    BIBLE = ROOT / "bible"
 OUT = ROOT / "data" / "lyrics"
 
 SKIP_HEAD = re.compile(
@@ -31,7 +33,7 @@ META_LINE = re.compile(
 
 def slugify(title: str) -> str:
     t = title.lower().replace("’", "'").replace("can't", "cant")
-    t = re.sub(r"\([^)]*\)", "", t)
+    t = re.sub(r"[()]", " ", t)
     t = re.sub(r"[^a-z0-9]+", "-", t).strip("-")
     return t
 
