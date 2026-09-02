@@ -206,6 +206,16 @@ function scoreChunk(query, text) {
 }
 
 async function loadPack(env) {
+  try {
+    const log = await chatLogStub(env);
+    const stored = await log.fetch("https://chatlog/pack");
+    if (stored.ok) {
+      const pack = await stored.json();
+      if (pack && Array.isArray(pack.files) && pack.files.length) return pack;
+    }
+  } catch {
+    /* fall through */
+  }
   const url = (env.BIBLE_ORIGIN || "https://lila-spark.com").replace(/\/$/, "") + "/data/bible-pack.json";
   const res = await fetch(url, { cf: { cacheTtl: 120 } });
   if (!res.ok) return { files: [] };
@@ -594,6 +604,29 @@ export class ChatLog {
       const n = Math.min(200, Math.max(1, Number(url.searchParams.get("n") || "50")));
       return Response.json({ n: rows.length, chats: rows.slice(-n).reverse() });
     }
+    if (url.pathname === "/pack" && request.method === "PUT") {
+      const pack = await request.json();
+      const names = [];
+      for (const f of pack.files || []) {
+        if (!f || !f.name) continue;
+        await this.state.storage.put("file:" + f.name, String(f.text || ""));
+        names.push(f.name);
+      }
+      await this.state.storage.put("index", names);
+      await this.state.storage.put("packed_at", pack.packed_at || new Date().toISOString());
+      return Response.json({ ok: true, n: names.length });
+    }
+    if (url.pathname === "/pack" && request.method === "GET") {
+      const names = (await this.state.storage.get("index")) || [];
+      const files = [];
+      for (const name of names) {
+        files.push({ name, text: (await this.state.storage.get("file:" + name)) || "" });
+      }
+      return Response.json({
+        packed_at: (await this.state.storage.get("packed_at")) || "",
+        files,
+      });
+    }
     return new Response("not found", { status: 404 });
   }
 }
@@ -731,12 +764,26 @@ export default {
     }
 
     const url = new URL(request.url);
+    const auth = (request.headers.get("Authorization") || "").replace(/^Bearer\s+/i, "");
+    if (request.method === "PUT" && url.pathname === "/canon") {
+      if (!env.LOG_SECRET || auth !== env.LOG_SECRET) {
+        return json({ error: "unauthorized" }, 401, origin);
+      }
+      const pack = await request.json();
+      const log = await chatLogStub(env);
+      const res = await log.fetch("https://chatlog/pack", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(pack),
+      });
+      const data = await res.json();
+      return json(data, res.status, origin);
+    }
     if (request.method === "GET" && url.pathname === "/logs") {
-      const sent = (request.headers.get("Authorization") || "").replace(/^Bearer\s+/i, "");
       const accept = request.headers.get("Accept") || "";
       const wantsHtml = accept.includes("text/html");
-      if (!env.LOG_SECRET || sent !== env.LOG_SECRET) {
-        if (wantsHtml && !sent) {
+      if (!env.LOG_SECRET || auth !== env.LOG_SECRET) {
+        if (wantsHtml && !auth) {
           return new Response(LOG_VIEWER_HTML, {
             status: 200,
             headers: {
