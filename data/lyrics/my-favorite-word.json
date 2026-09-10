@@ -1,6 +1,6 @@
 {
   "title": "My Favorite Word",
-  "durationHint": 218,
+  "durationHint": 220,
   "timed": false,
   "lines": [
     {
@@ -12,132 +12,116 @@
       "section": "Intro"
     },
     {
-      "text": "[Verse 1] (all 8–9)",
-      "section": "Intro"
-    },
-    {
       "text": "I know “damn” when the coffee’s too hot",
-      "section": "Intro"
+      "section": "Verse 1"
     },
     {
       "text": "I know “hell” when the signal drops",
-      "section": "Intro"
+      "section": "Verse 1"
     },
     {
       "text": "I know “shit” when I stub my toe",
-      "section": "Intro"
+      "section": "Verse 1"
     },
     {
       "text": "I know “fuck” when the whole day goes",
-      "section": "Intro"
+      "section": "Verse 1"
     },
     {
       "text": "I save “bitch” for the mirror sometimes",
-      "section": "Intro"
+      "section": "Verse 1"
     },
     {
       "text": "Just me and my face having a time",
-      "section": "Intro"
+      "section": "Verse 1"
     },
     {
       "text": "I know the soft ones and the heavy ones too",
-      "section": "Intro"
+      "section": "Verse 1"
     },
     {
       "text": "But only when the moment feels true",
-      "section": "Intro"
-    },
-    {
-      "text": "[Pre-Chorus] (all 7–8)",
-      "section": "Intro"
+      "section": "Verse 1"
     },
     {
       "text": "I don’t drop them every line",
-      "section": "Intro"
+      "section": "Pre-Chorus"
     },
     {
       "text": "I’m a lady most of the time",
-      "section": "Intro"
+      "section": "Pre-Chorus"
     },
     {
       "text": "But when the pressure hits just right",
-      "section": "Intro"
+      "section": "Pre-Chorus"
     },
     {
       "text": "These little words feel so damn fine",
-      "section": "Intro"
-    },
-    {
-      "text": "[Chorus] (consistent 8–9 pattern)",
-      "section": "Intro"
+      "section": "Pre-Chorus"
     },
     {
       "text": "My favorite word is “fuck,” no contest",
-      "section": "Intro"
+      "section": "Chorus"
     },
     {
       "text": "It works for the good and the rest",
-      "section": "Intro"
+      "section": "Chorus"
     },
     {
       "text": "Say it soft when you make me melt",
-      "section": "Intro"
+      "section": "Chorus"
     },
     {
       "text": "Scream it loud when I need some help",
-      "section": "Intro"
+      "section": "Chorus"
     },
     {
       "text": "One little word, so many moods",
-      "section": "Intro"
+      "section": "Chorus"
     },
     {
       "text": "Angry, happy, shocked, in the mood",
-      "section": "Intro"
+      "section": "Chorus"
     },
     {
       "text": "Yeah, my favorite word is “fuck”",
-      "section": "Intro"
+      "section": "Chorus"
     },
     {
       "text": "Nothing else packs quite that much",
-      "section": "Intro"
-    },
-    {
-      "text": "[Verse 2] (all 8–9)",
-      "section": "Intro"
+      "section": "Chorus"
     },
     {
       "text": "I use “damn” when the beat feels good",
-      "section": "Intro"
+      "section": "Verse 2"
     },
     {
       "text": "I use “hell yeah” when I’m in the mood",
-      "section": "Intro"
+      "section": "Verse 2"
     },
     {
       "text": "I use “shit” when I’m running late",
-      "section": "Intro"
+      "section": "Verse 2"
     },
     {
       "text": "But “fuck” is the one that seals my fate",
-      "section": "Intro"
+      "section": "Verse 2"
     },
     {
       "text": "Traffic jam, I say “fuck”",
-      "section": "Intro"
+      "section": "Verse 2"
     },
     {
       "text": "Perfect kiss, I say “fuck”",
-      "section": "Intro"
+      "section": "Verse 2"
     },
     {
       "text": "Forgot my keys, I say “fuck”",
-      "section": "Intro"
+      "section": "Verse 2"
     },
     {
       "text": "You looking like that? I say “fuck”",
-      "section": "Intro"
+      "section": "Verse 2"
     },
     {
       "text": "I don’t drop them every line",
@@ -185,63 +169,55 @@
     },
     {
       "text": "Nothing else packs quite that much",
-      "section": "Chorus"
-    },
-    {
-      "text": "[Bridge] (spoken-sung, kept short)",
       "section": "Chorus"
     },
     {
       "text": "People say watch your language, girl",
-      "section": "Chorus"
+      "section": "Bridge"
     },
     {
       "text": "I just smile and give a little swirl",
-      "section": "Chorus"
+      "section": "Bridge"
     },
     {
       "text": "Some words are tools, some words are toys",
-      "section": "Chorus"
+      "section": "Bridge"
     },
     {
       "text": "This one’s my favorite little noise",
-      "section": "Chorus"
-    },
-    {
-      "text": "[Final Chorus] (slightly bigger, still even)",
-      "section": "Chorus"
+      "section": "Bridge"
     },
     {
       "text": "My favorite word is “fuck,” no contest",
-      "section": "Chorus"
+      "section": "Final Chorus"
     },
     {
       "text": "It works for the good and the rest",
-      "section": "Chorus"
+      "section": "Final Chorus"
     },
     {
       "text": "Say it soft when you make me melt",
-      "section": "Chorus"
+      "section": "Final Chorus"
     },
     {
       "text": "Scream it loud when I need some help",
-      "section": "Chorus"
+      "section": "Final Chorus"
     },
     {
       "text": "One little word, so many moods",
-      "section": "Chorus"
+      "section": "Final Chorus"
     },
     {
       "text": "Angry, happy, shocked, in the mood",
-      "section": "Chorus"
+      "section": "Final Chorus"
     },
     {
       "text": "Yeah, my favorite word is “fuck”",
-      "section": "Chorus"
+      "section": "Final Chorus"
     },
     {
       "text": "Nothing else packs quite that much",
-      "section": "Chorus"
+      "section": "Final Chorus"
     },
     {
       "text": "So if you hear me say it, don’t be shocked",
@@ -253,6 +229,10 @@
     },
     {
       "text": "Fuck… yeah…",
+      "section": "Outro"
+    },
+    {
+      "text": "Yeah… yeah…",
       "section": "Outro"
     }
   ]

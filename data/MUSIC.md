@@ -8,7 +8,7 @@ Edit `data/catalog.json`.
 
 - `id` is the filename stem. Put the full song at `audio/{id}.mp3`.
 - If that file is missing, the player falls back to `preview` (the old 30-second clip).
-- `lyrics` is the stem of `data/lyrics/{id}.json`. Set `"lyrics": false` if there is no canon lyric yet (Tiny Hints).
+- `lyrics` is the stem of `data/lyrics/{id}.json`. Set `"lyrics": false` if there is no canon lyric yet.
 - Optional `cover`, `apple` / `spotify` / `amazon`, `explicit`, `featured`.
 - `description` is the one-line blurb under the title (e.g. “A flirty, high-energy dance-pop track…”).
 

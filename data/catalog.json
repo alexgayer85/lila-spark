@@ -36,12 +36,12 @@
           "id": "tiny-hints",
           "num": "03",
           "title": "Tiny Hints",
-          "description": "An Untitled-era cut. Lyrics aren’t locked in the bible yet.",
+          "description": "Anxious mid-tempo pop-R&B about missed signals and the one confession that can’t be misunderstood.",
           "audio": "audio/tiny-hints.mp3",
           "cover": null,
           "explicit": false,
           "featured": false,
-          "lyrics": false
+          "lyrics": "tiny-hints"
         },
         {
           "id": "my-favorite-word",
@@ -53,6 +53,28 @@
           "explicit": true,
           "featured": false,
           "lyrics": "my-favorite-word"
+        },
+        {
+          "id": "dont-call-it-love",
+          "num": "05",
+          "title": "Don't Call It Love",
+          "description": "Frustrated mid-tempo pop-R&B about someone who wants the fire, not the girl she is.",
+          "audio": "audio/dont-call-it-love.mp3",
+          "cover": null,
+          "explicit": false,
+          "featured": false,
+          "lyrics": "dont-call-it-love"
+        },
+        {
+          "id": "almost-here",
+          "num": "06",
+          "title": "Almost Here",
+          "description": "Tender mid-tempo soft pop about a dream of a sibling who was almost here.",
+          "audio": "audio/almost-here.mp3",
+          "cover": null,
+          "explicit": false,
+          "featured": false,
+          "lyrics": "almost-here"
         }
       ]
     },
