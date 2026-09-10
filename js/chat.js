@@ -53,7 +53,6 @@
     try {
       localStorage.setItem(FAN_KEY, JSON.stringify(next));
     } catch (_) {}
-    if (typeof refreshFanUi === "function") refreshFanUi();
   }
 
   function extractFromText(text, prior) {
@@ -80,7 +79,6 @@
   }
 
   let fanProfile = loadFan();
-  let refreshFanUi = null;
 
   function fanQuery() {
     return (
@@ -482,16 +480,6 @@
     });
 
 
-    const style = el("style", { text: `
-      .ls-chat-fan { display:flex; flex-wrap:wrap; gap:.35rem; padding:.45rem .75rem .55rem; border-bottom:1px solid rgba(255,255,255,.08); }
-      .ls-chat-fan button, .ls-chat-fan input { font: inherit; }
-      .ls-chat-chip { border:1px solid rgba(255,255,255,.12); background:transparent; color:inherit; border-radius:999px; padding:.2rem .7rem; font-size:.72rem; letter-spacing:.04em; text-transform:uppercase; opacity:.7; }
-      .ls-chat-chip.is-on { opacity:1; border-color:rgba(255,45,149,.7); color:#ff9ec8; }
-      .ls-chat-fan-name { flex:1; min-width:7rem; border:0; background:transparent; color:inherit; font-size:.82rem; outline:none; opacity:.85; }
-      .ls-chat-sub.is-locked { color:#ff9ec8; }
-    `});
-    document.head.appendChild(style);
-
     const header = el("header", { class: "ls-chat-header" });
     const who = el("div", { class: "ls-chat-who" });
     who.appendChild(
@@ -529,62 +517,7 @@
     form.appendChild(input);
     form.appendChild(send);
 
-    const fanBar = el("div", { class: "ls-chat-fan" });
-    const chips = [
-      ["woman", "Woman"],
-      ["man", "Man"],
-      ["nonbinary", "Nonbinary"],
-    ].map(([id, label]) => {
-      const btn = el("button", { class: "ls-chat-chip", type: "button", text: label, "data-gender": id });
-      btn.addEventListener("click", () => {
-        const next = Object.assign({}, fanProfile);
-        next.gender = fanProfile.gender === id ? "unknown" : id;
-        next.pronouns = next.gender === "woman" ? "she/her" : next.gender === "man" ? "he/him" : next.gender === "nonbinary" ? "they/them" : "";
-        saveFan(next);
-      });
-      fanBar.appendChild(btn);
-      return btn;
-    });
-    const nameInput = el("input", {
-      class: "ls-chat-fan-name",
-      type: "text",
-      placeholder: "Your name",
-      "aria-label": "Your name",
-    });
-    nameInput.value = fanProfile.name || "";
-    nameInput.addEventListener("change", () => {
-      const next = Object.assign({}, fanProfile, { name: nameInput.value.trim().slice(0, 32) });
-      saveFan(next);
-    });
-    fanBar.appendChild(nameInput);
-
-    const subEl = whoText.querySelector(".ls-chat-sub");
-    refreshFanUi = function () {
-      chips.forEach((btn) => {
-        btn.classList.toggle("is-on", btn.getAttribute("data-gender") === fanProfile.gender);
-      });
-      if (nameInput.value !== (fanProfile.name || "")) nameInput.value = fanProfile.name || "";
-      if (subEl) {
-        const g = fanProfile.gender;
-        const who =
-          g === "woman" ? "a woman" :
-          g === "man" ? "a man" :
-          g === "nonbinary" ? "nonbinary" : "";
-        if (who || fanProfile.name) {
-          subEl.textContent = fanProfile.name
-            ? (who ? "remembering " + fanProfile.name + " as " + who : "remembering " + fanProfile.name)
-            : "remembering you as " + who;
-          subEl.classList.add("is-locked");
-        } else {
-          subEl.textContent = "Chicago · late night · still writing";
-          subEl.classList.remove("is-locked");
-        }
-      }
-    };
-    refreshFanUi();
-
     panel.appendChild(header);
-    panel.appendChild(fanBar);
     panel.appendChild(log);
     panel.appendChild(form);
     root.appendChild(panel);
