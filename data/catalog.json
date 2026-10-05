@@ -102,7 +102,7 @@
           "title": "Boomerang",
           "description": "A flirty, high-energy dance-pop track about feelings that keep coming back no matter what.",
           "audio": "audio/boomerang.mp3",
-          "cover": null,
+          "cover": "images/covers/boomerang.jpg",
           "explicit": false,
           "featured": false,
           "lyrics": "boomerang"
@@ -127,7 +127,7 @@
           "title": "Rhythm Thief",
           "description": "Sassy groove-pop about the person who steals her beat the second they walk in.",
           "audio": "audio/rhythm-thief.mp3",
-          "cover": null,
+          "cover": "images/covers/rhythm-thief.jpg",
           "explicit": false,
           "featured": false,
           "lyrics": "rhythm-thief"
@@ -160,7 +160,7 @@
           "title": "Dark Static",
           "description": "Atmospheric late-night dance-pop — city lights, humming bass, and a charge she can’t shake.",
           "audio": "audio/dark-static.mp3",
-          "cover": null,
+          "cover": "images/covers/dark-static.jpg",
           "explicit": false,
           "featured": false,
           "lyrics": "dark-static"
@@ -171,7 +171,7 @@
           "title": "Sweet Shock (Lights Go Low)",
           "description": "Sultry club-ready dance-pop for when the lights go low and she’s in total control.",
           "audio": "audio/lights-go-low.mp3",
-          "cover": null,
+          "cover": "images/covers/sweet-shock-lights-go-low.jpg",
           "explicit": false,
           "featured": false,
           "lyrics": "lights-go-low"
