@@ -2813,3 +2813,101 @@ body.lightbox-open {
     height: 44px;
   }
 }
+
+/* Coming soon / pre-save block (Home + Music) — rendered by js/releases.js from data/releases.json */
+.release-section[hidden] {
+  display: none;
+}
+
+.release-section .section-header {
+  margin-bottom: 1.25rem;
+}
+
+.release-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
+  gap: 1rem;
+}
+
+.release-card {
+  display: grid;
+  grid-template-columns: 132px minmax(0, 1fr);
+  gap: 1rem 1.25rem;
+  align-items: center;
+  padding: 1rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background:
+    linear-gradient(120deg, rgba(255, 45, 149, 0.12), rgba(155, 92, 255, 0.08)),
+    var(--card);
+  backdrop-filter: blur(12px);
+}
+
+.release-cover {
+  width: 132px;
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.35);
+}
+
+.release-kind {
+  margin: 0 0 0.25rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cyan);
+}
+
+.release-title {
+  margin: 0 0 0.3rem;
+  font-size: clamp(1.15rem, 2.6vw, 1.4rem);
+  font-weight: 700;
+}
+
+.release-when {
+  margin: 0 0 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--magenta);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.release-card.is-out .release-when {
+  color: var(--cyan);
+}
+
+.release-tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.1rem 0.5rem;
+}
+
+.release-blurb {
+  margin: 0 0 0.75rem;
+  color: var(--ink-muted);
+  font-size: 0.92rem;
+}
+
+@media (max-width: 420px) {
+  .release-card {
+    grid-template-columns: 96px minmax(0, 1fr);
+    gap: 0.75rem;
+  }
+  .release-cover {
+    width: 96px;
+  }
+}
+
+.release-section + .music-section {
+  padding-top: 0.5rem;
+}

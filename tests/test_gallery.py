@@ -422,7 +422,7 @@ class TestPhotosManifest(unittest.TestCase):
 class TestMusicMarkup(unittest.TestCase):
     def test_three_tracks_have_covers_and_cache_bust(self):
         html = (ROOT / "music.html").read_text()
-        self.assertIn('href="css/styles.css?v=player-9"', html)
+        self.assertIn('href="css/styles.css?v=releases-1"', html)
         self.assertNotIn('href="css/styles.css?v=social-icons-1"', html)
         afterglow = [
             ("images/covers/somehow.jpg", "Somehow"),
@@ -462,7 +462,7 @@ class TestMusicMarkup(unittest.TestCase):
 class TestPhotosPage(unittest.TestCase):
     def test_photos_page_uses_sections_and_cache_bust(self):
         html = (ROOT / "photos.html").read_text()
-        self.assertIn('href="css/styles.css?v=photos-3"', html)
+        self.assertIn('href="css/styles.css?v=releases-1"', html)
         self.assertIn("js/photos.js?v=sections-2", html)
         self.assertIn('id="photo-jump"', html)
         self.assertIn('id="photo-gallery"', html)
@@ -491,7 +491,7 @@ class TestRealityStudio(unittest.TestCase):
 
     def test_story_shows_screenshot_and_edit_tools(self):
         html = (ROOT / "story.html").read_text()
-        self.assertIn('href="css/styles.css?v=story-lore-7"', html)
+        self.assertIn('href="css/styles.css?v=releases-1"', html)
         self.assertIn("images/studio/lss.jpg", html)
         self.assertIn("variational autoencoder", html)
         self.assertNotIn("1D VAE", html)
@@ -541,3 +541,46 @@ class TestRealityStudio(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestComingSoonAndSocial(unittest.TestCase):
+    PAGES = ["index.html", "music.html", "story.html", "photos.html", "contact.html"]
+    FB = "https://www.facebook.com/profile.php?id=61594030887300"
+
+    def test_releases_data_and_covers(self):
+        data = json.loads((ROOT / "data" / "releases.json").read_text())
+        titles = {r["title"]: r for r in data["releases"]}
+        self.assertEqual(titles["Heat Signature"]["date"], "2026-10-23")
+        self.assertEqual(titles["Heat Signature"]["presave"], "https://release.landr.com/991061428356")
+        self.assertEqual(titles["No Apologies"]["date"], "2026-11-13")
+        self.assertEqual(titles["No Apologies"]["presave"], "https://release.landr.com/991061432100")
+        for r in data["releases"]:
+            cover = ROOT / r["cover"]
+            self.assertTrue(cover.exists(), r["cover"])
+            self.assertLessEqual(cover.stat().st_size, MAX_BYTES, r["cover"])
+            with Image.open(cover) as im:
+                self.assertEqual(im.size[0], im.size[1])
+
+    def test_coming_soon_block_on_home_and_music(self):
+        for page in ["index.html", "music.html"]:
+            html = (ROOT / page).read_text()
+            self.assertIn("data-releases-section", html, page)
+            self.assertIn('js/releases.js?v=', html, page)
+
+    def test_og_image_and_facebook_on_every_page(self):
+        for page in self.PAGES:
+            html = (ROOT / page).read_text()
+            self.assertIn('og:image" content="https://lila-spark.com/images/covers/heat-signature.jpg"', html, page)
+            self.assertIn(self.FB, html, page)
+            self.assertIn('css/styles.css?v=releases-1"', html, page)
+
+    def test_robots_and_sitemap(self):
+        self.assertIn("Sitemap: https://lila-spark.com/sitemap.xml", (ROOT / "robots.txt").read_text())
+        sitemap = (ROOT / "sitemap.xml").read_text()
+        for page in self.PAGES[1:]:
+            self.assertIn(f"https://lila-spark.com/{page}", sitemap)
+
+    def test_untitled_track_count_matches_catalog(self):
+        cat = json.loads((ROOT / "data" / "catalog.json").read_text())
+        n = len(next(a for a in cat["albums"] if a["id"] == "untitled")["tracks"])
+        self.assertIn(f"Newest · title TBA · {n} tracks", (ROOT / "music.html").read_text())

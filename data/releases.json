@@ -1,0 +1,28 @@
+{
+  "note": "Drives the 'Coming soon' block on Home and Music (js/releases.js). Before `date` a card shows 'Pre-save'; from `date` (America/Chicago) it flips to 'Out now' + Listen, and it disappears `showDaysAfter` days later. To update: edit or add entries here — no HTML changes needed.",
+  "showDaysAfter": 21,
+  "releases": [
+    {
+      "id": "heat-signature",
+      "title": "Heat Signature",
+      "date": "2026-10-23",
+      "kind": "New single",
+      "blurb": "Sexy, high-energy dance-pop — you can see me in the dark.",
+      "cover": "images/covers/heat-signature.jpg",
+      "presave": "https://release.landr.com/991061428356",
+      "listen": "",
+      "tags": []
+    },
+    {
+      "id": "no-apologies",
+      "title": "No Apologies",
+      "date": "2026-11-13",
+      "kind": "Single · from Afterglow",
+      "blurb": "Empowering pop-rock about taking up space and refusing to say sorry for it.",
+      "cover": "images/covers/no-apologies.jpg",
+      "presave": "https://release.landr.com/991061432100",
+      "listen": "",
+      "tags": ["Clean"]
+    }
+  ]
+}
