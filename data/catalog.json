@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "note": "Edit this file to add albums/tracks. Drop full mp3s in audio/{id}.mp3. Lyrics live in data/lyrics/{id}.json. Set description for the one-line blurb under the title. Optional LRC-style times: add \"t\": seconds on a line.",
+  "note": "Edit this file to add albums/tracks. Drop full mp3s in audio/{id}.mp3. Lyrics live in data/lyrics/{id}.json. Set description for the one-line blurb under the title. Optional LRC-style times: add \"t\": seconds on a line. Optional \"listen\": streaming smart link (LANDR) for released tracks, shown as a Listen button; \"presave\": pre-save link for announced, unreleased tracks.",
   "albums": [
     {
       "id": "untitled",
@@ -102,10 +102,11 @@
           "title": "Boomerang",
           "description": "A flirty, high-energy dance-pop track about feelings that keep coming back no matter what.",
           "audio": "audio/boomerang.mp3",
-          "cover": null,
+          "cover": "images/covers/boomerang.jpg",
           "explicit": false,
           "featured": false,
-          "lyrics": "boomerang"
+          "lyrics": "boomerang",
+          "listen": "https://release.landr.com/991061080615"
         },
         {
           "id": "somehow",
@@ -119,7 +120,8 @@
           "lyrics": "somehow",
           "apple": "https://music.apple.com/us/album/somehow/6797913002?i=6797913004",
           "spotify": "https://open.spotify.com/artist/6ARsLc0ziUa7wxmG2WSG0b",
-          "amazon": "https://music.amazon.com/artists/B0HCW621SL/lila-spark"
+          "amazon": "https://music.amazon.com/artists/B0HCW621SL/lila-spark",
+          "listen": "https://release.landr.com/991048658950"
         },
         {
           "id": "rhythm-thief",
@@ -127,10 +129,11 @@
           "title": "Rhythm Thief",
           "description": "Sassy groove-pop about the person who steals her beat the second they walk in.",
           "audio": "audio/rhythm-thief.mp3",
-          "cover": null,
+          "cover": "images/covers/rhythm-thief.jpg",
           "explicit": false,
           "featured": false,
-          "lyrics": "rhythm-thief"
+          "lyrics": "rhythm-thief",
+          "listen": "https://release.landr.com/991061329172"
         },
         {
           "id": "almost",
@@ -160,10 +163,11 @@
           "title": "Dark Static",
           "description": "Atmospheric late-night dance-pop — city lights, humming bass, and a charge she can’t shake.",
           "audio": "audio/dark-static.mp3",
-          "cover": null,
+          "cover": "images/covers/dark-static.jpg",
           "explicit": false,
           "featured": false,
-          "lyrics": "dark-static"
+          "lyrics": "dark-static",
+          "listen": "https://release.landr.com/991061249081"
         },
         {
           "id": "lights-go-low",
@@ -171,10 +175,11 @@
           "title": "Sweet Shock (Lights Go Low)",
           "description": "Sultry club-ready dance-pop for when the lights go low and she’s in total control.",
           "audio": "audio/lights-go-low.mp3",
-          "cover": null,
+          "cover": "images/covers/sweet-shock-lights-go-low.jpg",
           "explicit": false,
           "featured": false,
-          "lyrics": "lights-go-low"
+          "lyrics": "lights-go-low",
+          "listen": "https://release.landr.com/991061070173"
         },
         {
           "id": "no-apologies",
@@ -185,7 +190,8 @@
           "cover": null,
           "explicit": false,
           "featured": false,
-          "lyrics": "no-apologies"
+          "lyrics": "no-apologies",
+          "presave": "https://release.landr.com/991061432100"
         },
         {
           "id": "layla",
@@ -196,7 +202,8 @@
           "cover": "images/covers/layla.jpg",
           "explicit": false,
           "featured": false,
-          "lyrics": "layla"
+          "lyrics": "layla",
+          "listen": "https://release.landr.com/991061128188"
         },
         {
           "id": "hold-me-in-the-middle",
@@ -218,7 +225,8 @@
           "cover": "images/covers/let-me-begin.jpg",
           "explicit": false,
           "featured": false,
-          "lyrics": "let-me-begin"
+          "lyrics": "let-me-begin",
+          "listen": "https://release.landr.com/991048797192"
         }
       ]
     },
@@ -244,7 +252,8 @@
           "lyrics": "midnight-voltage",
           "apple": "https://music.apple.com/us/album/midnight-voltage/6800083050?i=6800083051",
           "spotify": "https://open.spotify.com/artist/6ARsLc0ziUa7wxmG2WSG0b",
-          "amazon": "https://music.amazon.com/artists/B0HCW621SL/lila-spark"
+          "amazon": "https://music.amazon.com/artists/B0HCW621SL/lila-spark",
+          "listen": "https://release.landr.com/991048737754"
         },
         {
           "id": "electric-crush",
@@ -258,7 +267,8 @@
           "lyrics": "electric-crush",
           "apple": "https://music.apple.com/us/album/electric-crush/6800083050?i=6800083052",
           "spotify": "https://open.spotify.com/artist/6ARsLc0ziUa7wxmG2WSG0b",
-          "amazon": "https://music.amazon.com/artists/B0HCW621SL/lila-spark"
+          "amazon": "https://music.amazon.com/artists/B0HCW621SL/lila-spark",
+          "listen": "https://release.landr.com/991048737402"
         },
         {
           "id": "frequency-of-you",
@@ -272,7 +282,8 @@
           "lyrics": "frequency-of-you",
           "apple": "https://music.apple.com/us/album/frequency-of-you/6800083050?i=6800083053",
           "spotify": "https://open.spotify.com/artist/6ARsLc0ziUa7wxmG2WSG0b",
-          "amazon": "https://music.amazon.com/artists/B0HCW621SL/lila-spark"
+          "amazon": "https://music.amazon.com/artists/B0HCW621SL/lila-spark",
+          "listen": "https://release.landr.com/991048737402"
         },
         {
           "id": "no-more-hiding",
@@ -286,7 +297,8 @@
           "lyrics": "no-more-hiding",
           "apple": "https://music.apple.com/us/album/no-more-hiding/6800083050?i=6800083054",
           "spotify": "https://open.spotify.com/artist/6ARsLc0ziUa7wxmG2WSG0b",
-          "amazon": "https://music.amazon.com/artists/B0HCW621SL/lila-spark"
+          "amazon": "https://music.amazon.com/artists/B0HCW621SL/lila-spark",
+          "listen": "https://release.landr.com/991048737402"
         },
         {
           "id": "small-miracles",
@@ -300,7 +312,8 @@
           "lyrics": "small-miracles",
           "apple": "https://music.apple.com/us/album/small-miracles/6800083050?i=6800083055",
           "spotify": "https://open.spotify.com/artist/6ARsLc0ziUa7wxmG2WSG0b",
-          "amazon": "https://music.amazon.com/artists/B0HCW621SL/lila-spark"
+          "amazon": "https://music.amazon.com/artists/B0HCW621SL/lila-spark",
+          "listen": "https://release.landr.com/991048737402"
         },
         {
           "id": "turn-the-page-tonight",
@@ -314,7 +327,8 @@
           "lyrics": "turn-the-page-tonight",
           "apple": "https://music.apple.com/us/album/turn-the-page-tonight/6800083050?i=6800083056",
           "spotify": "https://open.spotify.com/artist/6ARsLc0ziUa7wxmG2WSG0b",
-          "amazon": "https://music.amazon.com/artists/B0HCW621SL/lila-spark"
+          "amazon": "https://music.amazon.com/artists/B0HCW621SL/lila-spark",
+          "listen": "https://release.landr.com/991048737402"
         },
         {
           "id": "burn-through-the-dark",
@@ -328,7 +342,8 @@
           "lyrics": "burn-through-the-dark",
           "apple": "https://music.apple.com/us/album/burn-through-the-dark/6800083050?i=6800083057",
           "spotify": "https://open.spotify.com/artist/6ARsLc0ziUa7wxmG2WSG0b",
-          "amazon": "https://music.amazon.com/artists/B0HCW621SL/lila-spark"
+          "amazon": "https://music.amazon.com/artists/B0HCW621SL/lila-spark",
+          "listen": "https://release.landr.com/991048737402"
         },
         {
           "id": "velvet-lies",
@@ -342,7 +357,8 @@
           "lyrics": "velvet-lies",
           "apple": "https://music.apple.com/us/album/velvet-lies/6800083050?i=6800083058",
           "spotify": "https://open.spotify.com/artist/6ARsLc0ziUa7wxmG2WSG0b",
-          "amazon": "https://music.amazon.com/artists/B0HCW621SL/lila-spark"
+          "amazon": "https://music.amazon.com/artists/B0HCW621SL/lila-spark",
+          "listen": "https://release.landr.com/991048737402"
         },
         {
           "id": "still-need-you",
@@ -356,7 +372,8 @@
           "lyrics": "still-need-you",
           "apple": "https://music.apple.com/us/album/still-need-you/6800083050?i=6800083059",
           "spotify": "https://open.spotify.com/artist/6ARsLc0ziUa7wxmG2WSG0b",
-          "amazon": "https://music.amazon.com/artists/B0HCW621SL/lila-spark"
+          "amazon": "https://music.amazon.com/artists/B0HCW621SL/lila-spark",
+          "listen": "https://release.landr.com/991048737402"
         },
         {
           "id": "louder-than-yesterday",
@@ -370,7 +387,8 @@
           "lyrics": "louder-than-yesterday",
           "apple": "https://music.apple.com/us/album/louder-than-yesterday/6800083050?i=6800083060",
           "spotify": "https://open.spotify.com/artist/6ARsLc0ziUa7wxmG2WSG0b",
-          "amazon": "https://music.amazon.com/artists/B0HCW621SL/lila-spark"
+          "amazon": "https://music.amazon.com/artists/B0HCW621SL/lila-spark",
+          "listen": "https://release.landr.com/991048737402"
         },
         {
           "id": "diamond-tears",
@@ -384,7 +402,8 @@
           "lyrics": "diamond-tears",
           "apple": "https://music.apple.com/us/album/diamond-tears/6800083050?i=6800083061",
           "spotify": "https://open.spotify.com/artist/6ARsLc0ziUa7wxmG2WSG0b",
-          "amazon": "https://music.amazon.com/artists/B0HCW621SL/lila-spark"
+          "amazon": "https://music.amazon.com/artists/B0HCW621SL/lila-spark",
+          "listen": "https://release.landr.com/991048737402"
         },
         {
           "id": "white-dress-envy",
@@ -398,7 +417,8 @@
           "lyrics": "white-dress-envy",
           "apple": "https://music.apple.com/us/album/white-dress-envy/6800083050?i=6800083062",
           "spotify": "https://open.spotify.com/artist/6ARsLc0ziUa7wxmG2WSG0b",
-          "amazon": "https://music.amazon.com/artists/B0HCW621SL/lila-spark"
+          "amazon": "https://music.amazon.com/artists/B0HCW621SL/lila-spark",
+          "listen": "https://release.landr.com/991048737402"
         },
         {
           "id": "starlit-promise",
@@ -412,7 +432,8 @@
           "lyrics": "starlit-promise",
           "apple": "https://music.apple.com/us/album/starlit-promise/6800083050?i=6800083063",
           "spotify": "https://open.spotify.com/artist/6ARsLc0ziUa7wxmG2WSG0b",
-          "amazon": "https://music.amazon.com/artists/B0HCW621SL/lila-spark"
+          "amazon": "https://music.amazon.com/artists/B0HCW621SL/lila-spark",
+          "listen": "https://release.landr.com/991048737402"
         },
         {
           "id": "just-wanna-make-you-a-sammich",
@@ -426,7 +447,8 @@
           "lyrics": "just-wanna-make-you-a-sammich",
           "apple": "https://music.apple.com/us/album/just-wanna-make-you-a-sammich/6800083050?i=6800083064",
           "spotify": "https://open.spotify.com/artist/6ARsLc0ziUa7wxmG2WSG0b",
-          "amazon": "https://music.amazon.com/artists/B0HCW621SL/lila-spark"
+          "amazon": "https://music.amazon.com/artists/B0HCW621SL/lila-spark",
+          "listen": "https://release.landr.com/991048737402"
         },
         {
           "id": "brain-glitch",
@@ -440,7 +462,8 @@
           "lyrics": "brain-glitch",
           "apple": "https://music.apple.com/us/album/brain-glitch/6800083050?i=6800083065",
           "spotify": "https://open.spotify.com/artist/6ARsLc0ziUa7wxmG2WSG0b",
-          "amazon": "https://music.amazon.com/artists/B0HCW621SL/lila-spark"
+          "amazon": "https://music.amazon.com/artists/B0HCW621SL/lila-spark",
+          "listen": "https://release.landr.com/991048737402"
         }
       ]
     },
@@ -485,7 +508,8 @@
           "lyrics": "what-i-need",
           "apple": "https://music.apple.com/us/album/what-i-need/6799450289?i=6799450290",
           "spotify": "https://open.spotify.com/artist/6ARsLc0ziUa7wxmG2WSG0b",
-          "amazon": "https://music.amazon.com/artists/B0HCW621SL/lila-spark"
+          "amazon": "https://music.amazon.com/artists/B0HCW621SL/lila-spark",
+          "listen": "https://release.landr.com/991048708075"
         },
         {
           "id": "hold-me-close",
@@ -499,7 +523,8 @@
           "lyrics": "hold-me-close",
           "apple": "https://music.apple.com/us/album/hold-me-close/6799916557?i=6799916558",
           "spotify": "https://open.spotify.com/artist/6ARsLc0ziUa7wxmG2WSG0b",
-          "amazon": "https://music.amazon.com/artists/B0HCW621SL/lila-spark"
+          "amazon": "https://music.amazon.com/artists/B0HCW621SL/lila-spark",
+          "listen": "https://release.landr.com/991048731073"
         },
         {
           "id": "key-to-my-heart",
@@ -513,7 +538,8 @@
           "lyrics": "key-to-my-heart",
           "apple": "https://music.apple.com/us/album/key-to-my-heart/6799450749?i=6799450931",
           "spotify": "https://open.spotify.com/artist/6ARsLc0ziUa7wxmG2WSG0b",
-          "amazon": "https://music.amazon.com/artists/B0HCW621SL/lila-spark"
+          "amazon": "https://music.amazon.com/artists/B0HCW621SL/lila-spark",
+          "listen": "https://release.landr.com/991048708082"
         },
         {
           "id": "stop-the-hurt",
@@ -535,7 +561,8 @@
           "cover": "images/covers/choose-me-now.jpg",
           "explicit": false,
           "featured": false,
-          "lyrics": "choose-me-now"
+          "lyrics": "choose-me-now",
+          "listen": "https://release.landr.com/991061364593"
         },
         {
           "id": "old-enough",
@@ -560,7 +587,8 @@
           "lyrics": "spark-of-love",
           "apple": "https://music.apple.com/us/album/spark-of-love/6799939816?i=6799939818",
           "spotify": "https://open.spotify.com/artist/6ARsLc0ziUa7wxmG2WSG0b",
-          "amazon": "https://music.amazon.com/artists/B0HCW621SL/lila-spark"
+          "amazon": "https://music.amazon.com/artists/B0HCW621SL/lila-spark",
+          "listen": "https://release.landr.com/991048731318"
         },
         {
           "id": "feels-good",
@@ -574,7 +602,8 @@
           "lyrics": "feels-good",
           "apple": "https://music.apple.com/us/album/feels-good/6799451574?i=6799451575",
           "spotify": "https://open.spotify.com/artist/6ARsLc0ziUa7wxmG2WSG0b",
-          "amazon": "https://music.amazon.com/artists/B0HCW621SL/lila-spark"
+          "amazon": "https://music.amazon.com/artists/B0HCW621SL/lila-spark",
+          "listen": "https://release.landr.com/991048708112"
         },
         {
           "id": "forever-yours",
@@ -588,7 +617,8 @@
           "lyrics": "forever-yours",
           "apple": "https://music.apple.com/us/album/forever-yours/6799940272?i=6799940273",
           "spotify": "https://open.spotify.com/artist/6ARsLc0ziUa7wxmG2WSG0b",
-          "amazon": "https://music.amazon.com/artists/B0HCW621SL/lila-spark"
+          "amazon": "https://music.amazon.com/artists/B0HCW621SL/lila-spark",
+          "listen": "https://release.landr.com/991048731400"
         },
         {
           "id": "heart-on-a-string",
@@ -602,7 +632,8 @@
           "lyrics": "heart-on-a-string",
           "apple": "https://music.apple.com/us/album/heart-on-a-string/6800055541?i=6800055542",
           "spotify": "https://open.spotify.com/artist/6ARsLc0ziUa7wxmG2WSG0b",
-          "amazon": "https://music.amazon.com/artists/B0HCW621SL/lila-spark"
+          "amazon": "https://music.amazon.com/artists/B0HCW621SL/lila-spark",
+          "listen": "https://release.landr.com/991048736245"
         },
         {
           "id": "stop-the-hurt-reprise",

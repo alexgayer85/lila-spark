@@ -4,131 +4,234 @@
   "timed": true,
   "lines": [
     {
-      "text": "In the crowd, I see you there,",
+      "text": "Oh-oh-oh-oh",
+      "section": "Intro",
+      "t": 18.64
+    },
+    {
+      "text": "Oh-oh-oh-oh",
+      "section": "Intro",
+      "t": 21.64
+    },
+    {
+      "text": "Oh-oh-oh-oh",
+      "section": "Intro",
+      "t": 24.64
+    },
+    {
+      "text": "Oh-oh-oh-oh",
+      "section": "Intro",
+      "t": 27.64
+    },
+    {
+      "text": "Oh-oh-oh-oh",
+      "section": "Intro",
+      "t": 30.64
+    },
+    {
+      "text": "Oh-oh-oh-oh",
+      "section": "Intro",
+      "t": 33.64
+    },
+    {
+      "text": "In the crowd, I see you there",
       "section": "Verse 1",
       "t": 36.64
     },
     {
-      "text": "Wondering if you even care.",
+      "text": "Wondering if you even care",
       "section": "Verse 1",
       "t": 41.78
     },
     {
-      "text": "Heart's racing, time to decide,",
-      "section": "Verse 1"
+      "text": "Heart's racing, time to decide",
+      "section": "Verse 1",
+      "t": 46.13
     },
     {
-      "text": "Don't leave me on this ride.",
+      "text": "Don't leave me on this ride",
       "section": "Verse 1",
       "t": 50.48
     },
     {
-      "text": "Open your eyes, see the truth,",
+      "text": "Open your eyes, see the truth",
       "section": "Pre-Chorus",
       "t": 55.28
     },
     {
-      "text": "I'm right here, in my youth.",
+      "text": "I'm right here in my youth",
       "section": "Pre-Chorus",
       "t": 60.0
     },
     {
-      "text": "Choose me now, don't hesitate,",
+      "text": "Choose me now, don't hesitate",
       "section": "Chorus",
       "t": 63.38
     },
     {
-      "text": "Be the one, seal our fate.",
+      "text": "Be the one, seal our fate",
       "section": "Chorus",
       "t": 68.23
     },
     {
-      "text": "Love's waiting, take my hand,",
+      "text": "Love's waiting, take my hand",
       "section": "Chorus",
       "t": 72.52
     },
     {
-      "text": "Choose me now, understand.",
+      "text": "Choose me now, understand",
       "section": "Chorus",
       "t": 76.98
     },
     {
-      "text": "Friends whisper, but I feel strong,",
-      "section": "Verse 2"
+      "text": "Oh-oh-oh-oh",
+      "section": "Post-Chorus",
+      "t": 81.56
     },
     {
-      "text": "This connection can't be wrong.",
+      "text": "Oh-oh-oh-oh",
+      "section": "Post-Chorus",
+      "t": 86.13
+    },
+    {
+      "text": "Oh-oh-oh-oh",
+      "section": "Post-Chorus",
+      "t": 90.71
+    },
+    {
+      "text": "Oh-oh-oh-oh",
+      "section": "Post-Chorus",
+      "t": 95.29
+    },
+    {
+      "text": "Friends whisper, but I feel strong",
+      "section": "Verse 2",
+      "t": 99.86
+    },
+    {
+      "text": "This connection can't be wrong",
       "section": "Verse 2",
       "t": 104.44
     },
     {
-      "text": "Step forward, make it clear,",
+      "text": "Step forward, make it clear",
       "section": "Verse 2",
       "t": 108.92
     },
     {
-      "text": "Erase all doubt and fear.",
+      "text": "Erase all doubt and fear",
       "section": "Verse 2",
       "t": 113.56
     },
     {
-      "text": "Moment's here, don't let it pass,",
+      "text": "Moment's here, don't let it pass",
       "section": "Pre-Chorus",
       "t": 119.46
     },
     {
-      "text": "Make it last, break the glass.",
+      "text": "Make it last, break the glass",
       "section": "Pre-Chorus",
       "t": 122.82
     },
     {
-      "text": "Choose me now, don't hesitate,",
+      "text": "Choose me now, don't hesitate",
       "section": "Chorus",
       "t": 127.26
     },
     {
-      "text": "Be the one, seal our fate.",
+      "text": "Be the one, seal our fate",
       "section": "Chorus",
       "t": 131.34
     },
     {
-      "text": "Love's waiting, take my hand,",
+      "text": "Love's waiting, take my hand",
       "section": "Chorus",
       "t": 137.05
     },
     {
-      "text": "Choose me now, understand.",
+      "text": "Choose me now, understand",
       "section": "Chorus",
       "t": 140.99
     },
     {
-      "text": "No more waiting in the wings,",
+      "text": "Oh-oh-oh-oh",
+      "section": "Post-Chorus",
+      "t": 145.7
+    },
+    {
+      "text": "Oh-oh-oh-oh",
+      "section": "Post-Chorus",
+      "t": 150.41
+    },
+    {
+      "text": "Oh-oh-oh-oh",
+      "section": "Post-Chorus",
+      "t": 155.11
+    },
+    {
+      "text": "Oh-oh-oh-oh",
+      "section": "Post-Chorus",
+      "t": 159.82
+    },
+    {
+      "text": "No more waiting in the wings",
       "section": "Bridge",
       "t": 164.53
     },
     {
-      "text": "Hear the bells it rings.",
-      "section": "Bridge"
+      "text": "Hear the bells it rings",
+      "section": "Bridge",
+      "t": 168.73
     },
     {
-      "text": "Choose me now, don't hesitate,",
+      "text": "Choose me now, don't hesitate",
       "section": "Final Chorus",
       "t": 172.93
     },
     {
-      "text": "Be the one, seal our fate.",
+      "text": "Be the one, seal our fate",
       "section": "Final Chorus",
-      "t": 22.56
+      "t": 177.58
     },
     {
-      "text": "Love's waiting, take my hand,",
+      "text": "Love's waiting, take my hand",
       "section": "Final Chorus",
       "t": 182.23
     },
     {
-      "text": "Choose me now, forever stand.",
+      "text": "Choose me now, forever stand",
       "section": "Final Chorus",
       "t": 186.85
+    },
+    {
+      "text": "Oh-oh-oh-oh",
+      "section": "Outro",
+      "t": 189.85
+    },
+    {
+      "text": "Oh-oh-oh-oh",
+      "section": "Outro",
+      "t": 192.85
+    },
+    {
+      "text": "Oh-oh-oh-oh",
+      "section": "Outro",
+      "t": 195.85
+    },
+    {
+      "text": "Oh-oh-oh-oh",
+      "section": "Outro",
+      "t": 198.85
+    },
+    {
+      "text": "Oh-oh-oh-oh",
+      "section": "Outro",
+      "t": 201.85
+    },
+    {
+      "text": "Oh-oh-oh-oh",
+      "section": "Outro",
+      "t": 204.85
     }
   ]
 }

@@ -422,7 +422,7 @@ class TestPhotosManifest(unittest.TestCase):
 class TestMusicMarkup(unittest.TestCase):
     def test_three_tracks_have_covers_and_cache_bust(self):
         html = (ROOT / "music.html").read_text()
-        self.assertIn('href="css/styles.css?v=releases-1"', html)
+        self.assertIn('href="css/styles.css?v=listen-1"', html)
         self.assertNotIn('href="css/styles.css?v=social-icons-1"', html)
         afterglow = [
             ("images/covers/somehow.jpg", "Somehow"),
@@ -462,7 +462,7 @@ class TestMusicMarkup(unittest.TestCase):
 class TestPhotosPage(unittest.TestCase):
     def test_photos_page_uses_sections_and_cache_bust(self):
         html = (ROOT / "photos.html").read_text()
-        self.assertIn('href="css/styles.css?v=releases-1"', html)
+        self.assertIn('href="css/styles.css?v=listen-1"', html)
         self.assertIn("js/photos.js?v=sections-2", html)
         self.assertIn('id="photo-jump"', html)
         self.assertIn('id="photo-gallery"', html)
@@ -491,7 +491,7 @@ class TestRealityStudio(unittest.TestCase):
 
     def test_story_shows_screenshot_and_edit_tools(self):
         html = (ROOT / "story.html").read_text()
-        self.assertIn('href="css/styles.css?v=releases-1"', html)
+        self.assertIn('href="css/styles.css?v=listen-1"', html)
         self.assertIn("images/studio/lss.jpg", html)
         self.assertIn("variational autoencoder", html)
         self.assertNotIn("1D VAE", html)
@@ -572,7 +572,7 @@ class TestComingSoonAndSocial(unittest.TestCase):
             html = (ROOT / page).read_text()
             self.assertIn('og:image" content="https://lila-spark.com/images/covers/heat-signature.jpg"', html, page)
             self.assertIn(self.FB, html, page)
-            self.assertIn('css/styles.css?v=releases-1"', html, page)
+            self.assertIn('css/styles.css?v=listen-1"', html, page)
 
     def test_robots_and_sitemap(self):
         self.assertIn("Sitemap: https://lila-spark.com/sitemap.xml", (ROOT / "robots.txt").read_text())

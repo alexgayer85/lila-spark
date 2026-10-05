@@ -11,6 +11,7 @@
     cover: root.querySelector("[data-cover]"),
     title: root.querySelector("[data-title]"),
     desc: root.querySelector("[data-desc]"),
+    listen: root.querySelector("[data-listen]"),
     album: root.querySelector("[data-album-name]"),
     wave: root.querySelector("[data-wave]"),
     lyrics: root.querySelector("[data-lyrics]"),
@@ -505,6 +506,17 @@
       els.desc.textContent = track.description || "";
       els.desc.hidden = !track.description;
     }
+    if (els.listen) {
+      const link = trackLink(track);
+      els.listen.hidden = !link;
+      if (link) {
+        els.listen.href = link.href;
+        els.listen.textContent = link.label;
+        els.listen.setAttribute("aria-label", link.label + ": " + track.title);
+      } else {
+        els.listen.removeAttribute("href");
+      }
+    }
     state.wantPlay = !!play;
     state.peaks = null;
     state.pcm = null;
@@ -574,6 +586,13 @@
     });
   }
 
+  /* Streaming link for a track: "listen" (released, LANDR smart link) or "presave" (announced, not out yet). */
+  function trackLink(t) {
+    if (t && t.listen) return { href: t.listen, label: "Listen", presave: false };
+    if (t && t.presave) return { href: t.presave, label: "Pre-save", presave: true };
+    return null;
+  }
+
   function renderLists() {
     albums().forEach((album) => {
       const list = document.querySelector('.track-list[data-album="' + album.id + '"]');
@@ -591,7 +610,11 @@
           const desc = t.description
             ? `<span class="track-desc">${escapeHtml(t.description)}</span>`
             : "";
-          return `<li>
+          const link = trackLink(t);
+          const linkHtml = link
+            ? `<a class="btn btn-ghost btn-sm track-link${link.presave ? " is-presave" : ""}" href="${escapeHtml(link.href)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(link.label + ": " + t.title)}">${link.label}</a>`
+            : "";
+          return `<li${link ? ' class="has-link"' : ""}>
             <button type="button" class="ls-row track-card${feat}${hasCover}" data-album="${album.id}" data-index="${i}">
               ${cover}
               <span class="track-num">${t.num}</span>
@@ -600,6 +623,7 @@
                 ${desc}
               </span>
             </button>
+            ${linkHtml}
           </li>`;
         })
         .join("");
