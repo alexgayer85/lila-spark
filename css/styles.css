@@ -2911,3 +2911,52 @@ body.lightbox-open {
 .release-section + .music-section {
   padding-top: 0.5rem;
 }
+
+/* Per-song Listen / Pre-save links (Music page) — rendered by js/player.js from catalog "listen"/"presave" */
+.track-list li.has-link {
+  position: relative;
+}
+
+.track-list li.has-link .track-card {
+  padding-right: 7.5rem;
+}
+
+.track-link {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  padding: 0.4rem 0.95rem;
+  font-size: 0.82rem;
+  background: rgba(10, 10, 15, 0.55);
+  white-space: nowrap;
+}
+
+.track-link:hover {
+  transform: translateY(calc(-50% - 1px));
+}
+
+.track-link.is-presave {
+  border-color: rgba(255, 45, 149, 0.45);
+  color: var(--magenta);
+}
+
+.ls-player-listen {
+  margin-top: 0.6rem;
+}
+
+.ls-player-listen[hidden] {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .track-list li.has-link .track-card {
+    padding-right: 5.6rem;
+  }
+
+  .track-link {
+    right: 0.6rem;
+    padding: 0.35rem 0.7rem;
+    font-size: 0.78rem;
+  }
+}
