@@ -4,132 +4,144 @@
   "timed": true,
   "lines": [
     {
-      "text": "Through the years, our love will stay,",
+      "text": "Through the years, our love will stay",
       "section": "Verse 1",
       "t": 11.88
     },
     {
-      "text": "Hand in hand, come what may.",
+      "text": "Hand in hand, come what may",
       "section": "Verse 1",
       "t": 17.6
     },
     {
-      "text": "Promises whispered in the breeze,",
+      "text": "Promises whispered in the breeze",
       "section": "Verse 1",
       "t": 24.82
     },
     {
-      "text": "Hearts at ease, on our knees.",
+      "text": "Hearts at ease, on our knees",
       "section": "Verse 1",
       "t": 30.0
     },
     {
-      "text": "Time can't touch what we share,",
+      "text": "Time can't touch what we share",
       "section": "Pre-Chorus",
       "t": 35.98
     },
     {
-      "text": "Always there.",
+      "text": "Always there",
       "section": "Pre-Chorus",
       "t": 40.7
     },
     {
-      "text": "Forever yours, through thick and thin,",
+      "text": "Forever yours, through thick and thin",
       "section": "Chorus",
       "t": 47.32
     },
     {
-      "text": "Love within, let it begin.",
+      "text": "Love within, let it begin",
       "section": "Chorus",
       "t": 53.8
     },
     {
-      "text": "No end in sight, just endless blue,",
+      "text": "No end in sight, just endless blue",
       "section": "Chorus",
       "t": 59.9
     },
     {
-      "text": "Forever yours, me and you.",
+      "text": "Forever yours, me and you",
       "section": "Chorus",
       "t": 65.52
     },
     {
-      "text": "Storms may come, but we'll endure,",
+      "text": "Storms may come, but we'll endure",
       "section": "Verse 2",
       "t": 85.68
     },
     {
-      "text": "Pure and sure, evermore.",
+      "text": "Pure and sure, evermore",
       "section": "Verse 2",
       "t": 89.78
     },
     {
-      "text": "Memories built, foundations strong,",
+      "text": "Memories build foundations strong",
       "section": "Verse 2",
       "t": 98.18
     },
     {
-      "text": "Where we belong.",
+      "text": "Where we belong",
       "section": "Verse 2",
       "t": 102.76
     },
     {
-      "text": "Bond unbreakable, souls entwine,",
-      "section": "Pre-Chorus"
+      "text": "Bond unbreakable, souls entwine",
+      "section": "Pre-Chorus",
+      "t": 108.74
     },
     {
-      "text": "Yours and mine.",
+      "text": "Yours and mine",
       "section": "Pre-Chorus",
       "t": 114.72
     },
     {
-      "text": "Forever yours, through thick and thin,",
+      "text": "Forever yours, through thick and thin",
       "section": "Chorus",
       "t": 120.46
     },
     {
-      "text": "Love within, let it begin.",
+      "text": "Love within, let it begin",
       "section": "Chorus",
       "t": 127.46
     },
     {
-      "text": "No end in sight, just endless blue,",
+      "text": "No end in sight, just endless blue",
       "section": "Chorus",
       "t": 183.04
     },
     {
-      "text": "Forever yours, me and you.",
+      "text": "Forever yours, me and you",
       "section": "Chorus",
-      "t": 65.52
+      "t": 183.72
     },
     {
-      "text": "One love, one life, eternally,",
-      "section": "Bridge"
-    },
-    {
-      "text": "Set us free.",
+      "text": "One love, one life",
       "section": "Bridge",
-      "t": 157.0
+      "t": 184.41
     },
     {
-      "text": "Forever yours, through thick and thin,",
+      "text": "Eternally",
+      "section": "Bridge",
+      "t": 185.09
+    },
+    {
+      "text": "Set us free",
+      "section": "Bridge",
+      "t": 185.78
+    },
+    {
+      "text": "Forever yours, through thick and thin",
       "section": "Final Chorus",
-      "t": 1.7
+      "t": 186.47
     },
     {
-      "text": "Love within, let it begin.",
+      "text": "Love within, let it begin",
       "section": "Final Chorus",
-      "t": 7.76
+      "t": 187.15
     },
     {
-      "text": "No end in sight, just endless blue,",
+      "text": "No end in sight, just endless blue",
       "section": "Final Chorus",
-      "t": 59.9
+      "t": 187.84
     },
     {
-      "text": "Forever yours, true.",
+      "text": "Forever yours",
       "section": "Final Chorus",
       "t": 188.52
+    },
+    {
+      "text": "True",
+      "section": "Final Chorus",
+      "t": 191.52
     }
   ]
 }

@@ -4,11 +4,23 @@
   "timed": false,
   "lines": [
     {
-      "text": "I still sleep on the left, still face the door for you",
+      "text": "Mmm",
+      "section": "Intro"
+    },
+    {
+      "text": "Mmm",
+      "section": "Intro"
+    },
+    {
+      "text": "Still on your side",
+      "section": "Intro"
+    },
+    {
+      "text": "Yeah, I still sleep on the left, still face the door for you",
       "section": "Verse 1"
     },
     {
-      "text": "Still make the coffee strong the way you liked me to",
+      "text": "Still make the coffee strong the way you like me to",
       "section": "Verse 1"
     },
     {
@@ -16,7 +28,7 @@
       "section": "Verse 1"
     },
     {
-      "text": "I pull your pillow closer but it doesn’t feel like mine",
+      "text": "I pull your pillow closer, but it doesn't feel like mine",
       "section": "Verse 1"
     },
     {
@@ -40,11 +52,11 @@
       "section": "Chorus"
     },
     {
-      "text": "I'm still holding onto you somehow",
+      "text": "I'm still holding on to you somehow",
       "section": "Chorus"
     },
     {
-      "text": "Your jacket’s on the chair, I haven’t moved it since that night",
+      "text": "Yeah, your jacket's on the chair, I haven't moved it since that night",
       "section": "Verse 2"
     },
     {
@@ -80,11 +92,11 @@
       "section": "Chorus"
     },
     {
-      "text": "I'm still holding onto you somehow",
+      "text": "I'm still holding on to you somehow",
       "section": "Chorus"
     },
     {
-      "text": "Still here… still yours… come home…",
+      "text": "Still here, still yours, come home",
       "section": "Bridge"
     },
     {
@@ -96,7 +108,7 @@
       "section": "Bridge"
     },
     {
-      "text": "I'm still living on your side of the bed",
+      "text": "I'm still living on your side of the bed (Of the bed)",
       "section": "Final Chorus"
     },
     {
@@ -108,8 +120,16 @@
       "section": "Final Chorus"
     },
     {
-      "text": "I'm still holding onto you somehow",
+      "text": "I'm still holding on to you somehow",
       "section": "Final Chorus"
+    },
+    {
+      "text": "Mmm",
+      "section": "Outro"
+    },
+    {
+      "text": "Mmm",
+      "section": "Outro"
     }
   ]
 }
