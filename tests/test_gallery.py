@@ -322,14 +322,13 @@ class TestPhotosManifest(unittest.TestCase):
                 EXPECTED_NEW[6],  # looks-outdoor
                 EXPECTED_NEW[7],  # looks-studio
                 AFTERGLOW_TURNAROUND,
-                AFTERGLOW_LOUNGE,
                 AFTERGLOW_STREET,
                 AFTERGLOW_TATTOO,
             ],
         )
 
         photos = flatten_photos(data)
-        self.assertEqual(len(photos), 79)
+        self.assertEqual(len(photos), 78)
         for item in photos:
             self.assertTrue((ROOT / item["src"]).is_file(), item["src"])
 
@@ -357,7 +356,6 @@ class TestPhotosManifest(unittest.TestCase):
     def test_afterglow_miscellany_shots_sized(self):
         for src, dest_name in (
             (AFTERGLOW_TURNAROUND_SRC, "afterglow-turnaround.jpg"),
-            (AFTERGLOW_LOUNGE_SRC, "afterglow-lounge.jpg"),
             (AFTERGLOW_STREET_SRC, "street.jpg"),
             (AFTERGLOW_TATTOO_SRC, "tattoo.jpg"),
         ):
