@@ -9,9 +9,6 @@ SRC = Path("/home/alex/iCloudSync/Music/Lila Spark - Afterglow")
 MAX_BYTES = 400 * 1024
 
 GALLERY = [
-    ("grok-image-c4d49059-9001-44cc-9b2c-1b4766c3d540.jpg", "concept-to-reality.jpg"),
-    ("grok-image-22018e38-f19d-49d3-8689-24dbc97bae3e.jpg", "studio-lila-at-desk.jpg"),
-    ("grok-image-deecadb1-8d79-43ff-81f9-94a8237583d2.jpg", "studio-over-shoulder.jpg"),
     ("Somehow (single)_3000x3000.jpg", "somehow.jpg"),
     ("Let_Me_Begin_3000x3000_d81fa070.jpg", "let-me-begin.jpg"),
     ("Layla (song cover).jpg", "layla.jpg"),
@@ -27,7 +24,7 @@ def aspect(path):
 
 
 class TestGalleryFiles(unittest.TestCase):
-    def test_eight_gallery_files_exist_sized_and_uncropped(self):
+    def test_gallery_files_exist_sized_and_uncropped(self):
         for src_name, dest_name in GALLERY:
             dest = ROOT / "images" / "gallery" / dest_name
             src = SRC / src_name
@@ -322,9 +319,6 @@ class TestPhotosManifest(unittest.TestCase):
         self.assertEqual(
             more["photos"][3:],
             [
-                EXPECTED_NEW[0],  # concept-to-reality
-                EXPECTED_NEW[1],  # studio-lila-at-desk
-                EXPECTED_NEW[2],  # studio-over-shoulder
                 EXPECTED_NEW[6],  # looks-outdoor
                 EXPECTED_NEW[7],  # looks-studio
                 AFTERGLOW_TURNAROUND,
@@ -335,7 +329,7 @@ class TestPhotosManifest(unittest.TestCase):
         )
 
         photos = flatten_photos(data)
-        self.assertEqual(len(photos), 82)
+        self.assertEqual(len(photos), 79)
         for item in photos:
             self.assertTrue((ROOT / item["src"]).is_file(), item["src"])
 
