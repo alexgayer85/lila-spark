@@ -537,7 +537,7 @@ if __name__ == "__main__":
 
 class TestComingSoonAndSocial(unittest.TestCase):
     PAGES = ["index.html", "music.html", "story.html", "photos.html", "contact.html"]
-    FB = "https://www.facebook.com/profile.php?id=61594030887300"
+    FB = "https://www.facebook.com/LilaSparkMusic"
 
     def test_releases_data_and_covers(self):
         data = json.loads((ROOT / "data" / "releases.json").read_text())

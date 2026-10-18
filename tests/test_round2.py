@@ -57,7 +57,7 @@ class TestStoryFacebook(unittest.TestCase):
         html = (ROOT / "story.html").read_text()
         i = html.index("If you’d like to support the work")
         para = html[i : html.index("</p>", i)]
-        self.assertIn("https://www.facebook.com/profile.php?id=61594030887300", para)
+        self.assertIn("https://www.facebook.com/LilaSparkMusic", para)
 
 
 if __name__ == "__main__":
