@@ -2960,3 +2960,5 @@ body.lightbox-open {
     font-size: 0.78rem;
   }
 }
+
+.story-switch[hidden] { display: none !important; }

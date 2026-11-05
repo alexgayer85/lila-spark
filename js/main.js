@@ -121,7 +121,7 @@
     };
 
     function selectStoryView(id, push) {
-      if (!tabs.some((tab) => tab.dataset.view === id)) id = "lore";
+      if (storySwitch.hidden || !tabs.some((tab) => tab.dataset.view === id)) id = "lore";
       tabs.forEach((tab) => {
         const on = tab.dataset.view === id;
         tab.classList.toggle("is-active", on);
