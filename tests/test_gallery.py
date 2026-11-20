@@ -124,16 +124,6 @@ AGE_18_SOURCES = [
     ),
 ]
 
-AFTERGLOW_TURNAROUND = {
-    "src": "images/gallery/afterglow-turnaround.jpg",
-    "alt": "Lila Spark in red satin, front, profile, and back studio views",
-    "caption": "Looks · Afterglow turnaround",
-}
-AFTERGLOW_TURNAROUND_SRC = Path(
-    "/home/alex/iCloudSync/Music/Lila Spark - Afterglow/"
-    "grok-image-756bf8b2-dfda-4b4c-86ac-dbc485bee1b7.jpg"
-)
-
 AFTERGLOW_LOUNGE = {
     "src": "images/gallery/afterglow-lounge.jpg",
     "alt": "Lila Spark in a red sequin dress singing at a candlelit lounge microphone",
@@ -321,14 +311,13 @@ class TestPhotosManifest(unittest.TestCase):
             [
                 EXPECTED_NEW[6],  # looks-outdoor
                 EXPECTED_NEW[7],  # looks-studio
-                AFTERGLOW_TURNAROUND,
                 AFTERGLOW_STREET,
                 AFTERGLOW_TATTOO,
             ],
         )
 
         photos = flatten_photos(data)
-        self.assertEqual(len(photos), 78)
+        self.assertEqual(len(photos), 77)
         for item in photos:
             self.assertTrue((ROOT / item["src"]).is_file(), item["src"])
 
@@ -355,7 +344,6 @@ class TestPhotosManifest(unittest.TestCase):
 
     def test_afterglow_miscellany_shots_sized(self):
         for src, dest_name in (
-            (AFTERGLOW_TURNAROUND_SRC, "afterglow-turnaround.jpg"),
             (AFTERGLOW_STREET_SRC, "street.jpg"),
             (AFTERGLOW_TATTOO_SRC, "tattoo.jpg"),
         ):
