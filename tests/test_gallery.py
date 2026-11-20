@@ -414,7 +414,7 @@ class TestPhotosManifest(unittest.TestCase):
 class TestMusicMarkup(unittest.TestCase):
     def test_three_tracks_have_covers_and_cache_bust(self):
         html = (ROOT / "music.html").read_text()
-        self.assertIn('href="css/styles.css?v=listen-1"', html)
+        self.assertIn('href="css/styles.css?v=listen-page-1"', html)
         self.assertNotIn('href="css/styles.css?v=social-icons-1"', html)
         afterglow = [
             ("images/covers/somehow.jpg", "Somehow"),
@@ -454,7 +454,7 @@ class TestMusicMarkup(unittest.TestCase):
 class TestPhotosPage(unittest.TestCase):
     def test_photos_page_uses_sections_and_cache_bust(self):
         html = (ROOT / "photos.html").read_text()
-        self.assertIn('href="css/styles.css?v=listen-1"', html)
+        self.assertIn('href="css/styles.css?v=listen-page-1"', html)
         self.assertIn("js/photos.js?v=sections-2", html)
         self.assertIn('id="photo-jump"', html)
         self.assertIn('id="photo-gallery"', html)
@@ -483,7 +483,7 @@ class TestRealityStudio(unittest.TestCase):
 
     def test_story_shows_screenshot_and_edit_tools(self):
         html = (ROOT / "story.html").read_text()
-        self.assertIn('href="css/styles.css?v=listen-1"', html)
+        self.assertIn('href="css/styles.css?v=listen-page-1"', html)
         self.assertIn("images/studio/lss.jpg", html)
         self.assertIn("variational autoencoder", html)
         self.assertNotIn("1D VAE", html)
@@ -564,7 +564,7 @@ class TestComingSoonAndSocial(unittest.TestCase):
             html = (ROOT / page).read_text()
             self.assertIn('og:image" content="https://lila-spark.com/images/covers/heat-signature.jpg"', html, page)
             self.assertIn(self.FB, html, page)
-            self.assertIn('css/styles.css?v=listen-1"', html, page)
+            self.assertIn('css/styles.css?v=listen-page-1"', html, page)
 
     def test_robots_and_sitemap(self):
         self.assertIn("Sitemap: https://lila-spark.com/sitemap.xml", (ROOT / "robots.txt").read_text())
@@ -576,3 +576,28 @@ class TestComingSoonAndSocial(unittest.TestCase):
         cat = json.loads((ROOT / "data" / "catalog.json").read_text())
         n = len(next(a for a in cat["albums"] if a["id"] == "untitled")["tracks"])
         self.assertIn(f"Newest · title TBA · {n} tracks", (ROOT / "music.html").read_text())
+
+class TestListenLanding(unittest.TestCase):
+    def test_listen_page_exists_and_apple_is_first(self):
+        html = (ROOT / "listen" / "index.html").read_text()
+        self.assertIn("Listen to Lila Spark", html)
+        self.assertIn("https://lila-spark.com/listen/", html)
+        self.assertIn("https://www.facebook.com/LilaSparkMusic", html)
+        self.assertIn("https://www.instagram.com/lilasparkmusic/", html)
+        self.assertIn("https://www.tiktok.com/@lila.spark.ai", html)
+        self.assertIn("https://music.youtube.com/channel/UCA7bfTNt3y0xi-JQItFDNjg", html)
+        platforms = html.split('id="platforms-title"', 1)[1].split("</div>", 1)[0]
+        first_href = platforms.split('href="', 1)[1].split('"', 1)[0]
+        self.assertEqual(first_href, "https://music.apple.com/us/artist/lila-spark/6797912457")
+        self.assertIn("platform-btn btn-primary platform-featured", html)
+        apple_block = platforms.split("Apple Music", 1)[0]
+        self.assertIn("btn-primary", apple_block)
+        self.assertNotIn("btn-primary", platforms.split("Apple Music", 1)[1])
+
+    def test_sitemap_includes_listen(self):
+        self.assertIn("https://lila-spark.com/listen/", (ROOT / "sitemap.xml").read_text())
+
+    def test_nav_includes_listen(self):
+        for page in ["index.html", "music.html", "story.html", "photos.html", "contact.html"]:
+            html = (ROOT / page).read_text()
+            self.assertIn('href="listen/"', html, page)

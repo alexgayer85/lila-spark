@@ -9,6 +9,7 @@ Artist site for [lila-spark.com](https://lila-spark.com), hosted on **GitHub Pag
 | Page | File | Purpose |
 |------|------|---------|
 | Home | `index.html` | Hero, featured track, era arc, story teaser |
+| Listen | `listen/index.html` | Streaming hub for bio/link-in-bio (artist pages + featured LANDR links) |
 | Music | `music.html` | Full discography (album art → tracklists) |
 | Story | `story.html` | Lore (Lila) / Reality (Alex) toggle |
 | Photos | `photos.html` | Gallery |

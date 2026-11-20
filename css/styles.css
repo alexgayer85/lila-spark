@@ -2962,3 +2962,226 @@ body.lightbox-open {
 }
 
 .story-switch[hidden] { display: none !important; }
+/* Listen landing page */
+.listen-main {
+  padding-bottom: 1rem;
+}
+
+.listen-hero {
+  position: relative;
+  z-index: 1;
+  padding: clamp(1.75rem, 6vw, 3.25rem) 0 clamp(1.75rem, 5vw, 2.5rem);
+}
+
+.listen-hero-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.15rem;
+}
+
+.listen-hero .hero-portrait {
+  --portrait-size: min(220px, 58vw);
+  justify-self: center;
+  margin-inline: auto;
+}
+
+.listen-hero .eyebrow {
+  margin-bottom: 0;
+}
+
+.listen-hero h1 {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+}
+
+.listen-hero .hero-tagline {
+  font-size: clamp(1.15rem, 4vw, 1.45rem);
+  font-weight: 500;
+}
+
+.listen-hero .hero-name {
+  font-size: clamp(3.1rem, 14vw, 5.25rem);
+  padding-top: 0.08em;
+  padding-bottom: 0.2em;
+  line-height: 1.35;
+}
+
+.listen-lead {
+  margin: 0;
+  max-width: 28rem;
+  color: var(--ink-muted);
+  font-size: 1.05rem;
+}
+
+.listen-section {
+  padding-top: clamp(1.5rem, 4vw, 2.25rem);
+  padding-bottom: clamp(1.75rem, 5vw, 2.75rem);
+}
+
+.listen-section .section-header {
+  margin-bottom: 1.15rem;
+  text-align: center;
+}
+
+.listen-section .section-header h2 {
+  font-size: clamp(1.45rem, 4vw, 1.85rem);
+}
+
+.platform-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  max-width: 36rem;
+  margin-inline: auto;
+}
+
+@media (min-width: 520px) {
+  .platform-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.platform-btn {
+  width: 100%;
+  gap: 0.7rem;
+  padding: 0.95rem 1.15rem;
+  font-size: 1.02rem;
+  background: rgba(18, 18, 28, 0.85);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+.platform-btn .social-svg {
+  width: 1.35rem;
+  height: 1.35rem;
+  flex-shrink: 0;
+}
+
+.song-list {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  max-width: 40rem;
+}
+
+.song-row {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.5rem 0.7rem 0.5rem 0.5rem;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.song-row:hover,
+.song-row:focus-visible {
+  border-color: rgba(45, 226, 255, 0.4);
+  box-shadow: var(--glow-cyan);
+  transform: translateY(-1px);
+  outline: none;
+}
+
+.song-row .cover-frame {
+  width: 64px;
+  flex: 0 0 64px;
+  border-radius: 10px;
+}
+
+.song-meta {
+  min-width: 0;
+  flex: 1;
+  text-align: left;
+}
+
+.song-title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+
+.song-sub {
+  margin: 0.15rem 0 0;
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+}
+
+.song-listen {
+  flex-shrink: 0;
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #fff;
+  background: linear-gradient(120deg, var(--magenta), #ff5cb0 40%, var(--violet));
+}
+
+.listen-more {
+  margin: 1.15rem auto 0;
+  text-align: center;
+  color: var(--ink-muted);
+  font-size: 0.95rem;
+}
+
+.listen-more .text-link + .text-link {
+  margin-left: 0;
+}
+
+.follow-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  max-width: 36rem;
+  margin-inline: auto;
+}
+
+@media (min-width: 640px) {
+  .follow-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.follow-btn {
+  width: 100%;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 0.9rem 0.6rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  background: rgba(18, 18, 28, 0.85);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+.follow-btn .social-svg {
+  width: 1.35rem;
+  height: 1.35rem;
+}
+
+.platform-btn.btn-primary {
+  background: linear-gradient(120deg, var(--magenta), #ff5cb0 40%, var(--violet));
+  color: #fff;
+  border-color: transparent;
+  box-shadow: var(--glow-magenta);
+  font-size: 1.08rem;
+  padding: 1.05rem 1.2rem;
+}
+
+.platform-btn.btn-primary:hover {
+  box-shadow: 0 0 50px rgba(255, 45, 149, 0.5);
+}
+
+.platform-featured {
+  grid-column: 1 / -1;
+}
