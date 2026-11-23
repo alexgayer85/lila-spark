@@ -1,0 +1,357 @@
+{
+  "title": "Let It Answer",
+  "durationHint": 192,
+  "timed": true,
+  "lines": [
+    {
+      "text": "Mmm",
+      "section": "Intro",
+      "t": 0.28
+    },
+    {
+      "text": "Mmm",
+      "section": "Intro",
+      "t": 3.1
+    },
+    {
+      "text": "Don't ask me",
+      "section": "Intro",
+      "t": 6.12
+    },
+    {
+      "text": "Ask the rest of me",
+      "section": "Intro",
+      "t": 8.65
+    },
+    {
+      "text": "I can talk a clean game",
+      "section": "Verse 1",
+      "t": 11.81
+    },
+    {
+      "text": "I can say we're fine",
+      "section": "Verse 1",
+      "t": 14.55
+    },
+    {
+      "text": "I can keep my hands in my lap",
+      "section": "Verse 1",
+      "t": 17.33
+    },
+    {
+      "text": "Till the second you walk by",
+      "section": "Verse 1",
+      "t": 19.37
+    },
+    {
+      "text": "My mouth is still polite",
+      "section": "Verse 1",
+      "t": 22.44
+    },
+    {
+      "text": "My pulse already left",
+      "section": "Verse 1",
+      "t": 25.18
+    },
+    {
+      "text": "It's halfway to your collar",
+      "section": "Verse 1",
+      "t": 28.0
+    },
+    {
+      "text": "Before I catch my breath",
+      "section": "Verse 1",
+      "t": 30.72
+    },
+    {
+      "text": "I won't spell it",
+      "section": "Pre-Chorus",
+      "t": 33.85
+    },
+    {
+      "text": "I won't sign it",
+      "section": "Pre-Chorus",
+      "t": 35.25
+    },
+    {
+      "text": "If you need the words, you're late",
+      "section": "Pre-Chorus",
+      "t": 36.97
+    },
+    {
+      "text": "The room already read it",
+      "section": "Pre-Chorus",
+      "t": 39.17
+    },
+    {
+      "text": "On the way I didn't wait",
+      "section": "Pre-Chorus",
+      "t": 42.23
+    },
+    {
+      "text": "Let it answer",
+      "section": "Chorus",
+      "t": 44.91
+    },
+    {
+      "text": "Let it answer for me",
+      "section": "Chorus",
+      "t": 47.35
+    },
+    {
+      "text": "If my mouth stays quiet",
+      "section": "Chorus",
+      "t": 50.12
+    },
+    {
+      "text": "Watch the rest of me",
+      "section": "Chorus",
+      "t": 52.86
+    },
+    {
+      "text": "Let it answer",
+      "section": "Chorus",
+      "t": 56.0
+    },
+    {
+      "text": "Closer than a line",
+      "section": "Chorus",
+      "t": 58.0
+    },
+    {
+      "text": "If I don't say it",
+      "section": "Chorus",
+      "t": 61.16
+    },
+    {
+      "text": "You can still tell it's mine",
+      "section": "Chorus",
+      "t": 63.21
+    },
+    {
+      "text": "Let it answer",
+      "section": "Chorus",
+      "t": 66.99
+    },
+    {
+      "text": "You can keep the small talk",
+      "section": "Verse 2",
+      "t": 69.79
+    },
+    {
+      "text": "I already lost that thread",
+      "section": "Verse 2",
+      "t": 72.33
+    },
+    {
+      "text": "Wrist, then waist, then nowhere decent",
+      "section": "Verse 2",
+      "t": 74.59
+    },
+    {
+      "text": "And I haven't even said",
+      "section": "Verse 2",
+      "t": 77.44
+    },
+    {
+      "text": "I like the way you notice",
+      "section": "Verse 2",
+      "t": 80.74
+    },
+    {
+      "text": "Without making me explain",
+      "section": "Verse 2",
+      "t": 83.06
+    },
+    {
+      "text": "I like a man who listens",
+      "section": "Verse 2",
+      "t": 86.28
+    },
+    {
+      "text": "When the sentence isn't plain",
+      "section": "Verse 2",
+      "t": 88.44
+    },
+    {
+      "text": "I won't spell it",
+      "section": "Pre-Chorus",
+      "t": 91.9
+    },
+    {
+      "text": "I won't sign it",
+      "section": "Pre-Chorus",
+      "t": 93.25
+    },
+    {
+      "text": "If you need the words, you're late",
+      "section": "Pre-Chorus",
+      "t": 95.01
+    },
+    {
+      "text": "The room already read it",
+      "section": "Pre-Chorus",
+      "t": 97.19
+    },
+    {
+      "text": "On the way I didn't wait",
+      "section": "Pre-Chorus",
+      "t": 100.27
+    },
+    {
+      "text": "Let it answer",
+      "section": "Chorus",
+      "t": 102.93
+    },
+    {
+      "text": "Let it answer for me",
+      "section": "Chorus",
+      "t": 105.35
+    },
+    {
+      "text": "If my mouth stays quiet",
+      "section": "Chorus",
+      "t": 108.14
+    },
+    {
+      "text": "Watch the rest of me",
+      "section": "Chorus",
+      "t": 110.86
+    },
+    {
+      "text": "Let it answer",
+      "section": "Chorus",
+      "t": 113.98
+    },
+    {
+      "text": "Closer than a line",
+      "section": "Chorus",
+      "t": 116.02
+    },
+    {
+      "text": "If I don't say it",
+      "section": "Chorus",
+      "t": 119.19
+    },
+    {
+      "text": "You can still tell it's mine",
+      "section": "Chorus",
+      "t": 121.21
+    },
+    {
+      "text": "Let it answer",
+      "section": "Chorus",
+      "t": 124.99
+    },
+    {
+      "text": "Don't make me pretty it up",
+      "section": "Bridge",
+      "t": 126.55
+    },
+    {
+      "text": "Don't make me take it back",
+      "section": "Bridge",
+      "t": 129.31
+    },
+    {
+      "text": "I'm grown, I'm here, I'm obvious",
+      "section": "Bridge",
+      "t": 130.95
+    },
+    {
+      "text": "And I'm not playing that",
+      "section": "Bridge",
+      "t": 134.88
+    },
+    {
+      "text": "(Closer)",
+      "section": "Bridge",
+      "t": 136.7
+    },
+    {
+      "text": "(Still not talking)",
+      "section": "Bridge",
+      "t": 140.95
+    },
+    {
+      "text": "(You already know)",
+      "section": "Bridge",
+      "t": 143.6
+    },
+    {
+      "text": "Let it answer",
+      "section": "Final Chorus",
+      "t": 147.09
+    },
+    {
+      "text": "Let it answer for me",
+      "section": "Final Chorus",
+      "t": 149.53
+    },
+    {
+      "text": "If my mouth stays quiet",
+      "section": "Final Chorus",
+      "t": 152.29
+    },
+    {
+      "text": "Watch the rest of me",
+      "section": "Final Chorus",
+      "t": 155.01
+    },
+    {
+      "text": "Let it answer",
+      "section": "Final Chorus",
+      "t": 158.11
+    },
+    {
+      "text": "Now you're reading it right",
+      "section": "Final Chorus",
+      "t": 159.85
+    },
+    {
+      "text": "If I don't say it",
+      "section": "Final Chorus",
+      "t": 163.34
+    },
+    {
+      "text": "You can still tell it's mine",
+      "section": "Final Chorus",
+      "t": 165.36
+    },
+    {
+      "text": "Let it answer",
+      "section": "Final Chorus",
+      "t": 169.1
+    },
+    {
+      "text": "Mmm",
+      "section": "Outro",
+      "t": 171.6
+    },
+    {
+      "text": "Don't ask me",
+      "section": "Outro",
+      "t": 174.65
+    },
+    {
+      "text": "Ask the rest of me",
+      "section": "Outro",
+      "t": 177.11
+    },
+    {
+      "text": "Mmm",
+      "section": "Outro",
+      "t": 182.6
+    },
+    {
+      "text": "Don't ask me",
+      "section": "Outro",
+      "t": 185.63
+    },
+    {
+      "text": "Ask the rest of me",
+      "section": "Outro",
+      "t": 188.11
+    }
+  ]
+}

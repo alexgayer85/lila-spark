@@ -75,6 +75,17 @@
           "explicit": false,
           "featured": false,
           "lyrics": "almost-here"
+        },
+        {
+          "id": "let-it-answer",
+          "num": "07",
+          "title": "Let It Answer",
+          "description": "Sultry pop about body language: everything her body says before her mouth catches up.",
+          "audio": "audio/let-it-answer.mp3",
+          "cover": null,
+          "explicit": false,
+          "featured": false,
+          "lyrics": "let-it-answer"
         }
       ]
     },
