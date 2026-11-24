@@ -5,7 +5,7 @@
   "lines": [
     {
       "text": "Turn the page tonight",
-      "section": "Verse 1",
+      "section": "Intro",
       "t": 0.76
     },
     {
@@ -13,6 +13,11 @@
       "section": "Instrumental",
       "t": 5.94,
       "break": true
+    },
+    {
+      "text": "Page tonight",
+      "section": "Intro",
+      "t": 11.95
     },
     {
       "text": "Chapter one was beautiful but now it’s done",
@@ -69,6 +74,11 @@
       "section": "Instrumental",
       "t": 91.95,
       "break": true
+    },
+    {
+      "text": "Page tonight",
+      "section": "Interlude",
+      "t": 99.85
     },
     {
       "text": "New horizons calling, I can hear the beat",

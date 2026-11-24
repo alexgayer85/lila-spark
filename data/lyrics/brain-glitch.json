@@ -59,14 +59,14 @@
       "t": 63.94
     },
     {
-      "text": "Brain glitch, brain glitch",
+      "text": "Brain, brain glitch, brain glitch",
       "section": "Chorus",
-      "t": 71.11
+      "t": 70.45
     },
     {
-      "text": "You turn my cool girl energy to total brain glitch",
+      "text": "You, you, you, you turn my cool girl energy to total brain glitch",
       "section": "Chorus",
-      "t": 74.73
+      "t": 73.05
     },
     {
       "text": "Tried to play it smooth but quoted the wrong movie line",
@@ -119,14 +119,24 @@
       "t": 126.28
     },
     {
-      "text": "Brain glitch, brain glitch",
+      "text": "Brain, brain glitch, brain glitch",
       "section": "Chorus",
-      "t": 133.31
+      "t": 132.7
     },
     {
-      "text": "You turn my cool girl energy to total brain glitch",
+      "text": "You, you, you, you turn my cool girl energy to total brain glitch",
       "section": "Chorus",
-      "t": 136.34
+      "t": 135.25
+    },
+    {
+      "text": "Wait, what did I just say?",
+      "section": "Chorus",
+      "t": 140.3
+    },
+    {
+      "text": "No",
+      "section": "Chorus",
+      "t": 142.0
     },
     {
       "text": "Meant to say you’re glowing but it came out “You’re my favorite ride”",
@@ -169,14 +179,19 @@
       "t": 179.63
     },
     {
-      "text": "Brain glitch, brain glitch",
+      "text": "Brain, brain glitch, brain glitch",
       "section": "Final Chorus",
-      "t": 186.08
+      "t": 186.05
     },
     {
-      "text": "You turn my cool girl energy to total brain glitch",
+      "text": "You, you, you, you turn my cool girl energy to total brain glitch",
       "section": "Final Chorus",
-      "t": 190.28
+      "t": 188.6
+    },
+    {
+      "text": "Yeah, yeah, yeah, yeah",
+      "section": "Final Chorus",
+      "t": 193.55
     },
     {
       "text": "So come a little closer, my thoughts are kinda messy but the vibe is right",
@@ -187,6 +202,11 @@
       "text": "I’ll try not to ramble, but no promises I’ll keep it light",
       "section": "Outro",
       "t": 199.27
+    },
+    {
+      "text": "Brain glitch, yeah, yeah, yeah, yeah, yeah, yeah, yeah",
+      "section": "Outro",
+      "t": 204.1
     },
     {
       "text": "Brain glitch, yeah, you got me",
