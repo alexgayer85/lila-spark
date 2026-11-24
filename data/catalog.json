@@ -86,6 +86,17 @@
           "explicit": false,
           "featured": false,
           "lyrics": "let-it-answer"
+        },
+        {
+          "id": "still-standing",
+          "num": "08",
+          "title": "Still Standing",
+          "description": "Warm, hopeful mid-tempo pop about getting knocked down, getting back up, and being proud of who she's become.",
+          "audio": "audio/still-standing.mp3",
+          "cover": null,
+          "explicit": false,
+          "featured": false,
+          "lyrics": "still-standing"
         }
       ]
     },
