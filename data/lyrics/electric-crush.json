@@ -1,119 +1,163 @@
 {
   "title": "Electric Crush",
-  "durationHint": null,
-  "timed": false,
+  "durationHint": 212,
+  "timed": true,
   "lines": [
     {
       "text": "You walked in and the whole room lit up bright",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 19.06
     },
     {
       "text": "One smile from you and I’m losing track of time tonight",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 23.24
     },
     {
       "text": "Chemistry is crackling, can’t ignore the spark",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 27.63
     },
     {
       "text": "Every time you move it’s lighting up the dark",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 31.91
     },
     {
       "text": "Heart racing, can’t slow down",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 35.7
     },
     {
       "text": "This feeling’s taking over now",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 39.9
     },
     {
       "text": "Electric crush, got me feeling so alive",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 44.67
     },
     {
       "text": "You’re the only one who makes my heartbeat multiply",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 48.57
     },
     {
       "text": "Turn it up, let the bass drop low",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 52.67
     },
     {
       "text": "Electric crush, baby steal the show",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 56.66
     },
     {
       "text": "Crush, crush, electric crush on you",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 61.98
     },
     {
       "text": "We’re moving like the music wrote our names in lights",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 81.08
     },
     {
       "text": "Dancing through the tension, burning up the night",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 86.07
     },
     {
       "text": "No more waiting, no more “what if” games",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 90.25
     },
     {
       "text": "This crush is real and I’m calling out your name",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 94.18
     },
     {
       "text": "Heart racing, can’t slow down",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 98.32
     },
     {
       "text": "This feeling’s taking over now",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 102.49
     },
     {
       "text": "Electric crush, got me feeling so alive",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 107.25
     },
     {
       "text": "You’re the only one who makes my heartbeat multiply",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 111.18
     },
     {
       "text": "Turn it up, let the bass drop low",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 115.24
     },
     {
       "text": "Electric crush, baby steal the show",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 119.5
     },
     {
       "text": "Crush, crush, electric crush on you",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 124.52
     },
     {
-      "text": "Feel it… electric… crush!",
-      "section": "Bridge"
+      "text": "♪ ♪ ♪",
+      "section": "Instrumental",
+      "t": 148.66,
+      "break": true
+    },
+    {
+      "text": "Feel it",
+      "section": "Bridge",
+      "t": 158.11
+    },
+    {
+      "text": "Electric crush!",
+      "section": "Bridge",
+      "t": 164.35
     },
     {
       "text": "Electric crush, got me feeling so alive",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 165.71
     },
     {
       "text": "You’re the only one who makes my heartbeat multiply",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 169.64
     },
     {
       "text": "Turn it up, let the bass drop low",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 173.72
     },
     {
       "text": "Electric crush, baby steal the show",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 177.79
     },
     {
       "text": "Crush, crush, electric crush on you",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 182.6
+    },
+    {
+      "text": "Feel it, let it pulse in me",
+      "section": "Final Chorus",
+      "t": 188.87
     }
   ]
 }

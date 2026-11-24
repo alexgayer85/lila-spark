@@ -1,111 +1,159 @@
 {
   "title": "Velvet Lies",
-  "durationHint": null,
-  "timed": false,
+  "durationHint": 215,
+  "timed": true,
   "lines": [
     {
       "text": "You move through the room like you own the night",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 23.46
     },
     {
       "text": "Whispers follow every step, caught in your spotlight",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 28.61
     },
     {
       "text": "One look from you could make a good girl sin",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 33.87
     },
     {
       "text": "You smile like an angel, but I know what’s hiding within",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 38.32
     },
     {
       "text": "You say all the right things, touch me the right way",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 44.1
     },
     {
       "text": "But something in your eyes tells me I should run away",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 49.25
     },
     {
       "text": "You’re velvet lies wrapped in designer suits",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 53.81
+    },
+    {
+      "text": "Smooth operator, baby, playing me for a fool",
+      "section": "Chorus",
+      "t": 58.9
     },
     {
       "text": "I know I should leave, but I keep coming back",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 64.2
     },
     {
-      "text": "You’re velvet lies… and I can’t resist the trap",
-      "section": "Chorus"
+      "text": "You’re velvet lies, and I can’t resist the trap",
+      "section": "Chorus",
+      "t": 68.67
+    },
+    {
+      "text": "♪ ♪ ♪",
+      "section": "Instrumental",
+      "t": 75.44,
+      "break": true
     },
     {
       "text": "Champagne in crystal, your hand on my waist",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 85.35
     },
     {
       "text": "You tell me I’m different, put on that perfect face",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 90.57
     },
     {
       "text": "We dance real slow while the city burns below",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 95.76
     },
     {
       "text": "You’re the sweetest kind of trouble that I’ll never let go",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 100.0
     },
     {
       "text": "You say all the right things, touch me the right way",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 106.03
     },
     {
       "text": "But something in your eyes tells me I should run away",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 111.19
     },
     {
       "text": "You’re velvet lies wrapped in designer suits",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 115.76
+    },
+    {
+      "text": "Smooth operator, baby, playing me for a fool",
+      "section": "Chorus",
+      "t": 120.78
     },
     {
       "text": "I know I should leave, but I keep coming back",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 126.11
     },
     {
-      "text": "You’re velvet lies… and I can’t resist the trap",
-      "section": "Chorus"
+      "text": "You’re velvet lies, and I can’t resist the trap",
+      "section": "Chorus",
+      "t": 130.55
     },
     {
-      "text": "One touch… one kiss…",
-      "section": "Bridge"
+      "text": "♪ ♪ ♪",
+      "section": "Instrumental",
+      "t": 137.66,
+      "break": true
+    },
+    {
+      "text": "One touch, one kiss",
+      "section": "Bridge",
+      "t": 147.11
     },
     {
       "text": "I already know how this ends",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 150.03
     },
     {
-      "text": "But here I am… falling again",
-      "section": "Bridge"
-    },
-    {
-      "text": "[Final Chorus] (softer then building)",
-      "section": "Bridge"
+      "text": "But here I am, falling again",
+      "section": "Bridge",
+      "t": 153.13
     },
     {
       "text": "You’re velvet lies wrapped in designer suits",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 162.16
+    },
+    {
+      "text": "Smooth operator, spinning your perfect truth",
+      "section": "Bridge",
+      "t": 167.21
     },
     {
       "text": "I know I should leave, but the damage is done",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 172.53
     },
     {
-      "text": "You’re velvet lies… and I’m still coming undone",
-      "section": "Bridge"
+      "text": "You’re velvet lies, and I’m still coming undone",
+      "section": "Bridge",
+      "t": 177.0
     },
     {
-      "text": "Velvet lies…",
-      "section": "Outro"
+      "text": "Velvet lies",
+      "section": "Outro",
+      "t": 183.8
     }
   ]
 }

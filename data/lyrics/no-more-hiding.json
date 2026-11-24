@@ -1,119 +1,214 @@
 {
   "title": "No More Hiding",
-  "durationHint": null,
-  "timed": false,
+  "durationHint": 199,
+  "timed": true,
   "lines": [
     {
+      "text": "No more hiding, hiding, no more hiding, hiding",
+      "section": "Intro",
+      "t": 0.34
+    },
+    {
+      "text": "No more hiding, hiding, no more hiding, hiding",
+      "section": "Intro",
+      "t": 4.88
+    },
+    {
       "text": "I used to shrink myself to fit inside their frame",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 9.67
     },
     {
       "text": "Quiet smiles, perfect lines, playing their game",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 14.44
     },
     {
       "text": "But something inside me finally woke up loud",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 19.48
     },
     {
       "text": "I’m stepping out the shadows, no more hiding now",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 23.66
     },
     {
       "text": "I’ve got fire in my veins and I’m not afraid to show",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 28.51
     },
     {
       "text": "Watch me shine, watch me glow",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 35.66
     },
     {
       "text": "No more hiding, no more playing small",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 38.02
     },
     {
       "text": "I’m standing tall, I’m breaking through the wall",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 42.4
     },
     {
       "text": "This is my moment, this is my time",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 47.11
     },
     {
       "text": "No more hiding, watch me come alive",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 50.37
     },
     {
-      "text": "Yeah, I’m done hiding, done hiding",
-      "section": "Chorus"
+      "text": "Yeah, I’m done hiding",
+      "section": "Chorus",
+      "t": 55.98
+    },
+    {
+      "text": "Done hiding",
+      "section": "Chorus",
+      "t": 63.58
     },
     {
       "text": "They can talk, they can stare, doesn’t matter anymore",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 66.23
     },
     {
       "text": "I’m writing my own story on an open door",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 71.25
     },
     {
       "text": "Every scar, every fear, turned into strength today",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 76.0
     },
     {
       "text": "I’m owning every piece of who I am this way",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 80.24
     },
     {
       "text": "I’ve got fire in my veins and I’m not afraid to show",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 84.97
     },
     {
       "text": "Watch me shine, watch me glow",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 92.13
     },
     {
       "text": "No more hiding, no more playing small",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 94.47
     },
     {
       "text": "I’m standing tall, I’m breaking through the wall",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 98.9
     },
     {
       "text": "This is my moment, this is my time",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 103.58
     },
     {
       "text": "No more hiding, watch me come alive",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 106.81
     },
     {
-      "text": "Yeah, I’m done hiding, done hiding",
-      "section": "Chorus"
+      "text": "Yeah, I’m done hiding",
+      "section": "Chorus",
+      "t": 112.41
     },
     {
-      "text": "This is my life, my rules, my light",
-      "section": "Bridge"
+      "text": "Done hiding",
+      "section": "Chorus",
+      "t": 120.14
+    },
+    {
+      "text": "♪ ♪ ♪",
+      "section": "Instrumental",
+      "t": 122.08,
+      "break": true
+    },
+    {
+      "text": "This is my life, my rules, my life",
+      "section": "Chorus",
+      "t": 141.24
+    },
+    {
+      "text": "No more hiding, hiding",
+      "section": "Bridge",
+      "t": 146.27
+    },
+    {
+      "text": "No more hiding, hiding",
+      "section": "Bridge",
+      "t": 148.61
     },
     {
       "text": "No more hiding, no more playing small",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 150.95
     },
     {
       "text": "I’m standing tall, I’m breaking through the wall",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 155.36
     },
     {
       "text": "This is my moment, this is my time",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 160.06
     },
     {
       "text": "No more hiding, watch me come alive",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 163.28
     },
     {
-      "text": "Yeah, I’m done hiding, done hiding",
-      "section": "Final Chorus"
+      "text": "Yeah, I’m done hiding",
+      "section": "Final Chorus",
+      "t": 168.89
+    },
+    {
+      "text": "Done hiding",
+      "section": "Final Chorus",
+      "t": 176.54
+    },
+    {
+      "text": "♪ ♪ ♪",
+      "section": "Instrumental",
+      "t": 178.54,
+      "break": true
+    },
+    {
+      "text": "No more hiding, hiding",
+      "section": "Final Chorus",
+      "t": 188.61
+    },
+    {
+      "text": "No more hiding, hiding",
+      "section": "Final Chorus",
+      "t": 192.49
+    },
+    {
+      "text": "No more hiding, hiding",
+      "section": "Final Chorus",
+      "t": 193.68
+    },
+    {
+      "text": "No more hiding, hiding",
+      "section": "Final Chorus",
+      "t": 196.0
     }
   ]
 }

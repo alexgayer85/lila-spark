@@ -1,159 +1,202 @@
 {
   "title": "Brain Glitch",
-  "durationHint": null,
-  "timed": false,
+  "durationHint": 215,
+  "timed": true,
   "lines": [
     {
       "text": "La-la-la, da-da-da, uh-huh, yeah",
-      "section": "Intro"
+      "section": "Intro",
+      "t": 9.17
     },
     {
       "text": "Scrolling through my feed but only seeing your face",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 17.66
     },
     {
       "text": "Changed your name to “Heart Attack” just in case",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 22.18
     },
     {
       "text": "You said you like my smile and the way my body glows",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 26.39
     },
     {
       "text": "Now I’m tripping over words every time you get real close, oh",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 30.89
     },
     {
       "text": "But every time you text me my fingers start to freeze",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 35.29
     },
     {
       "text": "Baby my mind goes static like bad TV",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 43.6
     },
     {
       "text": "Lookin’ at you got me stuck in a brain glitch",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 52.49
     },
     {
       "text": "Butterflies doing backflips, can’t compute a single stitch",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 55.29
     },
     {
       "text": "When you wrap your hands around me it hits me like a wave",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 60.0
     },
     {
-      "text": "I start spitting random facts like “did you know I can’t behave?”",
-      "section": "Chorus"
+      "text": "I start spitting random facts like “Did you know I can’t behave?”",
+      "section": "Chorus",
+      "t": 63.94
     },
     {
       "text": "Brain glitch, brain glitch",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 71.11
     },
     {
       "text": "You turn my cool girl energy to total brain glitch",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 74.73
     },
     {
       "text": "Tried to play it smooth but quoted the wrong movie line",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 79.96
     },
     {
-      "text": "Said “may the force be with you” when I meant “you look fine… all night”",
-      "section": "Verse 2"
+      "text": "Said “May the force be with you” when I meant “You look fine”",
+      "section": "Verse 2",
+      "t": 84.14
     },
     {
-      "text": "You laugh and tilt your head like it’s the cutest thing",
-      "section": "Verse 2"
+      "text": "All night you laugh and tilt your head like it’s the cutest thing",
+      "section": "Verse 2",
+      "t": 88.08
     },
     {
       "text": "Now I’m mixing up my words while imagining the swing",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 93.05
     },
     {
       "text": "But every time you text me my fingers start to freeze",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 97.49
     },
     {
       "text": "Baby my mind goes static like bad TV",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 105.8
     },
     {
       "text": "Lookin’ at you got me stuck in a brain glitch",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 114.71
     },
     {
       "text": "Butterflies doing backflips, can’t compute a single stitch",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 117.51
     },
     {
       "text": "When you wrap your hands around me it hits me like a wave",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 122.22
     },
     {
-      "text": "I start spitting random facts like “did you know I can’t behave?”",
-      "section": "Chorus"
+      "text": "I start spitting random facts like “Did you know I can’t behave?”",
+      "section": "Chorus",
+      "t": 126.28
     },
     {
       "text": "Brain glitch, brain glitch",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 133.31
     },
     {
       "text": "You turn my cool girl energy to total brain glitch",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 136.34
     },
     {
-      "text": "Meant to say you’re glowing but it came out “you’re my favorite ride”",
-      "section": "Bridge"
+      "text": "Meant to say you’re glowing but it came out “You’re my favorite ride”",
+      "section": "Bridge",
+      "t": 146.66
     },
     {
-      "text": "Tried to flirt in Spanish, now I’m stuck on “te amo… all night”",
-      "section": "Bridge"
+      "text": "Tried to flirt in Spanish, now I’m stuck on “Te amo”",
+      "section": "Bridge",
+      "t": 151.11
     },
     {
-      "text": "You pull me in and whisper “keep talking anyway”",
-      "section": "Bridge"
+      "text": "All night you pull me in and whisper “Keep talking anyway”",
+      "section": "Bridge",
+      "t": 154.79
     },
     {
-      "text": "Guess my brain’s officially on permanent holiday… with benefits",
-      "section": "Bridge"
+      "text": "Guess my brain’s officially on permanent holiday, with benefits",
+      "section": "Bridge",
+      "t": 160.0
     },
     {
       "text": "Lookin’ at you got me stuck in a brain glitch",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 167.94
     },
     {
       "text": "Butterflies doing backflips, can’t compute a single stitch",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 170.82
     },
     {
       "text": "When you wrap your hands around me it hits me like a wave",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 175.55
     },
     {
-      "text": "I start spitting random facts like “did you know I can’t behave?”",
-      "section": "Final Chorus"
+      "text": "I start spitting random facts like “Did you know I can’t behave?”",
+      "section": "Final Chorus",
+      "t": 179.63
     },
     {
       "text": "Brain glitch, brain glitch",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 186.08
     },
     {
       "text": "You turn my cool girl energy to total brain glitch",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 190.28
     },
     {
       "text": "So come a little closer, my thoughts are kinda messy but the vibe is right",
-      "section": "Outro"
+      "section": "Outro",
+      "t": 195.27
     },
     {
-      "text": "I’ll try not to ramble… but no promises I’ll keep it light…",
-      "section": "Outro"
+      "text": "I’ll try not to ramble, but no promises I’ll keep it light",
+      "section": "Outro",
+      "t": 199.27
     },
     {
-      "text": "Brain glitch… yeah, you got me…",
-      "section": "Outro"
+      "text": "Brain glitch, yeah, you got me",
+      "section": "Outro",
+      "t": 209.14
+    },
+    {
+      "text": "Yeah, you got me",
+      "section": "Outro",
+      "t": 211.94
     }
   ]
 }

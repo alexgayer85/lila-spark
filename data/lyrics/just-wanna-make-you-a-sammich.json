@@ -1,139 +1,178 @@
 {
   "title": "Just Wanna Make You a Sammich",
-  "durationHint": null,
-  "timed": false,
+  "durationHint": 188,
+  "timed": true,
   "lines": [
     {
       "text": "Other girls want roses, diamonds on a ring",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 9.89
     },
     {
-      "text": "Fancy dinners, private jets — the whole big thing",
-      "section": "Verse 1"
+      "text": "Fancy dinners, private jets, the whole big thing",
+      "section": "Verse 1",
+      "t": 15.26
     },
     {
       "text": "But me, I’m in the kitchen with the bread and ham",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 20.3
     },
     {
       "text": "Taking my time ’cause I know exactly who I am",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 25.16
     },
     {
       "text": "They say love should be complicated, hard to understand",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 30.93
     },
     {
       "text": "But I believe the sweetest things are simple, hand in hand",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 35.87
     },
     {
       "text": "I don’t need to impress you with some grand design",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 42.24
     },
     {
       "text": "I just wanna make you a sammich, baby, and make it mine",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 47.29
     },
     {
       "text": "Turkey or tuna, extra pickles on the side",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 52.41
     },
     {
       "text": "Cut it in triangles ’cause I know you like that kind",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 57.0
     },
     {
       "text": "I just wanna make you a sammich",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 62.34
     },
     {
       "text": "Show you that you’re worth my time",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 65.27
     },
     {
       "text": "You look at me funny like you don’t deserve the care",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 69.91
     },
     {
       "text": "Say you’re just some regular guy, nothing special there",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 74.54
     },
     {
       "text": "But I see the way you light up when someone shows they tried",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 79.49
     },
     {
       "text": "So let me be that someone, let me be your quiet pride",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 84.72
     },
     {
       "text": "They chase the spotlight, chasing what they think you need",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 90.66
     },
     {
-      "text": "But I already know the truth — it’s in the little things",
-      "section": "Pre-Chorus"
+      "text": "But I already know the truth, it’s in the little things",
+      "section": "Pre-Chorus",
+      "t": 95.94
     },
     {
       "text": "I don’t need to impress you with some grand design",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 101.94
     },
     {
       "text": "I just wanna make you a sammich, baby, and make it mine",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 107.35
     },
     {
       "text": "Turkey or tuna, extra pickles on the side",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 112.16
     },
     {
       "text": "Cut it in triangles ’cause I know you like that kind",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 116.78
     },
     {
       "text": "I just wanna make you a sammich",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 122.36
     },
     {
       "text": "Show you that you’re worth my time",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 125.23
+    },
+    {
+      "text": "♪ ♪ ♪",
+      "section": "Instrumental",
+      "t": 129.03,
+      "break": true
     },
     {
       "text": "You don’t have to earn it, you don’t have to prove a thing",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 138.36
     },
     {
       "text": "Just sit down at my table and let me do this one small thing",
-      "section": "Bridge"
-    },
-    {
-      "text": "[Final Chorus] (softer, then building)",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 143.15
     },
     {
       "text": "I don’t need to impress you with some grand design",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 151.71
     },
     {
       "text": "I just wanna make you a sammich, baby, and make it mine",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 156.92
     },
     {
       "text": "Maybe one day you’ll believe you’re worthy of the kind",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 162.0
     },
     {
-      "text": "Of love that takes its time… yeah",
-      "section": "Bridge"
+      "text": "Of love that takes its time, yeah",
+      "section": "Bridge",
+      "t": 166.99
     },
     {
       "text": "I just wanna make you a sammich",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 171.91
     },
     {
       "text": "’Cause you’re already perfect in my eyes",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 174.58
+    },
+    {
+      "text": "Just wanna make you a sammich",
+      "section": "Bridge",
+      "t": 180.4
     }
   ]
 }

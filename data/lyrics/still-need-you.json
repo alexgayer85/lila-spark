@@ -1,115 +1,147 @@
 {
   "title": "Still Need You",
-  "durationHint": null,
-  "timed": false,
+  "durationHint": 200,
+  "timed": true,
   "lines": [
     {
       "text": "Late night, city lights feel cold against my skin",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 11.91
     },
     {
       "text": "Scrolling through old photos, wondering where you’ve been",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 17.02
     },
     {
       "text": "I tell myself I’m fine, but the silence says I’m lying",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 22.12
     },
     {
       "text": "Every heartbeat hurts like it’s slowly dying",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 27.65
     },
     {
       "text": "I try to let you go, but I keep pulling you closer",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 32.49
     },
     {
       "text": "This empty space beside me is getting harder to shoulder",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 42.82
     },
     {
       "text": "I still need you, need you here tonight",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 52.37
     },
     {
       "text": "Come back and make it right, turn down these lonely lights",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 57.24
     },
     {
       "text": "I’m tired of pretending I can make it on my own",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 62.5
     },
     {
-      "text": "I still need you… God, I still need you",
-      "section": "Chorus"
+      "text": "I still need you, God, I still need you",
+      "section": "Chorus",
+      "t": 68.13
     },
     {
       "text": "I wear your favorite perfume, play the songs you used to love",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 76.26
     },
     {
       "text": "Pour another glass of wine, put on the hoodie you left behind",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 81.66
     },
     {
       "text": "But the truth keeps whispering underneath my breath",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 86.93
     },
     {
       "text": "I’m not as strong as I said when you left",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 91.87
     },
     {
       "text": "I try to let you go, but I keep pulling you closer",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 97.74
     },
     {
       "text": "This empty space beside me is getting harder to shoulder",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 108.09
     },
     {
       "text": "I still need you, need you here tonight",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 117.8
     },
     {
       "text": "Come back and make it right, turn down these lonely lights",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 122.44
     },
     {
       "text": "I’m tired of pretending I can make it on my own",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 127.71
     },
     {
-      "text": "I still need you… God, I still need you",
-      "section": "Chorus"
+      "text": "I still need you, God, I still need you",
+      "section": "Chorus",
+      "t": 133.31
     },
     {
-      "text": "If you feel it too, even just a little…",
-      "section": "Bridge"
+      "text": "If you feel it too, even just a little",
+      "section": "Bridge",
+      "t": 140.48
     },
     {
-      "text": "Come back to me… I’m still right here in the middle",
-      "section": "Bridge"
+      "text": "Come back to me, I’m still right here in the middle",
+      "section": "Bridge",
+      "t": 145.26
     },
     {
-      "text": "[Final Chorus] (softer then building)",
-      "section": "Bridge"
+      "text": "If you feel it too, even just a little",
+      "section": "Bridge",
+      "t": 150.87
+    },
+    {
+      "text": "Come back to me, I’m still right here in the middle",
+      "section": "Bridge",
+      "t": 155.71
     },
     {
       "text": "I still need you, need you here tonight",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 162.08
     },
     {
       "text": "Hold me close and make the aching subside",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 167.09
     },
     {
       "text": "I don’t wanna be strong if it means I’m without you",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 172.01
     },
     {
-      "text": "I still need you… I still need you",
-      "section": "Bridge"
+      "text": "I still need you, I still need you",
+      "section": "Bridge",
+      "t": 177.76
     }
   ]
 }

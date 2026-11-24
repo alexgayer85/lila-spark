@@ -1,107 +1,153 @@
 {
   "title": "Small Miracles",
-  "durationHint": null,
-  "timed": false,
+  "durationHint": 210,
+  "timed": true,
   "lines": [
     {
       "text": "Woke up to the sunlight kissing my face",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 20.76
     },
     {
       "text": "Yesterday’s worries slowly fade away",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 25.85
     },
     {
       "text": "Little things reminding me I’m not alone",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 30.93
     },
     {
       "text": "In the quiet moments, love has always shown",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 35.14
     },
     {
       "text": "When the world feels heavy, I remember this",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 41.64
     },
     {
       "text": "Every breath, every smile is a gift",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 46.47
     },
     {
       "text": "Small miracles all around me every day",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 51.33
     },
     {
       "text": "In your eyes, in the sky, in the words you say",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 56.24
     },
     {
       "text": "They lift me higher, they light the way",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 61.54
     },
     {
       "text": "Small miracles, carrying me through today",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 71.53
+    },
+    {
+      "text": "♪ ♪ ♪",
+      "section": "Instrumental",
+      "t": 76.78,
+      "break": true
     },
     {
       "text": "Coffee with a friend, laughter in the air",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 91.85
     },
     {
       "text": "Random acts of kindness everywhere",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 96.92
     },
     {
       "text": "I used to miss them chasing bigger dreams",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 101.92
     },
     {
       "text": "Now I see the magic in the in-between",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 106.37
     },
     {
       "text": "When the world feels heavy, I remember this",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 112.38
     },
     {
       "text": "Every breath, every smile is a gift",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 117.22
     },
     {
       "text": "Small miracles all around me every day",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 122.08
     },
     {
       "text": "In your eyes, in the sky, in the words you say",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 126.97
     },
     {
       "text": "They lift me higher, they light the way",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 132.28
     },
     {
       "text": "Small miracles, carrying me through today",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 142.27
     },
     {
-      "text": "Grateful for the little lights that guide me home",
-      "section": "Bridge"
+      "text": "Grateful for the little lights",
+      "section": "Bridge",
+      "t": 152.52
+    },
+    {
+      "text": "That guide me home",
+      "section": "Bridge",
+      "t": 157.88
+    },
+    {
+      "text": "Small miracles",
+      "section": "Bridge",
+      "t": 164.78
     },
     {
       "text": "Small miracles all around me every day",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 175.14
     },
     {
       "text": "In your eyes, in the sky, in the words you say",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 180.03
     },
     {
       "text": "They lift me higher, they light the way",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 185.35
     },
     {
       "text": "Small miracles, carrying me through today",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 195.34
+    },
+    {
+      "text": "Small miracles",
+      "section": "Final Chorus",
+      "t": 205.43
     }
   ]
 }

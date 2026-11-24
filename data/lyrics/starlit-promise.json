@@ -1,107 +1,149 @@
 {
   "title": "Starlit Promise",
-  "durationHint": null,
-  "timed": false,
+  "durationHint": 253,
+  "timed": true,
   "lines": [
     {
       "text": "Underneath these stars I’m making you this vow",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 13.67
     },
     {
       "text": "No matter where life takes us, I’ll be here right now",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 20.08
     },
     {
       "text": "Through every twist and turning, every high and low",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 26.73
     },
     {
       "text": "My heart is yours completely, just so you know",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 33.19
     },
     {
       "text": "The night is quiet, but my promise is loud",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 39.24
     },
     {
       "text": "Written in the heavens, wrapped in every cloud",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 45.14
     },
     {
       "text": "Starlit promise, shining just for you",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 53.28
     },
     {
       "text": "Every wish I ever made is finally coming true",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 59.54
     },
     {
       "text": "I’ll hold you close when the dark feels wide",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 66.64
     },
     {
       "text": "Starlit promise, forever by your side",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 73.53
     },
     {
       "text": "We’ve come so far together, learned to trust the ride",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 86.49
     },
     {
       "text": "Every moment with you feels like the stars aligned",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 93.69
     },
     {
       "text": "No need for perfect, just honest and true",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 99.59
     },
     {
       "text": "This love we built is strong enough for two",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 106.29
     },
     {
       "text": "The night is quiet, but my promise is loud",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 112.55
     },
     {
       "text": "Written in the heavens, wrapped in every cloud",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 119.44
     },
     {
       "text": "Starlit promise, shining just for you",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 126.54
     },
     {
       "text": "Every wish I ever made is finally coming true",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 132.89
     },
     {
       "text": "I’ll hold you close when the dark feels wide",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 139.14
     },
     {
       "text": "Starlit promise, forever by your side",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 146.82
     },
     {
       "text": "Even when the stars go dark, my love will light the way",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 159.53
+    },
+    {
+      "text": "♪ ♪ ♪",
+      "section": "Instrumental",
+      "t": 167.66,
+      "break": true
     },
     {
       "text": "Starlit promise, shining just for you",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 200.03
     },
     {
       "text": "Every wish I ever made is finally coming true",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 206.24
     },
     {
       "text": "I’ll hold you close when the dark feels wide",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 212.87
     },
     {
       "text": "Starlit promise, forever by your side",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 220.17
+    },
+    {
+      "text": "♪ ♪ ♪",
+      "section": "Instrumental",
+      "t": 227.52,
+      "break": true
+    },
+    {
+      "text": "Starlit promise",
+      "section": "Final Chorus",
+      "t": 240.17
     }
   ]
 }

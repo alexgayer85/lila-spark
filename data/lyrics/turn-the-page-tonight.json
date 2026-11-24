@@ -1,107 +1,160 @@
 {
   "title": "Turn the Page Tonight",
-  "durationHint": null,
-  "timed": false,
+  "durationHint": 221,
+  "timed": true,
   "lines": [
     {
+      "text": "Turn the page tonight",
+      "section": "Verse 1",
+      "t": 0.76
+    },
+    {
+      "text": "♪ ♪ ♪",
+      "section": "Instrumental",
+      "t": 5.94,
+      "break": true
+    },
+    {
       "text": "Chapter one was beautiful but now it’s done",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 34.37
     },
     {
       "text": "I learned the lessons, had my share of fun",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 39.08
     },
     {
       "text": "No regret, just gratitude for what we had",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 45.26
     },
     {
       "text": "Time to write the next part, make it feel this glad",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 50.05
     },
     {
       "text": "The story’s mine, the pen is in my hand",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 55.85
     },
     {
       "text": "I’m ready for whatever’s in the plan",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 61.38
     },
     {
       "text": "Turn the page tonight, start a brand-new scene",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 66.42
     },
     {
       "text": "Leave the past behind, chase a different dream",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 71.91
     },
     {
       "text": "Heart is open wide, soul is feeling light",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 77.35
     },
     {
       "text": "Turn the page tonight, everything’s alright",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 82.76
+    },
+    {
+      "text": "♪ ♪ ♪",
+      "section": "Instrumental",
+      "t": 91.95,
+      "break": true
     },
     {
       "text": "New horizons calling, I can hear the beat",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 110.48
     },
     {
       "text": "Every step I take is steady on my feet",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 116.25
     },
     {
       "text": "I’m stronger now, I know exactly who I am",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 121.36
     },
     {
       "text": "This next chapter’s written with a bolder hand",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 127.06
     },
     {
       "text": "The story’s mine, the pen is in my hand",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 132.23
     },
     {
       "text": "I’m ready for whatever’s in the plan",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 137.73
     },
     {
       "text": "Turn the page tonight, start a brand-new scene",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 142.76
     },
     {
       "text": "Leave the past behind, chase a different dream",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 148.24
     },
     {
       "text": "Heart is open wide, soul is feeling light",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 153.73
     },
     {
       "text": "Turn the page tonight, everything’s alright",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 159.11
+    },
+    {
+      "text": "♪ ♪ ♪",
+      "section": "Instrumental",
+      "t": 166.64,
+      "break": true
     },
     {
       "text": "No looking back, only forward now",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 177.91
     },
     {
       "text": "Turn the page tonight, start a brand-new scene",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 186.38
     },
     {
       "text": "Leave the past behind, chase a different dream",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 191.9
     },
     {
       "text": "Heart is open wide, soul is feeling light",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 197.37
     },
     {
       "text": "Turn the page tonight, everything’s alright",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 202.75
+    },
+    {
+      "text": "Turn the page",
+      "section": "Final Chorus",
+      "t": 212.94
     }
   ]
 }

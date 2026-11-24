@@ -1,87 +1,130 @@
 {
   "title": "Midnight Voltage",
-  "durationHint": null,
-  "timed": false,
+  "durationHint": 225,
+  "timed": true,
   "lines": [
     {
+      "text": "Feel the voltage",
+      "section": "Verse 1",
+      "t": 17.82
+    },
+    {
+      "text": "♪ ♪ ♪",
+      "section": "Instrumental",
+      "t": 19.88,
+      "break": true
+    },
+    {
       "text": "City lights are calling, got that current in my veins",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 36.62
     },
     {
       "text": "Moving through the crowd like I’m breaking all the chains",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 40.7
     },
     {
       "text": "You see me shining, baby, can’t look away",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 44.55
     },
     {
       "text": "This energy between us is about to overtake",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 48.61
     },
     {
       "text": "It’s rising up, can’t hold it back no more",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 52.68
     },
     {
       "text": "The second our eyes meet, we’re opening the door",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 56.76
     },
     {
-      "text": "Midnight voltage, running through my body",
-      "section": "Chorus"
+      "text": "Midnight voltage running through my body",
+      "section": "Chorus",
+      "t": 64.11
     },
     {
       "text": "Electric love, you know you can’t stop me",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 68.51
     },
     {
       "text": "Feel the power, let it take control",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 72.74
     },
     {
-      "text": "Midnight voltage, lighting up my soul",
-      "section": "Chorus"
+      "text": "Midnight voltage lighting up my soul",
+      "section": "Chorus",
+      "t": 80.39
     },
     {
-      "text": "Baby come and get it, feel it in the air",
-      "section": "Chorus"
+      "text": "Baby, come and get it, feel it in the air",
+      "section": "Chorus",
+      "t": 84.43
     },
     {
       "text": "Midnight voltage, take me if you dare",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 88.77
     },
     {
       "text": "Dancing on the edge of what we both desire",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 101.73
     },
     {
       "text": "Every beat is pulling, setting hearts on fire",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 105.89
     },
     {
       "text": "No more playing safe, we’re living for tonight",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 109.88
     },
     {
-      "text": "This spark we started’s burning way too bright",
-      "section": "Verse 2"
+      "text": "The spark we started’s burning way too bright",
+      "section": "Verse 2",
+      "t": 113.38
     },
     {
-      "text": "It’s rising up…",
-      "section": "Pre-Chorus"
+      "text": "It’s rising up",
+      "section": "Pre-Chorus",
+      "t": 124.89
     },
     {
-      "text": "Midnight voltage…",
-      "section": "Chorus"
+      "text": "♪ ♪ ♪",
+      "section": "Instrumental",
+      "t": 127.33,
+      "break": true
     },
     {
-      "text": "Let the night explode",
-      "section": "Bridge / Instrumental Break"
+      "text": "Midnight voltage",
+      "section": "Chorus",
+      "t": 149.51
     },
     {
-      "text": "Midnight voltage (bigger layers and harmonies), running through my body…",
-      "section": "Final Chorus"
+      "text": "♪ ♪ ♪",
+      "section": "Instrumental",
+      "t": 153.02,
+      "break": true
+    },
+    {
+      "text": "Midnight voltage",
+      "section": "Bridge / Instrumental Break",
+      "t": 190.2
+    },
+    {
+      "text": "Midnight voltage",
+      "section": "Final Chorus",
+      "t": 206.42
     }
   ]
 }

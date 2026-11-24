@@ -1,155 +1,193 @@
 {
   "title": "White Dress Envy",
-  "durationHint": null,
-  "timed": false,
+  "durationHint": 237,
+  "timed": true,
   "lines": [
     {
-      "text": "Mmm… yeah…",
-      "section": "Intro"
+      "text": "Mmm",
+      "section": "Intro",
+      "t": 16.75
     },
     {
       "text": "Saw the photos on my phone before I could look away",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 23.66
     },
     {
       "text": "You in that black suit, smiling like you finally found your place",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 29.37
     },
     {
       "text": "She’s walking down the aisle in white, flowers in her hair",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 35.53
     },
     {
       "text": "And I’m still here replaying every word we didn’t say",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 41.26
     },
     {
       "text": "I told myself I’d let you go, I swear I really tried",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 47.31
     },
     {
       "text": "But seeing you promise forever to somebody else tonight",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 52.79
     },
     {
       "text": "White dress envy, got me choking on the past",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 58.46
     },
     {
       "text": "Jealous of the future that we never got to have",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 64.24
     },
     {
       "text": "I want closure, but I still want you",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 69.74
     },
     {
       "text": "Heart’s so loud, don’t know what to do",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 75.97
     },
     {
       "text": "Why does it hurt this bad to see you move on?",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 81.46
     },
     {
       "text": "White dress envy, and I’m still holding on",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 87.73
     },
     {
       "text": "Wonder if you think of me when you’re saying “I do”",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 94.31
     },
     {
       "text": "Does her laugh remind you of the nights we drove into the blue?",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 99.8
     },
     {
       "text": "I’m happy for you, or at least that’s what I tell my friends",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 105.82
     },
     {
       "text": "But deep down I’m wishing it was my hand you were holding then",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 111.29
     },
     {
       "text": "I told myself I’d let you go, I swear I really tried",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 117.56
     },
     {
       "text": "But seeing you promise forever to somebody else tonight",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 122.98
     },
     {
       "text": "White dress envy, got me choking on the past",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 128.75
     },
     {
       "text": "Jealous of the future that we never got to have",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 134.49
     },
     {
       "text": "I want closure, but I still want you",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 140.74
     },
     {
       "text": "Heart’s so loud, don’t know what to do",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 146.18
     },
     {
       "text": "Why does it hurt this bad to see you move on?",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 151.73
     },
     {
       "text": "White dress envy, and I’m still holding on",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 157.93
+    },
+    {
+      "text": "♪ ♪ ♪",
+      "section": "Instrumental",
+      "t": 162.8,
+      "break": true
     },
     {
       "text": "Maybe one day I’ll smile when I hear your name",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 176.27
     },
     {
       "text": "But right now I’m drowning in this champagne pain",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 181.02
     },
     {
       "text": "Did you ever wonder what we could’ve been?",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 187.58
     },
     {
       "text": "Or am I the only one who can’t let the ending end?",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 192.81
     },
     {
       "text": "White dress envy, got me choking on the past",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 198.97
     },
     {
       "text": "Jealous of the future that we never got to have",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 204.72
     },
     {
       "text": "I want closure, but I still want you",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 210.16
     },
     {
       "text": "Heart’s so loud, don’t know what to do",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 216.43
     },
     {
       "text": "Why does it hurt this bad to see you move on?",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 220.88
     },
     {
-      "text": "White dress envy… and I’m still holding on",
-      "section": "Final Chorus"
+      "text": "White dress envy, and I’m still holding on",
+      "section": "Final Chorus",
+      "t": 228.18
     },
     {
-      "text": "Still holding on… mmm…",
-      "section": "Outro"
-    },
-    {
-      "text": "White dress envy…",
-      "section": "Outro"
+      "text": "I’m still holding on",
+      "section": "Outro",
+      "t": 233.43
     }
   ]
 }

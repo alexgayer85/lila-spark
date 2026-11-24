@@ -1,107 +1,144 @@
 {
   "title": "Louder Than Yesterday",
-  "durationHint": null,
-  "timed": false,
+  "durationHint": 250,
+  "timed": true,
   "lines": [
     {
       "text": "Yesterday I whispered, today I’m finding my voice",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 13.97
     },
     {
       "text": "Every fear I buried, I’m giving it no choice",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 20.64
     },
     {
       "text": "I’ve been quiet too long, holding back the fight",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 26.87
     },
     {
       "text": "Now I’m rising stronger, stepping into the light",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 33.72
+    },
+    {
+      "text": "♪ ♪ ♪",
+      "section": "Instrumental",
+      "t": 42.92,
+      "break": true
     },
     {
       "text": "The volume’s turning up inside my chest",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 54.9
     },
     {
       "text": "This time I’m louder than the rest",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 62.1
     },
     {
       "text": "Louder than yesterday, hear me roar",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 71.56
     },
     {
       "text": "Stronger than the pain I felt before",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 78.0
     },
     {
       "text": "I’m not holding back, this is my song",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 84.91
     },
     {
       "text": "Louder than yesterday, where I belong",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 91.3
+    },
+    {
+      "text": "♪ ♪ ♪",
+      "section": "Instrumental",
+      "t": 101.0,
+      "break": true
     },
     {
       "text": "They tried to dim my sparkle, but the fire’s still alive",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 125.55
     },
     {
       "text": "Every scar’s a story, every tear helped me survive",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 132.4
     },
     {
       "text": "I’m rewriting every rule they said was true",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 138.6
     },
     {
       "text": "Now the world is gonna hear me breaking through",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 145.11
     },
     {
       "text": "The volume’s turning up inside my chest",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 153.54
     },
     {
       "text": "This time I’m louder than the rest",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 160.73
     },
     {
       "text": "Louder than yesterday, hear me roar",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 170.2
     },
     {
       "text": "Stronger than the pain I felt before",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 176.66
     },
     {
       "text": "I’m not holding back, this is my song",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 183.59
     },
     {
       "text": "Louder than yesterday, where I belong",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 189.9
     },
     {
       "text": "This voice is mine and I’m never letting go",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 201.79
     },
     {
       "text": "Louder than yesterday, hear me roar",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 212.92
     },
     {
       "text": "Stronger than the pain I felt before",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 219.41
     },
     {
       "text": "I’m not holding back, this is my song",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 226.32
     },
     {
       "text": "Louder than yesterday, where I belong",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 232.64
     }
   ]
 }

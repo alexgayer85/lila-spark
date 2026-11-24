@@ -1,107 +1,143 @@
 {
   "title": "Diamond Tears",
-  "durationHint": null,
-  "timed": false,
+  "durationHint": 240,
+  "timed": true,
   "lines": [
     {
       "text": "These tears are diamonds, falling from my eyes",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 13.39
     },
     {
       "text": "Every drop a memory of all our goodbyes",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 21.04
     },
     {
       "text": "I thought forever meant we’d never have to choose",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 28.35
     },
     {
       "text": "But sometimes love leaves scars we never lose",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 35.84
     },
     {
       "text": "Still I wouldn’t trade a single night we shared",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 42.66
     },
     {
       "text": "Even when it hurts, I know you cared",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 50.39
     },
     {
       "text": "Diamond tears, shining through the pain",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 60.04
     },
     {
       "text": "Turning every heartbreak into something beautiful again",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 69.83
     },
     {
       "text": "I’ll wear them proudly, let them light my way",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 77.52
     },
     {
       "text": "Diamond tears, reminding me I’m okay",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 85.33
     },
     {
       "text": "The nights feel longer when your side is cold",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 99.86
     },
     {
       "text": "But I’m learning how to stand on my own",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 106.95
     },
     {
       "text": "Every lesson written in these crystal lines",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 113.94
     },
     {
       "text": "Helps me see the beauty in what’s left behind",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 121.36
     },
     {
       "text": "Still I wouldn’t trade a single night we shared",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 128.01
     },
     {
       "text": "Even when it hurts, I know you cared",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 135.74
     },
     {
       "text": "Diamond tears, shining through the pain",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 151.56
     },
     {
       "text": "Turning every heartbreak into something beautiful again",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 155.18
     },
     {
       "text": "I’ll wear them proudly, let them light my way",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 162.66
     },
     {
       "text": "Diamond tears, reminding me I’m okay",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 170.27
     },
     {
-      "text": "These tears don’t break me, they remake me whole",
-      "section": "Bridge"
+      "text": "These tears don’t break me",
+      "section": "Bridge",
+      "t": 181.38
+    },
+    {
+      "text": "They remake me whole",
+      "section": "Bridge",
+      "t": 185.45
+    },
+    {
+      "text": "♪ ♪ ♪",
+      "section": "Instrumental",
+      "t": 190.39,
+      "break": true
     },
     {
       "text": "Diamond tears, shining through the pain",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 201.44
     },
     {
       "text": "Turning every heartbreak into something beautiful again",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 208.51
     },
     {
       "text": "I’ll wear them proudly, let them light my way",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 216.2
     },
     {
       "text": "Diamond tears, reminding me I’m okay",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 223.56
     }
   ]
 }

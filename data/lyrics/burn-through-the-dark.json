@@ -1,135 +1,167 @@
 {
   "title": "Burn Through the Dark",
-  "durationHint": null,
-  "timed": false,
+  "durationHint": 221,
+  "timed": true,
   "lines": [
     {
       "text": "Candles flicker, shadows paint the wall",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 12.31
     },
     {
       "text": "Your hands are tracing secrets I can’t recall",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 17.6
     },
     {
       "text": "No one else has ever pulled me under quite like this",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 22.14
     },
     {
       "text": "One look from you and I forget what “careful” is",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 28.29
     },
     {
       "text": "The temperature is rising, can’t deny",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 33.81
     },
     {
       "text": "The way your body calls me sets me alight",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 39.48
     },
     {
       "text": "Burn through the dark, light me up inside",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 45.8
     },
     {
       "text": "Let your love consume me, baby, take this ride",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 51.25
     },
     {
       "text": "No hesitation, lose ourselves tonight",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 57.12
     },
     {
       "text": "Burn through the dark till morning comes to light",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 62.8
     },
     {
       "text": "Burn, burn, through the dark with me",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 67.01
     },
     {
       "text": "Set my whole world free",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 75.8
     },
     {
       "text": "Every breath you take against my skin feels like a prayer",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 84.36
     },
     {
       "text": "We’re speaking in a language only lovers share",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 90.27
     },
     {
       "text": "No more hiding feelings, no more playing pretend",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 95.59
     },
     {
       "text": "Just you and me, this fire, and no need to defend",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 101.52
     },
     {
       "text": "The temperature is rising, can’t deny",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 107.21
     },
     {
       "text": "The way your body calls me sets me alight",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 112.87
     },
     {
       "text": "Burn through the dark, light me up inside",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 119.22
     },
     {
       "text": "Let your love consume me, baby, take this ride",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 124.64
     },
     {
       "text": "No hesitation, lose ourselves tonight",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 130.49
     },
     {
       "text": "Burn through the dark till morning comes to light",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 136.15
     },
     {
       "text": "Burn, burn, through the dark with me",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 141.5
     },
     {
       "text": "Set my whole world free",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 149.19
     },
     {
       "text": "No walls between us, just heat and skin",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 158.94
     },
     {
       "text": "Let the night erase where I end and you begin",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 164.04
     },
     {
       "text": "Burn through the dark, light me up inside",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 175.67
     },
     {
       "text": "Let your love consume me, baby, take this ride",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 181.14
     },
     {
       "text": "No hesitation, lose ourselves tonight",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 186.98
     },
     {
       "text": "Burn through the dark till morning comes to light",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 192.61
     },
     {
       "text": "Burn, burn, through the dark with me",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 200.08
     },
     {
       "text": "Set my whole world free",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 205.66
     }
   ]
 }
