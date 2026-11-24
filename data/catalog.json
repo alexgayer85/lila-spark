@@ -150,12 +150,13 @@
           "num": "03",
           "title": "Rhythm Thief",
           "description": "Sassy groove-pop about the person who steals her beat the second they walk in.",
-          "audio": "audio/rhythm-thief.mp3",
+          "audio": "audio/rhythm-thief.mp3?v=2",
           "cover": "images/covers/rhythm-thief.jpg",
           "explicit": false,
           "featured": false,
           "lyrics": "rhythm-thief",
-          "listen": "https://release.landr.com/991061329172"
+          "listen": "https://release.landr.com/991061329172",
+          "duration": 219.465
         },
         {
           "id": "almost",
