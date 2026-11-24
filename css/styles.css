@@ -3185,3 +3185,540 @@ body.lightbox-open {
 .platform-featured {
   grid-column: 1 / -1;
 }
+
+/* ------------------------------------------------------------------
+   Music player layout, Nov 2026
+   Desktop (>= 1000px): track list left, sticky player right.
+   Phones: compact album tiles, fixed mini-player, full-screen sheet.
+   ------------------------------------------------------------------ */
+.ls-sheet-close,
+.ls-expand {
+  display: none;
+}
+
+/* Now-playing equalizer on the current row */
+.ls-is-playing .ls-row.is-current .track-num {
+  color: transparent;
+  background:
+    linear-gradient(var(--magenta), var(--magenta)) 0 100% / 3px 40% no-repeat,
+    linear-gradient(var(--violet), var(--violet)) 50% 100% / 3px 80% no-repeat,
+    linear-gradient(var(--cyan), var(--cyan)) 100% 100% / 3px 60% no-repeat;
+  background-origin: content-box;
+  width: 1.1rem;
+  min-width: 1.1rem;
+  height: 1.2rem;
+  padding: 0;
+  margin-top: 0.3rem;
+  margin-right: 0.65rem;
+  animation: ls-eq 0.9s ease-in-out infinite alternate;
+}
+
+@keyframes ls-eq {
+  0% { background-size: 3px 40%, 3px 85%, 3px 60%; }
+  50% { background-size: 3px 90%, 3px 35%, 3px 80%; }
+  100% { background-size: 3px 55%, 3px 70%, 3px 30%; }
+}
+
+@media (min-width: 1000px) {
+  .music-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 27rem);
+    grid-template-areas:
+      "picker picker"
+      "panels player";
+    column-gap: 1.75rem;
+    align-items: start;
+  }
+
+  .music-layout > .album-picker {
+    grid-area: picker;
+  }
+
+  .music-layout > .album-panels {
+    grid-area: panels;
+  }
+
+  .music-layout > .ls-player,
+  .music-layout > .ls-player.is-editing {
+    grid-area: player;
+    position: sticky;
+    top: calc(var(--header-h) + 1rem);
+    margin: 0;
+    gap: 0.7rem;
+    padding: 1.1rem 1.2rem 1.2rem;
+    max-height: calc(100vh - var(--header-h) - 2rem);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+  }
+
+  .music-layout > .ls-player .ls-player-head {
+    grid-template-columns: 6.5rem 1fr;
+  }
+
+  .music-layout > .ls-player .ls-wave {
+    height: 64px;
+  }
+
+  .music-layout > .ls-player .ls-lyrics {
+    height: clamp(8rem, calc(100vh - 34rem), 15rem);
+  }
+
+  .music-layout > .ls-player .ls-transport {
+    justify-content: center;
+  }
+
+  /* Editing needs the full width. */
+  .music-layout:has(.ls-player.is-editing) {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "picker"
+      "player"
+      "panels";
+  }
+
+  .music-layout:has(.ls-player.is-editing) > .ls-player {
+    position: static;
+    max-height: none;
+    overflow: visible;
+    margin-bottom: 1.75rem;
+  }
+}
+
+@media (max-width: 760px), (max-height: 500px) and (pointer: coarse) {
+  /* Let the fixed player sit above the sticky header when it opens full screen. */
+  .music-section:has(#ls-player) {
+    z-index: auto;
+  }
+
+  body:has(#ls-player) .page-hero {
+    padding-top: 1.6rem;
+  }
+
+  body:has(#ls-player) .page-hero .section-lead {
+    font-size: 0.95rem;
+  }
+
+  body:has(#ls-player) .release-section {
+    padding: 1.6rem 0 0.4rem;
+  }
+
+  body:has(#ls-player) .release-section .section-header {
+    margin-bottom: 0.8rem;
+  }
+
+  body:has(#ls-player) .release-section + .music-section {
+    padding-top: 1.4rem;
+  }
+
+  /* Album tiles: all four in one row */
+  .music-layout .album-picker {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.6rem;
+    margin-bottom: 1.1rem;
+  }
+
+  .music-layout .album-card {
+    gap: 0.4rem;
+  }
+
+  .music-layout .album-art-wrap {
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  }
+
+  .music-layout .album-card:hover .album-art-wrap,
+  .music-layout .album-card:focus-visible .album-art-wrap {
+    transform: none;
+  }
+
+  .music-layout .album-card.is-active .album-art-wrap {
+    box-shadow:
+      0 0 0 2px rgba(255, 45, 149, 0.6),
+      0 0 22px rgba(255, 45, 149, 0.35);
+  }
+
+  .music-layout .album-meta {
+    padding: 0;
+    align-items: center;
+    text-align: center;
+  }
+
+  .music-layout .album-title {
+    font-size: 0.8rem;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+  }
+
+  .music-layout .album-sub {
+    display: none;
+  }
+
+  .music-layout .album-panel-header {
+    margin-bottom: 0.75rem;
+  }
+
+  .music-layout .album-panel-header h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .music-layout .album-panel-header p {
+    font-size: 0.85rem;
+  }
+
+  .music-layout .track-list {
+    gap: 0.5rem;
+  }
+
+  .music-layout .track-card {
+    padding: 0.65rem 0.8rem;
+  }
+
+  .music-layout .track-list li.has-link .track-card {
+    padding-right: 5.6rem;
+  }
+
+  .music-layout .track-link {
+    right: 0.6rem;
+    padding: 0.35rem 0.75rem;
+    font-size: 0.78rem;
+  }
+
+  .music-layout .track-title {
+    font-size: 0.98rem;
+  }
+
+  .music-layout .track-desc {
+    font-size: 0.8rem;
+  }
+
+  /* Room for the mini-player at the bottom of the page */
+  body:has(#ls-player) .site-footer {
+    padding-bottom: calc(6.5rem + env(safe-area-inset-bottom));
+  }
+
+  body:has(#ls-player) .ls-chat {
+    bottom: calc(6.4rem + env(safe-area-inset-bottom));
+    right: 0.7rem;
+  }
+
+  .ls-sheet-open,
+  .ls-sheet-open body {
+    overflow: hidden;
+  }
+
+  .ls-sheet-open .ls-chat {
+    display: none;
+  }
+
+  /* ---- Mini-player ---- */
+  #ls-player,
+  #ls-player.is-editing {
+    position: fixed;
+    left: max(0.5rem, env(safe-area-inset-left));
+    right: max(0.5rem, env(safe-area-inset-right));
+    bottom: calc(0.5rem + env(safe-area-inset-bottom));
+    top: auto;
+    z-index: 70;
+    margin: 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "head transport"
+      "seek seek";
+    align-items: center;
+    gap: 0.1rem 0.4rem;
+    padding: 0.5rem 0.6rem 0.3rem 0.5rem;
+    background: rgba(16, 14, 26, 0.94);
+    -webkit-backdrop-filter: blur(18px);
+    backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 45, 149, 0.3);
+    border-radius: 18px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6), 0 0 26px rgba(255, 45, 149, 0.14);
+  }
+
+  #ls-player:not(.is-expanded) .ls-wave,
+  #ls-player:not(.is-expanded) .ls-lyrics,
+  #ls-player:not(.is-expanded) .ls-edit-toggle-wrap,
+  #ls-player:not(.is-expanded) .ls-edit,
+  #ls-player:not(.is-expanded) .ls-player-desc,
+  #ls-player:not(.is-expanded) .ls-player-listen,
+  #ls-player:not(.is-expanded) [data-skip] {
+    display: none;
+  }
+
+  #ls-player .ls-controls {
+    display: contents;
+  }
+
+  #ls-player .ls-player-head {
+    grid-area: head;
+    grid-template-columns: 2.9rem minmax(0, 1fr) auto;
+    gap: 0.6rem;
+    align-items: center;
+    min-width: 0;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  #ls-player .ls-player-cover {
+    width: 2.9rem;
+    border-radius: 10px;
+  }
+
+  #ls-player .ls-player-title {
+    font-size: 0.95rem;
+    line-height: 1.25;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  #ls-player .ls-player-album {
+    margin: 0.05rem 0 0;
+    font-size: 0.74rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  #ls-player .ls-expand {
+    display: grid;
+    width: 2rem;
+    height: 2rem;
+    border-color: transparent;
+    background: transparent;
+    color: var(--ink-muted);
+  }
+
+  #ls-player .ls-transport {
+    grid-area: transport;
+    flex-wrap: nowrap;
+    gap: 0.25rem;
+  }
+
+  #ls-player .ls-btn {
+    width: 2.6rem;
+    height: 2.6rem;
+  }
+
+  #ls-player .ls-btn-play {
+    width: 2.9rem;
+    height: 2.9rem;
+  }
+
+  #ls-player .ls-seek-row {
+    grid-area: seek;
+    gap: 0.45rem;
+  }
+
+  #ls-player .ls-time {
+    font-size: 0.66rem;
+    min-width: 1.9rem;
+  }
+
+  #ls-player .ls-time[data-dur] {
+    text-align: right;
+  }
+
+  #ls-player .ls-seek {
+    height: 1.35rem;
+  }
+
+  #ls-player .ls-seek-track {
+    height: 4px;
+  }
+
+  /* ---- Full-screen sheet ---- */
+  #ls-player.is-expanded {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 90;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    padding:
+      calc(env(safe-area-inset-top) + 0.35rem)
+      max(1.15rem, env(safe-area-inset-right))
+      calc(env(safe-area-inset-bottom) + 1rem)
+      max(1.15rem, env(safe-area-inset-left));
+    border: 0;
+    border-radius: 0;
+    background:
+      radial-gradient(120% 60% at 50% 0%, rgba(155, 92, 255, 0.28), transparent 60%),
+      radial-gradient(90% 50% at 50% 100%, rgba(255, 45, 149, 0.2), transparent 65%),
+      #0a0a0f;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    animation: ls-sheet-in 0.26s ease-out;
+  }
+
+  #ls-player.is-expanded .ls-sheet-close {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.1rem;
+    flex: 0 0 auto;
+    align-self: center;
+    width: 5rem;
+    padding: 0.35rem 0 0;
+    border: 0;
+    background: transparent;
+    color: var(--ink-muted);
+    cursor: pointer;
+  }
+
+  .ls-sheet-grab {
+    width: 2.5rem;
+    height: 4px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.22);
+  }
+
+  #ls-player.is-expanded .ls-sheet-close svg {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+
+  #ls-player.is-expanded .ls-player-head {
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    text-align: center;
+    gap: 0.75rem;
+    cursor: default;
+    flex: 0 0 auto;
+  }
+
+  #ls-player.is-expanded .ls-player-cover {
+    width: min(56vw, 25vh, 15rem);
+    border-radius: 16px;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.5), 0 0 40px rgba(255, 45, 149, 0.18);
+  }
+
+  #ls-player.is-expanded .ls-player-meta {
+    width: 100%;
+  }
+
+  #ls-player.is-expanded .ls-player-title {
+    font-size: 1.35rem;
+    white-space: normal;
+  }
+
+  #ls-player.is-expanded .ls-player-album {
+    font-size: 0.85rem;
+  }
+
+  #ls-player.is-expanded .ls-player-desc {
+    margin: 0.35rem auto 0;
+    font-size: 0.85rem;
+    color: var(--ink-muted);
+    max-width: 30rem;
+  }
+
+  #ls-player.is-expanded .ls-player-listen {
+    margin-top: 0.5rem;
+  }
+
+  #ls-player.is-expanded .ls-player-listen[hidden],
+  #ls-player.is-expanded .ls-player-desc[hidden] {
+    display: none;
+  }
+
+  #ls-player.is-expanded .ls-expand {
+    display: none;
+  }
+
+  #ls-player.is-expanded .ls-wave {
+    flex: 0 0 auto;
+    height: 36px;
+  }
+
+  #ls-player.is-expanded .ls-lyrics {
+    flex: 1 1 0;
+    min-height: 8.5rem;
+    height: auto;
+  }
+
+  #ls-player.is-expanded .ls-lyric-line {
+    font-size: 1.05rem;
+    padding: 0.3rem 0.3rem;
+  }
+
+  #ls-player.is-expanded .ls-edit-toggle-wrap {
+    flex: 0 0 auto;
+    margin: 0;
+    text-align: center;
+  }
+
+  #ls-player.is-expanded .ls-edit {
+    flex: 0 0 auto;
+  }
+
+  #ls-player.is-expanded .ls-controls {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 auto;
+    gap: 0.6rem;
+  }
+
+  #ls-player.is-expanded .ls-seek-row {
+    order: -1;
+  }
+
+  #ls-player.is-expanded .ls-time {
+    font-size: 0.75rem;
+  }
+
+  #ls-player.is-expanded .ls-transport {
+    justify-content: center;
+    gap: 0.9rem;
+  }
+
+  #ls-player.is-expanded .ls-btn {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  #ls-player.is-expanded .ls-btn[data-skip] {
+    width: 2.8rem;
+    min-width: 2.8rem;
+    height: 2.8rem;
+  }
+
+  #ls-player.is-expanded .ls-btn-play {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  #ls-player.is-expanded .ls-btn-play svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+/* Short phone in landscape: put art + lyrics side by side in the sheet. */
+@media (max-height: 500px) and (pointer: coarse) {
+  #ls-player.is-expanded .ls-player-cover {
+    width: min(26vh, 8rem);
+  }
+
+  #ls-player.is-expanded .ls-wave {
+    display: none;
+  }
+}
+
+@keyframes ls-sheet-in {
+  from { transform: translateY(6%); opacity: 0.4; }
+  to { transform: none; opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ls-is-playing .ls-row.is-current .track-num,
+  #ls-player.is-expanded {
+    animation: none;
+  }
+}

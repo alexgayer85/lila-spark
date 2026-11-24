@@ -35,7 +35,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=listen-page-1" />
+  <link rel="stylesheet" href="css/styles.css?v=mobile-player-1" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="images/profile.jpg" />
   <link rel="author" href="humans.txt" />
@@ -91,7 +91,7 @@
     </section>
 
     <section class="section music-section">
-      <div class="wrap">
+      <div class="wrap music-layout">
         <div class="album-picker" role="tablist" aria-label="Albums">
           <button
             type="button"
@@ -166,8 +166,12 @@
           </button>
         </div>
 
-        <div class="ls-player" id="ls-player">
-          <div class="ls-player-head">
+        <div class="ls-player" id="ls-player" aria-label="Music player">
+          <button type="button" class="ls-sheet-close" data-collapse aria-label="Close full player">
+            <span class="ls-sheet-grab" aria-hidden="true"></span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.4 8.6 12 13.2l4.6-4.6L18 10l-6 6-6-6z"/></svg>
+          </button>
+          <div class="ls-player-head" data-head>
             <img class="ls-player-cover" data-cover src="images/covers/untitled.jpg" alt="" width="900" height="900" />
             <div class="ls-player-meta">
               <h2 class="ls-player-title" data-title>Pick a track</h2>
@@ -175,6 +179,9 @@
               <p class="ls-player-album" data-album-name></p>
               <a class="btn btn-primary btn-sm ls-player-listen" data-listen href="#" target="_blank" rel="noopener noreferrer" hidden>Listen</a>
             </div>
+            <button type="button" class="ls-btn ls-expand" data-expand aria-label="Open lyrics and full player" aria-expanded="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.4 15.4 12 10.8l4.6 4.6L18 14l-6-6-6 6z"/></svg>
+            </button>
           </div>
           <canvas class="ls-wave" data-wave width="720" height="110" aria-hidden="true"></canvas>
             <div class="ls-lyrics" data-lyrics></div>
@@ -229,7 +236,7 @@
                 <span class="ls-time" data-dur>0:00</span>
               </div>
             </div>
-          <audio preload="metadata" controlsList="nodownload"></audio>
+          <audio preload="metadata" controlsList="nodownload" playsinline webkit-playsinline x-webkit-airplay="allow"></audio>
         </div>
 
         <div class="album-panels">
@@ -314,7 +321,7 @@
   </footer>
 
   <script src="js/main.js?v=story-view-1"></script>
-  <script src="js/player.js?v=15"></script>
+  <script src="js/player.js?v=16"></script>
   <script src="js/releases.js?v=1"></script>
   <script src="js/chat.js?v=11"></script>
 </body>

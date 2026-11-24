@@ -35,7 +35,18 @@
     publish: root.querySelector("[data-publish]"),
     publishPass: root.querySelector("[data-publish-pass]"),
     publishStatus: root.querySelector("[data-publish-status]"),
+    head: root.querySelector("[data-head]"),
+    expand: root.querySelector("[data-expand]"),
+    collapse: root.querySelector("[data-collapse]"),
   };
+
+  /* Phones (and short landscape phones) get a fixed mini-player that opens into a full-screen sheet. */
+  const MOBILE_MQ = window.matchMedia
+    ? window.matchMedia("(max-width: 760px), (max-height: 500px) and (pointer: coarse)")
+    : { matches: false, addEventListener() {} };
+  /* 0.05 s of silence: played once inside the first tap so iOS lets later play() calls through after async loads. */
+  const SILENT_WAV =
+    "data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQAAAAA=";
 
   const state = {
     catalog: null,
@@ -56,6 +67,10 @@
     smoothBars: null,
     decodeDuration: 0,
     decodeCtx: null,
+    started: false,
+    primed: false,
+    priming: false,
+    expanded: false,
   };
 
   function lyricKey(track) {
@@ -334,6 +349,14 @@
 
   function setPlaying(on) {
     root.classList.toggle("is-playing", on);
+    document.body.classList.toggle("ls-is-playing", on);
+    if ("mediaSession" in navigator) {
+      try {
+        navigator.mediaSession.playbackState = on ? "playing" : "paused";
+      } catch {
+        /* optional */
+      }
+    }
     els.play.setAttribute("aria-label", on ? "Pause" : "Play");
     els.play.innerHTML = on ? icons.pause : icons.play;
   }
@@ -454,6 +477,7 @@
       const playing = !els.audio.paused;
       const t = els.audio.currentTime || 0;
       const live = liveBands(t);
+      if (!state.smoothBars) state.smoothBars = new Float32Array(BAR_N);
       ctx2.clearRect(0, 0, w, h);
       for (let i = 0; i < BAR_N; i++) {
         const target = playing ? live[i] : live[i] * 0.22;
@@ -535,6 +559,7 @@
     if (state.editing) pageUrl.searchParams.set("edit", "1");
     else pageUrl.searchParams.delete("edit");
     history.replaceState({}, "", pageUrl.pathname + pageUrl.search);
+    updateMediaSession(album, track);
 
     const urls = [srcFor(track), fallbackSrc(track)].filter(Boolean);
     let buf = null;
@@ -569,13 +594,140 @@
       setTimeout(ready, 4000);
     });
     if (loadId !== state.loadId) return;
-    if (play) {
+    if (play || state.wantPlay) {
       try {
         await els.audio.play();
       } catch {
         /* autoplay blocked */
       }
     }
+  }
+
+  function absUrl(u) {
+    try {
+      return new URL(u, location.href).href;
+    } catch {
+      return u;
+    }
+  }
+
+  function updateMediaSession(album, track) {
+    if (!("mediaSession" in navigator) || !window.MediaMetadata) return;
+    const art = absUrl(track.cover || album.cover || "images/covers/untitled.jpg");
+    try {
+      navigator.mediaSession.metadata = new MediaMetadata({
+        title: track.title,
+        artist: "Lila Spark",
+        album: album.title,
+        artwork: [
+          { src: art, sizes: "512x512", type: "image/jpeg" },
+          { src: art, sizes: "900x900", type: "image/jpeg" },
+        ],
+      });
+    } catch {
+      /* optional */
+    }
+  }
+
+  function updatePositionState() {
+    if (!("mediaSession" in navigator) || !navigator.mediaSession.setPositionState) return;
+    const d = mediaDuration();
+    const t = els.audio.currentTime || 0;
+    if (!d || t > d) return;
+    try {
+      navigator.mediaSession.setPositionState({
+        duration: d,
+        playbackRate: els.audio.playbackRate || 1,
+        position: t,
+      });
+    } catch {
+      /* optional */
+    }
+  }
+
+  function setupMediaSession() {
+    if (!("mediaSession" in navigator)) return;
+    const ms = navigator.mediaSession;
+    const on = (action, fn) => {
+      try {
+        ms.setActionHandler(action, fn);
+      } catch {
+        /* unsupported action */
+      }
+    };
+    on("play", () => {
+      state.wantPlay = true;
+      els.audio.play().catch(() => {});
+    });
+    on("pause", () => {
+      state.wantPlay = false;
+      els.audio.pause();
+    });
+    on("previoustrack", () => {
+      if ((els.audio.currentTime || 0) > 3) seekTo(0);
+      else next(-1);
+    });
+    on("nexttrack", () => next(1));
+    on("seekbackward", (d) => seekTo((els.audio.currentTime || 0) - ((d && d.seekOffset) || 10)));
+    on("seekforward", (d) => seekTo((els.audio.currentTime || 0) + ((d && d.seekOffset) || 10)));
+    on("seekto", (d) => {
+      if (d && typeof d.seekTime === "number") seekTo(d.seekTime);
+      updatePositionState();
+    });
+  }
+
+  /* Must run synchronously inside a tap. Unlocks the <audio> element on iOS so the play()
+     that follows the (async) blob fetch is allowed. */
+  function primeAudio() {
+    if (state.primed) return;
+    state.primed = true;
+    const a = els.audio;
+    if (!a.paused) return;
+    if (!a.getAttribute("src")) a.src = SILENT_WAV;
+    const primedSrc = a.currentSrc || a.src;
+    state.priming = true;
+    a.muted = true;
+    let p;
+    try {
+      p = a.play();
+    } catch {
+      p = null;
+    }
+    const done = () => {
+      if ((a.currentSrc || a.src) === primedSrc) a.pause();
+      a.muted = false;
+      state.priming = false;
+    };
+    if (p && p.then) p.then(done, done);
+    else done();
+  }
+
+  function isMobile() {
+    return !!MOBILE_MQ.matches;
+  }
+
+  function setExpanded(on) {
+    on = !!on && isMobile();
+    if (on === state.expanded) return;
+    state.expanded = on;
+    root.classList.toggle("is-expanded", on);
+    document.documentElement.classList.toggle("ls-sheet-open", on);
+    if (els.expand) els.expand.setAttribute("aria-expanded", on ? "true" : "false");
+    if (on) {
+      root.setAttribute("role", "dialog");
+      root.setAttribute("aria-modal", "true");
+      root.scrollTop = 0;
+      if (els.collapse) els.collapse.focus({ preventScroll: true });
+    } else {
+      root.removeAttribute("role");
+      root.removeAttribute("aria-modal");
+    }
+    requestAnimationFrame(relayoutLyrics);
+  }
+
+  function relayoutLyrics() {
+    if (els.lyrics) els.lyrics.dataset.fp = "";
+    renderLyrics(activeLine(els.audio.currentTime || 0));
   }
 
   function highlightRow() {
@@ -810,13 +962,21 @@
   }
 
   els.audio.addEventListener("play", () => {
+    if (state.priming) return;
+    state.started = true;
     setPlaying(true);
     drawWave();
+    updatePositionState();
   });
   els.audio.addEventListener("pause", () => {
     setPlaying(false);
+    updatePositionState();
   });
-  els.audio.addEventListener("ended", () => next(1));
+  els.audio.addEventListener("ended", () => {
+    if (state.priming || (els.audio.getAttribute("src") || "") === SILENT_WAV) return;
+    next(1);
+  });
+  els.audio.addEventListener("seeked", updatePositionState);
   function refreshTimes() {
     const t = els.audio.currentTime || 0;
     const d = mediaDuration();
@@ -841,6 +1001,7 @@
     if (d) {
       els.dur.textContent = fmt(d);
       buildEstimates(d);
+      updatePositionState();
     }
   });
   els.audio.addEventListener("loadedmetadata", () => {
@@ -855,14 +1016,22 @@
   els.play.addEventListener("click", () => {
     if (els.audio.paused) {
       state.wantPlay = true;
+      state.started = true;
+      if (!els.audio.getAttribute("src") || els.audio.getAttribute("src") === SILENT_WAV) primeAudio();
       els.audio.play().catch(() => {});
     } else {
       state.wantPlay = false;
       els.audio.pause();
     }
   });
-  els.prev.addEventListener("click", () => next(-1));
-  els.next.addEventListener("click", () => next(1));
+  els.prev.addEventListener("click", () => {
+    primeAudio();
+    next(-1);
+  });
+  els.next.addEventListener("click", () => {
+    primeAudio();
+    next(1);
+  });
   els.skips.forEach((btn) => {
     btn.addEventListener("click", () => {
       seekTo((els.audio.currentTime || 0) + Number(btn.dataset.skip));
@@ -939,7 +1108,75 @@
   document.addEventListener("click", (e) => {
     const row = e.target.closest(".ls-row");
     if (!row) return;
-    loadTrack(row.dataset.album, Number(row.dataset.index), true);
+    const albumId = row.dataset.album;
+    const index = Number(row.dataset.index);
+    state.started = true;
+    if (albumId === state.albumId && index === state.index && state.blobUrl) {
+      /* Tapping the loaded song toggles it instead of restarting. */
+      if (els.audio.paused) {
+        state.wantPlay = true;
+        els.audio.play().catch(() => {});
+      } else {
+        state.wantPlay = false;
+        els.audio.pause();
+      }
+      return;
+    }
+    primeAudio();
+    loadTrack(albumId, index, true);
+  });
+
+  /* Mini-player <-> full sheet (phones). */
+  if (els.expand) {
+    els.expand.addEventListener("click", (e) => {
+      e.stopPropagation();
+      setExpanded(!state.expanded);
+    });
+  }
+  if (els.collapse) els.collapse.addEventListener("click", () => setExpanded(false));
+  if (els.head) {
+    els.head.addEventListener("click", (e) => {
+      if (state.expanded || !isMobile()) return;
+      if (e.target.closest("a, [data-expand]")) return;
+      setExpanded(true);
+    });
+  }
+  /* Swipe down on the sheet's top area to close it. */
+  let sheetSwipe = null;
+  root.addEventListener(
+    "touchstart",
+    (e) => {
+      if (!state.expanded || e.touches.length !== 1) return;
+      if (e.target.closest(".ls-lyrics, .ls-seek, .ls-edit, button, a, input")) {
+        if (!e.target.closest("[data-collapse]")) return;
+      }
+      if (root.scrollTop > 0) return;
+      sheetSwipe = { y: e.touches[0].clientY, x: e.touches[0].clientX };
+    },
+    { passive: true }
+  );
+  root.addEventListener(
+    "touchend",
+    (e) => {
+      if (!sheetSwipe) return;
+      const t = e.changedTouches[0];
+      const dy = t.clientY - sheetSwipe.y;
+      const dx = Math.abs(t.clientX - sheetSwipe.x);
+      sheetSwipe = null;
+      if (dy > 70 && dy > dx * 1.5) setExpanded(false);
+    },
+    { passive: true }
+  );
+  const onMq = () => {
+    if (!isMobile()) setExpanded(false);
+    requestAnimationFrame(relayoutLyrics);
+  };
+  if (MOBILE_MQ.addEventListener) MOBILE_MQ.addEventListener("change", onMq);
+  else if (MOBILE_MQ.addListener) MOBILE_MQ.addListener(onMq);
+  let resizeRaf = 0;
+  window.addEventListener("resize", () => {
+    cancelAnimationFrame(resizeRaf);
+    resizeRaf = requestAnimationFrame(relayoutLyrics);
   });
 
   if (els.editToggle) {
@@ -989,6 +1226,11 @@
   }
 
   document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && state.expanded) {
+      setExpanded(false);
+      if (els.expand) els.expand.focus({ preventScroll: true });
+      return;
+    }
     if (state.editing && e.key === "Enter" && e.target.closest(".ls-edit")) {
       e.preventDefault();
       const row = e.target.closest("[data-edit-i]");
@@ -1019,6 +1261,8 @@
   window.addEventListener("lila:album", (e) => {
     const id = e.detail && e.detail.id;
     if (!id || id === state.albumId) return;
+    /* Browsing another album never interrupts what's playing (or a song that was started and paused). */
+    if (state.started) return;
     loadTrack(id, 0, false);
   });
 
@@ -1045,5 +1289,6 @@
     });
 
   els.play.innerHTML = icons.play;
+  setupMediaSession();
   drawWave();
 })();
