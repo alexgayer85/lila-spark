@@ -224,6 +224,7 @@
     state.editIndex = 0;
     buildEstimates(els.audio.duration);
     renderLyrics(-1);
+    if (els.lyrics) els.lyrics.dataset.active = "";
     renderEditor();
   }
 
