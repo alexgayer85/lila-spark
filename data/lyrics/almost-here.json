@@ -1,195 +1,242 @@
 {
   "title": "Almost Here",
   "durationHint": 235,
-  "timed": false,
+  "timed": true,
   "lines": [
     {
       "text": "I dreamed my mother held a secret in her hands",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 12.55
     },
     {
       "text": "Something small and shining she was scared to plan",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 18.98
     },
     {
       "text": "We talked like it was promised, like the house could grow",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 25.01
     },
     {
       "text": "I saw a future I was never meant to know",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 31.23
     },
     {
       "text": "For a minute it was easy",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 37.28
     },
     {
       "text": "For a minute it was true",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 40.38
     },
     {
       "text": "I had a name inside my mouth",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 43.44
     },
     {
       "text": "I never got to give to you",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 46.63
     },
     {
       "text": "You were almost here",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 52.45
     },
     {
       "text": "Almost breathing in the quiet",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 57.42
     },
     {
       "text": "Almost part of us",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 61.88
     },
     {
       "text": "Then the morning took the light",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 66.73
     },
     {
       "text": "I woke up empty-handed",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 71.15
     },
     {
       "text": "With a love that had no name",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 74.72
     },
     {
       "text": "You were almost here",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 77.44
     },
     {
       "text": "And it hurt me just the same",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 82.56
     },
     {
       "text": "I watched her smile like hope had finally come home",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 90.59
     },
     {
       "text": "After all the years of learning how to live alone",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 96.56
     },
     {
       "text": "I reached for something living in a room that wasn’t real",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 102.97
     },
     {
       "text": "And I felt the kind of joy you’re not supposed to steal",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 109.01
     },
     {
       "text": "For a minute it was easy",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 115.2
     },
     {
       "text": "For a minute it was true",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 118.32
     },
     {
       "text": "I had a name inside my mouth",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 121.34
     },
     {
       "text": "I never got to give to you",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 124.53
     },
     {
       "text": "You were almost here",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 130.39
     },
     {
       "text": "Almost breathing in the quiet",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 135.38
     },
     {
       "text": "Almost part of us",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 139.82
     },
     {
       "text": "Then the morning took the light",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 144.65
     },
     {
       "text": "I woke up empty-handed",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 149.07
     },
     {
       "text": "With a love that had no name",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 152.68
     },
     {
       "text": "You were almost here",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 155.34
     },
     {
       "text": "And it hurt me just the same",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 160.5
     },
     {
       "text": "I know it was a dream",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 163.67
     },
     {
       "text": "I know you were never mine",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 166.79
     },
     {
       "text": "But grief don’t ask permission",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 169.77
     },
     {
       "text": "When it borrows you from time",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 172.86
     },
     {
       "text": "I held you in the dark",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 176.3
     },
     {
       "text": "Then the dark gave you back",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 179.14
     },
     {
       "text": "You were almost here",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 186.59
     },
     {
       "text": "Almost breathing in the quiet",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 191.5
     },
     {
       "text": "Almost part of us",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 195.94
     },
     {
       "text": "Then the morning took the light",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 200.75
     },
     {
       "text": "I woke up empty-handed",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 205.19
     },
     {
       "text": "With a love that had no name",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 208.77
     },
     {
       "text": "You were almost here",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 211.5
     },
     {
       "text": "And it hurt me just the same",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 216.7
     },
     {
       "text": "Almost here…",
-      "section": "Outro"
+      "section": "Outro",
+      "t": 224.03
     }
   ]
 }

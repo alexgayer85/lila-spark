@@ -1,127 +1,163 @@
 {
   "title": "Can’t Keep Up",
-  "durationHint": null,
-  "timed": false,
+  "durationHint": 228,
+  "timed": true,
   "lines": [
     {
       "text": "Prices climb while my paycheck stays still",
-      "section": "Verse 1"
+      "section": "",
+      "t": 19.16
     },
     {
       "text": "Every aisle feels steeper uphill",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 24.5
     },
     {
       "text": "I do the math late at night in my head",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 29.27
     },
     {
       "text": "And the numbers never land where I need them instead",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 33.22
     },
     {
       "text": "Cut the extras, stretch the rest",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 38.94
     },
     {
       "text": "Tell myself I’m doing my best",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 44.2
     },
     {
       "text": "But the ground keeps shifting under my feet",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 48.64
     },
     {
       "text": "I can’t keep up, I can’t keep up",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 59.36
     },
     {
       "text": "Every time I catch my breath, the cost goes up",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 63.49
     },
     {
       "text": "I can’t keep up, I can’t keep up",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 68.28
     },
     {
       "text": "Working twice as hard and it’s never enough",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 73.61
+    },
+    {
+      "text": "♪ ♪ ♪",
+      "section": "Instrumental",
+      "t": 79.54,
+      "break": true
     },
     {
       "text": "Another month of thinner margins again",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 98.42
     },
     {
       "text": "Trading wants for the things I can’t skip",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 103.58
     },
     {
       "text": "I used to dream a little further ahead",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 107.42
     },
     {
       "text": "Now I’m just trying not to slip",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 113.1
     },
     {
       "text": "Cut the extras, stretch the rest",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 118.12
     },
     {
       "text": "Tell myself I’m doing my best",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 123.36
     },
     {
       "text": "But the ground keeps shifting under my feet",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 128.03
     },
     {
       "text": "I can’t keep up, I can’t keep up",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 138.48
     },
     {
       "text": "Every time I catch my breath, the cost goes up",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 142.96
     },
     {
       "text": "I can’t keep up, I can’t keep up",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 147.46
     },
     {
       "text": "Working twice as hard and it’s never enough",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 152.81
     },
     {
       "text": "I’m not asking for easy",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 169.23
     },
     {
       "text": "I’m just tired of the chase",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 174.18
     },
     {
       "text": "Every dollar I make",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 179.2
     },
     {
       "text": "Gets eaten by the same old place",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 182.78
     },
     {
       "text": "I can’t keep up, I can’t keep up",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 186.62
     },
     {
       "text": "Every time I catch my breath, the cost goes up",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 192.47
     },
     {
       "text": "I can’t keep up, I can’t keep up",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 196.94
     },
     {
       "text": "Working twice as hard and it’s never enough",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 202.26
     }
   ]
 }

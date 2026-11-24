@@ -4,154 +4,166 @@
   "timed": true,
   "lines": [
     {
-      "text": "I've been knocked down harder than I thought I'd ever be",
+      "text": "I’ve been knocked down harder than I thought I’d ever be",
       "section": "Verse 1",
-      "t": 9.9
+      "t": 11.09
     },
     {
-      "text": "But I'm still here breathing, still wearing this heart on my sleeve",
+      "text": "But I’m still here breathing, still wearing this heart on my sleeve",
       "section": "Verse 1",
-      "t": 14.9
+      "t": 15.6
     },
     {
       "text": "The scars are real, the lessons cut deep",
       "section": "Verse 1",
-      "t": 20.9
+      "t": 21.6
     },
     {
-      "text": "But I'm learning how to stand without losing sleep",
+      "text": "But I’m learning how to stand without losing sleep",
       "section": "Verse 1",
-      "t": 25.1
+      "t": 26.03
     },
     {
-      "text": "I don't have to be unbreakable to be strong",
+      "text": "I don’t have to be unbreakable to be strong",
       "section": "Pre-Chorus",
-      "t": 30.5
+      "t": 31.87
     },
     {
       "text": "I just have to keep going when everything feels wrong",
       "section": "Pre-Chorus",
-      "t": 39.3
+      "t": 38.96
     },
     {
-      "text": "I'm still standing, still singing, still showing up",
+      "text": "I’m still standing, still singing, still showing up",
       "section": "Chorus",
       "t": 51.0
     },
     {
-      "text": "Still believing there's beauty in the way we love",
+      "text": "Still believing there’s beauty in the way we love",
       "section": "Chorus",
-      "t": 56.1
+      "t": 56.64
     },
     {
-      "text": "I'm not the same girl who used to break so easily",
+      "text": "I’m not the same girl who used to break so easily",
       "section": "Chorus",
-      "t": 61.3
+      "t": 61.76
     },
     {
-      "text": "I'm still standing",
+      "text": "I’m still standing",
       "section": "Chorus",
-      "t": 66.3
+      "t": 67.17
     },
     {
-      "text": "And I'm proud of me",
+      "text": "And I’m proud of me",
       "section": "Chorus",
-      "t": 69.6
+      "t": 71.29
+    },
+    {
+      "text": "♪ ♪ ♪",
+      "section": "Instrumental",
+      "t": 73.67,
+      "break": true
     },
     {
       "text": "I used to think that falling meant that I had failed",
       "section": "Verse 2",
-      "t": 82.8
+      "t": 84.33
     },
     {
-      "text": "Now I know that getting up is where the real story's told",
+      "text": "Now I know that getting up is where the real story’s told",
       "section": "Verse 2",
-      "t": 87.7
+      "t": 88.65
     },
     {
-      "text": "Every time I chose myself when it would've been easier to stay",
+      "text": "Every time I chose myself when it would’ve been easier to stay",
       "section": "Verse 2",
-      "t": 92.85
+      "t": 93.9
     },
     {
-      "text": "I built a little more of the woman I'm becoming today",
+      "text": "I built a little more of the woman I’m becoming today",
       "section": "Verse 2",
-      "t": 98.1
+      "t": 99.26
     },
     {
-      "text": "I don't have to be unbreakable to be strong",
+      "text": "I don’t have to be unbreakable to be strong",
       "section": "Pre-Chorus",
-      "t": 104.0
+      "t": 104.89
     },
     {
       "text": "I just have to keep going when everything feels wrong",
       "section": "Pre-Chorus",
-      "t": 112.8
+      "t": 112.06
     },
     {
-      "text": "I'm still standing, still singing, still showing up",
+      "text": "I’m still standing, still singing, still showing up",
       "section": "Chorus",
-      "t": 123.9
+      "t": 124.27
     },
     {
-      "text": "Still believing there's beauty in the way we love",
+      "text": "Still believing there’s beauty in the way we love",
       "section": "Chorus",
-      "t": 129.2
+      "t": 129.69
     },
     {
-      "text": "I'm not the same girl who used to break so easily",
+      "text": "I’m not the same girl who used to break so easily",
       "section": "Chorus",
-      "t": 134.3
+      "t": 134.72
     },
     {
-      "text": "I'm still standing",
+      "text": "I’m still standing",
       "section": "Chorus",
-      "t": 139.3
+      "t": 140.22
     },
     {
-      "text": "And I'm proud of me",
+      "text": "And I’m proud of me",
       "section": "Chorus",
-      "t": 142.7
+      "t": 144.63
     },
     {
-      "text": "I'm not perfect, I'm not done, I'm still figuring it out",
+      "text": "♪ ♪ ♪",
+      "section": "Instrumental",
+      "t": 146.73,
+      "break": true
+    },
+    {
+      "text": "I’m not perfect, I’m not done, I’m still figuring it out",
       "section": "Bridge",
-      "t": 155.0
+      "t": 156.2
     },
     {
-      "text": "But I'm standing here with open hands and an open heart",
+      "text": "But I’m standing here with open hands and an open heart",
       "section": "Bridge",
-      "t": 160.8
+      "t": 161.51
     },
     {
-      "text": "I'm still standing, still singing, still showing up",
+      "text": "I’m still standing, still singing, still showing up",
       "section": "Final Chorus",
-      "t": 167.7
+      "t": 168.61
     },
     {
-      "text": "Still believing there's beauty in the way we love",
+      "text": "Still believing there’s beauty in the way we love",
       "section": "Final Chorus",
-      "t": 173.5
+      "t": 174.04
     },
     {
-      "text": "I'm not the same girl",
+      "text": "I’m not the same girl",
       "section": "Final Chorus",
-      "t": 178.7
+      "t": 179.22
     },
     {
-      "text": "I'm better than I used to be",
+      "text": "I’m better than I used to be",
       "section": "Final Chorus",
       "t": 181.0
     },
     {
-      "text": "I'm still standing",
+      "text": "I’m still standing",
       "section": "Final Chorus",
-      "t": 183.85
+      "t": 184.55
     },
     {
-      "text": "And I'm proud of me",
+      "text": "And I’m proud of me",
       "section": "Final Chorus",
-      "t": 186.9
+      "t": 188.78
     }
   ]
 }

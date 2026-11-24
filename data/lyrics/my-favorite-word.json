@@ -1,239 +1,312 @@
 {
   "title": "My Favorite Word",
-  "durationHint": 220,
-  "timed": false,
+  "durationHint": 218,
+  "timed": true,
   "lines": [
     {
       "text": "Ooh yeah… I know a few",
-      "section": "Intro"
+      "section": "Intro",
+      "t": 1.1
     },
     {
       "text": "La-la, uh-huh",
-      "section": "Intro"
+      "section": "Intro",
+      "t": 6.17
     },
     {
       "text": "I know “damn” when the coffee’s too hot",
-      "section": "Verse 1"
+      "section": "Intro",
+      "t": 10.51
     },
     {
       "text": "I know “hell” when the signal drops",
-      "section": "Verse 1"
+      "section": "Intro",
+      "t": 13.01
     },
     {
       "text": "I know “shit” when I stub my toe",
-      "section": "Verse 1"
+      "section": "Intro",
+      "t": 15.46
     },
     {
       "text": "I know “fuck” when the whole day goes",
-      "section": "Verse 1"
+      "section": "Intro",
+      "t": 17.66
     },
     {
       "text": "I save “bitch” for the mirror sometimes",
-      "section": "Verse 1"
+      "section": "Intro",
+      "t": 19.82
     },
     {
       "text": "Just me and my face having a time",
-      "section": "Verse 1"
+      "section": "Intro",
+      "t": 22.02
     },
     {
       "text": "I know the soft ones and the heavy ones too",
-      "section": "Verse 1"
+      "section": "Intro",
+      "t": 23.74
     },
     {
       "text": "But only when the moment feels true",
-      "section": "Verse 1"
+      "section": "Intro",
+      "t": 25.85
     },
     {
       "text": "I don’t drop them every line",
-      "section": "Pre-Chorus"
+      "section": "Intro",
+      "t": 28.53
     },
     {
       "text": "I’m a lady most of the time",
-      "section": "Pre-Chorus"
+      "section": "Intro",
+      "t": 32.59
     },
     {
       "text": "But when the pressure hits just right",
-      "section": "Pre-Chorus"
+      "section": "Intro",
+      "t": 36.55
     },
     {
       "text": "These little words feel so damn fine",
-      "section": "Pre-Chorus"
+      "section": "Intro",
+      "t": 40.88
     },
     {
       "text": "My favorite word is “fuck,” no contest",
-      "section": "Chorus"
+      "section": "Intro",
+      "t": 45.24
     },
     {
       "text": "It works for the good and the rest",
-      "section": "Chorus"
+      "section": "Intro",
+      "t": 49.13
     },
     {
       "text": "Say it soft when you make me melt",
-      "section": "Chorus"
+      "section": "Intro",
+      "t": 51.06
     },
     {
       "text": "Scream it loud when I need some help",
-      "section": "Chorus"
+      "section": "Intro",
+      "t": 53.79
     },
     {
       "text": "One little word, so many moods",
-      "section": "Chorus"
+      "section": "Intro",
+      "t": 56.22
     },
     {
       "text": "Angry, happy, shocked, in the mood",
-      "section": "Chorus"
+      "section": "Intro",
+      "t": 58.4
     },
     {
       "text": "Yeah, my favorite word is “fuck”",
-      "section": "Chorus"
+      "section": "Intro",
+      "t": 60.28
     },
     {
       "text": "Nothing else packs quite that much",
-      "section": "Chorus"
+      "section": "Intro",
+      "t": 62.69
+    },
+    {
+      "text": "Nothing else packs quite that much",
+      "section": "Intro",
+      "t": 71.37
     },
     {
       "text": "I use “damn” when the beat feels good",
-      "section": "Verse 2"
+      "section": "Intro",
+      "t": 82.04
     },
     {
       "text": "I use “hell yeah” when I’m in the mood",
-      "section": "Verse 2"
+      "section": "Intro",
+      "t": 83.73
     },
     {
       "text": "I use “shit” when I’m running late",
-      "section": "Verse 2"
+      "section": "Intro",
+      "t": 86.12
     },
     {
       "text": "But “fuck” is the one that seals my fate",
-      "section": "Verse 2"
+      "section": "Intro",
+      "t": 87.96
     },
     {
       "text": "Traffic jam, I say “fuck”",
-      "section": "Verse 2"
+      "section": "Intro",
+      "t": 90.22
     },
     {
       "text": "Perfect kiss, I say “fuck”",
-      "section": "Verse 2"
+      "section": "Intro",
+      "t": 92.69
     },
     {
       "text": "Forgot my keys, I say “fuck”",
-      "section": "Verse 2"
+      "section": "Intro",
+      "t": 94.43
     },
     {
       "text": "You looking like that? I say “fuck”",
-      "section": "Verse 2"
+      "section": "Intro",
+      "t": 96.69
     },
     {
       "text": "I don’t drop them every line",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 100.52
     },
     {
       "text": "I’m a lady most of the time",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 104.86
     },
     {
       "text": "But when the pressure hits just right",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 108.57
     },
     {
       "text": "These little words feel so damn fine",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 112.91
     },
     {
       "text": "My favorite word is “fuck,” no contest",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 117.31
     },
     {
       "text": "It works for the good and the rest",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 121.36
     },
     {
       "text": "Say it soft when you make me melt",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 122.98
     },
     {
       "text": "Scream it loud when I need some help",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 125.69
     },
     {
       "text": "One little word, so many moods",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 128.19
     },
     {
       "text": "Angry, happy, shocked, in the mood",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 130.39
     },
     {
       "text": "Yeah, my favorite word is “fuck”",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 132.25
     },
     {
       "text": "Nothing else packs quite that much",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 134.69
+    },
+    {
+      "text": "Nothing else packs quite that much",
+      "section": "Chorus",
+      "t": 143.37
     },
     {
       "text": "People say watch your language, girl",
-      "section": "Bridge"
+      "section": "Chorus",
+      "t": 154.27
     },
     {
       "text": "I just smile and give a little swirl",
-      "section": "Bridge"
+      "section": "Chorus",
+      "t": 156.61
     },
     {
       "text": "Some words are tools, some words are toys",
-      "section": "Bridge"
+      "section": "Chorus",
+      "t": 158.68
     },
     {
       "text": "This one’s my favorite little noise",
-      "section": "Bridge"
+      "section": "Chorus",
+      "t": 160.24
     },
     {
       "text": "My favorite word is “fuck,” no contest",
-      "section": "Final Chorus"
+      "section": "Chorus",
+      "t": 163.02
     },
     {
       "text": "It works for the good and the rest",
-      "section": "Final Chorus"
+      "section": "Chorus",
+      "t": 167.19
     },
     {
       "text": "Say it soft when you make me melt",
-      "section": "Final Chorus"
+      "section": "Chorus",
+      "t": 168.8
     },
     {
       "text": "Scream it loud when I need some help",
-      "section": "Final Chorus"
+      "section": "Chorus",
+      "t": 171.55
     },
     {
       "text": "One little word, so many moods",
-      "section": "Final Chorus"
+      "section": "Chorus",
+      "t": 174.01
     },
     {
       "text": "Angry, happy, shocked, in the mood",
-      "section": "Final Chorus"
+      "section": "Chorus",
+      "t": 176.21
     },
     {
       "text": "Yeah, my favorite word is “fuck”",
-      "section": "Final Chorus"
+      "section": "Chorus",
+      "t": 178.32
     },
     {
       "text": "Nothing else packs quite that much",
-      "section": "Final Chorus"
+      "section": "Chorus",
+      "t": 180.74
+    },
+    {
+      "text": "Nothing else packs quite that much",
+      "section": "Outro",
+      "t": 189.25
     },
     {
       "text": "So if you hear me say it, don’t be shocked",
-      "section": "Outro"
+      "section": "Outro",
+      "t": 199.88
     },
     {
       "text": "It’s just my favorite word… unlocked",
-      "section": "Outro"
+      "section": "Outro",
+      "t": 203.99
     },
     {
       "text": "Fuck… yeah…",
-      "section": "Outro"
+      "section": "Outro",
+      "t": 208.56
     },
     {
-      "text": "Yeah… yeah…",
-      "section": "Outro"
+      "text": "Yeah... yeah...",
+      "section": "Outro",
+      "t": 210.24
     }
   ]
 }

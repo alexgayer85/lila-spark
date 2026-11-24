@@ -1,167 +1,197 @@
 {
   "title": "The Last Time Through the Door",
-  "durationHint": null,
-  "timed": false,
+  "durationHint": 233,
+  "timed": true,
   "lines": [
     {
       "text": "I remember the first time I turned the key",
-      "section": "Intro"
+      "section": "Intro",
+      "t": 13.03
     },
     {
       "text": "Empty rooms and a quieter me",
-      "section": "Intro"
-    },
-    {
-      "text": "I remember the first time I turned the key",
-      "section": "Verse 1"
-    },
-    {
-      "text": "Empty rooms and a quieter me",
-      "section": "Verse 1"
+      "section": "Intro",
+      "t": 18.72
     },
     {
       "text": "Didn’t know what these walls would hold",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 24.44
     },
     {
       "text": "Just a new beginning, clean and cold",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 28.59
     },
     {
       "text": "Every laugh and every fight",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 33.95
     },
     {
       "text": "Every late-night talk and morning light",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 39.45
     },
     {
       "text": "Built a life I didn’t see",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 45.26
     },
     {
       "text": "Until I had to leave",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 51.49
     },
     {
       "text": "Now I’m walking through the door one last time",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 56.3
     },
     {
       "text": "Same old frame, different eyes",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 62.16
     },
     {
       "text": "All the years still linger here",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 68.69
     },
     {
       "text": "In the dust and the air",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 74.44
     },
     {
       "text": "I never thought the first step in",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 80.1
     },
     {
       "text": "Would hurt this much walking out again",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 83.74
     },
     {
       "text": "Boxes stacked where the couch used to be",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 93.53
     },
     {
       "text": "Echoes left of who I used to be",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 99.68
     },
     {
       "text": "I trace the marks we made on the floor",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 104.86
     },
     {
       "text": "Knowing I won’t open this door anymore",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 109.45
     },
     {
       "text": "Every laugh and every fight",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 114.92
     },
     {
       "text": "Every late-night talk and morning light",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 120.7
     },
     {
       "text": "Built a life I didn’t see",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 126.2
     },
     {
       "text": "Until I had to leave",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 132.73
     },
     {
       "text": "Now I’m walking through the door one last time",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 137.24
     },
     {
       "text": "Same old frame, different eyes",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 143.11
     },
     {
       "text": "All the years still linger here",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 149.65
     },
     {
       "text": "In the dust and the air",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 155.4
     },
     {
       "text": "I never thought the first step in",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 160.68
     },
     {
       "text": "Would hurt this much walking out again",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 164.71
     },
     {
       "text": "It’s strange how a doorway can hold so much",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 172.87
     },
     {
       "text": "A thousand small moments in a single touch",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 178.88
     },
     {
       "text": "I pause with my hand on the frame",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 184.69
     },
     {
       "text": "Whisper goodbye to a place that became",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 189.49
     },
     {
       "text": "Now I’m walking through the door one last time",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 197.98
     },
     {
       "text": "Same old frame, different eyes",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 204.08
     },
     {
       "text": "All the years still linger here",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 210.39
     },
     {
       "text": "In the dust and the air",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 216.14
     },
     {
       "text": "I never thought the first step in",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 221.39
     },
     {
       "text": "Would hurt this much walking out again",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 225.15
     }
   ]
 }

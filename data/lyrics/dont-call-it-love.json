@@ -1,131 +1,180 @@
 {
   "title": "Don't Call It Love",
   "durationHint": 230,
-  "timed": false,
+  "timed": true,
   "lines": [
     {
       "text": "You say you love me when the lights go down",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 9.07
     },
     {
       "text": "Hold me like you mean it then you shut me out",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 13.77
     },
     {
       "text": "You want the softness, you don’t want the rest",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 19.12
     },
     {
       "text": "Kiss me like a promise then you fail the test",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 23.82
     },
     {
       "text": "You take the parts that feel good on your hands",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 29.75
     },
     {
       "text": "Leave the girl who talks and takes a stand",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 39.28
     },
     {
       "text": "You love me but you don’t like me",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 49.33
     },
     {
       "text": "You keep me close but you don’t try me",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 54.36
     },
     {
       "text": "You want the fire, not the girl I am",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 59.38
     },
     {
       "text": "You love me but you don’t like me",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 64.73
     },
     {
       "text": "And it still breaks my heart",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 68.07
+    },
+    {
+      "text": "♪ ♪ ♪",
+      "section": "Instrumental",
+      "t": 70.67,
+      "break": true
     },
     {
       "text": "I laugh too loud and you look away",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 79.72
     },
     {
       "text": "I tell the truth and you don’t stay",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 84.59
     },
     {
       "text": "You like the picture hanging on the wall",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 89.51
     },
     {
       "text": "Not the woman standing in the hall",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 94.22
     },
     {
       "text": "You take the night and leave the day behind",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 100.27
     },
     {
       "text": "Call it love when it’s just passing time",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 109.57
     },
     {
       "text": "You love me but you don’t like me",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 119.72
     },
     {
       "text": "You keep me close but you don’t try me",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 124.69
     },
     {
       "text": "You want the fire, not the girl I am",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 129.75
     },
     {
       "text": "You love me but you don’t like me",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 135.1
     },
     {
       "text": "And it still breaks my heart",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 138.62
+    },
+    {
+      "text": "♪ ♪ ♪",
+      "section": "Instrumental",
+      "t": 142.47,
+      "break": true
     },
     {
       "text": "Don’t call it love if you don’t like my mouth",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 151.1
     },
     {
       "text": "Don’t hold me close just to shut me down",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 156.12
     },
     {
       "text": "You want the “yes,” you never want the fight",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 161.17
     },
     {
       "text": "If you don’t like me, don’t come back tonight",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 165.59
+    },
+    {
+      "text": "♪ ♪ ♪",
+      "section": "Instrumental",
+      "t": 175.02,
+      "break": true
     },
     {
       "text": "You love me but you don’t like me",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 190.04
     },
     {
       "text": "You keep me close but you don’t try me",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 195.08
     },
     {
       "text": "You want the fire, not the girl I am",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 200.09
     },
     {
       "text": "You love me but you don’t like me",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 205.47
     },
     {
       "text": "And it still breaks my heart",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 208.98
     }
   ]
 }
