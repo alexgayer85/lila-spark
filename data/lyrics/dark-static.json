@@ -1,115 +1,148 @@
 {
   "title": "Dark Static",
   "durationHint": 248,
-  "timed": false,
+  "timed": true,
   "lines": [
     {
       "text": "City lights are humming, they know my name tonight",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 15.23
     },
     {
       "text": "Driving with the windows down, I feel it ignite",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 23.04
     },
     {
       "text": "Not the same old fire that burned me out before",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 31.03
     },
     {
-      "text": "This is electric, and it doesn't hurt anymore",
-      "section": "Verse 1"
+      "text": "This is electric, and it doesn’t hurt anymore",
+      "section": "Verse 1",
+      "t": 38.86
     },
     {
-      "text": "Every signal's pointing straight to you",
-      "section": "Pre-Chorus"
+      "text": "Every signal’s pointing straight to you",
+      "section": "Pre-Chorus",
+      "t": 47.75
     },
     {
-      "text": "And I don't want to fight what's coming through",
-      "section": "Pre-Chorus"
+      "text": "And I don’t want to fight what’s coming through",
+      "section": "Pre-Chorus",
+      "t": 55.27
     },
     {
       "text": "Dark static buzzing in my chest",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 63.86
     },
     {
-      "text": "You're the frequency I can't get out my head",
-      "section": "Chorus"
+      "text": "You’re the frequency I can’t get out my head",
+      "section": "Chorus",
+      "t": 71.71
     },
     {
-      "text": "I don't need to understand, I just need to feel",
-      "section": "Chorus"
+      "text": "I don’t need to understand, I just need to feel",
+      "section": "Chorus",
+      "t": 79.84
     },
     {
       "text": "Dark static, baby, make it real",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 87.41
     },
     {
-      "text": "We don't have to talk, but the silence says it all",
-      "section": "Verse 2"
+      "text": "We don’t have to talk, but the silence says it all",
+      "section": "Verse 2",
+      "t": 97.76
     },
     {
       "text": "Your eyes do all the work, and I answer the call",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 105.31
     },
     {
-      "text": "This isn't just a moment, it's something taking shape",
-      "section": "Verse 2"
+      "text": "This isn’t just a moment, it’s something taking shape",
+      "section": "Verse 2",
+      "t": 113.15
     },
     {
-      "text": "I'm ready for whatever comes when we escape",
-      "section": "Verse 2"
+      "text": "I’m ready for whatever comes when we escape",
+      "section": "Verse 2",
+      "t": 121.02
     },
     {
-      "text": "Every signal's pointing straight to you",
-      "section": "Pre-Chorus"
+      "text": "Every signal’s pointing straight to you",
+      "section": "Pre-Chorus",
+      "t": 130.25
     },
     {
-      "text": "And I don't want to fight what's coming through",
-      "section": "Pre-Chorus"
+      "text": "And I don’t want to fight what’s coming through",
+      "section": "Pre-Chorus",
+      "t": 137.65
     },
     {
       "text": "Dark static buzzing in my chest",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 146.31
     },
     {
-      "text": "You're the frequency I can't get out my head",
-      "section": "Chorus"
+      "text": "You’re the frequency I can’t get out my head",
+      "section": "Chorus",
+      "t": 154.16
     },
     {
-      "text": "I don't need to understand, I just need to feel",
-      "section": "Chorus"
+      "text": "I don’t need to understand, I just need to feel",
+      "section": "Chorus",
+      "t": 162.06
     },
     {
       "text": "Dark static, baby, make it real",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 169.83
     },
     {
-      "text": "Static, don't fight it",
-      "section": "Bridge"
+      "text": "♪ ♪ ♪",
+      "section": "Instrumental",
+      "t": 173.93,
+      "break": true
+    },
+    {
+      "text": "Static, don’t fight it",
+      "section": "Bridge",
+      "t": 186.43
     },
     {
       "text": "Let the night do what it wants to do",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 190.43
     },
     {
-      "text": "I'm already falling into you",
-      "section": "Bridge"
+      "text": "I’m already falling into you",
+      "section": "Bridge",
+      "t": 198.34
     },
     {
       "text": "Dark static buzzing in my chest",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 205.21
     },
     {
-      "text": "You're the frequency I can't get out my head",
-      "section": "Final Chorus"
+      "text": "You’re the frequency I can’t get out my head",
+      "section": "Final Chorus",
+      "t": 212.99
     },
     {
-      "text": "I don't need to understand, I just need to feel",
-      "section": "Final Chorus"
+      "text": "I don’t need to understand, I just need to feel",
+      "section": "Final Chorus",
+      "t": 220.92
     },
     {
       "text": "Dark static, baby, make it real",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 228.71
     }
   ]
 }

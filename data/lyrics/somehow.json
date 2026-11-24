@@ -1,135 +1,167 @@
 {
   "title": "Somehow",
   "durationHint": 205,
-  "timed": false,
+  "timed": true,
   "lines": [
     {
       "text": "Mmm",
-      "section": "Intro"
+      "section": "Intro",
+      "t": 1.18
     },
     {
       "text": "Mmm",
-      "section": "Intro"
+      "section": "Intro",
+      "t": 8.51
     },
     {
       "text": "Still on your side",
-      "section": "Intro"
+      "section": "Intro",
+      "t": 11.07
     },
     {
       "text": "Yeah, I still sleep on the left, still face the door for you",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 14.54
     },
     {
       "text": "Still make the coffee strong the way you like me to",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 20.96
     },
     {
       "text": "Morning finds me reaching where your body used to lie",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 27.25
     },
     {
-      "text": "I pull your pillow closer, but it doesn't feel like mine",
-      "section": "Verse 1"
+      "text": "I pull your pillow closer, but it doesn’t feel like mine",
+      "section": "Verse 1",
+      "t": 32.62
     },
     {
       "text": "And everybody says that time will mend",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 38.08
     },
     {
       "text": "But I keep starting over at the end",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 43.93
     },
     {
-      "text": "I'm still living on your side of the bed",
-      "section": "Chorus"
+      "text": "I’m still living on your side of the bed",
+      "section": "Chorus",
+      "t": 49.29
     },
     {
       "text": "Loving all the quiet words we never said",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 55.04
     },
     {
-      "text": "Everybody's moving on, but I don't know how",
-      "section": "Chorus"
+      "text": "Everybody’s moving on, but I don’t know how",
+      "section": "Chorus",
+      "t": 60.98
     },
     {
-      "text": "I'm still holding on to you somehow",
-      "section": "Chorus"
+      "text": "I’m still holding on to you somehow",
+      "section": "Chorus",
+      "t": 66.83
     },
     {
-      "text": "Yeah, your jacket's on the chair, I haven't moved it since that night",
-      "section": "Verse 2"
+      "text": "Yeah, your jacket’s on the chair, I haven’t moved it since that night",
+      "section": "Verse 2",
+      "t": 78.87
     },
     {
       "text": "I regret the things I said that made you say goodbye",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 85.57
     },
     {
       "text": "The house remembers you in every quiet room",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 91.46
     },
     {
       "text": "I water all your plants and wait for them to bloom",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 97.0
     },
     {
       "text": "And everybody says that time will mend",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 102.47
     },
     {
       "text": "But I keep starting over at the end",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 108.32
     },
     {
-      "text": "I'm still living on your side of the bed",
-      "section": "Chorus"
+      "text": "I’m still living on your side of the bed",
+      "section": "Chorus",
+      "t": 113.66
     },
     {
       "text": "Loving all the quiet words we never said",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 119.43
     },
     {
-      "text": "Everybody's moving on, but I don't know how",
-      "section": "Chorus"
+      "text": "Everybody’s moving on, but I don’t know how",
+      "section": "Chorus",
+      "t": 125.39
     },
     {
-      "text": "I'm still holding on to you somehow",
-      "section": "Chorus"
+      "text": "I’m still holding on to you somehow",
+      "section": "Chorus",
+      "t": 131.24
     },
     {
       "text": "Still here, still yours, come home",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 142.81
     },
     {
       "text": "Maybe letting go is what the brave ones do",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 149.44
     },
     {
       "text": "But I was never brave when it came to you",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 155.15
     },
     {
-      "text": "I'm still living on your side of the bed (Of the bed)",
-      "section": "Final Chorus"
+      "text": "I’m still living on your side of the bed (Of the bed)",
+      "section": "Final Chorus",
+      "t": 163.5
     },
     {
       "text": "Loving all the quiet words we never said",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 169.18
     },
     {
-      "text": "Everybody's moving on, but I don't know how",
-      "section": "Final Chorus"
+      "text": "Everybody’s moving on, but I don’t know how",
+      "section": "Final Chorus",
+      "t": 175.15
     },
     {
-      "text": "I'm still holding on to you somehow",
-      "section": "Final Chorus"
+      "text": "I’m still holding on to you somehow",
+      "section": "Final Chorus",
+      "t": 180.99
     },
     {
       "text": "Mmm",
-      "section": "Outro"
+      "section": "Outro",
+      "t": 192.53
     },
     {
       "text": "Mmm",
-      "section": "Outro"
+      "section": "Outro",
+      "t": 193.59
     }
   ]
 }

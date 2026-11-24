@@ -1,111 +1,149 @@
 {
   "title": "Rhythm Thief",
-  "durationHint": 234,
-  "timed": false,
+  "durationHint": 219,
+  "timed": true,
   "lines": [
     {
       "text": "You walked in and the bassline changed its mind",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 18.2
     },
     {
-      "text": "My feet started moving to a beat I couldn't find",
-      "section": "Verse 1"
+      "text": "My feet started moving to a beat I couldn’t find",
+      "section": "Verse 1",
+      "t": 22.52
     },
     {
       "text": "I had my own rhythm, I was steady on my own",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 27.32
     },
     {
-      "text": "Now I'm dancing to a song that only you have shown",
-      "section": "Verse 1"
+      "text": "Now I’m dancing to a song that only you have shown",
+      "section": "Verse 1",
+      "t": 31.47
     },
     {
       "text": "You stole the tempo right out of my chest",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 36.89
     },
     {
-      "text": "Now I can't move unless you give me the rest",
-      "section": "Pre-Chorus"
+      "text": "Now I can’t move unless you give me the rest",
+      "section": "Pre-Chorus",
+      "t": 41.56
     },
     {
       "text": "Rhythm thief, you got me moving to your sound",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 45.88
     },
     {
-      "text": "Every step I take, I'm following you around",
-      "section": "Chorus"
+      "text": "Every step I take, I’m following you around",
+      "section": "Chorus",
+      "t": 50.59
     },
     {
-      "text": "I don't mind the hijack, I don't mind the crime",
-      "section": "Chorus"
+      "text": "I don’t mind the hijack, I don’t mind the crime",
+      "section": "Chorus",
+      "t": 55.33
     },
     {
       "text": "Rhythm thief, baby, steal this, steal this beat of mine",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 59.76
     },
     {
       "text": "You laugh when I trip over words I used to own",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 73.31
     },
     {
       "text": "You turn my steady pulse into a rolling stone",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 77.92
     },
     {
-      "text": "I used to lead the dance, now I'm happy to be led",
-      "section": "Verse 2"
+      "text": "I used to lead the dance, now I’m happy to be led",
+      "section": "Verse 2",
+      "t": 82.76
     },
     {
-      "text": "'Cause your rhythm feels like home inside my head",
-      "section": "Verse 2"
+      "text": "’Cause your rhythm feels like home inside my head",
+      "section": "Verse 2",
+      "t": 86.85
     },
     {
       "text": "You stole the tempo right out of my chest",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 92.31
     },
     {
-      "text": "Now I can't move unless you give me the rest",
-      "section": "Pre-Chorus"
+      "text": "Now I can’t move unless you give me the rest",
+      "section": "Pre-Chorus",
+      "t": 96.94
     },
     {
       "text": "Rhythm thief, you got me moving to your sound",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 101.46
     },
     {
-      "text": "Every step I take, I'm following you around",
-      "section": "Chorus"
+      "text": "Every step I take, I’m following you around",
+      "section": "Chorus",
+      "t": 106.01
     },
     {
-      "text": "I don't mind the hijack, I don't mind the crime",
-      "section": "Chorus"
+      "text": "I don’t mind the hijack, I don’t mind the crime",
+      "section": "Chorus",
+      "t": 110.75
     },
     {
       "text": "Rhythm thief, baby, steal this, steal this beat of mine",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 115.14
+    },
+    {
+      "text": "♪ ♪ ♪",
+      "section": "Instrumental",
+      "t": 120.9,
+      "break": true
     },
     {
       "text": "Maybe I was waiting for someone to take the lead",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 147.43
     },
     {
-      "text": "Maybe I was ready for a rhythm I can't beat",
-      "section": "Bridge"
+      "text": "Maybe I was ready for a rhythm I can’t beat",
+      "section": "Bridge",
+      "t": 156.64
+    },
+    {
+      "text": "♪ ♪ ♪",
+      "section": "Instrumental",
+      "t": 161.6,
+      "break": true
     },
     {
       "text": "Rhythm thief, you got me moving to your sound",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 186.69
     },
     {
-      "text": "Every step I take, I'm following you around",
-      "section": "Final Chorus"
+      "text": "Every step I take, I’m following you around",
+      "section": "Final Chorus",
+      "t": 191.07
     },
     {
-      "text": "I don't mind the hijack, I don't mind the crime",
-      "section": "Final Chorus"
+      "text": "I don’t mind the hijack, I don’t mind the crime",
+      "section": "Final Chorus",
+      "t": 196.12
     },
     {
       "text": "Rhythm thief, baby, steal this, steal this beat of mine",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 200.78
     }
   ]
 }

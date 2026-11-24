@@ -1,111 +1,149 @@
 {
   "title": "Almost",
   "durationHint": 222,
-  "timed": false,
+  "timed": true,
   "lines": [
     {
       "text": "I still think about you late at night",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 21.66
     },
     {
       "text": "Wondering if we could have got it right",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 26.75
     },
     {
       "text": "Every song I hear just pulls me back",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 30.67
     },
     {
       "text": "To the love we almost had",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 36.03
     },
     {
       "text": "I don’t know what to do",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 41.3
     },
     {
       "text": "Still stuck on me and you",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 45.66
     },
     {
       "text": "We were almost in love",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 53.49
     },
     {
       "text": "Almost close enough",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 59.3
     },
     {
       "text": "Almost said the words",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 64.5
     },
     {
       "text": "But almost wasn’t enough",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 69.29
+    },
+    {
+      "text": "♪ ♪ ♪",
+      "section": "Instrumental",
+      "t": 72.71,
+      "break": true
     },
     {
       "text": "You said the timing never worked out right",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 93.63
     },
     {
       "text": "I told myself that I would be just fine",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 98.91
     },
     {
       "text": "Now I know that almost doesn’t mean",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 102.82
     },
     {
       "text": "We were ever meant to be",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 108.28
     },
     {
       "text": "I don’t know what to do",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 113.65
     },
     {
       "text": "Still stuck on me and you",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 118.51
     },
     {
       "text": "We were almost in love",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 125.72
     },
     {
       "text": "Almost close enough",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 131.56
     },
     {
       "text": "Almost said the words",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 136.73
     },
     {
       "text": "But almost wasn’t enough",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 141.49
+    },
+    {
+      "text": "♪ ♪ ♪",
+      "section": "Instrumental",
+      "t": 144.92,
+      "break": true
     },
     {
       "text": "Maybe one day I won’t feel this way",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 165.94
     },
     {
       "text": "But it still hurts me every day",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 171.42
     },
     {
       "text": "We were almost in love",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 180.09
     },
     {
       "text": "Almost close enough",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 185.66
     },
     {
       "text": "I’m learning how to let you go",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 190.76
     },
     {
       "text": "Even though it hurts me so",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 195.93
     }
   ]
 }

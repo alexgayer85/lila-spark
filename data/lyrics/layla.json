@@ -1,119 +1,157 @@
 {
   "title": "Layla",
   "durationHint": 240,
-  "timed": false,
+  "timed": true,
   "lines": [
     {
+      "text": "I just don’t know what to do",
+      "section": "Verse 1",
+      "t": 1.38
+    },
+    {
+      "text": "I’m so angry",
+      "section": "Verse 1",
+      "t": 3.96
+    },
+    {
       "text": "I still see your face and it tears me open",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 14.35
     },
     {
       "text": "Every memory feels like a wound reopened",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 20.2
     },
     {
       "text": "You were stolen from me in a second of carelessness",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 26.0
     },
     {
       "text": "And I am left here drowning in the emptiness",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 31.69
     },
     {
       "text": "I scream your name into the dark",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 36.32
     },
     {
       "text": "But the dark never answers back",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 42.08
     },
     {
-      "text": "Layla… I am furious you are gone",
-      "section": "Chorus"
+      "text": "Layla, I am furious you are gone",
+      "section": "Chorus",
+      "t": 48.65
     },
     {
-      "text": "Layla… this pain just goes on and on",
-      "section": "Chorus"
+      "text": "Layla, this pain just goes on and on",
+      "section": "Chorus",
+      "t": 54.4
     },
     {
       "text": "I hate the world that took you away",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 60.14
     },
     {
       "text": "I hate that I’m the one who had to stay",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 68.62
     },
     {
       "text": "I blame the one who did this, I blame the sky",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 78.18
     },
     {
       "text": "I blame every god that watched and didn’t try",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 84.36
     },
     {
       "text": "There is no comfort, there is no grace",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 90.19
     },
     {
       "text": "Just this rage that won’t leave your empty place",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 96.01
     },
     {
       "text": "I scream your name into the dark",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 100.52
     },
     {
       "text": "But the dark never answers back",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 106.26
     },
     {
-      "text": "Layla… I am furious you are gone",
-      "section": "Chorus"
+      "text": "Layla, I am furious you are gone",
+      "section": "Chorus",
+      "t": 112.77
     },
     {
-      "text": "Layla… this pain just goes on and on",
-      "section": "Chorus"
+      "text": "Layla, this pain just goes on and on",
+      "section": "Chorus",
+      "t": 118.64
     },
     {
       "text": "I hate the world that took you away",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 124.12
     },
     {
       "text": "I hate that I’m the one who had to stay",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 132.8
     },
     {
       "text": "I want to destroy everything that let you die",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 142.82
     },
     {
       "text": "I want to burn the day that said goodbye",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 148.69
     },
     {
       "text": "There is no lesson, there is no light",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 154.37
     },
     {
       "text": "Only this fury that eats me alive every night",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 160.28
     },
     {
-      "text": "Layla… I am furious you are gone",
-      "section": "Final Chorus"
+      "text": "Layla, I am furious you are gone",
+      "section": "Final Chorus",
+      "t": 168.32
     },
     {
-      "text": "Layla… this pain just goes on and on",
-      "section": "Final Chorus"
+      "text": "Layla, this pain just goes on and on",
+      "section": "Final Chorus",
+      "t": 173.88
     },
     {
       "text": "I hate the world that took you away",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 179.78
     },
     {
       "text": "I hate that I’m the one who had to stay",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 188.38
     }
   ]
 }

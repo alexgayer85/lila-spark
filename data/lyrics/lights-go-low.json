@@ -1,115 +1,154 @@
 {
   "title": "Sweet Shock (Lights Go Low)",
   "durationHint": 210,
-  "timed": false,
+  "timed": true,
   "lines": [
     {
       "text": "Lights down low and I can feel you watching me",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 31.51
     },
     {
       "text": "Move a little closer, let the rhythm set you free",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 35.3
     },
     {
-      "text": "I don't need to say a word, my body does the talk",
-      "section": "Verse 1"
+      "text": "I don’t need to say a word, my body does the talk",
+      "section": "Verse 1",
+      "t": 39.38
     },
     {
       "text": "Every step I take, I own the floor, I own the block",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 43.14
     },
     {
-      "text": "Come a little closer now, don't be shy",
-      "section": "Pre-Chorus"
+      "text": "Come a little closer now, don’t be shy",
+      "section": "Pre-Chorus",
+      "t": 47.75
     },
     {
-      "text": "One taste of this and baby, you'll know why",
-      "section": "Pre-Chorus"
+      "text": "One taste of this and baby you’ll know why",
+      "section": "Pre-Chorus",
+      "t": 55.58
+    },
+    {
+      "text": "Yeah yeah yeah",
+      "section": "Pre-Chorus",
+      "t": 66.11
     },
     {
       "text": "Sweet shock, hit me when the lights go low",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 67.95
     },
     {
-      "text": "Move with me, baby, don't let go",
-      "section": "Chorus"
+      "text": "Move with me, baby, don’t let go",
+      "section": "Chorus",
+      "t": 71.85
     },
     {
-      "text": "I don't wanna stop, I just wanna drop",
-      "section": "Chorus"
+      "text": "I don’t wanna stop, I just wanna drop",
+      "section": "Chorus",
+      "t": 75.78
     },
     {
-      "text": "Sweet shock, give it to me nonstop",
-      "section": "Chorus"
+      "text": "Sweet shock, give it to me non-stop",
+      "section": "Chorus",
+      "t": 79.98
     },
     {
-      "text": "Think you run the room, baby, look at you",
-      "section": "Verse 2"
+      "text": "♪ ♪ ♪",
+      "section": "Instrumental",
+      "t": 83.86,
+      "break": true
     },
     {
-      "text": "Following my every move in all I do",
-      "section": "Verse 2"
+      "text": "Think you run the room, baby look at you",
+      "section": "Verse 2",
+      "t": 98.6
     },
     {
-      "text": "I don't have to try, I let you come to me",
-      "section": "Verse 2"
+      "text": "Following my every move in all, all I do",
+      "section": "Verse 2",
+      "t": 102.58
+    },
+    {
+      "text": "I don’t have to try, I let you come to me",
+      "section": "Verse 2",
+      "t": 106.67
     },
     {
       "text": "Watch you lose your cool the moment that you see",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 110.27
     },
     {
-      "text": "Come a little closer now, don't be shy",
-      "section": "Pre-Chorus"
+      "text": "Come a little closer now, don’t be shy",
+      "section": "Pre-Chorus",
+      "t": 115.08
     },
     {
-      "text": "One taste of this and baby, you'll know why",
-      "section": "Pre-Chorus"
+      "text": "One taste of this and baby you’ll know why",
+      "section": "Pre-Chorus",
+      "t": 122.85
     },
     {
       "text": "Sweet shock, hit me when the lights go low",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 133.28
     },
     {
-      "text": "Move with me, baby, don't let go",
-      "section": "Chorus"
+      "text": "Move with me, baby, don’t let go",
+      "section": "Chorus",
+      "t": 137.56
     },
     {
-      "text": "I don't wanna stop, I just wanna drop",
-      "section": "Chorus"
+      "text": "I don’t wanna stop, I just wanna drop",
+      "section": "Chorus",
+      "t": 141.15
     },
     {
-      "text": "Sweet shock, give it to me nonstop",
-      "section": "Chorus"
+      "text": "Sweet shock, give it to me non-stop",
+      "section": "Chorus",
+      "t": 145.31
     },
     {
-      "text": "No more playing games, baby, this is real",
-      "section": "Bridge"
+      "text": "♪ ♪ ♪",
+      "section": "Instrumental",
+      "t": 149.21,
+      "break": true
+    },
+    {
+      "text": "No more playing games, baby this is real",
+      "section": "Bridge",
+      "t": 177.72
     },
     {
       "text": "Give in to the way I make you feel",
-      "section": "Bridge"
-    },
-    {
-      "text": "[Final Chorus] (key change up to B minor)",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 181.45
     },
     {
       "text": "Sweet shock, hit me when the lights go low",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 188.78
     },
     {
-      "text": "Move with me, baby, don't let go",
-      "section": "Bridge"
+      "text": "Move with me, baby, don’t let go",
+      "section": "Bridge",
+      "t": 193.0
     },
     {
-      "text": "I don't wanna stop, I just wanna drop",
-      "section": "Bridge"
+      "text": "I don’t wanna stop, I just wanna drop",
+      "section": "Bridge",
+      "t": 196.5
     },
     {
-      "text": "Sweet shock, give it to me nonstop",
-      "section": "Bridge"
+      "text": "Sweet shock, give it to me non-stop",
+      "section": "Bridge",
+      "t": 201.09
     }
   ]
 }

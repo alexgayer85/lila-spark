@@ -1,183 +1,279 @@
 {
   "title": "Hold Me in the Middle",
   "durationHint": 218,
-  "timed": false,
+  "timed": true,
   "lines": [
     {
       "text": "I saw a stranger’s hands today",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 10.31
     },
     {
       "text": "And something in me slipped away",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 15.76
     },
     {
       "text": "Suddenly I’m five years old again",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 21.54
     },
     {
       "text": "Swinging hard between the two of them",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 26.89
     },
     {
       "text": "They’d lift me like the world was light",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 32.99
     },
     {
       "text": "Laughing while the sidewalk blurred",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 39.08
     },
     {
       "text": "I never knew that kind of height",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 44.39
     },
     {
       "text": "Could leave a mark that still endures",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 47.13
     },
     {
       "text": "Hold me in the middle",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 51.77
     },
     {
       "text": "One hand left and one hand right",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 54.72
     },
     {
       "text": "Hold me in the middle",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 57.56
     },
     {
       "text": "Don’t let go just yet tonight",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 60.32
     },
     {
       "text": "I’d give anything to feel that safe",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 62.91
     },
     {
       "text": "To be that small and free",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 65.87
     },
     {
       "text": "Hold me in the middle",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 68.89
     },
     {
       "text": "One more time for me",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 71.85
+    },
+    {
+      "text": "♪ ♪ ♪",
+      "section": "Instrumental",
+      "t": 74.08,
+      "break": true
     },
     {
       "text": "Now their hands are only memories",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 84.25
     },
     {
       "text": "Faded photos on the shelf",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 89.77
     },
     {
       "text": "I still reach for what I used to need",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 95.68
     },
     {
       "text": "And find I’m holding only myself",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 100.92
     },
     {
       "text": "Hold me in the middle",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 108.89
     },
     {
       "text": "One hand left and one hand right",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 111.86
     },
     {
       "text": "Hold me in the middle",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 114.66
     },
     {
       "text": "Don’t let go just yet tonight",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 117.48
     },
     {
       "text": "I’d give anything to feel that safe",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 119.92
     },
     {
       "text": "To be that small and free",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 122.99
     },
     {
       "text": "Hold me in the middle",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 126.03
     },
     {
       "text": "One more time for me",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 128.99
     },
     {
       "text": "I’m tired of being the strong one",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 131.44
     },
     {
       "text": "Tired of saying that I’m fine",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 134.24
     },
     {
       "text": "Some nights I still want to be carried",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 137.12
     },
     {
       "text": "Want someone else’s hands in mine",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 139.99
     },
     {
       "text": "I don’t need the whole world fixed",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 142.65
     },
     {
       "text": "I just want to feel that small again",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 145.45
     },
     {
       "text": "Just for a minute…",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 153.34
     },
     {
       "text": "Just for a minute",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 159.09
     },
     {
       "text": "Hold me in the middle",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 166.07
     },
     {
       "text": "One hand left and one hand right",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 169.0
     },
     {
       "text": "Hold me in the middle",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 171.82
     },
     {
       "text": "Don’t let go just yet tonight",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 174.62
     },
     {
       "text": "I’d give anything to feel that safe",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 177.06
     },
     {
       "text": "To be that small and free",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 180.13
     },
     {
       "text": "Hold me in the middle",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 183.13
     },
     {
       "text": "One more time for me",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 186.13
+    },
+    {
+      "text": "♪ ♪ ♪",
+      "section": "Instrumental",
+      "t": 188.35,
+      "break": true
+    },
+    {
+      "text": "Hold me in the middle",
+      "section": "Final Chorus",
+      "t": 211.78
+    },
+    {
+      "text": "One hand left and one hand right",
+      "section": "Final Chorus",
+      "t": 214.72
+    },
+    {
+      "text": "Hold me in the middle",
+      "section": "Final Chorus",
+      "t": 217.53
+    },
+    {
+      "text": "Don’t let go just yet tonight",
+      "section": "Final Chorus",
+      "t": 220.33
+    },
+    {
+      "text": "I’d give anything to feel that safe",
+      "section": "Final Chorus",
+      "t": 222.73
+    },
+    {
+      "text": "To be that small and free",
+      "section": "Final Chorus",
+      "t": 225.85
+    },
+    {
+      "text": "Hold me in the middle",
+      "section": "Final Chorus",
+      "t": 228.9
+    },
+    {
+      "text": "One more time for me",
+      "section": "Final Chorus",
+      "t": 231.84
     }
   ]
 }

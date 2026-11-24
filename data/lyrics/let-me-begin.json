@@ -1,119 +1,159 @@
 {
   "title": "Let Me Begin",
   "durationHint": 228,
-  "timed": false,
+  "timed": true,
   "lines": [
     {
       "text": "I see the way she touches you like she’s just passing through",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 16.5
     },
     {
       "text": "Barely even claims you when the night is almost through",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 21.06
     },
     {
       "text": "She don’t pull you closer, doesn’t take her time",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 25.75
     },
     {
       "text": "I’m the one who’s ready, reading every sign",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 30.19
     },
     {
       "text": "You don’t have to hide it, I already know",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 35.46
     },
     {
       "text": "There’s a hunger in you that she won’t let show",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 39.92
     },
     {
       "text": "I can love you better than she ever could",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 46.75
     },
     {
       "text": "Make you feel it deeper, give you what she should",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 51.19
     },
     {
       "text": "Let me take the wheel, baby, let me pull you in",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 55.74
     },
     {
       "text": "I can love you better — just let me begin",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 60.42
     },
     {
       "text": "She’s got the title but she’s half-asleep",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 74.1
     },
     {
       "text": "I’m wide awake and diving in the deep",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 78.72
     },
     {
       "text": "I know exactly where to put my hands",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 83.41
     },
     {
       "text": "I’m ready to begin to work my plan",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 87.85
     },
     {
       "text": "You don’t have to fight it, I already know",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 91.98
     },
     {
       "text": "There’s a fire in you that she never stoked",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 96.5
     },
     {
       "text": "I can love you better than she ever could",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 103.57
     },
     {
       "text": "Make you feel it deeper, give you what she should",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 107.67
     },
     {
       "text": "Let me take the wheel, baby, let me pull you in",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 112.38
     },
     {
       "text": "I can love you better — just let me begin",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 117.16
+    },
+    {
+      "text": "♪ ♪ ♪",
+      "section": "Instrumental",
+      "t": 123.29,
+      "break": true
     },
     {
       "text": "I’m not here to play nice, I’m not here to wait",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 139.31
     },
     {
       "text": "I’m the open door while she’s locking the gate",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 143.81
     },
     {
       "text": "One night is all it takes to cross that line",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 148.35
     },
     {
       "text": "Once you feel this body, you won’t leave it behind",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 152.94
+    },
+    {
+      "text": "♪ ♪ ♪",
+      "section": "Instrumental",
+      "t": 158.03,
+      "break": true
     },
     {
       "text": "I can love you better than she ever could",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 175.96
     },
     {
       "text": "Make you feel it deeper, give you what she should",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 180.27
     },
     {
       "text": "Let me take the wheel, baby, let me pull you in",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 184.79
     },
     {
       "text": "I can love you better — just let me begin",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 189.54
     }
   ]
 }

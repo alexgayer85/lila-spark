@@ -1,111 +1,143 @@
 {
   "title": "No Apologies",
   "durationHint": 233,
-  "timed": false,
+  "timed": true,
   "lines": [
     {
       "text": "I used to say sorry for taking up the space",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 0.54
     },
     {
       "text": "Sorry for the dreams I had written on my face",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 9.63
     },
     {
       "text": "Sorry for the fire when they wanted something tame",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 18.7
     },
     {
       "text": "But I’m done apologizing for the sound of my own name",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 27.51
     },
     {
       "text": "I’m not here to shrink or play it small",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 37.84
     },
     {
       "text": "I’m here to stand up ten feet tall",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 47.57
     },
     {
       "text": "No apologies, this is who I am",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 56.68
     },
     {
       "text": "No more shrinking to fit inside your plan",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 61.2
     },
     {
       "text": "I’m loud, I’m bright, I’m taking up the light",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 65.85
     },
     {
       "text": "No apologies — not tonight",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 70.27
     },
     {
       "text": "They told me pretty girls should keep their voices soft",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 77.32
     },
     {
       "text": "But soft never got me anywhere I wanted to get lost",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 86.37
     },
     {
       "text": "So I’m raising up the volume on the truth I’ve found",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 95.42
     },
     {
       "text": "If it makes you uncomfortable, that’s not my problem now",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 104.28
     },
     {
       "text": "I’m not here to shrink or play it small",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 114.79
     },
     {
       "text": "I’m here to stand up ten feet tall",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 124.4
     },
     {
       "text": "No apologies, this is who I am",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 133.67
     },
     {
       "text": "No more shrinking to fit inside your plan",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 138.2
     },
     {
       "text": "I’m loud, I’m bright, I’m taking up the light",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 142.84
     },
     {
       "text": "No apologies — not tonight",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 147.33
+    },
+    {
+      "text": "♪ ♪ ♪",
+      "section": "Instrumental",
+      "t": 151.99,
+      "break": true
     },
     {
       "text": "I’m not angry, I’m just finally awake",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 160.9
     },
     {
       "text": "And I’m not going back to sleeping through my own mistakes",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 164.54
     },
     {
       "text": "No apologies, this is who I am",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 174.43
     },
     {
       "text": "No more shrinking to fit inside your plan",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 178.96
     },
     {
       "text": "I’m loud, I’m bright, I’m taking up the light",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 183.56
     },
     {
       "text": "No apologies — and I’m doing it right",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 188.03
     }
   ]
 }
