@@ -1,70 +1,77 @@
 {
   "title": "Old Enough",
-  "durationHint": null,
+  "durationHint": 154,
   "timed": true,
   "lines": [
     {
-      "text": "They say I'm young, don't understand,",
-      "section": "Verse 1"
+      "text": "They say I’m young, don’t understand,",
+      "section": "Verse 1",
+      "t": 1.36
     },
     {
       "text": "But feelings run deep, across the land.",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 5.65
     },
     {
       "text": "Judgments come, but I stand tall,",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 10.17
     },
     {
-      "text": "Ready to answer love's call.",
-      "section": "Verse 1"
+      "text": "Ready to answer love’s call.",
+      "section": "Verse 1",
+      "t": 14.2
     },
     {
       "text": "Age is just a number, heart knows best,",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 18.32
     },
     {
       "text": "Put me to the test.",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 22.5
     },
     {
-      "text": "Old enough to know what's real,",
+      "text": "Old enough to know what’s real,",
       "section": "Chorus",
-      "t": 25.8
+      "t": 26.89
     },
     {
       "text": "Old enough to feel the deal.",
       "section": "Chorus",
-      "t": 29.74
+      "t": 31.17
     },
     {
       "text": "Not too young, hear my voice,",
       "section": "Chorus",
-      "t": 33.78
+      "t": 35.38
     },
     {
       "text": "Old enough, my choice.",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 38.72
     },
     {
       "text": "Lessons learned from every fall,",
       "section": "Verse 2",
-      "t": 47.82
+      "t": 48.75
     },
     {
       "text": "Rising up, breaking the wall.",
       "section": "Verse 2",
-      "t": 52.1
+      "t": 52.55
     },
     {
-      "text": "Dreams are big, won't hold back,",
+      "text": "Dreams are big, won’t hold back,",
       "section": "Verse 2",
-      "t": 56.66
+      "t": 57.34
     },
     {
       "text": "On this track, no turning back.",
       "section": "Verse 2",
-      "t": 60.62
+      "t": 61.18
     },
     {
       "text": "Fire inside, burning bright,",
@@ -77,50 +84,60 @@
       "t": 69.13
     },
     {
-      "text": "Old enough to know what's real,",
+      "text": "Old enough to know what’s real,",
       "section": "Chorus",
-      "t": 73.3
+      "t": 74.06
     },
     {
       "text": "Old enough to feel the deal.",
       "section": "Chorus",
-      "t": 76.9
+      "t": 78.34
     },
     {
       "text": "Not too young, hear my voice,",
       "section": "Chorus",
-      "t": 80.92
+      "t": 82.49
     },
     {
       "text": "Old enough, my choice.",
-      "section": "Chorus"
+      "section": "Chorus",
+      "t": 85.85
+    },
+    {
+      "text": "♪ ♪ ♪",
+      "section": "Instrumental",
+      "t": 91.21,
+      "break": true
     },
     {
       "text": "Doubts fade away, I believe,",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 107.99
     },
     {
       "text": "Achieve what I conceive.",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 113.36
     },
     {
-      "text": "Old enough to know what's real,",
+      "text": "Old enough to know what’s real,",
       "section": "Final Chorus",
-      "t": 25.8
+      "t": 119.05
     },
     {
       "text": "Old enough to feel the deal.",
       "section": "Final Chorus",
-      "t": 122.48
+      "t": 123.33
     },
     {
       "text": "Not too young, hear my voice,",
       "section": "Final Chorus",
-      "t": 125.9
+      "t": 127.51
     },
     {
       "text": "Old enough, rejoice.",
-      "section": "Final Chorus"
+      "section": "Final Chorus",
+      "t": 130.84
     }
   ]
 }

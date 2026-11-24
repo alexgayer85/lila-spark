@@ -1,27 +1,32 @@
 {
   "title": "Sweet Crush",
-  "durationHint": null,
+  "durationHint": 234,
   "timed": true,
   "lines": [
     {
       "text": "Walking down the street, I catch you in my eye",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 19.72
     },
     {
-      "text": "Heart starts racing, don’t know how or why",
-      "section": "Verse 1"
+      "text": "Heart skips a beat, can’t even say why",
+      "section": "Verse 1",
+      "t": 24.43
     },
     {
-      "text": "Your smile hits me like warm sunshine",
-      "section": "Verse 1"
+      "text": "Your smile’s like sunshine, melting me away",
+      "section": "Verse 1",
+      "t": 29.23
     },
     {
-      "text": "Got me daydreaming all the time",
-      "section": "Verse 1"
+      "text": "Got me daydreaming all through the day",
+      "section": "Verse 1",
+      "t": 33.91
     },
     {
-      "text": "Butterflies are dancing, feelings feel so new",
-      "section": "Pre-Chorus"
+      "text": "Butterflies dancing, feeling so new",
+      "section": "Pre-Chorus",
+      "t": 39.28
     },
     {
       "text": "Wonder if you notice what I’m going through",
@@ -29,63 +34,86 @@
       "t": 43.14
     },
     {
-      "text": "Sweet crush, yeah you got me hooked",
-      "section": "Chorus"
-    },
-    {
-      "text": "Like candy on my lips, can’t get enough",
+      "text": "Sweet, sweet crush, oh, it’s got me hooked",
       "section": "Chorus",
-      "t": 109.04
+      "t": 48.11
     },
     {
-      "text": "You’re the flavor that I crave every day",
-      "section": "Chorus"
+      "text": "Like candy on my lips, can’t overlook",
+      "section": "Chorus",
+      "t": 52.35
     },
     {
-      "text": "Sweet crush, won’t you come my way",
-      "section": "Chorus"
+      "text": "You’re the flavor I crave, oh, I crave night and day",
+      "section": "Chorus",
+      "t": 57.12
     },
     {
-      "text": "Notes in my locker, whispers in the hall",
+      "text": "Sweet crush, sweet crush, come my way",
+      "section": "Chorus",
+      "t": 61.78
+    },
+    {
+      "text": "♪ ♪ ♪",
+      "section": "Instrumental",
+      "t": 66.89,
+      "break": true
+    },
+    {
+      "text": "Notes in my locker, whispers in class",
       "section": "Verse 2",
-      "t": 75.96
+      "t": 76.7
     },
     {
-      "text": "Hoping this feeling never fades at all",
-      "section": "Verse 2"
+      "text": "Hoping this feeling will forever last",
+      "section": "Verse 2",
+      "t": 81.46
     },
     {
-      "text": "Eyes meet across the room, the spark ignites",
-      "section": "Verse 2"
+      "text": "Eyes meet across the room, spark ignites",
+      "section": "Verse 2",
+      "t": 86.31
     },
     {
-      "text": "You turn my ordinary days so right",
-      "section": "Verse 2"
+      "text": "Turning ordinary into something right",
+      "section": "Verse 2",
+      "t": 90.91
     },
     {
-      "text": "Pulse is racing fast, can’t hide the thrill",
-      "section": "Pre-Chorus"
+      "text": "Pulse is racing, can’t hide the thrill",
+      "section": "Pre-Chorus",
+      "t": 96.34
     },
     {
-      "text": "This feeling’s real, got me standing still",
-      "section": "Pre-Chorus"
+      "text": "This emotion’s real, got me standing still",
+      "section": "Pre-Chorus",
+      "t": 100.44
     },
     {
-      "text": "Sweet crush, yeah you got me hooked",
-      "section": "Chorus"
-    },
-    {
-      "text": "Like candy on my lips, can’t get enough",
+      "text": "Sweet, sweet crush, oh, it’s got me hooked",
       "section": "Chorus",
-      "t": 175.58
+      "t": 105.17
     },
     {
-      "text": "You’re the flavor that I crave every day",
-      "section": "Chorus"
+      "text": "Like candy on my lips, can’t overlook",
+      "section": "Chorus",
+      "t": 109.45
     },
     {
-      "text": "Sweet crush, won’t you come my way",
-      "section": "Chorus"
+      "text": "You’re the flavor I crave, oh, I crave night and day",
+      "section": "Chorus",
+      "t": 114.12
+    },
+    {
+      "text": "Sweet crush, sweet crush, come my way",
+      "section": "Chorus",
+      "t": 118.84
+    },
+    {
+      "text": "♪ ♪ ♪",
+      "section": "Instrumental",
+      "t": 123.97,
+      "break": true
     },
     {
       "text": "Maybe someday you’ll see me too",
@@ -93,25 +121,55 @@
       "t": 152.52
     },
     {
-      "text": "Turn this little dream into something true",
-      "section": "Bridge"
+      "text": "Turn this dream into something true",
+      "section": "Bridge",
+      "t": 157.46
     },
     {
-      "text": "Sweet crush, yeah you got me hooked",
-      "section": "Final Chorus"
+      "text": "♪ ♪ ♪",
+      "section": "Instrumental",
+      "t": 161.99,
+      "break": true
     },
     {
-      "text": "Like candy on my lips, can’t get enough",
+      "text": "Sweet, sweet crush, oh, it’s got me hooked",
       "section": "Final Chorus",
-      "t": 194.62
+      "t": 171.72
     },
     {
-      "text": "You’re the flavor that I crave night and day",
-      "section": "Final Chorus"
+      "text": "Like candy on my lips, can’t overlook",
+      "section": "Final Chorus",
+      "t": 176.06
     },
     {
-      "text": "Sweet crush, please just stay",
-      "section": "Final Chorus"
+      "text": "You’re the flavor I crave, oh, I crave night and day",
+      "section": "Final Chorus",
+      "t": 180.69
+    },
+    {
+      "text": "Sweet crush, sweet crush, forever stay",
+      "section": "Final Chorus",
+      "t": 185.35
+    },
+    {
+      "text": "Sweet, sweet crush, oh, it’s got me hooked",
+      "section": "Final Chorus",
+      "t": 190.74
+    },
+    {
+      "text": "Like candy on my lips, can’t overlook",
+      "section": "Final Chorus",
+      "t": 195.12
+    },
+    {
+      "text": "You’re the flavor I crave, oh, I crave night and day",
+      "section": "Final Chorus",
+      "t": 199.72
+    },
+    {
+      "text": "Sweet crush, sweet crush, forever stay",
+      "section": "Final Chorus",
+      "t": 204.35
     }
   ]
 }

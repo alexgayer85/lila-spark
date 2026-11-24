@@ -1,32 +1,32 @@
 {
   "title": "Stop the Hurt (Reprise)",
-  "durationHint": null,
+  "durationHint": 30,
   "timed": true,
   "lines": [
     {
       "text": "Stop the hurt, one final time,",
       "section": "Verse",
-      "t": 7.88
+      "t": 8.63
     },
     {
       "text": "Healing now, feeling fine.",
       "section": "Verse",
-      "t": 11.72
+      "t": 13.05
     },
     {
-      "text": "No more tears, strength I've found,",
+      "text": "No more tears, strength I’ve found,",
       "section": "Verse",
       "t": 17.26
     },
     {
       "text": "Moving on, safe and sound.",
       "section": "Verse",
-      "t": 20.7
+      "t": 21.72
     },
     {
       "text": "Goodbye...",
       "section": "Outro",
-      "t": 26.22
+      "t": 25.84
     }
   ]
 }

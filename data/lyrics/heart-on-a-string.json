@@ -1,6 +1,6 @@
 {
   "title": "Heart on a String",
-  "durationHint": null,
+  "durationHint": 202,
   "timed": true,
   "lines": [
     {
@@ -9,24 +9,24 @@
       "t": 17.66
     },
     {
-      "text": "One smile and I'm flying, one look and I land",
+      "text": "One smile and I’m flying, one look and I land",
       "section": "Verse 1",
-      "t": 21.26
+      "t": 21.7
     },
     {
-      "text": "Can't help but laugh at how you pull me close",
+      "text": "Can’t help but laugh at how you pull me close",
       "section": "Verse 1",
       "t": 26.34
     },
     {
-      "text": "This game we're playing, baby, I love it the most",
+      "text": "This game we’re playing, baby, I love it the most",
       "section": "Verse 1",
       "t": 30.8
     },
     {
       "text": "You tug a little and my heart starts to sing",
       "section": "Pre-Chorus",
-      "t": 35.94
+      "t": 36.42
     },
     {
       "text": "Got me wrapped around your finger on a string",
@@ -61,7 +61,7 @@
     {
       "text": "Oh-oh-oh",
       "section": "Post-Chorus",
-      "t": 63.84
+      "t": 65.4
     },
     {
       "text": "Ooh-ooh-ooh-ooh-ooh-ooh",
@@ -71,62 +71,62 @@
     {
       "text": "Oh-oh-oh",
       "section": "Post-Chorus",
-      "t": 68.2
+      "t": 69.87
     },
     {
       "text": "Ooh-ooh-ooh-ooh-ooh-ooh",
       "section": "Post-Chorus",
-      "t": 70.78
+      "t": 71.18
     },
     {
       "text": "Oh-oh-oh",
       "section": "Post-Chorus",
-      "t": 72.08
+      "t": 74.27
     },
     {
       "text": "Ooh-ooh-ooh-ooh-ooh-ooh",
       "section": "Post-Chorus",
-      "t": 74.82
+      "t": 75.5
     },
     {
       "text": "Oh-oh-oh",
       "section": "Post-Chorus",
-      "t": 76.73
+      "t": 78.42
     },
     {
       "text": "We tease and we laugh, never taking it too far",
       "section": "Verse 2",
-      "t": 78.7
+      "t": 79.81
     },
     {
       "text": "Every little moment feels like shooting stars",
       "section": "Verse 2",
-      "t": 83.48
+      "t": 83.93
     },
     {
       "text": "You keep me guessing, keep me on my toes",
       "section": "Verse 2",
-      "t": 87.36
+      "t": 87.72
     },
     {
       "text": "But deep down I know exactly where this goes",
       "section": "Verse 2",
-      "t": 91.3
+      "t": 92.04
     },
     {
       "text": "You tug a little and my heart starts to sing",
       "section": "Pre-Chorus",
-      "t": 96.96
+      "t": 97.51
     },
     {
       "text": "Got me wrapped around your finger on a string",
       "section": "Pre-Chorus",
-      "t": 101.08
+      "t": 101.83
     },
     {
       "text": "Heart on a string, you know just what to do",
       "section": "Chorus",
-      "t": 105.26
+      "t": 105.9
     },
     {
       "text": "Pull me in, let me go, I keep coming back to you",
@@ -141,47 +141,47 @@
     {
       "text": "Heart on a string and it feels so fine",
       "section": "Chorus",
-      "t": 118.36
+      "t": 118.77
     },
     {
       "text": "Ooh-ooh-ooh-ooh-ooh-ooh",
       "section": "Post-Chorus",
-      "t": 122.78
+      "t": 123.4
     },
     {
       "text": "Oh-oh-oh",
       "section": "Post-Chorus",
-      "t": 125.26
+      "t": 126.68
     },
     {
       "text": "Ooh-ooh-ooh-ooh-ooh-ooh",
       "section": "Post-Chorus",
-      "t": 127.27
+      "t": 127.75
     },
     {
       "text": "Oh-oh-oh",
       "section": "Post-Chorus",
-      "t": 129.67
+      "t": 130.84
     },
     {
       "text": "Ooh-ooh-ooh-ooh-ooh-ooh",
       "section": "Post-Chorus",
-      "t": 131.61
+      "t": 132.12
     },
     {
       "text": "Oh-oh-oh",
       "section": "Post-Chorus",
-      "t": 133.99
+      "t": 135.2
     },
     {
       "text": "Ooh-ooh-ooh-ooh-ooh-ooh",
       "section": "Post-Chorus",
-      "t": 135.88
+      "t": 136.85
     },
     {
       "text": "Oh-oh-oh",
       "section": "Post-Chorus",
-      "t": 138.39
+      "t": 139.48
     },
     {
       "text": "Pull it, baby, yeah",
@@ -191,22 +191,22 @@
     {
       "text": "Oh-oh-oh",
       "section": "Bridge",
-      "t": 149.05
+      "t": 148.54
     },
     {
       "text": "Oh-oh-oh",
       "section": "Bridge",
-      "t": 153.4
+      "t": 152.76
     },
     {
       "text": "Oh-oh-oh",
       "section": "Bridge",
-      "t": 155.82
+      "t": 157.02
     },
     {
       "text": "Heart on a string, you know just what to do",
       "section": "Final Chorus",
-      "t": 158.0
+      "t": 158.47
     },
     {
       "text": "Pull me in, let me go, I keep coming back to you",
@@ -216,7 +216,7 @@
     {
       "text": "Dancing on this feeling, never wanna cut the line",
       "section": "Final Chorus",
-      "t": 166.44
+      "t": 166.74
     },
     {
       "text": "Heart on a string and it feels so fine",
@@ -226,52 +226,52 @@
     {
       "text": "Ooh-ooh-ooh-ooh-ooh-ooh",
       "section": "Outro",
-      "t": 174.83
+      "t": 176.11
     },
     {
       "text": "Oh-oh-oh",
       "section": "Outro",
-      "t": 177.55
+      "t": 178.84
     },
     {
       "text": "Ooh-ooh-ooh-ooh-ooh-ooh",
       "section": "Outro",
-      "t": 179.63
+      "t": 180.14
     },
     {
       "text": "Oh-oh-oh",
       "section": "Outro",
-      "t": 182.0
+      "t": 183.12
     },
     {
       "text": "Ooh-ooh-ooh-ooh-ooh-ooh",
       "section": "Outro",
-      "t": 183.89
+      "t": 184.66
     },
     {
       "text": "Oh-oh-oh",
       "section": "Outro",
-      "t": 185.24
+      "t": 187.53
     },
     {
       "text": "Ooh-ooh-ooh-ooh-ooh-ooh",
       "section": "Outro",
-      "t": 186.37
+      "t": 188.97
     },
     {
       "text": "Oh-oh-oh",
       "section": "Outro",
-      "t": 188.35
+      "t": 191.91
     },
     {
       "text": "Pull it, baby, yeah",
       "section": "Outro",
-      "t": 198.42
+      "t": 197.82
     },
     {
       "text": "Oh-oh-oh",
       "section": "Outro",
-      "t": 199.48
+      "t": 200.76
     }
   ]
 }

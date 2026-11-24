@@ -1,6 +1,6 @@
 {
   "title": "What I Need",
-  "durationHint": null,
+  "durationHint": 220,
   "timed": true,
   "lines": [
     {
@@ -9,129 +9,141 @@
       "t": 10.04
     },
     {
-      "text": "Wondering if you'll ever hold me tight",
+      "text": "Wondering if you’ll ever hold me tight",
       "section": "Verse 1",
       "t": 14.4
     },
     {
-      "text": "I've got questions, need to hear your voice",
+      "text": "I’ve got questions, need to hear your voice",
       "section": "Verse 1",
-      "t": 19.1
+      "t": 19.48
     },
     {
       "text": "Tell me now, make the right choice",
       "section": "Verse 1",
-      "t": 23.64
+      "t": 24.24
     },
     {
       "text": "No, no more waiting in the dark",
       "section": "Pre-Chorus",
-      "t": 28.7
+      "t": 28.29
     },
     {
       "text": "Light a spark, hit the mark",
       "section": "Pre-Chorus",
-      "t": 32.56
+      "t": 32.89
     },
     {
       "text": "This is what I need, your love so true",
       "section": "Chorus",
-      "t": 40.62
+      "t": 41.46
     },
     {
       "text": "Wrap me up, see me through",
       "section": "Chorus",
-      "t": 46.04
+      "t": 46.58
     },
     {
       "text": "No games, no lies, just you and me",
       "section": "Chorus",
-      "t": 50.58
+      "t": 51.17
     },
     {
       "text": "What I need, set my heart free",
       "section": "Chorus",
-      "t": 55.48
+      "t": 56.19
+    },
+    {
+      "text": "♪ ♪ ♪",
+      "section": "Instrumental",
+      "t": 60.5,
+      "break": true
     },
     {
       "text": "Friends say be patient, but time flies fast",
       "section": "Verse 2",
-      "t": 66.84
+      "t": 73.99
     },
     {
       "text": "Want your affection, make it last",
       "section": "Verse 2",
-      "t": 78.2
+      "t": 78.59
     },
     {
       "text": "Eyes locked, feelings overflow",
       "section": "Verse 2",
-      "t": 82.76
+      "t": 83.28
     },
     {
       "text": "Deep inside, I already know",
       "section": "Verse 2",
-      "t": 87.32
+      "t": 87.72
     },
     {
       "text": "Build, building tension, ready to break",
       "section": "Pre-Chorus",
-      "t": 91.85
+      "t": 92.31
     },
     {
-      "text": "For heaven's sake, no more fake",
+      "text": "For heaven’s sake, no more fake",
       "section": "Pre-Chorus",
-      "t": 96.38
+      "t": 96.85
     },
     {
       "text": "This is what I need, your love so true",
       "section": "Chorus",
-      "t": 104.7
+      "t": 105.46
     },
     {
       "text": "Wrap me up, see me through",
       "section": "Chorus",
-      "t": 110.04
+      "t": 110.58
     },
     {
       "text": "No games, no lies, just you and me",
       "section": "Chorus",
-      "t": 114.62
+      "t": 115.17
     },
     {
       "text": "What I need, set my heart free",
       "section": "Chorus",
-      "t": 119.62
+      "t": 120.08
+    },
+    {
+      "text": "♪ ♪ ♪",
+      "section": "Instrumental",
+      "t": 124.52,
+      "break": true
     },
     {
       "text": "One chance to make it right",
       "section": "Bridge",
-      "t": 155.2
+      "t": 156.41
     },
     {
       "text": "Hold on through the night",
       "section": "Bridge",
-      "t": 160.26
+      "t": 160.85
     },
     {
       "text": "This is what I need, your love so true",
       "section": "Final Chorus",
-      "t": 173.52
+      "t": 173.98
     },
     {
       "text": "Wrap me up, see me through",
       "section": "Final Chorus",
-      "t": 178.38
+      "t": 179.15
     },
     {
       "text": "No games, no lies, just you and me",
       "section": "Final Chorus",
-      "t": 183.24
+      "t": 183.71
     },
     {
       "text": "What I need, eternally",
       "section": "Final Chorus",
-      "t": 188.02
+      "t": 188.86
     }
   ]
 }

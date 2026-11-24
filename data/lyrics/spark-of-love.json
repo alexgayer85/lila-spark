@@ -1,116 +1,144 @@
 {
   "title": "Spark of Love",
-  "durationHint": null,
+  "durationHint": 260,
   "timed": true,
   "lines": [
     {
-      "text": "Feel the electricity when you're near,",
+      "text": "Feel the electricity when you’re near",
       "section": "Verse 1",
-      "t": 21.14
+      "t": 22.56
     },
     {
-      "text": "Igniting fires, crystal clear.",
+      "text": "Igniting fires, crystal clear",
       "section": "Verse 1",
-      "t": 32.1
+      "t": 32.57
     },
     {
-      "text": "Sends shivers down my spine,",
-      "section": "Verse 1"
-    },
-    {
-      "text": "This moment, yours and mine.",
+      "text": "Sends shivers down my spine",
       "section": "Verse 1",
-      "t": 51.42
+      "t": 42.54
     },
     {
-      "text": "Pulse quickens, can't deny,",
+      "text": "This moment, yours and mine",
+      "section": "Verse 1",
+      "t": 52.65
+    },
+    {
+      "text": "Pulse quickens, can’t deny",
       "section": "Pre-Chorus",
-      "t": 59.82
+      "t": 60.56
     },
     {
-      "text": "Under the sky, you and I.",
+      "text": "Under the sky, you and I",
       "section": "Pre-Chorus",
-      "t": 64.56
+      "t": 65.06
     },
     {
-      "text": "Spark of love, lighting up the dark,",
+      "text": "Spark of love, (love) lighting up the dark",
       "section": "Chorus",
-      "t": 69.42
+      "t": 69.99
     },
     {
-      "text": "Hit my heart, leave your mark.",
+      "text": "Hit my heart, leave your mark",
       "section": "Chorus",
-      "t": 145.54
+      "t": 75.13
     },
     {
-      "text": "Burning strong, day and night,",
+      "text": "Burning strong, (strong) day and night",
       "section": "Chorus",
-      "t": 79.84
+      "t": 80.16
     },
     {
-      "text": "Spark of love, feels so right.",
-      "section": "Chorus"
+      "text": "Spark of love, love feels so right",
+      "section": "Chorus",
+      "t": 85.14
     },
     {
-      "text": "Secrets shared in hushed tones,",
-      "section": "Verse 2"
+      "text": "♪ ♪ ♪",
+      "section": "Instrumental",
+      "t": 90.51,
+      "break": true
     },
     {
-      "text": "Eyes speak volumes, no words needed,",
-      "section": "Verse 2"
-    },
-    {
-      "text": "This flame's seeded.",
+      "text": "Secrets shared in hushed tones",
       "section": "Verse 2",
-      "t": 124.54
+      "t": 102.9
     },
     {
-      "text": "Heat rises, passions flow,",
+      "text": "Building bonds, never alone",
+      "section": "Verse 2",
+      "t": 112.99
+    },
+    {
+      "text": "Eyes speak volumes, no words needed",
+      "section": "Verse 2",
+      "t": 120.38
+    },
+    {
+      "text": "This flame’s seeded",
+      "section": "Verse 2",
+      "t": 125.94
+    },
+    {
+      "text": "Heat rises, passions flow",
       "section": "Pre-Chorus",
-      "t": 129.54
+      "t": 130.97
     },
     {
-      "text": "Let it grow.",
+      "text": "Let it grow, let it grow",
       "section": "Pre-Chorus",
-      "t": 135.36
+      "t": 136.07
     },
     {
-      "text": "Spark of love, lighting up the dark,",
+      "text": "Spark of love, (love) lighting up the dark",
       "section": "Chorus",
-      "t": 69.42
+      "t": 140.72
     },
     {
-      "text": "Hit my heart, leave your mark.",
+      "text": "Hit my heart, leave your mark",
       "section": "Chorus",
-      "t": 145.54
+      "t": 145.84
     },
     {
-      "text": "Burning strong, day and night,",
+      "text": "Burning strong, (strong) day and night",
       "section": "Chorus",
-      "t": 79.84
+      "t": 150.93
     },
     {
-      "text": "Spark of love, feels so right.",
-      "section": "Chorus"
+      "text": "Spark of love, love feels so right",
+      "section": "Chorus",
+      "t": 155.87
     },
     {
-      "text": "Spark of love, lighting up the dark,",
+      "text": "♪ ♪ ♪",
+      "section": "Instrumental",
+      "t": 165.76,
+      "break": true
+    },
+    {
+      "text": "Spark of love",
+      "section": "Chorus",
+      "t": 204.14
+    },
+    {
+      "text": "Spark of love, (love) lighting up the dark",
       "section": "Final Chorus",
-      "t": 69.42
+      "t": 213.99
     },
     {
-      "text": "Hit my heart, leave your mark.",
+      "text": "Hit my heart, leave your mark",
       "section": "Final Chorus",
-      "t": 145.54
+      "t": 219.13
     },
     {
-      "text": "Burning strong, day and night,",
+      "text": "Burning strong, (strong) day and night",
       "section": "Final Chorus",
-      "t": 79.84
+      "t": 224.14
     },
     {
-      "text": "Spark of love, feels so right.",
-      "section": "Final Chorus"
+      "text": "Spark of love, love feels so right",
+      "section": "Final Chorus",
+      "t": 229.16
     }
   ]
 }

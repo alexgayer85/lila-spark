@@ -1,41 +1,45 @@
 {
   "title": "Stop the Hurt",
-  "durationHint": null,
+  "durationHint": 228,
   "timed": true,
   "lines": [
     {
       "text": "Tears on my pillow, nights feeling blue,",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 36.28
     },
     {
       "text": "You keep playing games, what am I to do?",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 39.88
     },
     {
       "text": "Promises shattered like glass on the floor,",
-      "section": "Verse 1"
+      "section": "Verse 1",
+      "t": 45.05
     },
     {
-      "text": "Can't take this pain anymore.",
+      "text": "Can’t take this pain anymore.",
       "section": "Verse 1",
       "t": 49.14
     },
     {
       "text": "Time to stand up, wipe away the rain,",
       "section": "Pre-Chorus",
-      "t": 52.82
+      "t": 53.28
     },
     {
       "text": "No more chains, break the strain.",
-      "section": "Pre-Chorus"
+      "section": "Pre-Chorus",
+      "t": 58.96
     },
     {
       "text": "Stop the hurt, let me go,",
       "section": "Chorus",
-      "t": 70.44
+      "t": 71.47
     },
     {
-      "text": "Heart's been broken, now you know.",
+      "text": "Heart’s been broken, now you know.",
       "section": "Chorus",
       "t": 75.6
     },
@@ -47,43 +51,59 @@
     {
       "text": "Stop the hurt, turn out the lights.",
       "section": "Chorus",
-      "t": 84.24
+      "t": 84.55
+    },
+    {
+      "text": "♪ ♪ ♪",
+      "section": "Instrumental",
+      "t": 91.97,
+      "break": true
     },
     {
       "text": "Memories fade, but scars remain,",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 108.33
     },
     {
       "text": "Learning to dance in the pouring rain.",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 112.73
     },
     {
-      "text": "Won't let you pull me down low,",
-      "section": "Verse 2"
+      "text": "Won’t let you pull me down low,",
+      "section": "Verse 2",
+      "t": 117.08
     },
     {
       "text": "Rising up, stealing the show.",
-      "section": "Verse 2"
+      "section": "Verse 2",
+      "t": 121.75
     },
     {
       "text": "Strength inside, ready to fly,",
       "section": "Pre-Chorus",
-      "t": 125.32
+      "t": 125.69
     },
     {
       "text": "Say goodbye, no more cry.",
       "section": "Pre-Chorus",
-      "t": 130.44
+      "t": 130.93
+    },
+    {
+      "text": "♪ ♪ ♪",
+      "section": "Instrumental",
+      "t": 134.66,
+      "break": true
     },
     {
       "text": "Stop the hurt, let me go,",
       "section": "Chorus",
-      "t": 142.98
+      "t": 143.47
     },
     {
-      "text": "Heart's been broken, now you know.",
+      "text": "Heart’s been broken, now you know.",
       "section": "Chorus",
-      "t": 147.5
+      "t": 147.87
     },
     {
       "text": "No more lies, no more fights,",
@@ -96,28 +116,35 @@
       "t": 156.44
     },
     {
-      "text": "One last look, then I'm gone,",
+      "text": "♪ ♪ ♪",
+      "section": "Instrumental",
+      "t": 161.08,
+      "break": true
+    },
+    {
+      "text": "One last look, then I’m gone,",
       "section": "Bridge",
-      "t": 179.58
+      "t": 180.69
     },
     {
       "text": "New dawn, moving on.",
-      "section": "Bridge"
+      "section": "Bridge",
+      "t": 185.81
     },
     {
       "text": "Stop the hurt, let me go,",
       "section": "Final Chorus",
-      "t": 195.32
+      "t": 195.78
     },
     {
-      "text": "Heart's been broken, now you know.",
+      "text": "Heart’s been broken, now you know.",
       "section": "Final Chorus",
-      "t": 75.6
+      "t": 200.25
     },
     {
       "text": "No more lies, no more fights,",
       "section": "Final Chorus",
-      "t": 80.8
+      "t": 205.15
     },
     {
       "text": "Stop the hurt, embrace the nights.",

@@ -1,38 +1,32 @@
 {
   "title": "Key to My Heart",
-  "durationHint": null,
+  "durationHint": 207,
   "timed": true,
   "lines": [
     {
-      "text": "♪ ♪ ♪",
-      "section": "Intro",
-      "t": 0,
-      "break": true
-    },
-    {
-      "text": "You got the touch that opens me wide",
+      "text": "You’ve got the touch that opens me wide",
       "section": "Verse 1",
-      "t": 22.92
+      "t": 23.39
     },
     {
       "text": "No more secrets, nothing to hide",
       "section": "Verse 1",
-      "t": 28.22
+      "t": 28.55
     },
     {
       "text": "Whispers in the wind, calling your name",
       "section": "Verse 1",
-      "t": 33.4
+      "t": 33.73
     },
     {
-      "text": "This connection, it's not a game",
+      "text": "This connection, it’s not a game",
       "section": "Verse 1",
       "t": 39.02
     },
     {
       "text": "Unlock the door, step inside",
       "section": "Pre-Chorus",
-      "t": 43.12
+      "t": 43.61
     },
     {
       "text": "With you, with you, I confide",
@@ -40,7 +34,7 @@
       "t": 48.87
     },
     {
-      "text": "Key to my heart, you're the one I choose",
+      "text": "Key to my heart, you’re the one I choose",
       "section": "Chorus",
       "t": 55.07
     },
@@ -50,64 +44,64 @@
       "t": 60.15
     },
     {
-      "text": "Love's treasure, safe and sound",
+      "text": "Love’s treasure, safe and sound",
       "section": "Chorus",
       "t": 65.37
     },
     {
       "text": "Key, key to my heart, all around",
       "section": "Chorus",
-      "t": 70.44
+      "t": 70.75
     },
     {
       "text": "Moments shared under moonlit skies",
       "section": "Verse 2",
-      "t": 82.22
+      "t": 82.85
     },
     {
       "text": "Your eyes reflect no goodbyes",
       "section": "Verse 2",
-      "t": 87.64
+      "t": 88.41
     },
     {
       "text": "Building dreams, hand in hand",
       "section": "Verse 2",
-      "t": 93.09
+      "t": 93.6
     },
     {
-      "text": "Together we'll make our stand",
+      "text": "Together we’ll make our stand",
       "section": "Verse 2",
-      "t": 98.92
+      "t": 99.42
     },
     {
       "text": "Feel the rhythm, hearts in sync",
       "section": "Pre-Chorus",
-      "t": 103.57
+      "t": 103.95
     },
     {
-      "text": "No need to need to think",
+      "text": "No need to, need to think",
       "section": "Pre-Chorus",
-      "t": 108.12
+      "t": 109.0
     },
     {
-      "text": "Key to my heart, you're the one I choose",
+      "text": "Key to my heart, you’re the one I choose",
       "section": "Chorus",
       "t": 114.94
     },
     {
       "text": "Hold it tight, tight, never lose",
       "section": "Chorus",
-      "t": 119.89
+      "t": 120.21
     },
     {
-      "text": "Love's treasure, safe and sound",
+      "text": "Love’s treasure, safe and sound",
       "section": "Chorus",
       "t": 125.24
     },
     {
       "text": "Key, key to my heart, all around",
       "section": "Chorus",
-      "t": 130.21
+      "t": 130.6
     },
     {
       "text": "No turning back, this is real",
@@ -120,7 +114,7 @@
       "t": 147.66
     },
     {
-      "text": "Key to my heart, you're the one I choose",
+      "text": "Key to my heart, you’re the one I choose",
       "section": "Final Chorus",
       "t": 153.98
     },
@@ -130,14 +124,14 @@
       "t": 159.01
     },
     {
-      "text": "Love's treasure, safe and sound",
+      "text": "Love’s treasure, safe and sound",
       "section": "Final Chorus",
-      "t": 164.04
+      "t": 164.47
     },
     {
       "text": "Key, key to my heart, forever bound",
       "section": "Final Chorus",
-      "t": 169.25
+      "t": 169.67
     }
   ]
 }

@@ -1,42 +1,42 @@
 {
   "title": "Choose Me Now",
-  "durationHint": null,
+  "durationHint": 224,
   "timed": true,
   "lines": [
     {
       "text": "Oh-oh-oh-oh",
       "section": "Intro",
-      "t": 18.64
+      "t": 8.06
     },
     {
       "text": "Oh-oh-oh-oh",
       "section": "Intro",
-      "t": 21.64
+      "t": 12.82
     },
     {
       "text": "Oh-oh-oh-oh",
       "section": "Intro",
-      "t": 24.64
+      "t": 17.16
     },
     {
       "text": "Oh-oh-oh-oh",
       "section": "Intro",
-      "t": 27.64
+      "t": 21.96
     },
     {
       "text": "Oh-oh-oh-oh",
       "section": "Intro",
-      "t": 30.64
+      "t": 26.42
     },
     {
       "text": "Oh-oh-oh-oh",
       "section": "Intro",
-      "t": 33.64
+      "t": 31.01
     },
     {
       "text": "In the crowd, I see you there",
       "section": "Verse 1",
-      "t": 36.64
+      "t": 37.5
     },
     {
       "text": "Wondering if you even care",
@@ -44,194 +44,194 @@
       "t": 41.78
     },
     {
-      "text": "Heart's racing, time to decide",
+      "text": "Heart’s racing, time to decide",
       "section": "Verse 1",
-      "t": 46.13
+      "t": 46.53
     },
     {
-      "text": "Don't leave me on this ride",
+      "text": "Don’t leave me on this ride",
       "section": "Verse 1",
-      "t": 50.48
+      "t": 51.15
     },
     {
       "text": "Open your eyes, see the truth",
       "section": "Pre-Chorus",
-      "t": 55.28
+      "t": 56.08
     },
     {
-      "text": "I'm right here in my youth",
+      "text": "I’m right here in my youth",
       "section": "Pre-Chorus",
       "t": 60.0
     },
     {
-      "text": "Choose me now, don't hesitate",
+      "text": "Choose me now, don’t hesitate",
       "section": "Chorus",
-      "t": 63.38
+      "t": 64.01
     },
     {
       "text": "Be the one, seal our fate",
       "section": "Chorus",
-      "t": 68.23
+      "t": 68.59
     },
     {
-      "text": "Love's waiting, take my hand",
+      "text": "Love’s waiting, take my hand",
       "section": "Chorus",
-      "t": 72.52
+      "t": 73.17
     },
     {
       "text": "Choose me now, understand",
       "section": "Chorus",
-      "t": 76.98
+      "t": 77.72
     },
     {
       "text": "Oh-oh-oh-oh",
       "section": "Post-Chorus",
-      "t": 81.56
+      "t": 85.83
     },
     {
       "text": "Oh-oh-oh-oh",
       "section": "Post-Chorus",
-      "t": 86.13
+      "t": 90.44
     },
     {
       "text": "Oh-oh-oh-oh",
       "section": "Post-Chorus",
-      "t": 90.71
+      "t": 95.06
     },
     {
       "text": "Oh-oh-oh-oh",
       "section": "Post-Chorus",
-      "t": 95.29
+      "t": 99.86
     },
     {
       "text": "Friends whisper, but I feel strong",
       "section": "Verse 2",
-      "t": 99.86
+      "t": 101.41
     },
     {
-      "text": "This connection can't be wrong",
+      "text": "This connection can’t be wrong",
       "section": "Verse 2",
-      "t": 104.44
+      "t": 105.99
     },
     {
       "text": "Step forward, make it clear",
       "section": "Verse 2",
-      "t": 108.92
+      "t": 110.51
     },
     {
       "text": "Erase all doubt and fear",
       "section": "Verse 2",
-      "t": 113.56
+      "t": 115.24
     },
     {
-      "text": "Moment's here, don't let it pass",
+      "text": "Moment’s here, don’t let it pass",
       "section": "Pre-Chorus",
-      "t": 119.46
+      "t": 120.02
     },
     {
       "text": "Make it last, break the glass",
       "section": "Pre-Chorus",
-      "t": 122.82
+      "t": 124.59
     },
     {
-      "text": "Choose me now, don't hesitate",
+      "text": "Choose me now, don’t hesitate",
       "section": "Chorus",
-      "t": 127.26
+      "t": 127.99
     },
     {
       "text": "Be the one, seal our fate",
       "section": "Chorus",
-      "t": 131.34
+      "t": 132.6
     },
     {
-      "text": "Love's waiting, take my hand",
+      "text": "Love’s waiting, take my hand",
       "section": "Chorus",
       "t": 137.05
     },
     {
       "text": "Choose me now, understand",
       "section": "Chorus",
-      "t": 140.99
+      "t": 141.69
     },
     {
       "text": "Oh-oh-oh-oh",
       "section": "Post-Chorus",
-      "t": 145.7
+      "t": 149.72
     },
     {
       "text": "Oh-oh-oh-oh",
       "section": "Post-Chorus",
-      "t": 150.41
+      "t": 154.32
     },
     {
       "text": "Oh-oh-oh-oh",
       "section": "Post-Chorus",
-      "t": 155.11
+      "t": 159.05
     },
     {
       "text": "Oh-oh-oh-oh",
       "section": "Post-Chorus",
-      "t": 159.82
+      "t": 163.54
     },
     {
       "text": "No more waiting in the wings",
       "section": "Bridge",
-      "t": 164.53
+      "t": 165.75
     },
     {
       "text": "Hear the bells it rings",
       "section": "Bridge",
-      "t": 168.73
+      "t": 170.34
     },
     {
-      "text": "Choose me now, don't hesitate",
+      "text": "Choose me now, don’t hesitate",
       "section": "Final Chorus",
-      "t": 172.93
+      "t": 173.72
     },
     {
       "text": "Be the one, seal our fate",
       "section": "Final Chorus",
-      "t": 177.58
+      "t": 178.7
     },
     {
-      "text": "Love's waiting, take my hand",
+      "text": "Love’s waiting, take my hand",
       "section": "Final Chorus",
-      "t": 182.23
+      "t": 182.85
     },
     {
       "text": "Choose me now, forever stand",
       "section": "Final Chorus",
-      "t": 186.85
+      "t": 187.39
     },
     {
       "text": "Oh-oh-oh-oh",
       "section": "Outro",
-      "t": 189.85
+      "t": 195.61
     },
     {
       "text": "Oh-oh-oh-oh",
       "section": "Outro",
-      "t": 192.85
+      "t": 200.25
     },
     {
       "text": "Oh-oh-oh-oh",
       "section": "Outro",
-      "t": 195.85
+      "t": 204.82
     },
     {
       "text": "Oh-oh-oh-oh",
       "section": "Outro",
-      "t": 198.85
+      "t": 209.36
     },
     {
       "text": "Oh-oh-oh-oh",
       "section": "Outro",
-      "t": 201.85
+      "t": 213.79
     },
     {
       "text": "Oh-oh-oh-oh",
       "section": "Outro",
-      "t": 204.85
+      "t": 218.45
     }
   ]
 }

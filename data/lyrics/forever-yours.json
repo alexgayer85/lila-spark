@@ -1,17 +1,17 @@
 {
   "title": "Forever Yours",
-  "durationHint": null,
+  "durationHint": 207,
   "timed": true,
   "lines": [
     {
       "text": "Through the years, our love will stay",
       "section": "Verse 1",
-      "t": 11.88
+      "t": 12.41
     },
     {
       "text": "Hand in hand, come what may",
       "section": "Verse 1",
-      "t": 17.6
+      "t": 18.9
     },
     {
       "text": "Promises whispered in the breeze",
@@ -24,19 +24,19 @@
       "t": 30.0
     },
     {
-      "text": "Time can't touch what we share",
+      "text": "Time can’t touch what we share",
       "section": "Pre-Chorus",
-      "t": 35.98
+      "t": 36.32
     },
     {
       "text": "Always there",
       "section": "Pre-Chorus",
-      "t": 40.7
+      "t": 41.88
     },
     {
       "text": "Forever yours, through thick and thin",
       "section": "Chorus",
-      "t": 47.32
+      "t": 47.85
     },
     {
       "text": "Love within, let it begin",
@@ -46,102 +46,114 @@
     {
       "text": "No end in sight, just endless blue",
       "section": "Chorus",
-      "t": 59.9
+      "t": 60.22
     },
     {
       "text": "Forever yours, me and you",
       "section": "Chorus",
-      "t": 65.52
+      "t": 66.15
     },
     {
-      "text": "Storms may come, but we'll endure",
+      "text": "♪ ♪ ♪",
+      "section": "Instrumental",
+      "t": 71.79,
+      "break": true
+    },
+    {
+      "text": "Storms may come, but we’ll endure",
       "section": "Verse 2",
-      "t": 85.68
+      "t": 86.25
     },
     {
       "text": "Pure and sure, evermore",
       "section": "Verse 2",
-      "t": 89.78
+      "t": 92.37
     },
     {
-      "text": "Memories build foundations strong",
+      "text": "Memories built, foundation’s strong",
       "section": "Verse 2",
-      "t": 98.18
+      "t": 98.64
     },
     {
       "text": "Where we belong",
       "section": "Verse 2",
-      "t": 102.76
+      "t": 104.07
     },
     {
       "text": "Bond unbreakable, souls entwine",
       "section": "Pre-Chorus",
-      "t": 108.74
+      "t": 110.21
     },
     {
       "text": "Yours and mine",
       "section": "Pre-Chorus",
-      "t": 114.72
+      "t": 115.6
     },
     {
       "text": "Forever yours, through thick and thin",
       "section": "Chorus",
-      "t": 120.46
+      "t": 121.72
     },
     {
       "text": "Love within, let it begin",
       "section": "Chorus",
-      "t": 127.46
+      "t": 127.91
     },
     {
       "text": "No end in sight, just endless blue",
       "section": "Chorus",
-      "t": 183.04
+      "t": 134.08
     },
     {
       "text": "Forever yours, me and you",
       "section": "Chorus",
-      "t": 183.72
+      "t": 140.0
     },
     {
       "text": "One love, one life",
       "section": "Bridge",
-      "t": 184.41
+      "t": 146.57
     },
     {
       "text": "Eternally",
       "section": "Bridge",
-      "t": 185.09
+      "t": 153.42
     },
     {
       "text": "Set us free",
       "section": "Bridge",
-      "t": 185.78
+      "t": 158.66
+    },
+    {
+      "text": "♪ ♪ ♪",
+      "section": "Instrumental",
+      "t": 161.28,
+      "break": true
     },
     {
       "text": "Forever yours, through thick and thin",
       "section": "Final Chorus",
-      "t": 186.47
+      "t": 170.97
     },
     {
       "text": "Love within, let it begin",
       "section": "Final Chorus",
-      "t": 187.15
+      "t": 177.16
     },
     {
       "text": "No end in sight, just endless blue",
       "section": "Final Chorus",
-      "t": 187.84
+      "t": 183.29
     },
     {
       "text": "Forever yours",
       "section": "Final Chorus",
-      "t": 188.52
+      "t": 189.25
     },
     {
       "text": "True",
       "section": "Final Chorus",
-      "t": 191.52
+      "t": 195.23
     }
   ]
 }
