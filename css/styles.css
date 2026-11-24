@@ -3722,3 +3722,27 @@ body.lightbox-open {
     animation: none;
   }
 }
+
+/* Play button while the next song buffers */
+.ls-player.is-loading .ls-btn-play {
+  position: relative;
+}
+
+.ls-player.is-loading .ls-btn-play svg {
+  opacity: 0.35;
+}
+
+.ls-player.is-loading .ls-btn-play::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  border-top-color: var(--magenta);
+  border-right-color: var(--cyan);
+  animation: ls-spin 0.8s linear infinite;
+}
+
+@keyframes ls-spin {
+  to { transform: rotate(360deg); }
+}

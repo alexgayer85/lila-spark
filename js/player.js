@@ -71,6 +71,8 @@
     primed: false,
     priming: false,
     expanded: false,
+    loading: false,
+    abort: null,
   };
 
   function lyricKey(track) {
@@ -196,25 +198,29 @@
     return normalizePack(await res.json(), track.title);
   }
 
-  async function loadLyrics(track, { forceFile } = {}) {
-    state.estimates = [];
+  async function loadLyrics(track, { forceFile, loadId } = {}) {
+    let pack;
     try {
       if (forceFile) {
         if (!track.lyrics) {
-          state.lyrics = { title: track.title, durationHint: null, timed: false, lines: [] };
+          pack = { title: track.title, durationHint: null, timed: false, lines: [] };
         } else {
           const res = await fetch(LYRICS_DIR + track.lyrics + ".json");
           if (!res.ok) throw new Error("no lyrics");
-          state.lyrics = normalizePack(await res.json(), track.title);
+          pack = normalizePack(await res.json(), track.title);
         }
       } else {
         const saved = localStorage.getItem(lyricKey(track));
-        if (saved) state.lyrics = normalizePack(JSON.parse(saved), track.title);
-        else state.lyrics = await fetchLyricFile(track);
+        if (saved) pack = normalizePack(JSON.parse(saved), track.title);
+        else pack = await fetchLyricFile(track);
       }
     } catch {
-      state.lyrics = { title: track.title, durationHint: null, timed: false, lines: [] };
+      pack = { title: track.title, durationHint: null, timed: false, lines: [] };
     }
+    /* A newer track was picked while these lyrics were loading: drop them. */
+    if (loadId && loadId !== state.loadId) return;
+    state.lyrics = pack;
+    state.estimates = [];
     state.editIndex = 0;
     buildEstimates(els.audio.duration);
     renderLyrics(-1);
@@ -507,15 +513,38 @@
     frame();
   }
 
-  async function loadBlob(url) {
-    const res = await fetch(url);
+  async function loadBlob(url, signal) {
+    const res = await fetch(url, signal ? { signal } : undefined);
     if (!res.ok) throw new Error("fetch " + res.status);
     return res.arrayBuffer();
+  }
+
+  /* Silence whatever is playing right now, synchronously, before anything async happens. */
+  function stopCurrentAudio() {
+    const a = els.audio;
+    a.muted = true;
+    if (!a.paused) a.pause();
+    if (state.abort) {
+      try {
+        state.abort.abort();
+      } catch {
+        /* ignore */
+      }
+    }
+    state.abort = window.AbortController ? new AbortController() : null;
+  }
+
+  function setLoading(on) {
+    state.loading = !!on;
+    root.classList.toggle("is-loading", state.loading);
+    els.play.setAttribute("aria-busy", state.loading ? "true" : "false");
   }
 
   async function loadTrack(albumId, index, play) {
     const album = albumById(albumId);
     if (!album) return;
+    stopCurrentAudio();
+    const signal = state.abort && state.abort.signal;
     state.albumId = album.id;
     state.index = Math.max(0, Math.min(index, album.tracks.length - 1));
     const track = currentTrack();
@@ -550,9 +579,13 @@
     const loadId = ++state.loadId;
     els.audio.removeAttribute("crossorigin");
     els.audio.preload = "auto";
-    await loadLyrics(track);
-    highlightRow();
     setPlaying(false);
+    setLoading(true);
+    els.cur.textContent = "0:00";
+    setSeekUi(0);
+    highlightRow();
+    await loadLyrics(track, { loadId });
+    if (loadId !== state.loadId) return;
     const pageUrl = new URL(window.location.href);
     pageUrl.searchParams.set("album", album.id);
     pageUrl.searchParams.set("track", track.id);
@@ -565,7 +598,7 @@
     let buf = null;
     for (const u of urls) {
       try {
-        buf = await loadBlob(u);
+        buf = await loadBlob(u, signal);
         break;
       } catch {
         buf = null;
@@ -574,6 +607,8 @@
     if (loadId !== state.loadId) return;
     if (!buf) {
       els.dur.textContent = "0:00";
+      els.audio.muted = false;
+      setLoading(false);
       return;
     }
     if (state.blobUrl) URL.revokeObjectURL(state.blobUrl);
@@ -594,7 +629,9 @@
       setTimeout(ready, 4000);
     });
     if (loadId !== state.loadId) return;
-    if (play || state.wantPlay) {
+    els.audio.muted = false;
+    setLoading(false);
+    if (state.wantPlay) {
       try {
         await els.audio.play();
       } catch {
@@ -657,6 +694,7 @@
     };
     on("play", () => {
       state.wantPlay = true;
+      if (state.loading) return;
       els.audio.play().catch(() => {});
     });
     on("pause", () => {
@@ -695,7 +733,7 @@
     }
     const done = () => {
       if ((a.currentSrc || a.src) === primedSrc) a.pause();
-      a.muted = false;
+      if (!state.loading) a.muted = false;
       state.priming = false;
     };
     if (p && p.then) p.then(done, done);
@@ -963,6 +1001,11 @@
 
   els.audio.addEventListener("play", () => {
     if (state.priming) return;
+    if (state.loading) {
+      /* Something tried to resume the old source mid-switch. */
+      els.audio.pause();
+      return;
+    }
     state.started = true;
     setPlaying(true);
     drawWave();
@@ -1014,6 +1057,12 @@
   });
 
   els.play.addEventListener("click", () => {
+    if (state.loading) {
+      /* New track still buffering: toggle whether it should start once ready. Never resume the old one. */
+      state.wantPlay = !state.wantPlay;
+      state.started = true;
+      return;
+    }
     if (els.audio.paused) {
       state.wantPlay = true;
       state.started = true;
@@ -1111,6 +1160,7 @@
     const albumId = row.dataset.album;
     const index = Number(row.dataset.index);
     state.started = true;
+    if (albumId === state.albumId && index === state.index && state.loading) return;
     if (albumId === state.albumId && index === state.index && state.blobUrl) {
       /* Tapping the loaded song toggles it instead of restarting. */
       if (els.audio.paused) {
