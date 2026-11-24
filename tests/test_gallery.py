@@ -289,7 +289,7 @@ class TestPhotosManifest(unittest.TestCase):
         groups = {g["title"]: g["photos"] for g in singles["groups"]}
         self.assertEqual(
             [g["title"] for g in singles["groups"]],
-            ["Afterglow", "Sparked", "Truly Me", "Age 24 reshoots"],
+            ["Afterglow", "Truly Me", "Age 24 reshoots"],
         )
         self.assertEqual(
             [p["src"] for p in groups["Afterglow"]],
@@ -299,7 +299,7 @@ class TestPhotosManifest(unittest.TestCase):
                 "images/gallery/let-me-begin.jpg",
             ],
         )
-        self.assertEqual(groups["Sparked"], SPARKED_GALLERY)
+        self.assertNotIn("Sparked", groups)
         self.assertEqual(groups["Truly Me"], TRULY_ME_GALLERY)
         self.assertEqual(groups["Age 24 reshoots"], RESHOOT_GALLERY)
 
@@ -317,7 +317,7 @@ class TestPhotosManifest(unittest.TestCase):
         )
 
         photos = flatten_photos(data)
-        self.assertEqual(len(photos), 77)
+        self.assertEqual(len(photos), 61)
         for item in photos:
             self.assertTrue((ROOT / item["src"]).is_file(), item["src"])
 
@@ -355,19 +355,35 @@ class TestPhotosManifest(unittest.TestCase):
                 self.assertLessEqual(max(im.size), 1600, dest.name)
             self.assertAlmostEqual(aspect(dest), aspect(src), places=2, msg=dest.name)
 
-    def test_sparked_track_covers_sized(self):
-        for src_name, slug, _title in SPARKED_COVERS:
-            src = SPARKED_SRC / src_name
-            for dest, max_edge in (
-                (ROOT / "images" / "gallery" / f"{slug}.jpg", 1600),
-                (ROOT / "images" / "covers" / f"{slug}.jpg", 900),
-            ):
-                self.assertTrue(dest.is_file(), dest.name)
-                self.assertLessEqual(dest.stat().st_size, MAX_BYTES, dest.name)
-                with Image.open(dest) as im:
-                    self.assertEqual(im.mode, "RGB")
-                    self.assertLessEqual(max(im.size), max_edge, dest.name)
-                self.assertAlmostEqual(aspect(dest), aspect(src), places=2, msg=dest.name)
+    def test_sparked_tracks_use_album_cover_and_per_track_art_is_gone(self):
+        cat = json.loads((ROOT / "data" / "catalog.json").read_text())
+        sparked = next(a for a in cat["albums"] if a["id"] == "sparked")
+        self.assertEqual(sparked["cover"], "images/covers/sparked.jpg")
+        self.assertTrue((ROOT / sparked["cover"]).is_file())
+        album_slugs = [t["id"] for t in sparked["tracks"]]
+        for t in sparked["tracks"]:
+            self.assertEqual(t.get("cover"), "images/covers/sparked.jpg", t["id"])
+        # Per-track Sparked art is no longer displayed. Midnight Voltage keeps
+        # its single cover file only because the listen landing page still uses it.
+        keep_covers = {"sparked.jpg", "midnight-voltage.jpg"}
+        for _src_name, slug, _title in SPARKED_COVERS:
+            gallery = ROOT / "images" / "gallery" / f"{slug}.jpg"
+            self.assertFalse(gallery.is_file(), gallery.name)
+            if slug == "heart-on-a-string":
+                # Original HoS still is unused on the site; age-24 single cover stays.
+                continue
+            cover = ROOT / "images" / "covers" / f"{slug}.jpg"
+            if f"{slug}.jpg" in keep_covers:
+                self.assertTrue(cover.is_file(), cover.name)
+            else:
+                self.assertFalse(cover.is_file(), cover.name)
+        photos = json.loads((ROOT / "data" / "photos.json").read_text())
+        singles = section_by_id(photos, "singles")
+        titles = [g["title"] for g in singles["groups"]]
+        self.assertNotIn("Sparked", titles)
+        for item in flatten_photos(photos):
+            for slug in album_slugs:
+                self.assertNotIn(f"/{slug}.jpg", item["src"], item["src"])
 
     def test_truly_me_track_covers_sized(self):
         for src_name, slug, _title in TRULY_ME_COVERS:

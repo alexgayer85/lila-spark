@@ -44,6 +44,7 @@ class TestCovers(unittest.TestCase):
         for album in catalog()["albums"]:
             for path in [album.get("cover")] + [t.get("cover") for t in album["tracks"]]:
                 if path:
+                    path = path.split("?", 1)[0]
                     self.assertTrue((ROOT / path).is_file(), path)
 
     def test_afterglow_singles_have_own_covers(self):
